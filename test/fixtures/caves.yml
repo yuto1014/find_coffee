@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  opinion: MyString
+  place: MyString
+  roast: MyString
+  food: MyString
+  category_id: 1
+  taist_id: 1
+  is_deleted: false
+
+two:
+  name: MyString
+  opinion: MyString
+  place: MyString
+  roast: MyString
+  food: MyString
+  category_id: 1
+  taist_id: 1
+  is_deleted: false
