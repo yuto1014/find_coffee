@@ -7,9 +7,93 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script src="https://kit.fontawesome.com/0a9fd1077e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
   </head>
 
   <body>
+    <header class="navbar navbar-dark bg-dark", style="padding: 0 50px; margin-bottom: 0px;">
+      <% if admin_signed_in? %>
+        <nav class="nav navbar-nav navbar-left">
+          <a href="/admin/items" class="btn-circle-fishy">Find Best Coffee</a>
+        </nav>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <%= link_to 'ユーザー一覧', admins_users_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+            </li>
+            <li>
+              <%= link_to '各種登録', new_admins_item_path, class: "btn-default", style: "margin-left: 20px; margin-top: 33px;"%>
+            </li>
+            <li>
+              <%= link_to '問い合わせ一覧', admins_contacts_path, class: "btn-default", style: "margin-left: 20px; margin-top: 33px;" %>
+            </li>
+            <li>
+              <%= link_to 'いいねランキング', admins_like_path, class: "btn-default", style: "margin-left: 20px; margin-top: 33px;" %>
+            </li>
+            <li>
+              <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: "btn-default", style: "margin-left: 20px; margin-top: 33px;" %>
+            </li>
+          </ul>
+        </nav>
+        <p class="navbar-text navbar-right">
+          管理者としてログインしています
+        </p>
+      <% elsif user_signed_in? %>
+        <nav class="nav navbar-nav navbar-left">
+          <a href="/users/items" class="btn-circle-fishy">Find Best Coffee</a>
+        </nav>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <%= link_to 'マイページ', users_user_path(current_user.id), class: "btn-default", style: "margin-left: 20px; margin-top: 33px;" %>
+            </li>
+            <li>
+              <%= link_to '探す', users_items_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+            </li>
+            <li>
+            <%= link_to "繋がる", "#", class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+            </li>
+            <li>
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+            </li>
+            <p class="navbar-text navbar-right">
+            ようこそ<%= current_user.name %>さん。
+            </p>
+          </ul>
+        </nav>
+     <% else %>
+        <nav class="nav navbar-nav navbar-left">
+          <a href="/" class="btn-circle-fishy">Find Best Coffee</a>
+        </nav>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <%=link_to "新規登録", new_user_registration_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+            </li>
+            <li>
+              <%= link_to "ログイン", new_user_session_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+            </li>
+            </br>
+            <p class="navbar-text navbar-right">
+              ようこそ　ゲストさん。
+            </p>
+          </ul>
+        </nav>
+      <% end %>
+    </header>
     <%= yield %>
+    <footer class="footer navbar-dark bg-dark", style="height: 80px; line-height: 80px; font-size: 20px;">
+      <div class="container">
+        <p class="nav navbar-nav navbar-right", style="color:white">© All rights reserved by Find Best Coffee.Inc.</p>
+      </div>
+    </footer>
   </body>
 </html>

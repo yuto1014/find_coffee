@@ -1,0 +1,30 @@
+<div class="modal-dialog" role="document">
+	<div class="modal-content">
+		<section class="container clearfix">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 new-container">
+					<h3 class="text-center">商品新規追加</h1>
+					<hr>
+					<div class="row">
+						<%= form_for(@taist, url: users_taists_path, remote: true) do |f| %>
+							<%= f.fields_for :items do |item| %>
+								<%= render 'item_fields', f: item %>
+							<% end %>
+							<h5>風味</h5>
+							<%= f.label :"フルーティ" %>
+  							<%= f.select :fruity, [["感じない", "0"], ["やや感じる", "1"], ["感じる", "2"], ["強く感じる", "3"]], class:"form-control" %><br>
+  							<%= f.label :"スッキリ" %>
+  							<%= f.select :refresh, [["感じない", "0"], ["やや感じる", "1"], ["感じる", "2"], ["強く感じる", "3"]], class:"form-control" %><br>
+  							<%= f.label :"コク" %>
+  							<%= f.select :body, [["感じない", "0"], ["やや感じる", "1"], ["感じる", "2"], ["強く感じる", "3"]], class:"form-control" %><br>
+  							<%= f.label :"ビター" %>
+  							<%= f.select :bitter, [["感じない", "0"], ["やや感じる", "1"], ["感じる", "2"], ["強く感じる", "3"]], class:"form-control" %><br>
+  							<%= f.hidden_field :user_id, :value => current_user.id %>
+							<%= f.submit "保存", class:"form-control" %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>

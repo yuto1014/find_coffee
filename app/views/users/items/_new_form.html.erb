@@ -1,0 +1,28 @@
+<div class="modal-dialog" role="document">
+	<div class="modal-content">
+		<section class="container clearfix">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 new-container">
+					<h3 class="text-center">商品新規追加</h1>
+					<hr>
+					<div class="row">
+						<%= form_for(@item, url: users_items_path(@item), remote: true) do |f| %>
+							<%= f.label :画像投稿 %><br>
+							<%= f.attachment_field :image %>
+							<%= f.label :タイトル %><br>
+							<%= f.text_field :name %>
+							<%= f.label :感想 %>
+							<%= f.text_field :opinion %><br>
+							<%= f.label :味覚 %>
+							<%= f.select :fruity, Taist.fruities.keys.to_a, {}, {include_blank: "フルーティ"} %><br>
+							<%= f.select :refresh, Taist.refreshes.keys.to_a, {}, {include_blank: "スッキリ"} %><br>
+							<%= f.select :body, Taist.bodies.keys.to_a, {}, {include_blank: "コク"} %><br>
+							<%= f.select :bitter, Taist.bitteres.keys.to_a, {}, {include_blank: "苦味"} %><br>
+							<%= f.submit "保存" %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>

@@ -1,0 +1,6 @@
+<% if @status == 'success' %>
+<%  elsif @status == 'fail' %>
+	alert('error!');
+<% end %>
+	$("#user-modal").modal("hide");
+	$("#user_info").html("<%= escape_javascript(render 'user_update', user: @user) %>")

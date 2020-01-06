@@ -1,0 +1,20 @@
+<section class="container clearfix">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 new-container">
+			<h1 class="text-center">コーヒー一覧</h1>
+			<div id="item_index">
+				<% @items.each do |item| %>
+					<%= attachment_image_tag item, :image, size: "150x150" %>
+					<%= item.name %>
+					<%= item.opinion %>
+					<%= item.taist.fruity %>
+					<%= item.taist.refresh %>
+					<%= item.taist.body %>
+					<%= item.taist.bitter %>
+				<% end %>
+			</div>
+				<%= link_to "新規投稿", new_users_taist_path, remote: true, class: "btn btn-lg btn-primary" %>
+				<div id="item-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+		</div>
+	</div>
+</section>
