@@ -16,6 +16,7 @@
     <script>
       new WOW().init();
     </script>
+    <%= include_gon(init: true) %>
   </head>
 
   <body>
@@ -56,7 +57,7 @@
               <%= link_to 'マイページ', users_user_path(current_user.id), class: "btn-default", style: "margin-left: 20px; margin-top: 33px;" %>
             </li>
             <li>
-              <%= link_to '探す', users_items_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+              <%= link_to '探す', users_items_research_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
             </li>
             <li>
             <%= link_to "繋がる", "#", class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>

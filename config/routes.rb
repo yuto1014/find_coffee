@@ -18,11 +18,13 @@ Rails.application.routes.draw do
     get 'homes/thanks'
     get ':id/unsubscribe' => "homes#unsubscribe", as: "unsubscribe"
     resources :taists
+    get 'items/research' => 'items#research', as: 'items_research'
+    put 'items/:id/hide' => 'items#hide', as: 'items_hide'
     resources :items do
       resource :likes, only: [:create, :destroy]
       resources :comments, only: [:create, :destroy, :edit, :update]
   	end
-    put 'items/:id/hide' => 'items#hide', as: 'items_hide'
+
   	resources :users do
       member do
      	get :following, :followers

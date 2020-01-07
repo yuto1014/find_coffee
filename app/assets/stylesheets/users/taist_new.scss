@@ -1,0 +1,139 @@
+.taist-index {
+	display: grid;
+	grid-template-rows: 80px 80px 80px 80px;
+	grid-template-columns: 80px 80px 80px 80px;
+}
+
+.refresh_content1 {
+    border: solid 3px #000000;
+    grid-row: 1;
+    grid-column: 1;
+    background-color: #f5deb3;
+}
+.refresh_content2 {
+    border: solid 3px #000000;
+    grid-row: 1;
+    grid-column: 2;
+    background-color: #f5deb3;
+}
+.refresh_content3 {
+    border: solid 3px #000000;
+    grid-row: 2;
+    grid-column: 1;
+    background-color: #f5deb3;
+}
+.refresh_content4 {
+    border: solid 3px #000000;
+    grid-row: 2;
+    grid-column: 2;
+    background-color: #f5deb3;
+}
+.bitter_content1 {
+	border: solid 3px #000000;
+    grid-row: 1;
+    grid-column: 3;
+    background-color: #deb887;
+}
+.bitter_content2 {
+	border: solid 3px #000000;
+    grid-row: 1;
+    grid-column: 4;
+    background-color: #deb887;
+}
+.bitter_content3 {
+	border: solid 3px #000000;
+    grid-row: 2;
+    grid-column: 3;
+    background-color: #deb887;
+}
+.bitter_content4 {
+	border: solid 3px #000000;
+    grid-row: 2;
+    grid-column: 4;
+    background-color: #deb887;
+}
+.body_content1 {
+	border: solid 3px #000000;
+    grid-row: 3;
+    grid-column: 1;
+    background-color: #d2b48c;
+}
+.body_content2 {
+	border: solid 3px #000000;
+    grid-row: 3;
+    grid-column: 2;
+    background-color: #d2b48c;
+}
+.body_content3 {
+	border: solid 3px #000000;
+    grid-row: 4;
+    grid-column: 1;
+    background-color: #d2b48c;
+}
+.body_content4 {
+	border: solid 3px #000000;
+    grid-row: 4;
+    grid-column: 2;
+    background-color: #d2b48c;
+}
+.fruity_content1 {
+	border: solid 3px #000000;
+    grid-row: 3;
+    grid-column: 3;
+    background-color: #f0e68c;
+}
+.fruity_content2 {
+	border: solid 3px #000000;
+    grid-row: 3;
+    grid-column: 4;
+    background-color: #f0e68c;
+}
+.fruity_content3 {
+	border: solid 3px #000000;
+    grid-row: 4;
+    grid-column: 3;
+    background-color: #f0e68c;
+}
+.fruity_content4 {
+	border: solid 3px #000000;
+    grid-row: 4;
+    grid-column: 4;
+    background-color: #f0e68c;
+}
+
+ .radio_btn {
+   display: none;
+ }
+// チェックが入っていないとき
+.radio_btn + label {
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: normal;
+  color: #888;
+  border: solid 1px #EDBC6C;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 3px 10px;
+  background-color: #fff;
+  cursor: pointer;
+}
+// チェックが入ったとき
+.radio_btn:checked + label {
+  color: #fff;
+  background-color: #EDBC6C;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

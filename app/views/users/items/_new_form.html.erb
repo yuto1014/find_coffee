@@ -3,7 +3,7 @@
 		<section class="container clearfix">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 new-container">
-					<h3 class="text-center">商品新規追加</h1>
+					<h3 class="text-center">アイテム投稿</h1>
 					<hr>
 					<div class="row">
 						<%= form_for(@item, url: users_items_path(@item), remote: true) do |f| %>
@@ -13,11 +13,17 @@
 							<%= f.text_field :name %>
 							<%= f.label :感想 %>
 							<%= f.text_field :opinion %><br>
+							<%= f.label :購入場所 %>
+							<%= f.text_field :place %><br>
 							<%= f.label :味覚 %>
-							<%= f.select :fruity, Taist.fruities.keys.to_a, {}, {include_blank: "フルーティ"} %><br>
-							<%= f.select :refresh, Taist.refreshes.keys.to_a, {}, {include_blank: "スッキリ"} %><br>
-							<%= f.select :body, Taist.bodies.keys.to_a, {}, {include_blank: "コク"} %><br>
-							<%= f.select :bitter, Taist.bitteres.keys.to_a, {}, {include_blank: "苦味"} %><br>
+							<%= f.label :"フルーティ" %>
+  							<%= f.select :fruity, [["感じない", "0"], ["やや感じる", "1"], ["感じる", "2"], ["強く感じる", "3"]], class:"form-control" %><br>
+  							<%= f.label :"スッキリ" %>
+  							<%= f.select :refresh, [["感じない", "0"], ["やや感じる", "1"], ["感じる", "2"], ["強く感じる", "3"]], class:"form-control" %><br>
+  							<%= f.label :"コク" %>
+  							<%= f.select :body, [["感じない", "0"], ["やや感じる", "1"], ["感じる", "2"], ["強く感じる", "3"]], class:"form-control" %><br>
+  							<%= f.label :"ビター" %>
+  							<%= f.select :bitter, [["感じない", "0"], ["やや感じる", "1"], ["感じる", "2"], ["強く感じる", "3"]], class:"form-control" %><br>
 							<%= f.submit "保存" %>
 						<% end %>
 					</div>

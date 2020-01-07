@@ -71,5 +71,7 @@ gem 'ransack'
 gem 'nested_form_fields'
 gem 'dotenv-rails'
 gem 'rails-i18n'
-
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
 gem 'pry-byebug'
+gem 'gon'

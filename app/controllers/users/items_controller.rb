@@ -31,6 +31,14 @@ class Users::ItemsController < ApplicationController
 	end
 
 	def show
+		@item = Item.find(params[:id])
+		gon.item = @item
+		gon.taist = @item.taist
+	end
+
+	def research
+		@items = Item.all.order(created_at: :desc)
+		@taist1 = Taist.where(refresh:3, bitter:0, body:0, fruity:3)
 	end
 
 	private

@@ -1,0 +1,85 @@
+<div class="show-content">
+	<section class="container clearfix">
+		<h1 class="text-center">商品詳細</h1>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 show-container">
+				<div class="row clearfix">
+					<div class="col-md-6">
+						<div class="item_show">
+							<div class="item_show_image">
+								<%= attachment_image_tag @item, :image, size: "200x200", class: "center-block" %>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>製品名</th>
+									<th><%= @item.name %></th>
+								</tr>
+								<tr>
+									<th>感想</th>
+									<th><%= @item.opinion %></th>
+								</tr>
+								<tr>
+									<th>購入場所</th>
+									<th><%= @item.place %></th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+		        </div>
+
+		        <div class="row">
+		        	<h3 class="text-center">レーダーチャート</h3>
+  					<canvas id="myRaderChart"></canvas>
+  					<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+  					 <script>
+					    var ctx = document.getElementById("myRaderChart");
+					    var item = gon.item
+					    var taist = gon.taist
+					    //console.log(item)
+ 					    var myRadarChart = new Chart(ctx, {
+					        type: 'radar',
+					        data: {
+					            labels: ["スッキリ", "ビター", "コク", "フルーティ"],
+					            datasets: [{
+					                label: item.name,
+					                data: [taist.refresh, taist.bitter, taist.body, taist.fruity],
+					                //data: [1, 2, 3, 2],
+					                backgroundColor: 'RGBA(225,95,150, 0.5)',
+					                borderColor: 'RGBA(225,95,150, 1)',
+					                borderWidth: 1,
+					                pointBackgroundColor: 'RGB(46,106,177)'
+					            }]
+					        },
+					        options: {
+				            title: {
+				                display: true,
+				                text: 'coffee map'
+				            },
+				            scale:{
+				                ticks:{
+				                    suggestedMin: 0,
+				                    suggestedMax: 3,
+				                    stepSize: 1,
+				                    callback: function(value, index, values){
+				                    	if(value == 1){
+				                        	return "やや感じる"
+				                    	}else if(value == 2){
+				                    		return "感じる"
+				                    	}else{
+				                    		return "強く感じる"
+				                    	}
+				                    }
+				                }
+				            }
+				        }
+				    });
+				    </script>
+		    </div>
+		</div>
+	</section>
+</div>
