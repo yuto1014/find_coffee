@@ -11,18 +11,10 @@
 						<% end %>
 							感想<%= item.opinion %>
 							購入場所<%= item.place %>
-							<% if item.taist.fruity == 0 %>
-								フルーティ<p class="btn btn-danger btn-xs">感じない</p>
-							<% elsif item.taist.fruity == 1 %>
-								フルーティ<p class="btn btn-danger btn-xs">やや感じる</p>
-							<% elsif item.taist.fruity == 2 %>
-								フルーティ<p class="btn btn-danger btn-xs">感じる</p>
-							<% else %>
-	  							フルーティ<p class="btn btn-danger btn-xs">強く感じる</p>
-	  						<% end %>
-							<%= item.taist.refresh %>
-							<%= item.taist.body %>
-							<%= item.taist.bitter %>
+							refresh:<%= item.taist.refresh %>
+							bitter:<%= item.taist.bitter %>
+							body:<%= item.taist.body %>
+							fruity:<%= item.taist.fruity %>
 					<% end %>
 				</div>
 					<%= link_to "新規投稿", new_users_taist_path, remote: true, class: "btn btn-lg btn-dark" %>

@@ -10,6 +10,10 @@
 			</div>
 			<%= link_to "編集", edit_users_user_path, remote: true, class: "btn btn-lg btn-primary" %>
 			<div id="user-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+
+			<%= link_to "予定追加", new_users_event_path, remote: true, class: "btn btn-lg btn-dark" %>
+			<div id="event-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+			<div id="calendar"></div>
 		</div>
 	</div>
 </section>

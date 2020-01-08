@@ -16,117 +16,117 @@
 								<div class="refresh_content1">
 									<%= f.radio_button :refresh, 3, class: "radio_btn", id: 'refresh1' %>
 									<%= f.label '★', for: 'refresh1' %>
-									<%= f.hidden_field :bitter, :value => 0 %>
-									<%= f.hidden_field :body, :value => 0 %>
-									<%= f.hidden_field :fruity, :value => 3 %>
+										<%= f.hidden_field :bitter, :value => 0, disabled: true, class: 'hidden1' %>
+										<%= f.hidden_field :body, :value => 0, disabled: true, class: 'hidden1' %>
+										<%= f.hidden_field :fruity, :value => 3, disabled: true, class: 'hidden1' %>
 								</div>
 								<div class="refresh_content2">
 									<%= f.radio_button :refresh, 3, class: "radio_btn", id: 'refresh2' %>
 									<%= f.label '★', for: 'refresh2' %>
-									<%= f.hidden_field :bitter, :value => 1 %>
-									<%= f.hidden_field :body, :value => 0 %>
-									<%= f.hidden_field :fruity, :value => 2 %>
+									<%= f.hidden_field :bitter, :value => 1, disabled: true, class: 'hidden2' %>
+									<%= f.hidden_field :body, :value => 0, disabled: true, class: 'hidden2' %>
+									<%= f.hidden_field :fruity, :value => 2, disabled: true, class: 'hidden2' %>
 								</div>
 								<div class="refresh_content3">
 									<%= f.radio_button :refresh, 2, class: "radio_btn", id: 'refresh3' %>
 									<%= f.label '★', for: 'refresh3' %>
-									<%= f.hidden_field :bitter, :value => 0 %>
-									<%= f.hidden_field :body, :value => 1 %>
-									<%= f.hidden_field :fruity, :value => 3 %>
+									<%= f.hidden_field :bitter, :value => 0, disabled: true, id: 'refresh3' %>
+									<%= f.hidden_field :body, :value => 1, disabled: true, id: 'refresh3' %>
+									<%= f.hidden_field :fruity, :value => 3, disabled: true, id: 'refresh3' %>
 								</div>
 								<div class="refresh_content4">
 									<%= f.radio_button :refresh, 2, class: "radio_btn", id: 'refresh4' %>
 									<%= f.label '★', for: 'refresh4' %>
-									<%= f.hidden_field :bitter, :value => 1 %>
-									<%= f.hidden_field :body, :value => 1 %>
-									<%= f.hidden_field :fruity, :value => 2 %>
+									<%= f.hidden_field :bitter, :value => 1, disabled: true, id: 'refresh4' %>
+									<%= f.hidden_field :body, :value => 1, disabled: true, id: 'refresh4' %>
+									<%= f.hidden_field :fruity, :value => 2, disabled: true, id: 'refresh4' %>
 								</div>
 								<div class="bitter_content1">
 									<%= f.radio_button :refresh, 3, class: "radio_btn", id: 'refresh5' %>
 									<%= f.label '★', for: 'refresh5' %>
-									<%= f.hidden_field :bitter, :value => 2 %>
-									<%= f.hidden_field :body, :value => 0 %>
-									<%= f.hidden_field :fruity, :value => 1 %>
+									<%= f.hidden_field :bitter, :value => 2, disabled: true, id: 'refresh5' %>
+									<%= f.hidden_field :body, :value => 0, disabled: true, id: 'refresh5' %>
+									<%= f.hidden_field :fruity, :value => 1, disabled: true, id: 'refresh5' %>
 								</div>
 								<div class="bitter_content2">
 									<%= f.radio_button :refresh, 3, class: "radio_btn", id: 'refresh6' %>
 									<%= f.label '★', for: 'refresh6' %>
-									<%= f.hidden_field :bitter, :value => 3 %>
-									<%= f.hidden_field :body, :value => 0 %>
-									<%= f.hidden_field :fruity, :value => 0 %>
+									<%= f.hidden_field :bitter, :value => 3, disabled: true, id: 'refresh6' %>
+									<%= f.hidden_field :body, :value => 0, disabled: true, id: 'refresh6' %>
+									<%= f.hidden_field :fruity, :value => 0, disabled: true, id: 'refresh6' %>
 								</div>
 								<div class="bitter_content3">
 									<%= f.radio_button :refresh, 2, class: "radio_btn", id: 'refresh7' %>
 									<%= f.label '★', for: 'refresh7' %>
-									<%= f.hidden_field :bitter, :value => 2 %>
-									<%= f.hidden_field :body, :value => 1 %>
-									<%= f.hidden_field :fruity, :value => 1 %>
+									<%= f.hidden_field :bitter, :value => 2, disabled: true, id: 'refresh7' %>
+									<%= f.hidden_field :body, :value => 1, disabled: true, id: 'refresh7' %>
+									<%= f.hidden_field :fruity, :value => 1, disabled: true, id: 'refresh7' %>
 								</div>
 								<div class="bitter_content4">
 									<%= f.radio_button :refresh, 2, class: "radio_btn", id: 'refresh8' %>
 									<%= f.label '★', for: 'refresh8' %>
-									<%= f.hidden_field :bitter, :value => 3 %>
-									<%= f.hidden_field :body, :value => 1 %>
-									<%= f.hidden_field :fruity, :value => 0 %>
+									<%= f.hidden_field :bitter, :value => 3, disabled: true, id: 'refresh8' %>
+									<%= f.hidden_field :body, :value => 1, disabled: true, id: 'refresh8' %>
+									<%= f.hidden_field :fruity, :value => 0, disabled: true, id: 'refresh8' %>
 								</div>
 								<div class="body_content1">
 									<%= f.radio_button :refresh, 1, class: "radio_btn", id: 'refresh9' %>
 									<%= f.label '★', for: 'refresh9' %>
-									<%= f.hidden_field :bitter, :value => 0 %>
-									<%= f.hidden_field :body, :value => 2 %>
-									<%= f.hidden_field :fruity, :value => 3 %>
+									<%= f.hidden_field :bitter, :value => 0, disabled: true, id: 'refresh9' %>
+									<%= f.hidden_field :body, :value => 2, disabled: true, id: 'refresh9' %>
+									<%= f.hidden_field :fruity, :value => 3, disabled: true, id: 'refresh9' %>
 								</div>
 								<div class="body_content2">
 									<%= f.radio_button :refresh, 1, class: "radio_btn", id: 'refresh10' %>
 									<%= f.label '★', for: 'refresh10' %>
-									<%= f.hidden_field :bitter, :value => 1 %>
-									<%= f.hidden_field :body, :value => 2 %>
-									<%= f.hidden_field :fruity, :value => 2 %>
+									<%= f.hidden_field :bitter, :value => 1, disabled: true, id: 'refresh10' %>
+									<%= f.hidden_field :body, :value => 2, disabled: true, id: 'refresh10' %>
+									<%= f.hidden_field :fruity, :value => 2, disabled: true, id: 'refresh10' %>
 								</div>
 								<div class="body_content3">
 									<%= f.radio_button :refresh, 0, class: "radio_btn", id: 'refresh11' %>
 									<%= f.label '★', for: 'refresh11' %>
-									<%= f.hidden_field :bitter, :value => 0 %>
-									<%= f.hidden_field :body, :value => 3 %>
-									<%= f.hidden_field :fruity, :value => 3 %>
+									<%= f.hidden_field :bitter, :value => 0, disabled: true, id: 'refresh11' %>
+									<%= f.hidden_field :body, :value => 3, disabled: true, id: 'refresh11' %>
+									<%= f.hidden_field :fruity, :value => 3, disabled: true, id: 'refresh11' %>
 								</div>
 								<div class="body_content4">
 									<%= f.radio_button :refresh, 0, class: "radio_btn", id: 'refresh12' %>
 									<%= f.label '★', for: 'refresh12' %>
-									<%= f.hidden_field :bitter, :value => 1 %>
-									<%= f.hidden_field :body, :value => 3 %>
-									<%= f.hidden_field :fruity, :value => 2 %>
+									<%= f.hidden_field :bitter, :value => 1, disabled: true, id: 'refresh12' %>
+									<%= f.hidden_field :body, :value => 3, disabled: true, id: 'refresh12' %>
+									<%= f.hidden_field :fruity, :value => 2, disabled: true, id: 'refresh12' %>
 								</div>
 								<div class="fruity_content1">
 									<%= f.radio_button :refresh, 1, class: "radio_btn", id: 'refresh13' %>
 									<%= f.label '★', for: 'refresh13' %>
-									<%= f.hidden_field :bitter, :value => 2 %>
-									<%= f.hidden_field :body, :value => 2 %>
-									<%= f.hidden_field :fruity, :value => 1 %>
+									<%= f.hidden_field :bitter, :value => 2, disabled: true, id: 'refresh13' %>
+									<%= f.hidden_field :body, :value => 2, disabled: true, id: 'refresh13' %>
+									<%= f.hidden_field :fruity, :value => 1, disabled: true, id: 'refresh13' %>
 								</div>
 								<div class="fruity_content2">
 									<%= f.radio_button :refresh, 1, class: "radio_btn", id: 'refresh14' %>
 									<%= f.label '★', for: 'refresh14' %>
-									<%= f.hidden_field :bitter, :value => 3 %>
-									<%= f.hidden_field :body, :value => 2 %>
-									<%= f.hidden_field :fruity, :value => 0 %>
+									<%= f.hidden_field :bitter, :value => 3, disabled: true, id: 'refresh14' %>
+									<%= f.hidden_field :body, :value => 2, disabled: true, id: 'refresh14' %>
+									<%= f.hidden_field :fruity, :value => 0, disabled: true, id: 'refresh14' %>
 								</div>
 								<div class="fruity_content3">
 									<%= f.radio_button :refresh, 0, class: "radio_btn", id: 'refresh15' %>
 									<%= f.label '★', for: 'refresh15' %>
-									<%= f.hidden_field :bitter, :value => 2 %>
-									<%= f.hidden_field :body, :value => 3 %>
-									<%= f.hidden_field :fruity, :value => 1 %>
+									<%= f.hidden_field :bitter, :value => 2, disabled: true, id: 'refresh15' %>
+									<%= f.hidden_field :body, :value => 3, disabled: true, id: 'refresh15' %>
+									<%= f.hidden_field :fruity, :value => 1, disabled: true, id: 'refresh15' %>
 								</div>
 								<div class="fruity_content4">
 									<%= f.radio_button :refresh, 0, class: "radio_btn", id: 'refresh16' %>
 									<%= f.label '★', for: 'refresh16' %>
-									<%= f.hidden_field :bitter, :value => 3 %>
-									<%= f.hidden_field :body, :value => 3 %>
-									<%= f.hidden_field :fruity, :value => 0 %>
+									<%= f.hidden_field :bitter, :value => 3, disabled: true, id: 'refresh16' %>
+									<%= f.hidden_field :body, :value => 3, disabled: true, id: 'refresh16' %>
+									<%= f.hidden_field :fruity, :value => 0, disabled: true , id: 'refresh16'%>
 								</div>
+								<%= f.submit "保存", class:"form-control" %>
 							</div>
-							<%= f.submit "保存", class:"form-control" %>
 						<% end %>
 					</div>
 				</div>

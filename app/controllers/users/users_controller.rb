@@ -2,6 +2,11 @@ class Users::UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@items = @user.items.page(params[:page]).reverse_order
+		@evnet = Event.new
+		@events = Event.all
+		@events.each do |event|
+			gon.event_title = event.title
+		end
 	end
 
 	def edit

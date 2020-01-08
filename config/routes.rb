@@ -30,7 +30,8 @@ Rails.application.routes.draw do
      	get :following, :followers
       end
     end
-    resources :follows, only: [:create, :destroy]
+    resources :follows, only: [:create, :destroy, :update, :destroy]
+    resources :events
     resources :messages, only: [:show, :create]
     resources :contacts
     put "/users/:id" => "users#hide"
