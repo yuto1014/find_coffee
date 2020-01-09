@@ -17,25 +17,41 @@
 //= require bootstrap-sprockets
 //= require moment
 //= require fullcalendar
+//= require fullcalendar/lang/ja
 //= require turbolinks
 //= require_tree .
 
 $(document).ready(function() {
-  // 		$('#refresh1').prop('checked', function() {
-  // 				alert('1 is clicked');
-  //     			$(".hidden1").attr(true, false);
-  // 		});
+  		$('#refresh1').prop('checked', function() {
+  				alert('1 is clicked');
+      			$(".hidden1").attr(true, false);
+  		});
 
-  // 		$('#refresh2').prop('checked', function() {
-  // 				alert('2 is clicked');
-  //     			$(".hidden2").attr(true, false);
-		// });
+  		$('#refresh2').prop('checked', function() {
+  				alert('2 is clicked');
+      			$(".hidden2").attr(true, false);
+		});
 
-		// $("input[name='taist[refresh]']").click(function(){
-		// 	alert($(this).val());
-		// });
+		$("input[name='taist[refresh]']").click(function(){
+			alert($(this).val());
+		});
 
 		$('.form-control').on('click', function() {
 			alert("are you sure?");
 		});
+
+		new Vue({
+		el:'#app',
+		data:{
+			myName:''
+		}
+	});
 });
+
+
+
+
+
+
+
+

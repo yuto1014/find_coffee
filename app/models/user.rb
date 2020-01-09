@@ -10,6 +10,8 @@ class User < ApplicationRecord
     self.likes.exists?(item_id: item.id)
   end
 
+  has_many :favorites, dependent: :destroy
+
   has_many :comments, dependent: :destroy
   has_many :contact, dependent: :destroy
 
@@ -20,21 +22,21 @@ class User < ApplicationRecord
    has_many :rooms, through: :customer_rooms
    has_many :messages
 
-   has_many :following_relationships, foreign_key: "follower_id", class_name: "Follow", dependent: :destroy
-   has_many :followings, through: :following_relationships
-   has_many :follower_relationships, foreign_key: "following_id", class_name: "Follow", dependent: :destroy
-   has_many :followers, through: :follower_relationships
+   has_many :events, dependent: :destroy
 
-  def following?(other_user)
-    following_relationships.find_by(following_id: other_user.id)
+   has_many :following_relationships, foreign_key: "follower_id", class_name: "Relationship",  dependent: :destroy
+   has_many :following, through: :following_relationships
+
+  def following?(user)
+    following_relationships.find_by(following_id: user.id)
   end
 
-  def follow!(other_user)
-    following_relationships.create!(following_id: other_user.id)
+  def follow(user)
+    following_relationships.create!(following_id: user.id)
   end
 
-  def unfollow!(other_user)
-    following_relationships.find_by(following_id: other_user.id).destroy
+  def unfollow(user)
+    following_relationships.find_by(following_id: user.id).destroy
   end
 
   enum address: {

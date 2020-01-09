@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'users/homes#top'
+
   devise_for :admins, path: 'auth', path_names: { sign_in: 'find_user_coffee_login', sign_out: 'panda_and_coffee_with_ryoko_play_logout', password: 'panda_and_coffee_with_ryoko_play_secret', confirmation: 'panda_and_coffee_with_ryoko_play_verification', unlock: 'panda_and_coffee_with_ryoko_play_unblock', registration: 'panda_and_coffee_with_ryoko_play_register', sign_up: 'panda_and_coffee_with_ryoko_play_cmon_let_me_in' }, controllers: {
     sessions: 'admins/sessions',
     passwords: 'admins/passwords',
@@ -12,6 +13,10 @@ Rails.application.routes.draw do
     passwords: 'users/passwords',
     registrations: 'users/registrations',
   }
+
+  namespace :api, { format: 'json' } do
+    resources :favorites, only: [:index, :create, :destroy]
+  end
 
   namespace :users do
     get 'homes/top'
@@ -30,7 +35,7 @@ Rails.application.routes.draw do
      	get :following, :followers
       end
     end
-    resources :follows, only: [:create, :destroy, :update, :destroy]
+    resources :relationships, only: [:create, :destroy]
     resources :events
     resources :messages, only: [:show, :create]
     resources :contacts

@@ -4,18 +4,21 @@
 			<div class="row">
 				<h1 class="text-center">コーヒー一覧</h1>
 				<div id="item_index">
-					<% @items.each do |item| %>
-						<%= link_to users_item_path(item) do %>
-							<%= attachment_image_tag item, :image, size: "150x150" %>
-							製品名<%= item.name %>
-						<% end %>
-							感想<%= item.opinion %>
-							購入場所<%= item.place %>
-							refresh:<%= item.taist.refresh %>
-							bitter:<%= item.taist.bitter %>
-							body:<%= item.taist.body %>
-							fruity:<%= item.taist.fruity %>
-					<% end %>
+					<div id="favorite">
+						<% @items.each do |item| %>
+							<%= link_to users_item_path(item) do %>
+								<%= attachment_image_tag item, :image, size: "150x150" %>
+								製品名<%= item.name %>
+							<% end %>
+								感想<%= item.opinion %>
+								購入場所<%= item.place %>
+								refresh:<%= item.taist.refresh %>
+								bitter:<%= item.taist.bitter %>
+								body:<%= item.taist.body %>
+								fruity:<%= item.taist.fruity %>
+								<%= link_to "#{item.user.name}", users_user_path(item.user_id) %>
+	        			<% end %>
+        			</div>
 				</div>
 					<%= link_to "新規投稿", new_users_taist_path, remote: true, class: "btn btn-lg btn-dark" %>
 					<div id="item-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>

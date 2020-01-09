@@ -1,5 +1,6 @@
-<% if @status == 'success' %>
-<%  elsif @status == 'fail' %>
-	alert('error!');
-<% end %>
-	$("#event-modal").modal("hide");
+$('input[type="text"]').val('');
+$('#inputScheduleForm').modal('hide');
+$('#inputEditForm').html('<%= escape_javascript(render("users/events/edit", events: @events )) %>');
+// フルカレンダー を一度消しもう一度表示
+$('#calendar').fullCalendar('refetchEvents')
+

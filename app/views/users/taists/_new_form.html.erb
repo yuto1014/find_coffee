@@ -11,21 +11,20 @@
 								<%= render 'item_fields', f: item %>
 							<% end %>
 							<h5>風味</h5>
-  							<%= f.hidden_field :user_id, :value => current_user.id %>
   							<div class="taist-index">
 								<div class="refresh_content1">
 									<%= f.radio_button :refresh, 3, class: "radio_btn", id: 'refresh1' %>
 									<%= f.label '★', for: 'refresh1' %>
-										<%= f.hidden_field :bitter, :value => 0, disabled: true, class: 'hidden1' %>
-										<%= f.hidden_field :body, :value => 0, disabled: true, class: 'hidden1' %>
-										<%= f.hidden_field :fruity, :value => 3, disabled: true, class: 'hidden1' %>
+										<%= f.hidden_field :bitter, :value => 0, disabled: "disabled", class: 'hidden1' %>
+										<%= f.hidden_field :body, :value => 0, disabled: "disabled", class: 'hidden1' %>
+										<%= f.hidden_field :fruity, :value => 3, disabled: "disabled", class: 'hidden1' %>
 								</div>
 								<div class="refresh_content2">
 									<%= f.radio_button :refresh, 3, class: "radio_btn", id: 'refresh2' %>
 									<%= f.label '★', for: 'refresh2' %>
-									<%= f.hidden_field :bitter, :value => 1, disabled: true, class: 'hidden2' %>
-									<%= f.hidden_field :body, :value => 0, disabled: true, class: 'hidden2' %>
-									<%= f.hidden_field :fruity, :value => 2, disabled: true, class: 'hidden2' %>
+									<%= f.hidden_field :bitter, :value => 1, disabled: "disabled", class: 'hidden2' %>
+									<%= f.hidden_field :body, :value => 0, disabled: "disabled", class: 'hidden2' %>
+									<%= f.hidden_field :fruity, :value => 2, disabled: "disabled", class: 'hidden2' %>
 								</div>
 								<div class="refresh_content3">
 									<%= f.radio_button :refresh, 2, class: "radio_btn", id: 'refresh3' %>
