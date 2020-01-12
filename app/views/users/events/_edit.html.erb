@@ -22,7 +22,7 @@
 								<%= f.text_field :body, class: "form-control", placeholder: "タイトルの詳細を記入してください" %>
 							</span>
 							<div class="modal-footer">
-								<%= f.hidden_field :user_id, :value => @user.id %>
+								<%= f.hidden_field :user_id, :value => current_user.id %>
 								<%= f.submit "編集する", class: "btn btn-primary" %>
 								<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
 							</div>

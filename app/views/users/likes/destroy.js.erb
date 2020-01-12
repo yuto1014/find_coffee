@@ -1,0 +1,3 @@
+$(".item_like_<%= @item.id %>").html("<%= j(render partial: 'users/items/like', locals: { item: @item}) %>");
+$("#item__show_like_<%= @item.id %>").html("<%= j(render partial: 'users/items/show_like', locals: { item: @item}) %>");
+

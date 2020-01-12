@@ -14,9 +14,6 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
   }
 
-  namespace :api, { format: 'json' } do
-    resources :favorites, only: [:index, :create, :destroy]
-  end
 
   namespace :users do
     get 'homes/top'
@@ -27,7 +24,7 @@ Rails.application.routes.draw do
     put 'items/:id/hide' => 'items#hide', as: 'items_hide'
     resources :items do
       resource :likes, only: [:create, :destroy]
-      resources :comments, only: [:create, :destroy, :edit, :update]
+      resources :comments, only: [:create, :destroy]
   	end
 
   	resources :users do

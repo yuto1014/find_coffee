@@ -4,6 +4,7 @@
 			<h1 class="text-center">マイページ</h1>
 			<div id="user_info">
 				<%= attachment_image_tag @user, :profile_image, format: 'jpeg', class: "img-circle center-block profile-img", fallback: "no_image.jpg", size: "100x100" %>
+				<%= render "follow_form" %>
 				<%= @user.name %>
 				<%= @user.email %>
 				<%= @user.address %>
@@ -11,7 +12,6 @@
 			<%= link_to "編集", edit_users_user_path, remote: true, class: "btn btn-lg btn-primary" %>
 			<div id="user-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
 			<%= render 'users/users/event', events: @events %>
-			<%= render "follow_form" %>
 		</div>
 	</div>
 </section>

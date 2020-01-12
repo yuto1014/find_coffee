@@ -10,7 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery3
 //= require rails-ujs
 //= require activestorage
 //= require popper
@@ -19,36 +19,23 @@
 //= require fullcalendar
 //= require fullcalendar/lang/ja
 //= require turbolinks
-//= require_tree .
 
-$(document).ready(function() {
-  		$('#refresh1').prop('checked', function() {
-  				alert('1 is clicked');
-      			$(".hidden1").attr(true, false);
-  		});
+// $(#item-modal).on('show.bs.modal',function() {
+// 		console.log("show modal")
+//   		$('#refresh1').click(function() {
+//   				alert('1 is clicked');
+//       			$(".hidden1").attr('disabled', false);
+//   		});
 
-  		$('#refresh2').prop('checked', function() {
-  				alert('2 is clicked');
-      			$(".hidden2").attr(true, false);
-		});
+//   		$('#refresh2').click(function() {
+//   				alert('2 is clicked');
+//       			$(".hidden2").attr('disabled', false);
+// 		});
+// });
 
-		$("input[name='taist[refresh]']").click(function(){
-			alert($(this).val());
-		});
-
-		$('.form-control').on('click', function() {
-			alert("are you sure?");
-		});
-
-		new Vue({
-		el:'#app',
-		data:{
-			myName:''
-		}
-	});
-});
-
-
+// $(document).ready(function(){
+// 	console.log('ok')
+// });
 
 
 

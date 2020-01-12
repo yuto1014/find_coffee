@@ -18,7 +18,6 @@ class Users::EventsController < ApplicationController
 	end
 
 	def update
-		@user = User.find(params[:id])
 	  	event = Event.find(params[:id])
 	  	@events = Event.where(user_id: current_user.id)
 	  	# event.attributes = {

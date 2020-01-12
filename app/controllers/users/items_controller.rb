@@ -26,7 +26,9 @@ class Users::ItemsController < ApplicationController
 	end
 
 	def index
-		@items = Item.all.order(created_at: :desc)
+		@items = Item.all.order(created_at: :desc).limit(4)
+		@all_ranks = Item.find(Like.group(:item_id).order('count(item_id) desc').limit(8).pluck(:item_id))
+		@random = Item.order("RANDOM()").limit(8)
 		@taists = Taist.all
 	end
 
@@ -34,6 +36,8 @@ class Users::ItemsController < ApplicationController
 		@item = Item.find(params[:id])
 		gon.item = @item
 		gon.taist = @item.taist
+		@comment = Comment.new #①
+    	@comments = @item.comments #②
 	end
 
 	def research

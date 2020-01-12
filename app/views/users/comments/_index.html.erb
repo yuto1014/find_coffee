@@ -1,0 +1,23 @@
+<% comments.each do |comment| %>
+  <% unless comment.id.nil? %>
+  	<li class="comment-container">
+		<div class="comment-box">
+			<div class="comment-avatar">
+				<%= attachment_image_tag comment.user, :profile_image, fallback: "no_image.jpg", class:"comment-image img-circle", size: "40x40" %>
+			</div>
+			<div class="comment-text">
+			    <p><%= link_to "@#{comment.user.name}", users_user_path(comment.user.id) %></p>
+			    <div class="comment-entry">
+  				    <%= comment.content %>
+  				    <% if comment.user == current_user %>
+			      		<%= link_to '削除', users_item_comment_path(comment.item_id, comment.id), method: :delete, remote: true, class: "comment_destroy" %>
+			    	<% end %>
+  				</div>
+				<span class="comment-date pull-right">
+				      <%= @item.created_at.strftime('%Y/%m/%d') %>
+				</span>
+			</div>
+		</div>
+	</li>
+  <% end %>
+<% end %>

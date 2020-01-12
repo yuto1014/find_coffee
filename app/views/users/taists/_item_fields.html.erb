@@ -1,11 +1,25 @@
 <div class="nested-fields form-inline">
-	<%= f.label :画像投稿 %>
-	<%= f.attachment_field :image %>
-	<%= f.label :タイトル %>
-	<%= f.text_field :name %><br>
-	<%= f.label :感想 %>
-	<%= f.text_field :opinion %>
-	<%= f.label :購入場所 %>
-	<%= f.text_field :place %><br>
-	<%= f.hidden_field :user_id, :value => current_user.id %>
+	  <div class="col-md-12" style="margin-bottom: 10px;">
+		<p>画像投稿</p>
+		<%= f.attachment_field :image %>
+		<hr>
+	  </div>
+	  <div class="col-md-12" style="margin-bottom: 10px;">
+		<p>タイトル</p>
+		<%= f.text_field :name, class: "form-control" %>
+		<hr>
+	  </div>
+	  <hr>
+	  <div class="col-md-12" style="margin-bottom: 10px;">
+		<p>感想</p>
+		<%= f.text_field :opinion, class: "form-control col-md-12" %>
+		<hr>
+	  </div>
+	  <hr>
+	  <div class="col-md-12" style="margin-bottom: 10px;">
+		<p>購入場所</p>
+		<%= f.text_field :place, class: "form-control" %>
+		<hr>
+	  </div>
+		<%= f.hidden_field :user_id, :value => current_user.id %>
 </div>

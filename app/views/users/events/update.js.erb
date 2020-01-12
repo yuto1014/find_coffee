@@ -1,4 +1,16 @@
-$('#inputScheduleEditForm<%=event.id%>').modal('hide');
-$('#inputEditForm').html('<%= escape_javascript(render("users/events/edit", events: @events)) %>');
-// フルカレンダー を一度消しもう一度表示
-$('#calendar').fullCalendar('refetchEvents')
+// $(function() {
+	// $('#inputScheduleEditForm').on('show.bs.modal',function() {
+	// 	$('.modal fade').modal('hide');
+	// 	$('.modal-backdrop').remove();
+	// 	$('#inputScheduleEditForm').fullCalendar('refetchEvents')
+	// })
+// })
+	// $('#inputScheduleEditForm').modal('hide');
+	$('#inputEditForm').html('<%= escape_javascript(render("users/events/edit", events: @events)) %>');
+	$('.modal-backdrop').remove();
+	// フルカレンダー を一度消しもう一度表示
+	$('#calendar').fullCalendar('refetchEvents')
+
+  // $('#inputScheduleEditForm').removeClass('modal-open'); // 1
+        // 2
+  // $('#inputScheduleEditForm').modal('hide');        // 3
