@@ -29,6 +29,7 @@
 	padding: 20px 0;
 	margin-right: 30px;
 	margin-bottom: 30px;
+  background-color: white;
 }
 .coffee_opinion {
 	display: block;
@@ -70,6 +71,12 @@
   background-color: white;
   padding: 50px;
   margin: 50px 0px;
+}
+.item-show-container {
+  background-color: white;
+  padding: 50px;
+  margin: 50px 0px;
+  position: relative;
 }
 .center-block {
 	margin-left: 97px;
@@ -118,6 +125,48 @@
 .comment_destroy {
 	margin-left: 20px;
 }
+.input-mysize {
+  width: 1060px;
+  border: solid 1px black;
+}
+.mypage_list {
+  display: flex;
+}
+.more {
+  color: #6c757d;
+  margin: 16px
+}
+.zone_img {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 30px;
+  top: 254px;
+}
+// .comment {
+//   display: none;
+// }
+.more {
+  display: block;
+  cursor :pointer;
+}
+#menu_bar01 {
+    display: none;
+}
+#links01 {
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+#menu_bar01:checked ~ #links01  {
+    height: 54px;
+    opacity: 1;
+}
+
 
 
 

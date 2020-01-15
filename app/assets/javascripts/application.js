@@ -19,26 +19,97 @@
 //= require fullcalendar
 //= require fullcalendar/lang/ja
 //= require turbolinks
+//= require data-confirm-modal
 
-// $(#item-modal).on('show.bs.modal',function() {
-// 		console.log("show modal")
-//   		$('#refresh1').click(function() {
-//   				alert('1 is clicked');
-//       			$(".hidden1").attr('disabled', false);
-//   		});
+$(document).on("turbolinks:load", function() {
+	//ヘッダーナブバー右
+  $('.nav_tag1').hover(
+    function(){
+      $('.nav_tag_text1').fadeIn();
+    },
+    function(){
+      $('.nav_tag_text1').fadeOut();
+    }
+    );
 
-//   		$('#refresh2').click(function() {
-//   				alert('2 is clicked');
-//       			$(".hidden2").attr('disabled', false);
-// 		});
-// });
+  $('.nav_tag2').hover(
+    function(){
+      $('.nav_tag_text2').fadeIn();
+    },
+    function(){
+      $('.nav_tag_text2').fadeOut();
+    }
+    );
 
-// $(document).ready(function(){
-// 	console.log('ok')
-// });
+  $('.nav_tag3').hover(
+    function(){
+      $('.nav_tag_text3').fadeIn();
+    },
+    function(){
+      $('.nav_tag_text3').fadeOut();
+    }
+    );
+
+  $('.nav_tag4').hover(
+    function(){
+      $('.nav_tag_text4').fadeIn();
+    },
+    function(){
+      $('.nav_tag_text4').fadeOut();
+    }
+    );
+
+  $('.nav_tag5').hover(
+    function(){
+      $('.nav_tag_text5').fadeIn();
+    },
+    function(){
+      $('.nav_tag_text5').fadeOut();
+    }
+    );
+
+  $('.nav_tag6').hover(
+    function(){
+      $('.nav_tag_text6').fadeIn();
+    },
+    function(){
+      $('.nav_tag_text6').fadeOut();
+    }
+    );
+
+  $('.nav_tag7').hover(
+    function(){
+      $('.nav_tag_text7').fadeIn();
+    },
+    function(){
+      $('.nav_tag_text7').fadeOut();
+    }
+    );
+
+  $('.nav_tag8').hover(
+    function(){
+      $('.nav_tag_text8').fadeIn();
+    },
+    function(){
+      $('.nav_tag_text8').fadeOut();
+    }
+    );
+
+  //検索フォーム
+    var show = document.getElementById('show');
+    var hide = document.getElementById('hide');
+
+    show.addEventListener('click', function() {
+      // alert('1 is clicked');
+      $('.search-form').addClass('search-form-open');
+    });
+
+    hide.addEventListener('click', function() {
+      $('.search-form').removeClass('search-form-open');
+    });
 
 
-
+});
 
 
 

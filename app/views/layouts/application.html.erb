@@ -18,14 +18,22 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.min.css">
-    <%= include_gon(init: true) %>
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ravi+Prakash" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
   </head>
 
   <body>
-    <header class="navbar navbar-dark bg-dark", style="padding: 0 50px; margin-bottom: 0px;">
-      <% if admin_signed_in? %>
+    <% if admin_signed_in? %>
+    <div class="head_image">
+      <h3 class="head_image_title">あなたもみつかるハマるコーヒー</h3>
+        <h3 class="head_image_content_left">朝はシャキッと</h3>
+        <h3 class="head_image_content_right">夜はゆったり</h3>
+    </div>
+    <header class="navbar", style="padding: 0 50px; margin-bottom: 0px;">
         <nav class="nav navbar-nav navbar-left">
-          <a href="/admin/items" class="btn-circle-fishy">Find Best Coffee</a>
+          <a href="/admin/items" class="header_title">Find Best Coffee</a>
         </nav>
         <nav>
           <ul class="nav navbar-nav navbar-right">
@@ -44,49 +52,82 @@
             <li>
               <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: "btn-default", style: "margin-left: 20px; margin-top: 33px;" %>
             </li>
+            <li>
+              <div class="search">
+                <%= render 'users/items/search_form' %>
+              </div>
+            </li>
           </ul>
         </nav>
         <p class="navbar-text navbar-right">
           管理者としてログインしています
         </p>
       <% elsif user_signed_in? %>
+       <div class="head_image">
+        <h3 class="head_image_title">あなたもみつかるハマるコーヒー</h3>
+          <h3 class="head_image_content_left">朝はシャキッと</h3>
+          <h3 class="head_image_content_right">夜はゆったり</h3>
+      </div>
+      <header class="navbar", style="padding: 0 50px; margin-bottom: 0px;">
         <nav class="nav navbar-nav navbar-left">
-          <a href="/users/items" class="btn-circle-fishy">Find Best Coffee</a>
+          <a href="/" class="header_title">Find Best Coffee</a>
         </nav>
         <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <%= link_to 'マイページ', users_user_path(current_user.id), class: "btn-default", style: "margin-left: 20px; margin-top: 33px;" %>
+          <ul class="nav">
+            <li class="nav_tag1">
+              <%= link_to 'MYPAGE', users_user_path(current_user.id), class: "btn-default nav_tag_text" %>
+              <p class="nav_tag_text1">マイページ</p>
             </li>
-            <li>
-              <%= link_to '探す', users_items_research_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+            <li class="nav_tag2">
+              <%= link_to 'FIND', users_items_research_path, class: "btn-default nav_tag_text" %>
+              <p class="nav_tag_text2">コーヒーを探す</p>
             </li>
-            <li>
-            <%= link_to "繋がる", "#", class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+            <li class="nav_tag3">
+            <%= link_to "INDEX", users_items_path, class: "btn-default nav_tag_text" %>
+            <p class="nav_tag_text3">投稿一覧</p>
             </li>
-            <li>
-              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+            <li class="nav_tag6">
+            <%= link_to "TIMELINE", users_follow_index_path, class: "btn-default nav_tag_text" %>
+            <p class="nav_tag_text6">フォローユーザーの投稿</p>
+            </li>
+            <li class="nav_tag4">
+            <%= link_to "CONTACT", "#", class: "btn-default nav_tag_text" %>
+            <p class="nav_tag_text4">お問い合わせ</p>
+            </li>
+            <li class="nav_tag5">
+              <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "btn-default nav_tag_text" %>
+              <p class="nav_tag_text5">ログアウト</p>
             </li>
             <p class="navbar-text navbar-right">
             ようこそ<%= current_user.name %>さん。
             </p>
+            <i class="fas fa-search" id="show"></i>
+                <%= render 'users/items/search_form' %>
           </ul>
         </nav>
      <% else %>
+      <div class="head_image">
+        <h3 class="head_image_title">あなたもみつかるハマるコーヒー</h3>
+          <h3 class="head_image_content_left">朝はシャキッと</h3>
+          <h3 class="head_image_content_right">夜はゆったり</h3>
+      </div>
+      <header class="navbar", style="padding: 0 50px; margin-bottom: 0px;">
         <nav class="nav navbar-nav navbar-left">
-          <a href="/" class="btn-circle-fishy">Find Best Coffee</a>
+          <a href="/" class="header_title">Find Best Coffee</a>
         </nav>
         <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <%=link_to "新規登録", new_user_registration_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+          <ul class="nav">
+            <li class="nav_tag7">
+              <%=link_to "SIGNUP", new_user_registration_path, class: "btn-default nav_tag_text"  %>
+              <p class="nav_tag_text7">新規登録</p>
             </li>
-            <li>
-              <%= link_to "ログイン", new_user_session_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+            <li class="nav_tag8">
+              <%= link_to "LOGIN", new_user_session_path, class: "btn-default nav_tag_text"  %>
+              <p class="nav_tag_text8">ログイン</p>
             </li>
             </br>
             <p class="navbar-text navbar-right">
-              ようこそ　ゲストさん。
+              ようこそ ゲストさん。
             </p>
           </ul>
         </nav>
@@ -101,6 +142,5 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
   </body>
 </html>

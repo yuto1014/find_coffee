@@ -3,7 +3,7 @@
 		<div class="modal-dialog modal-nm">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
 					<h4 class="modal-title">スケジュール編集</h4>
 				</div>
 				<div class="modal-body">
@@ -14,11 +14,11 @@
 								<span id="inputTitle" value=""><%= f.text_field :title, class: "form-control", placeholder: "タイトルを入力してください" %></span>
 							</p>
 							<span>開始日時</span>
-							<span><%= f.datetime_field  :start, placeholder: "XXXX-XX-XX", class:"field" %> ~ </span>
+							<span><%= f.datetime_field  :start, placeholder: "XXXX-XX-XX", class:"field" %> ~ </span><br>
 							<span>終了日時</span>
 							<span><%= f.datetime_field  :end, placeholder: "XXXX-XX-XX", class:"field" %></span>
-							<span>
-								<p>詳細</p>
+							<span><br>
+								詳細
 								<%= f.text_field :body, class: "form-control", placeholder: "タイトルの詳細を記入してください" %>
 							</span>
 							<div class="modal-footer">

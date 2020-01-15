@@ -1,6 +1,4 @@
-<div class="container">
-	<h2>カレンダー</h2>
-	<div class="row">
+<h2>コーヒーライフ</h2>
 		<div id="calendar"></div>
 		<!-- 追加 -->
 		<div id="inputScheduleForm" class="modal fade" tabindex="-1">
@@ -35,47 +33,45 @@
 					</div>
 				</div>
 			</div>
-		</div>
 		<!-- 編集 -->
 		<div id="inputEditForm">
 			<div id='inputScheduleEditForm' class="modal fade" tabindex="-1">
-			<% @events.each do |event| %>
-					<div class="modal-dialog modal-nm">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-								<h4 class="modal-title">スケジュール編集</h4>
-							</div>
-							<div class="modal-body">
-								<div  class="col">
-									<%= form_with(model: event, url: users_event_path(event), method: :put) do |f| %>
-										<p>
-											<span>タイトル</span>
-											<span id="inputTitle" value=""><%= f.text_field :title, class: "form-control", placeholder: "タイトルを入力してください" %></span>
-										</p>
-										<span>開始日時</span>
-										<span><%= f.datetime_field  :start, placeholder: "XXXX-XX-XX", class:"field" %> ~ </span>
-										<span>終了日時</span>
-										<span><%= f.datetime_field  :end, placeholder: "XXXX-XX-XX", class:"field" %></span>
-										<span>
-											<p>詳細</p>
-											<%= f.text_field :body, class: "form-control", placeholder: "タイトルの詳細を記入してください" %>
-										</span>
-										<div class="modal-footer">
-											<%= f.hidden_field :user_id, :value => current_user.id %>
-											<%= f.submit "編集する", class: "btn btn-primary" %>
-											<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
-										</div>
-									<% end %>
+				<% @events.each do |event| %>
+						<div class="modal-dialog modal-nm">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h4 class="modal-title">スケジュール編集</h4>
+								</div>
+								<div class="modal-body">
+									<div  class="col">
+										<%= form_with(model: event, url: users_event_path(event), method: :put) do |f| %>
+											<p>
+												<span>タイトル</span>
+												<span id="inputTitle" value=""><%= f.text_field :title, class: "form-control", placeholder: "タイトルを入力してください" %></span>
+											</p>
+											<span>開始日時</span>
+											<span><%= f.datetime_field  :start, placeholder: "XXXX-XX-XX", class:"field" %> ~ </span>
+											<span>終了日時</span>
+											<span><%= f.datetime_field  :end, placeholder: "XXXX-XX-XX", class:"field" %></span>
+											<span>
+												<p>詳細</p>
+												<%= f.text_field :body, class: "form-control", placeholder: "タイトルの詳細を記入してください" %>
+											</span>
+											<div class="modal-footer">
+												<%= f.hidden_field :user_id, :value => current_user.id %>
+												<%= f.submit "編集する", class: "btn btn-primary" %>
+												<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+											</div>
+										<% end %>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-			<% end %>
+				<% end %>
 			</div>
 		</div>
 	</div>
-</div>
 <script>
 // CRUDを行う際にCSRF対策のtokenを発行
 	$(document).ready(function() {

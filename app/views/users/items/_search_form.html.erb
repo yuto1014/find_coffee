@@ -1,0 +1,12 @@
+<div class="search-btn">
+		<div class="search-form">
+			<%= form_tag(users_search_path, :method => 'get') do %>
+			    <form id="form2" action="自分のサイトURL" method="get">
+			    	<%= text_field_tag :search, params[:search], class: "form-control", id: "sbox2", placeholder: "タイトルを入力"%>
+					<!-- <input id="sbox2"  id="s" name="s" type="text" placeholder="タイトルを入力"/> -->
+					<button type="submit" id="sbtn2"><i class="fas fa-search search-icon2"></i></button>
+				</form>
+			<% end %>
+			<i class="fa fa-times" id="hide"></i>
+		</div>
+</div>

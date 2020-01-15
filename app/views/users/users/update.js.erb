@@ -3,4 +3,7 @@
 	alert('error!');
 <% end %>
 	$("#user-modal").modal("hide");
-	$("#user_info").html("<%= escape_javascript(render 'user_update', user: @user) %>")
+	$('.modal-backdrop').remove();
+	// $('.modal-open').remove();
+	element.classList.remove('.modal-open');
+	$("#user_info_edit").html("<%= escape_javascript(render 'user_info_edit', user: @user) %>")

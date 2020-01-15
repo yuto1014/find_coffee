@@ -1,178 +1,879 @@
-<section class="container clearfix">
-	<h1 class="text-center">コーヒーを探す</h1>
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="taist">
-				<div class="refresh_box1">
-					<a class="js-modal-open1" href=""><i class="fas fa-coffee"></i></a>
-					<div class="modal js-modal1">
-						<div class="modal__bg js-modal-close"></div>
-					    <div class="modal__content">
-					    	<% if @taist1.exists? %>
-						    	<% @taist1.each do |taist| %>
-						    		<% taist.items. each do |item| %>
-						    			<%= item.name %>
+<div class="research_back">
+	<section class="container clearfix">
+		<div class="row">
+			<div class="research_box">
+				<div class="taist">
+					<div class="refresh_box1">
+						<a class="js-modal-open1" href=""><i class="fas fa-coffee zone1"></i></a>
+						<div class="modal js-modal1">
+							<div class="modal__bg js-modal-close"></div>
+						    <div class="modal__content">
+						    	<% if @taist1.exists? %>
+						    		<h2 class="text-center">選択エリアのコーヒー</h2>
+						    		<%= link_to users_taist_research_path(sort:1) do %>
+						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
 						    		<% end %>
-						    	<% end %>
-						    <% else %>
-						    	アイテムがありません
-						    <% end %>
-					    	<a class="js-modal-close pull-right" href="">❌</a>
-					    </div>
+							    	<table  class="table table-hover table-inverse">
+											<thead>
+									 			<tr>
+													<th></th>
+													<th>タイトル</th>
+													<th>感想</th>
+													<th>ユーザー名</th>
+												</tr>
+											</thead>
+											<tbody>
+										    	<% @taist1.each do |taist| %>
+										    		<% taist.items. each do |item| %>
+											    		<tr>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<%= attachment_image_tag item, :image, size: "50x50" %>
+																<% end %>
+															</td>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<p style="color: black"><%= item.name %></p>
+																<% end %>
+															</td>
+															<td>
+																<%= item.opinion %>
+															</td>
+															<td>
+																<%= link_to users_user_path(item.user_id) do %>
+																	<p style="color: black"><%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
+																	@<%= item.user.name %></p>
+																<% end %>
+															</td>
+														</tr>
+													<% end %>
+											<% end %>
+										</tbody>
+									</table>
+							    <% else %>
+							    	アイテムがありません
+							    <% end %>
+						    	<a class="js-modal-close pull-right" href="">❌</a>
+						    </div>
+						</div>
+					</div>
+					<div class="refresh_box2">
+						<a class="js-modal-open2" href=""><i class="fas fa-coffee zone2"></i></a>
+						<div class="modal js-modal2">
+							<div class="modal__bg js-modal-close"></div>
+						    <div class="modal__content">
+						    	<% if @taist2.exists? %>
+						    		<h2 class="text-center">選択エリアのコーヒー</h2>
+						    		<%= link_to users_taist_research_path(sort:2) do %>
+						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
+						    		<% end %>
+							    	<table  class="table table-hover table-inverse">
+											<thead>
+									 			<tr>
+													<th></th>
+													<th>タイトル</th>
+													<th>感想</th>
+													<th>ユーザー名</th>
+												</tr>
+											</thead>
+											<tbody>
+										    	<% @taist2.each do |taist| %>
+										    		<% taist.items. each do |item| %>
+											    		<tr>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<%= attachment_image_tag item, :image, size: "50x50" %>
+																<% end %>
+															</td>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<p style="color: black"><%= item.name %></p>
+																<% end %>
+															</td>
+															<td>
+																<%= item.opinion %>
+															</td>
+															<td>
+																<%= link_to users_user_path(item.user_id) do %>
+																	<p style="color: black"><%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
+																	@<%= item.user.name %></p>
+																<% end %>
+															</td>
+														</tr>
+													<% end %>
+											<% end %>
+										</tbody>
+									</table>
+							    <% else %>
+							    	アイテムがありません
+							    <% end %>
+						    	<a class="js-modal-close pull-right" href="">❌</a>
+						    </div>
+						</div>
+					</div>
+					<div class="refresh_box3">
+						<a class="js-modal-open3" href=""><i class="fas fa-coffee zone3"></i></a>
+						<div class="modal js-modal3">
+							<div class="modal__bg js-modal-close"></div>
+						    <div class="modal__content">
+						    	<% if @taist3.exists? %>
+						    		<h2 class="text-center">選択エリアのコーヒー</h2>
+						    		<%= link_to users_taist_research_path(sort:3) do %>
+						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
+						    		<% end %>
+							    	<table  class="table table-hover table-inverse">
+											<thead>
+									 			<tr>
+													<th></th>
+													<th>タイトル</th>
+													<th>感想</th>
+													<th>ユーザー名</th>
+												</tr>
+											</thead>
+											<tbody>
+										    	<% @taist3.each do |taist| %>
+										    		<% taist.items. each do |item| %>
+											    		<tr>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<%= attachment_image_tag item, :image, size: "50x50" %>
+																<% end %>
+															</td>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<p style="color: black"><%= item.name %></p>
+																<% end %>
+															</td>
+															<td>
+																<%= item.opinion %>
+															</td>
+															<td>
+																<%= link_to users_user_path(item.user_id) do %>
+																	<p style="color: black"><%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
+																	@<%= item.user.name %></p>
+																<% end %>
+															</td>
+														</tr>
+													<% end %>
+											<% end %>
+										</tbody>
+									</table>
+							    <% else %>
+							    	アイテムがありません
+							    <% end %>
+						    	<a class="js-modal-close pull-right" href="">❌</a>
+						    </div>
+						</div>
+					</div>
+					<div class="refresh_box4">
+						<a class="js-modal-open4" href=""><i class="fas fa-coffee zone4"></i></a>
+						<div class="modal js-modal4">
+							<div class="modal__bg js-modal-close"></div>
+						    <div class="modal__content">
+						    	<% if @taist4.exists? %>
+						    		<h2 class="text-center">選択エリアのコーヒー</h2>
+						    		<%= link_to users_taist_research_path(sort:4) do %>
+						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
+						    		<% end %>
+							    	<table  class="table table-hover table-inverse">
+											<thead>
+									 			<tr>
+													<th></th>
+													<th>タイトル</th>
+													<th>感想</th>
+													<th>ユーザー名</th>
+												</tr>
+											</thead>
+											<tbody>
+										    	<% @taist4.each do |taist| %>
+										    		<% taist.items. each do |item| %>
+											    		<tr>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<%= attachment_image_tag item, :image, size: "50x50" %>
+																<% end %>
+															</td>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<p style="color: black"><%= item.name %></p>
+																<% end %>
+															</td>
+															<td>
+																<%= item.opinion %>
+															</td>
+															<td>
+																<%= link_to users_user_path(item.user_id) do %>
+																	<p style="color: black"><%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
+																	@<%= item.user.name %></p>
+																<% end %>
+															</td>
+														</tr>
+													<% end %>
+											<% end %>
+										</tbody>
+									</table>
+							    <% else %>
+							    	アイテムがありません
+							    <% end %>
+						    	<a class="js-modal-close pull-right" href="">❌</a>
+						    </div>
+						</div>
+					</div>
+					<div class="bitter_box1">
+						<a class="js-modal-open5" href=""><i class="fas fa-coffee zone5"></i></a>
+						<div class="modal js-modal5">
+							<div class="modal__bg js-modal-close"></div>
+						    <div class="modal__content">
+						    	<% if @taist5.exists? %>
+						    		<h2 class="text-center">選択エリアのコーヒー</h2>
+						    		<%= link_to users_taist_research_path(sort:5) do %>
+						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
+						    		<% end %>
+							    	<table  class="table table-hover table-inverse">
+											<thead>
+									 			<tr>
+													<th></th>
+													<th>タイトル</th>
+													<th>感想</th>
+													<th>ユーザー名</th>
+												</tr>
+											</thead>
+											<tbody>
+										    	<% @taist5.each do |taist| %>
+										    		<% taist.items. each do |item| %>
+											    		<tr>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<%= attachment_image_tag item, :image, size: "50x50" %>
+																<% end %>
+															</td>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<p style="color: black"><%= item.name %></p>
+																<% end %>
+															</td>
+															<td>
+																<%= item.opinion %>
+															</td>
+															<td>
+																<%= link_to users_user_path(item.user_id) do %>
+																	<p style="color: black"><%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
+																	@<%= item.user.name %></p>
+																<% end %>
+															</td>
+														</tr>
+													<% end %>
+											<% end %>
+										</tbody>
+									</table>
+							    <% else %>
+							    	アイテムがありません
+							    <% end %>
+						    	<a class="js-modal-close pull-right" href="">❌</a>
+						    </div>
+						</div>
+					</div>
+					<div class="bitter_box2">
+						<a class="js-modal-open6" href=""><i class="fas fa-coffee zone6"></i></a>
+						<div class="modal js-modal6">
+							<div class="modal__bg js-modal-close"></div>
+						    <div class="modal__content">
+						    	<% if @taist6.exists? %>
+						    		<h2 class="text-center">選択エリアのコーヒー</h2>
+						    		<%= link_to users_taist_research_path(sort:6) do %>
+						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
+						    		<% end %>
+							    	<table  class="table table-hover table-inverse">
+											<thead>
+									 			<tr>
+													<th></th>
+													<th>タイトル</th>
+													<th>感想</th>
+													<th>ユーザー名</th>
+												</tr>
+											</thead>
+											<tbody>
+										    	<% @taist6.each do |taist| %>
+										    		<% taist.items. each do |item| %>
+											    		<tr>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<%= attachment_image_tag item, :image, size: "50x50" %>
+																<% end %>
+															</td>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<p style="color: black"><%= item.name %></p>
+																<% end %>
+															</td>
+															<td>
+																<%= item.opinion %>
+															</td>
+															<td>
+																<%= link_to users_user_path(item.user_id) do %>
+																	<p style="color: black"><%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
+																	@<%= item.user.name %></p>
+																<% end %>
+															</td>
+														</tr>
+													<% end %>
+											<% end %>
+										</tbody>
+									</table>
+							    <% else %>
+							    	アイテムがありません
+							    <% end %>
+						    	<a class="js-modal-close pull-right" href="">❌</a>
+						    </div>
+						</div>
+					</div>
+					<div class="bitter_box3">
+						<a class="js-modal-open7" href=""><i class="fas fa-coffee zone7"></i></a>
+						<div class="modal js-modal7">
+							<div class="modal__bg js-modal-close"></div>
+						    <div class="modal__content">
+						    	<% if @taist7.exists? %>
+						    		<h2 class="text-center">選択エリアのコーヒー</h2>
+						    		<%= link_to users_taist_research_path(sort:7) do %>
+						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
+						    		<% end %>
+							    	<table  class="table table-hover table-inverse">
+											<thead>
+									 			<tr>
+													<th></th>
+													<th>タイトル</th>
+													<th>感想</th>
+													<th>ユーザー名</th>
+												</tr>
+											</thead>
+											<tbody>
+										    	<% @taist7.each do |taist| %>
+										    		<% taist.items. each do |item| %>
+											    		<tr>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<%= attachment_image_tag item, :image, size: "50x50" %>
+																<% end %>
+															</td>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<p style="color: black"><%= item.name %></p>
+																<% end %>
+															</td>
+															<td>
+																<%= item.opinion %>
+															</td>
+															<td>
+																<%= link_to users_user_path(item.user_id) do %>
+																	<p style="color: black"><%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
+																	@<%= item.user.name %></p>
+																<% end %>
+															</td>
+														</tr>
+													<% end %>
+											<% end %>
+										</tbody>
+									</table>
+							    <% else %>
+							    	アイテムがありません
+							    <% end %>
+						    	<a class="js-modal-close pull-right" href="">❌</a>
+						    </div>
+						</div>
+					</div>
+					<div class="bitter_box4">
+						<a class="js-modal-open8" href=""><i class="fas fa-coffee zone8"></i></a>
+						<div class="modal js-modal8">
+							<div class="modal__bg js-modal-close"></div>
+						    <div class="modal__content">
+						    	<% if @taist8.exists? %>
+						    		<h2 class="text-center">選択エリアのコーヒー</h2>
+						    		<%= link_to users_taist_research_path(sort:88) do %>
+						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
+						    		<% end %>
+							    	<table  class="table table-hover table-inverse">
+											<thead>
+									 			<tr>
+													<th></th>
+													<th>タイトル</th>
+													<th>感想</th>
+													<th>ユーザー名</th>
+												</tr>
+											</thead>
+											<tbody>
+										    	<% @taist8.each do |taist| %>
+										    		<% taist.items. each do |item| %>
+											    		<tr>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<%= attachment_image_tag item, :image, size: "50x50" %>
+																<% end %>
+															</td>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<p style="color: black"><%= item.name %></p>
+																<% end %>
+															</td>
+															<td>
+																<%= item.opinion %>
+															</td>
+															<td>
+																<%= link_to users_user_path(item.user_id) do %>
+																	<p style="color: black"><%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
+																	@<%= item.user.name %></p>
+																<% end %>
+															</td>
+														</tr>
+													<% end %>
+											<% end %>
+										</tbody>
+									</table>
+							    <% else %>
+							    	アイテムがありません
+							    <% end %>
+						    	<a class="js-modal-close pull-right" href="">❌</a>
+						    </div>
+						</div>
+					</div>
+					<div class="body_box1">
+						<a class="js-modal-open9" href=""><i class="fas fa-coffee zone9"></i></a>
+						<div class="modal js-modal9">
+							<div class="modal__bg js-modal-close"></div>
+						    <div class="modal__content">
+						    	<% if @taist9.exists? %>
+						    		<h2 class="text-center">選択エリアのコーヒー</h2>
+						    		<%= link_to users_taist_research_path(sort:9) do %>
+						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
+						    		<% end %>
+							    	<table  class="table table-hover table-inverse">
+											<thead>
+									 			<tr>
+													<th></th>
+													<th>タイトル</th>
+													<th>感想</th>
+													<th>ユーザー名</th>
+												</tr>
+											</thead>
+											<tbody>
+										    	<% @taist9.each do |taist| %>
+										    		<% taist.items. each do |item| %>
+											    		<tr>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<%= attachment_image_tag item, :image, size: "50x50" %>
+																<% end %>
+															</td>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<p style="color: black"><%= item.name %></p>
+																<% end %>
+															</td>
+															<td>
+																<%= item.opinion %>
+															</td>
+															<td>
+																<%= link_to users_user_path(item.user_id) do %>
+																	<p style="color: black"><%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
+																	@<%= item.user.name %></p>
+																<% end %>
+															</td>
+														</tr>
+													<% end %>
+											<% end %>
+										</tbody>
+									</table>
+							    <% else %>
+							    	アイテムがありません
+							    <% end %>
+						    	<a class="js-modal-close pull-right" href="">❌</a>
+						    </div>
+						</div>
+					</div>
+					<div class="body_box2">
+						<a class="js-modal-open10" href=""><i class="fas fa-coffee zone10"></i></a>
+						<div class="modal js-modal10">
+							<div class="modal__bg js-modal-close"></div>
+						    <div class="modal__content">
+						    	<% if @taist10.exists? %>
+						    		<h2 class="text-center">選択エリアのコーヒー</h2>
+						    		<%= link_to users_taist_research_path(sort:10) do %>
+						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
+						    		<% end %>
+							    	<table  class="table table-hover table-inverse">
+											<thead>
+									 			<tr>
+													<th></th>
+													<th>タイトル</th>
+													<th>感想</th>
+													<th>ユーザー名</th>
+												</tr>
+											</thead>
+											<tbody>
+										    	<% @taist10.each do |taist| %>
+										    		<% taist.items. each do |item| %>
+											    		<tr>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<%= attachment_image_tag item, :image, size: "50x50" %>
+																<% end %>
+															</td>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<p style="color: black"><%= item.name %></p>
+																<% end %>
+															</td>
+															<td>
+																<%= item.opinion %>
+															</td>
+															<td>
+																<%= link_to users_user_path(item.user_id) do %>
+																	<p style="color: black"><%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
+																	@<%= item.user.name %></p>
+																<% end %>
+															</td>
+														</tr>
+													<% end %>
+											<% end %>
+										</tbody>
+									</table>
+							    <% else %>
+							    	アイテムがありません
+							    <% end %>
+						    	<a class="js-modal-close pull-right" href="">❌</a>
+						    </div>
+						</div>
+					</div>
+					<div class="body_box3">
+						<a class="js-modal-open11" href=""><i class="fas fa-coffee zone11"></i></a>
+						<div class="modal js-modal11">
+							<div class="modal__bg js-modal-close"></div>
+						    <div class="modal__content">
+						    	<% if @taist11.exists? %>
+						    		<h2 class="text-center">選択エリアのコーヒー</h2>
+						    		<%= link_to users_taist_research_path(sort:11) do %>
+						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
+						    		<% end %>
+							    	<table  class="table table-hover table-inverse">
+											<thead>
+									 			<tr>
+													<th></th>
+													<th>タイトル</th>
+													<th>感想</th>
+													<th>ユーザー名</th>
+												</tr>
+											</thead>
+											<tbody>
+										    	<% @taist11.each do |taist| %>
+										    		<% taist.items. each do |item| %>
+											    		<tr>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<%= attachment_image_tag item, :image, size: "50x50" %>
+																<% end %>
+															</td>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<p style="color: black"><%= item.name %></p>
+																<% end %>
+															</td>
+															<td>
+																<%= item.opinion %>
+															</td>
+															<td>
+																<%= link_to users_user_path(item.user_id) do %>
+																	<p style="color: black"><%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
+																	@<%= item.user.name %></p>
+																<% end %>
+															</td>
+														</tr>
+													<% end %>
+											<% end %>
+										</tbody>
+									</table>
+							    <% else %>
+							    	アイテムがありません
+							    <% end %>
+						    	<a class="js-modal-close pull-right" href="">❌</a>
+						    </div>
+						</div>
+					</div>
+					<div class="body_box4">
+						<a class="js-modal-open12" href=""><i class="fas fa-coffee zone12"></i></a>
+						<div class="modal js-modal12">
+							<div class="modal__bg js-modal-close"></div>
+						    <div class="modal__content">
+						    	<% if @taist12.exists? %>
+						    		<h2 class="text-center">選択エリアのコーヒー</h2>
+						    		<%= link_to users_taist_research_path(sort:12) do %>
+						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
+						    		<% end %>
+							    	<table  class="table table-hover table-inverse">
+											<thead>
+									 			<tr>
+													<th></th>
+													<th>タイトル</th>
+													<th>感想</th>
+													<th>ユーザー名</th>
+												</tr>
+											</thead>
+											<tbody>
+										    	<% @taist12.each do |taist| %>
+										    		<% taist.items. each do |item| %>
+											    		<tr>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<%= attachment_image_tag item, :image, size: "50x50" %>
+																<% end %>
+															</td>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<p style="color: black"><%= item.name %></p>
+																<% end %>
+															</td>
+															<td>
+																<%= item.opinion %>
+															</td>
+															<td>
+																<%= link_to users_user_path(item.user_id) do %>
+																	<p style="color: black"><%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
+																	@<%= item.user.name %></p>
+																<% end %>
+															</td>
+														</tr>
+													<% end %>
+											<% end %>
+										</tbody>
+									</table>
+							    <% else %>
+							    	アイテムがありません
+							    <% end %>
+						    	<a class="js-modal-close pull-right" href="">❌</a>
+						    </div>
+						</div>
+					</div>
+					<div class="fruity_box1">
+						<a class="js-modal-open13" href=""><i class="fas fa-coffee zone13"></i></a>
+						<div class="modal js-modal13">
+							<div class="modal__bg js-modal-close"></div>
+						    <div class="modal__content">
+						    	<% if @taist13.exists? %>
+						    		<h2 class="text-center">選択エリアのコーヒー</h2>
+						    		<%= link_to users_taist_research_path(sort:13) do %>
+						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
+						    		<% end %>
+							    	<table  class="table table-hover table-inverse">
+											<thead>
+									 			<tr>
+													<th></th>
+													<th>タイトル</th>
+													<th>感想</th>
+													<th>ユーザー名</th>
+												</tr>
+											</thead>
+											<tbody>
+										    	<% @taist13.each do |taist| %>
+										    		<% taist.items. each do |item| %>
+											    		<tr>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<%= attachment_image_tag item, :image, size: "50x50" %>
+																<% end %>
+															</td>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<p style="color: black"><%= item.name %></p>
+																<% end %>
+															</td>
+															<td>
+																<%= item.opinion %>
+															</td>
+															<td>
+																<%= link_to users_user_path(item.user_id) do %>
+																	<p style="color: black"><%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
+																	@<%= item.user.name %></p>
+																<% end %>
+															</td>
+														</tr>
+													<% end %>
+											<% end %>
+										</tbody>
+									</table>
+							    <% else %>
+							    	アイテムがありません
+							    <% end %>
+						    	<a class="js-modal-close pull-right" href="">❌</a>
+						    </div>
+						</div>
+					</div>
+					<div class="fruity_box2">
+						<a class="js-modal-open14" href=""><i class="fas fa-coffee zone14"></i></a>
+						<div class="modal js-modal14">
+							<div class="modal__bg js-modal-close"></div>
+						    <div class="modal__content">
+						    	<% if @taist14.exists? %>
+						    		<h2 class="text-center">選択エリアのコーヒー</h2>
+						    		<%= link_to users_taist_research_path(sort:14) do %>
+						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
+						    		<% end %>
+							    	<table  class="table table-hover table-inverse">
+											<thead>
+									 			<tr>
+													<th></th>
+													<th>タイトル</th>
+													<th>感想</th>
+													<th>ユーザー名</th>
+												</tr>
+											</thead>
+											<tbody>
+										    	<% @taist14.each do |taist| %>
+										    		<% taist.items. each do |item| %>
+											    		<tr>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<%= attachment_image_tag item, :image, size: "50x50" %>
+																<% end %>
+															</td>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<p style="color: black"><%= item.name %></p>
+																<% end %>
+															</td>
+															<td>
+																<%= item.opinion %>
+															</td>
+															<td>
+																<%= link_to users_user_path(item.user_id) do %>
+																	<p style="color: black"><%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
+																	@<%= item.user.name %></p>
+																<% end %>
+															</td>
+														</tr>
+													<% end %>
+											<% end %>
+										</tbody>
+									</table>
+							    <% else %>
+							    	アイテムがありません
+							    <% end %>
+						    	<a class="js-modal-close pull-right" href="">❌</a>
+						    </div>
+						</div>
+					</div>
+					<div class="fruity_box3">
+						<a class="js-modal-open15" href=""><i class="fas fa-coffee zone15"></i></a>
+						<div class="modal js-modal15">
+							<div class="modal__bg js-modal-close"></div>
+						    <div class="modal__content">
+						    	<% if @taist15.exists? %>
+						    		<h2 class="text-center">選択エリアのコーヒー</h2>
+						    		<%= link_to users_taist_research_path(sort:15) do %>
+						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
+						    		<% end %>
+							    	<table  class="table table-hover table-inverse">
+											<thead>
+									 			<tr>
+													<th></th>
+													<th>タイトル</th>
+													<th>感想</th>
+													<th>ユーザー名</th>
+												</tr>
+											</thead>
+											<tbody>
+										    	<% @taist15.each do |taist| %>
+										    		<% taist.items. each do |item| %>
+											    		<tr>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<%= attachment_image_tag item, :image, size: "50x50" %>
+																<% end %>
+															</td>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<p style="color: black"><%= item.name %></p>
+																<% end %>
+															</td>
+															<td>
+																<%= item.opinion %>
+															</td>
+															<td>
+																<%= link_to users_user_path(item.user_id) do %>
+																	<p style="color: black"><%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
+																	@<%= item.user.name %></p>
+																<% end %>
+															</td>
+														</tr>
+													<% end %>
+											<% end %>
+										</tbody>
+									</table>
+							    <% else %>
+							    	アイテムがありません
+							    <% end %>
+						    	<a class="js-modal-close pull-right" href="">❌</a>
+						    </div>
+						</div>
+					</div>
+					<div class="fruity_box4">
+						<a class="js-modal-open16" href=""><i class="fas fa-coffee zone16"></i></a>
+						<div class="modal js-modal16">
+							<div class="modal__bg js-modal-close"></div>
+						    <div class="modal__content">
+						    	<% if @taist16.exists? %>
+						    		<h2 class="text-center">選択エリアのコーヒー</h2>
+						    		<%= link_to users_taist_research_path(sort:16) do %>
+						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
+						    		<% end %>
+							    	<table  class="table table-hover table-inverse">
+											<thead>
+									 			<tr>
+													<th></th>
+													<th>タイトル</th>
+													<th>感想</th>
+													<th>ユーザー名</th>
+												</tr>
+											</thead>
+											<tbody>
+										    	<% @taist16.each do |taist| %>
+										    		<% taist.items. each do |item| %>
+											    		<tr>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<%= attachment_image_tag item, :image, size: "50x50" %>
+																<% end %>
+															</td>
+															<td>
+																<%= link_to users_item_path(item) do %>
+																	<p style="color: black"><%= item.name %></p>
+																<% end %>
+															</td>
+															<td>
+																<%= item.opinion %>
+															</td>
+															<td>
+																<%= link_to users_user_path(item.user_id) do %>
+																	<p style="color: black"><%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
+																	@<%= item.user.name %></p>
+																<% end %>
+															</td>
+														</tr>
+													<% end %>
+											<% end %>
+										</tbody>
+									</table>
+							    <% else %>
+							    	アイテムがありません
+							    <% end %>
+						    	<a class="js-modal-close pull-right" href="">❌</a>
+						    </div>
+						</div>
 					</div>
 				</div>
-				<div class="refresh_box2">
-					<a class="js-modal-open2" href=""><i class="fas fa-coffee"></i></a>
-					<div class="modal js-modal2">
-						<div class="modal__bg js-modal-close"></div>
-					    <div class="modal__content">
-					    	22222
-					    	<a class="js-modal-close pull-right" href="">❌</a>
-					    </div>
-					</div>
-				</div>
-				<div class="refresh_box3">
-					<a class="js-modal-open3" href=""><i class="fas fa-coffee"></i></a>
-					<div class="modal js-modal3">
-						<div class="modal__bg js-modal-close"></div>
-					    <div class="modal__content">
-					    	3333
-					    	<a class="js-modal-close pull-right" href="">❌</a>
-					    </div>
-					</div>
-				</div>
-				<div class="refresh_box4">
-					<a class="js-modal-open4" href=""><i class="fas fa-coffee"></i></a>
-					<div class="modal js-modal4">
-						<div class="modal__bg js-modal-close"></div>
-					    <div class="modal__content">
-					    	44444
-					    	<a class="js-modal-close pull-right" href="">❌</a>
-					    </div>
-					</div>
-				</div>
-				<div class="bitter_box1">
-					<a class="js-modal-open5" href=""><i class="fas fa-coffee"></i></a>
-					<div class="modal js-modal5">
-						<div class="modal__bg js-modal-close"></div>
-					    <div class="modal__content">
-					    	55555
-					    	<a class="js-modal-close pull-right" href="">❌</a>
-					    </div>
-					</div>
-				</div>
-				<div class="bitter_box2">
-					<a class="js-modal-open6" href=""><i class="fas fa-coffee"></i></a>
-					<div class="modal js-modal6">
-						<div class="modal__bg js-modal-close"></div>
-					    <div class="modal__content">
-					    	666666
-					    	<a class="js-modal-close pull-right" href="">❌</a>
-					    </div>
-					</div>
-				</div>
-				<div class="bitter_box3">
-					<a class="js-modal-open7" href=""><i class="fas fa-coffee"></i></a>
-					<div class="modal js-modal7">
-						<div class="modal__bg js-modal-close"></div>
-					    <div class="modal__content">
-					    	7777777
-					    	<a class="js-modal-close pull-right" href="">❌</a>
-					    </div>
-					</div>
-				</div>
-				<div class="bitter_box4">
-					<a class="js-modal-open8" href=""><i class="fas fa-coffee"></i></a>
-					<div class="modal js-modal8">
-						<div class="modal__bg js-modal-close"></div>
-					    <div class="modal__content">
-					    	88888888
-					    	<a class="js-modal-close pull-right" href="">❌</a>
-					    </div>
-					</div>
-				</div>
-				<div class="body_box1">
-					<a class="js-modal-open9" href=""><i class="fas fa-coffee"></i></a>
-					<div class="modal js-modal9">
-						<div class="modal__bg js-modal-close"></div>
-					    <div class="modal__content">
-					    	9999999
-					    	<a class="js-modal-close pull-right" href="">❌</a>
-					    </div>
-					</div>
-				</div>
-				<div class="body_box2">
-					<a class="js-modal-open10" href=""><i class="fas fa-coffee"></i></a>
-					<div class="modal js-modal10">
-						<div class="modal__bg js-modal-close"></div>
-					    <div class="modal__content">
-					    	10101010101
-					    	<a class="js-modal-close pull-right" href="">❌</a>
-					    </div>
-					</div>
-				</div>
-				<div class="body_box3">
-					<a class="js-modal-open11" href=""><i class="fas fa-coffee"></i></a>
-					<div class="modal js-modal11">
-						<div class="modal__bg js-modal-close"></div>
-					    <div class="modal__content">
-					    	111111
-					    	<a class="js-modal-close pull-right" href="">❌</a>
-					    </div>
-					</div>
-				</div>
-				<div class="body_box4">
-					<a class="js-modal-open12" href=""><i class="fas fa-coffee"></i></a>
-					<div class="modal js-modal12">
-						<div class="modal__bg js-modal-close"></div>
-					    <div class="modal__content">
-					    	121212
-					    	<a class="js-modal-close pull-right" href="">❌</a>
-					    </div>
-					</div>
-				</div>
-				<div class="fruity_box1">
-					<a class="js-modal-open13" href=""><i class="fas fa-coffee"></i></a>
-					<div class="modal js-modal13">
-						<div class="modal__bg js-modal-close"></div>
-					    <div class="modal__content">
-					    	13131313
-					    	<a class="js-modal-close pull-right" href="">❌</a>
-					    </div>
-					</div>
-				</div>
-				<div class="fruity_box2">
-					<a class="js-modal-open14" href=""><i class="fas fa-coffee"></i></a>
-					<div class="modal js-modal14">
-						<div class="modal__bg js-modal-close"></div>
-					    <div class="modal__content">
-					    	14141414
-					    	<a class="js-modal-close pull-right" href="">❌</a>
-					    </div>
-					</div>
-				</div>
-				<div class="fruity_box3">
-					<a class="js-modal-open15" href=""><i class="fas fa-coffee"></i></a>
-					<div class="modal js-modal15">
-						<div class="modal__bg js-modal-close"></div>
-					    <div class="modal__content">
-					    	1515151
-					    	<a class="js-modal-close pull-right" href="">❌</a>
-					    </div>
-					</div>
-				</div>
-				<div class="fruity_box4">
-					<a class="js-modal-open16" href=""><i class="fas fa-coffee"></i></a>
-					<div class="modal js-modal16">
-						<div class="modal__bg js-modal-close"></div>
-					    <div class="modal__content">
-					    	1616161
-					    	<a class="js-modal-close pull-right" href="">❌</a>
-					    </div>
-					</div>
-				</div>
+				<div class="research-title-top">スッキリ</div>
+				<div class="research-title-right">ビター</div>
+				<div class="research-title-bottom">コク</div>
+				<div class="research-title-left">フルーティ</div>
 			</div>
 		</div>
-	</div>
-</section>
-<%= javascript_include_tag 'users/item_research.js' %>
+	</section>
+</div>
+	<%= javascript_include_tag 'users/item_research.js' %>

@@ -3,4 +3,4 @@
 	alert('error!');
 <% end %>
 	$("#item-modal").modal("hide");
-	$("#item_index").append("<%= escape_javascript(render 'users/items/item_save', item: @item) %>")
+	$("#item_index_new").html("<%= escape_javascript(render 'users/items/item_new', items: @items) %>")

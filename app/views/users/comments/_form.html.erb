@@ -1,8 +1,4 @@
 <%= form_with(model: [item, comment], url: users_item_comments_path(@item) ) do |f| %>
-  <div>
-    <%= f.text_area :content %>
-  </div>
-  <div class="actions">
-    <%= f.submit "コメントをする" %>
-  </div>
+    <%= f.text_area :content, class: "input-mysize" %>
+    <%= f.submit "送信", class: "btn btn-outline-dark comment-submit float-right" %>
 <% end %>

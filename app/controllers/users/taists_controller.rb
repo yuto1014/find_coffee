@@ -8,7 +8,7 @@ class Users::TaistsController < ApplicationController
 		@taist = Taist.new(taist_params)
     	respond_to do |format|
 	      if @taist.save!
-	      	@item = @taist.items.last
+	      	@items = Item.order(created_at: :desc).limit(4)
 	        format.html { redirect_to @taist, notice: 'Item was successfully created.' }
 	        format.json { render :show, status: :created, location: @taist }
 	        format.js { @status = "success"}

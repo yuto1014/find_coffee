@@ -21,7 +21,14 @@ Rails.application.routes.draw do
     get ':id/unsubscribe' => "homes#unsubscribe", as: "unsubscribe"
     resources :taists
     get 'items/research' => 'items#research', as: 'items_research'
+    get "items/index2" => "items#index2", as: 'index2'
     put 'items/:id/hide' => 'items#hide', as: 'items_hide'
+    get "users/:id/likes" => "users#likes"
+    get "users/:id/my_index" => "users#my_index", as: 'my_index'
+    get "users/taist_research" => "items#taist_research", as: 'taist_research'
+    get "users/search" => "items#search", as: 'search'
+    get "users_follow_index" => "items#follow_index", as: 'follow_index'
+
     resources :items do
       resource :likes, only: [:create, :destroy]
       resources :comments, only: [:create, :destroy]
@@ -29,14 +36,14 @@ Rails.application.routes.draw do
 
   	resources :users do
       member do
-     	get :following, :followers
+     	  get :following, :followers
       end
     end
     resources :relationships, only: [:create, :destroy]
     resources :events
     resources :messages, only: [:show, :create]
     resources :contacts
-    put "/users/:id" => "users#hide"
+    put "/users/:id" => "users#hide", as: 'users_hide'
     resources :users
 
   end

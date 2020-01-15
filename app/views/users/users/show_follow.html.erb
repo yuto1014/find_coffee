@@ -1,0 +1,17 @@
+
+<!--フォローしている人の名前の一覧の画面 -->
+<section class="container wear-edit">
+ 	<div class="row edit-row">
+ 		<div class="col-md-8 col-sm-offset-2">
+ 			<h2 class="edit-title">フォロー一覧</h2>
+				<% @user.following.each do |user| %>
+					<table class="table table-striped">
+						<tr>
+  							<td>  <%= user.name %> </td>
+  							<td><%= link_to '詳細', users_user_path(user) %></td>
+						</tr>
+					</table>
+				<% end %>
+		</div>
+	</div>
+</section>
