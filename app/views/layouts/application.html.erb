@@ -22,6 +22,8 @@
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ravi+Prakash" rel="stylesheet">
     <link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Shadows+Into+Light&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -33,7 +35,7 @@
     </div>
     <header class="navbar", style="padding: 0 50px; margin-bottom: 0px;">
         <nav class="nav navbar-nav navbar-left">
-          <a href="/admin/items" class="header_title">Find Best Coffee</a>
+          <a href="/admin/items" class="header_title">FindBestCoffee.</a>
         </nav>
         <nav>
           <ul class="nav navbar-nav navbar-right">
@@ -70,7 +72,7 @@
       </div>
       <header class="navbar", style="padding: 0 50px; margin-bottom: 0px;">
         <nav class="nav navbar-nav navbar-left">
-          <a href="/" class="header_title">Find Best Coffee</a>
+          <a href="/" class="header_title">FindBestCoffee.</a>
         </nav>
         <nav>
           <ul class="nav">
@@ -106,17 +108,25 @@
           </ul>
         </nav>
      <% else %>
-      <div class="head_image">
+     <!--  <div class="head_image">
         <h3 class="head_image_title">あなたもみつかるハマるコーヒー</h3>
           <h3 class="head_image_content_left">朝はシャキッと</h3>
           <h3 class="head_image_content_right">夜はゆったり</h3>
-      </div>
-      <header class="navbar", style="padding: 0 50px; margin-bottom: 0px;">
+      </div> -->
+      <header class="navbar nav_top", style="padding: 0 50px; margin-bottom: 0px;">
         <nav class="nav navbar-nav navbar-left">
-          <a href="/" class="header_title">Find Best Coffee</a>
+          <a href="/" class="header_title">FindBestCoffee .</a>
         </nav>
         <nav>
           <ul class="nav">
+            <li class="nav_tag2">
+              <%= link_to 'FIND', users_items_research_path, class: "btn-default nav_tag_text" %>
+              <p class="nav_tag_text2">コーヒーを探す</p>
+            </li>
+            <li class="nav_tag3">
+            <%= link_to "INDEX", users_items_path, class: "btn-default nav_tag_text" %>
+            <p class="nav_tag_text3">投稿一覧</p>
+            </li>
             <li class="nav_tag7">
               <%=link_to "SIGNUP", new_user_registration_path, class: "btn-default nav_tag_text"  %>
               <p class="nav_tag_text7">新規登録</p>
