@@ -1,0 +1,87 @@
+<section class="container clearfix">
+	<div class="row item_index_row">
+		<h2 class="item_title">新着投稿</h2>
+		<%= link_to users_index2_path(sort:1) do %>
+			<h6 class="text-right" style="color: #C0C0C0; margin-top: 17px;">もっと見る...</h6>
+		<% end %>
+		<div class="col-md-12" id="item_index_new">
+			<%= render 'item_new', items: @items %>
+		</div>
+	</div>
+
+	<div class="row item_index_row">
+		<h2 class="item_title">いいねランキング</h2>
+		<%= link_to users_index2_path(sort:2) do %>
+			<h6 class="text-right" style="color: #C0C0C0; margin-top: 17px;">もっと見る...</h6>
+		<% end %>
+		<div class="col-md-12">
+			<% @all_ranks.each do |item| %>
+				<div class="item_index">
+					<div class="coffee_image">
+						<%= link_to users_item_path(item) do %>
+							<%= attachment_image_tag item, :image, size: "190x190" %>
+						<% end %>
+					</div>
+					<div class="coffee_opinion">
+						<%= link_to users_item_path(item) do %>
+							<%= truncate(item.name, length: 8) %>
+						<% end %>
+					</div>
+					<div class="row">
+						<div class="col-md-8">
+							<%= link_to users_user_path(item.user_id) do %>
+								<%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
+								@<%= truncate(item.user.name, length: 5) %>
+							<% end %>
+						</div>
+						<div class="col-md-4 item-like">
+							<div class="item_like_<%= item.id %>">
+							 	<%= render 'like', item: item %>
+							</div>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="row item_index_row">
+		<h2 class="item_title">おすすめ</h2>
+		<div class="col-md-12">
+			<% @random.each do |item| %>
+				<div class="item_index">
+					<div class="coffee_image">
+						<%= link_to users_item_path(item) do %>
+							<%= attachment_image_tag item, :image, size: "190x190" %>
+						<% end %>
+					</div>
+					<div class="coffee_opinion">
+						<%= link_to users_item_path(item) do %>
+							<%= truncate(item.name, length: 8) %>
+						<% end %>
+					</div>
+					<div class="row">
+						<div class="col-md-8">
+							<%= link_to users_user_path(item.user_id) do %>
+								<%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
+								@<%= truncate(item.user.name, length: 5) %>
+							<% end %>
+						</div>
+						<div class="col-md-4 item-like">
+							<div class="item_like_<%= item.id %>">
+							 	<%= render 'like', item: item %>
+							</div>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+	<%= link_to "新規投稿", new_users_taist_path, remote: true, class: "btn-circle-stitch" %>
+		<div id="item-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog">
+	          <div class="post_index_m modal-content">
+	          </div>
+	       </div>
+   		</div>
+</section>

@@ -1,0 +1,27 @@
+<section class="container clearfix">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title">プロフィール編集
+					<a class="js-modal-close" href="">✖︎</a>
+					</h3>
+				</div>
+				<div class="modal-body">
+					<%= form_for(@user, url: users_user_path(@user), remote: true) do |f| %>
+						<%= f.label :プロフィール画像 %><br>
+						<%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size: "100x100" %>
+					    <%= f.attachment_field :profile_image %>
+						<%= f.label :名前 %><br>
+						<%= f.text_field :name, class:"form-control" %>
+						<%= f.label :メールアドレス %><br>
+						<%= f.text_field :email, class:"form-control" %>
+						<%= f.label :地域 %><br />
+           				<%= f.select :address, User.addresses.keys.to_a, {prompt: '選択してください'}, class: 'form-control btn btn-info' %>
+           				<div class="modal-footer">
+							<%= f.submit "保存", class:"form-control" %>
+						</div>
+					<% end %>
+				</div>
+		</div>
+	</div>
+</section>

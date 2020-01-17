@@ -1,0 +1,124 @@
+<h2>コーヒーライフ</h2>
+		<div id="calendar"></div>
+		<!-- 追加 -->
+		<div id="inputScheduleForm" class="modal fade" tabindex="-1">
+			<div class="modal-dialog modal-nm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">スケジュール登録</h4>
+					</div>
+					<div class="modal-body">
+						<%= form_with model: @event, url: users_events_path do |f| %>
+						<div  class="col">
+								<p>
+									<span>タイトル</span>
+									<span><%= f.text_field :title, class: "form-control", placeholder: "タイトルを入力してください" %></span>
+								</p>
+								<span>開始日時</span>
+								<span><%= f.datetime_field  :start, placeholder: "XXXX-XX-XX", class:"field" %> ~ </span>
+								<span>終了日時</span>
+								<span><%= f.datetime_field :end, placeholder: "XXXX-XX-XX", class:"field" %></span>
+									<div  class="col">
+										<p>詳細</p>
+										<%= f.text_field :body, class: "form-control", placeholder: "タイトルの詳細を記入してください" %>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<%= f.submit "登録する", class: "btn btn-primary" %>
+									<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+								</div>
+							</div>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		<!-- 編集 -->
+		<div id="inputEditForm">
+			<div id='inputScheduleEditForm' class="modal fade" tabindex="-1">
+				<% @events.each do |event| %>
+						<div class="modal-dialog modal-nm">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h4 class="modal-title">スケジュール編集</h4>
+								</div>
+								<div class="modal-body">
+									<div  class="col">
+										<%= form_with(model: event, url: users_event_path(event), method: :put) do |f| %>
+											<p>
+												<span>タイトル</span>
+												<span id="inputTitle" value=""><%= f.text_field :title, class: "form-control", placeholder: "タイトルを入力してください" %></span>
+											</p>
+											<span>開始日時</span>
+											<span><%= f.datetime_field  :start, placeholder: "XXXX-XX-XX", class:"field" %> ~ </span>
+											<span>終了日時</span>
+											<span><%= f.datetime_field  :end, placeholder: "XXXX-XX-XX", class:"field" %></span>
+											<span>
+												<p>詳細</p>
+												<%= f.text_field :body, class: "form-control", placeholder: "タイトルの詳細を記入してください" %>
+											</span>
+											<div class="modal-footer">
+												<%= f.hidden_field :user_id, :value => current_user.id %>
+												<%= f.submit "編集する", class: "btn btn-primary" %>
+												<button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+											</div>
+										<% end %>
+									</div>
+								</div>
+							</div>
+						</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+<script>
+// CRUDを行う際にCSRF対策のtokenを発行
+	$(document).ready(function() {
+    var prepare = function(options, originalOptions, jqXHR) {
+      var token;
+      if (!options.crossDomain) {
+        token = $('meta[name="csrf-token"]').attr('content');
+        if (token) {
+          return jqXHR.setRequestHeader('X-CSRF-Token', token);
+        }
+      }
+    };
+    }
+    )
+
+    // カレンダー表示
+	$('#calendar').fullCalendar ({
+		header: {
+	        left: 'prev,next today',
+	        center: 'month,agendaWeek,agendaDay',
+	        right: 'title'
+	    },
+
+	    buttonText: {
+		      prev: "<",
+		      next: ">"
+		},
+
+		timezone: 'UTC',
+      	events: '/users/events.json',
+      	navLinks: true,
+      	selectable: true,
+      	selectHelper: true,
+      	// 日付クリック
+		dayClick : function ( date , jsEvent , view ) {
+			$('#inputScheduleForm').modal('show');
+			},
+
+		// event クリックで編集、削除
+		eventClick : function(event, jsEvent , view) {
+    		jsEvent.preventDefault();
+			$(`#inputScheduleEditForm${event.id}`).modal('show');
+  		},
+
+  		eventMouseover : function(event, jsEvent , view) {
+    		jsEvent.preventDefault();
+  		}
+	})
+
+</script>

@@ -1,0 +1,185 @@
+// Place all the styles related to the users::items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//item_index
+.item_index_row{
+	margin: 50px;
+}
+.item_box {
+	margin-top: 20px;
+}
+.item_title {
+  border-bottom: solid 3px #cce4ff;
+  position: relative;
+}
+.item_title:after {
+  position: absolute;
+  content: " ";
+  display: block;
+  border-bottom: solid 3px #5472cd;
+  bottom: -3px;
+  width: 20%;
+}
+.item_index {
+	width: 22%;
+	float: left;
+	border: 1px solid #eee;
+	text-align: center;
+	padding: 20px 0;
+	margin-right: 30px;
+	margin-bottom: 30px;
+  background-color: white;
+}
+.coffee_opinion {
+	display: block;
+	margin: 10px;
+}
+.profile-img-circle{
+	border: 1px solid #eee;
+	border-radius: 50%;
+}
+.item-like {
+	margin-top: 4px;
+}
+.btn-circle-stitch {
+  display: inline-block;
+  text-decoration: none;
+  background: #ff5722;
+  color: #FFF;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 5px #ff5722;
+  border: dashed 1px #FFF;
+  transition: .4s;
+  position:fixed;
+  right:50px;
+  bottom:50px;
+}
+
+.btn-circle-stitch:hover {
+  background: #ff5722d9;
+  box-shadow: 0px 0px 0px 5px #ff5722d9;
+}
+
+//item_show
+.show-container {
+  background-color: white;
+  padding: 50px;
+  margin: 50px 0px;
+}
+.item-show-container {
+  background-color: white;
+  padding: 50px;
+  margin: 50px 0px;
+  position: relative;
+}
+.center-block {
+	margin-left: 97px;
+}
+.title {
+	border-bottom: solid 1px #9d9d9d;
+	font-size: 20px;
+}
+.opinion {
+	margin-top: 10px;
+}
+.comment-container {
+	margin-bottom: 10px;
+}
+.comment-box {
+	padding-left: 65px;
+    border: solid 1px #C0C0C0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 1060px;
+    position: relative;
+}
+.comment-avatar {
+	position: absolute;
+    left: 22px;
+}
+.comment-text {
+	margin-left: 10px;
+    margin-top: 5px;
+}
+.comment-date {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	color: #C0C0C0;
+}
+.comment-create {
+	margin-bottom: 15px;
+}
+.comment-submit {
+	margin-bottom: 15px;
+}
+.comment-image {
+	border-radius: 50%;
+}
+.comment_destroy {
+	margin-left: 20px;
+}
+.input-mysize {
+  width: 1060px;
+  border: solid 1px black;
+}
+.mypage_list {
+  display: flex;
+}
+.more {
+  color: #6c757d;
+  margin: 16px
+}
+.zone_img {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 30px;
+  top: 254px;
+}
+// .comment {
+//   display: none;
+// }
+.more {
+  display: block;
+  cursor :pointer;
+}
+#menu_bar01 {
+    display: none;
+}
+#links01 {
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+#menu_bar01:checked ~ #links01  {
+    height: 54px;
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

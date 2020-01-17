@@ -1,0 +1,41 @@
+<%= attachment_image_tag user, :profile_image, format: 'jpeg', class: "profile-img", fallback: "no_image.jpg", size: "160x160" %>
+	<div id="user_info">
+		<div class="user_name">
+			@<%= user.name %>
+		</div>
+		<div class="prof_image">
+			<%= link_to "プロフィール編集", edit_users_user_path, remote: true, class: "btn btn-outline-dark" %>
+			<div id="user-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+		</div>
+		<div>
+			<%= link_to "退会", users_users_hide_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？", style: "margin-left: 20px;", class: "btn btn-outline-danger" %>
+		</div>
+	</div>
+	<div class="user_info_sub">
+		<div class="post">
+			<%= link_to users_my_index_path(user) do %>
+				投稿<%= user.items.count %>件
+			<% end %>
+		</div>
+		<div class="follower">
+			<%= link_to "フォロワー", followers_users_user_path(user.id) %><%= user.followers.count %>人
+		</div>
+		<div class="follow">
+			<%= link_to "フォロー", following_users_user_path(user.id) %><%= user.following.count %>人
+		</div>
+		<div>
+			<%= render "follow_form" %>
+		</div>
+		<% unless @user.id == current_user.id %>
+		  <% if @isRoom == true %>
+		    <%= link_to "チャットへGo!", users_room_path(@roomId) %>
+		  <% else %>
+		    <%= form_for @room, url: users_rooms_path do |f| %>
+		      <%= fields_for @entry do |e| %>
+		        <%= e.hidden_field :user_id, :value=> @user.id %>
+		      <% end %>
+		      <%= f.submit "チャットを始める" %>
+		    <% end %>
+		  <% end %>
+		<% end %>
+	</div>

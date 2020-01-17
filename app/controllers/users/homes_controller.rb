@@ -1,5 +1,6 @@
 class Users::HomesController < ApplicationController
-  def about
+  def top
+  	@items = Item.all.order(created_at: :desc).limit(6)
   end
 
   def thanks
