@@ -97,18 +97,46 @@ $(document).on("turbolinks:load", function() {
     }
     );
 
+  //トップページ機能説明
+  $('.information_list1').hover(
+    function() {
+      $(this).find('.information_none1').addClass('text-active');
+    },
+    function() {
+         $(this).find('.information_none1').removeClass('text-active');
+    }
+  );
+
+  $('.information_list2').hover(
+    function() {
+      $(this).find('.information_none2').addClass('text-active');
+    },
+    function() {
+         $(this).find('.information_none2').removeClass('text-active');
+    }
+    );
+
+  $('.information_list3').hover(
+    function() {
+      $(this).find('.information_none3').addClass('text-active');
+    },
+    function() {
+         $(this).find('.information_none3').removeClass('text-active');
+    }
+    );
+
   //検索フォーム
-    var show = document.getElementById('show');
-    var hide = document.getElementById('hide');
+  var show = document.getElementById('show');
+  var hide = document.getElementById('hide');
 
-    show.addEventListener('click', function() {
-      // alert('1 is clicked');
-      $('.search-form').addClass('search-form-open');
-    });
+  show.addEventListener('click', function() {
+    // alert('1 is clicked');
+    $('.search-form').addClass('search-form-open');
+  });
 
-    hide.addEventListener('click', function() {
-      $('.search-form').removeClass('search-form-open');
-    });
+  hide.addEventListener('click', function() {
+    $('.search-form').removeClass('search-form-open');
+  });
 
 
 });

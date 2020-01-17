@@ -250,7 +250,18 @@ header {
   height: 66px;
   position: fixed;
 }
-
+//ログアウト時フッター
+.sign_out {
+  background-image: url(image-path("back16.jpg"));
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  padding-top: 150px;
+}
+.sign_up_btn {
+    width: 283px;
+    margin-top: 30px;
+}
 
 
 
