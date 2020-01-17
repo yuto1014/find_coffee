@@ -1,4 +1,4 @@
-<section class="container clearfix">
+<section class="container clearfix" id="users-show">
 	<div class="row">
 		<div class="col-xs-8 col-xs-offset-2 show-container">
 			<div class="row">
@@ -18,8 +18,8 @@
 							<hr>
 								<div class="row">
 									<div class="col-md-6 recommend_item_left">
-										<%= link_to users_item_path(@like_recommend.last.id) do %>
-											<%= attachment_image_tag @like_recommend.last, :image, size: "140x140" %>
+										<%= link_to users_item_path(@like_recommend) do %>
+											<%= attachment_image_tag @like_recommend, :image, size: "140x140" %>
 										<% end %>
 									</div>
 									<div class="col-md-6 recommend_item_right">
@@ -27,25 +27,25 @@
 											<thead>
 												<tr>
 													<th>タイトル</th>
-													<th><%= truncate(@like_recommend.last.name, length: 8) %></th>
+													<th><%= truncate(@like_recommend.name, length: 8) %></th>
 												</tr>
 												<tr>
 													<th>感想</th>
-													<th><%= truncate(@like_recommend.last.opinion, length: 8) %></th>
+													<th><%= truncate(@like_recommend.opinion, length: 8) %></th>
 												</tr>
 												<tr>
 													<th>ユーザー</th>
-													<th><%= attachment_image_tag @like_recommend.last.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "20x20" %>
-														<%= link_to users_user_path(@like_recommend.last.user_id) do %>
-															@<%= truncate(@like_recommend.last.user.name, length: 5) %>
+													<th><%= attachment_image_tag @like_recommend.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "20x20" %>
+														<%= link_to users_user_path(@like_recommend.user_id) do %>
+															@<%= truncate(@like_recommend.user.name, length: 5) %>
 														<% end %>
 													</th>
 												</tr>
 												<tr>
 													<th>いいね</th>
 													<th>
-														<div id="item__show_like_<%= @like_recommend.last.id %>">
-									             			<%= render 'users/items/show_like', item: @like_recommend.last %>
+														<div id="item__show_like_<%= @like_recommend.id %>">
+									             			<%= render 'users/items/show_like', item: @like_recommend %>
 														</div>
 													</th>
 												</tr>
@@ -55,7 +55,6 @@
 								</div>
 								<div class="row">
 									<canvas id="showRaderChart"></canvas>
-									<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 						    	</div>
 						</div>
 					</div>
@@ -103,5 +102,49 @@
 	</div>
 </section>
 <%= include_gon(:init => true) %>
-<%= javascript_include_tag 'users/user_show.js' %>
+<!--%= javascript_include_tag 'users/user_show.js' %-->
 <!--%= javascript_include_tag 'application.js' %-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+<script>
+	  var like_chart = document.getElementById("showRaderChart");
+	  var like_chart_item = gon.item
+      var like_chart_taist = gon.taist
+      console.log(like_chart_item)
+      var showRaderChart = new Chart(like_chart, {
+            type: 'radar',
+            data: {
+                labels: ["スッキリ", "ビター", "コク", "フルーティ"],
+                datasets: [{
+                    label: like_chart_item.name,
+                    data: [like_chart_taist.refresh, like_chart_taist.bitter, like_chart_taist.body, like_chart_taist.fruity],
+                    //data: [1, 2, 3, 2],
+                    backgroundColor: 'RGBA(135, 206, 235, 0.5)',
+                    borderColor: 'RGBA(65, 105, 225, 1)',
+                    borderWidth: 1,
+                    pointBackgroundColor: 'RGB(46,106,177)'
+                }]
+            },
+            options: {
+              title: {
+                  display: true,
+                  text: ''
+              },
+              scale:{
+                  ticks:{
+                      suggestedMin: 0,
+                      suggestedMax: 3,
+                      stepSize: 1,
+                      callback: function(value, index, values){
+                        if(value == 1){
+                            return "やや感じる"
+                        }else if(value == 2){
+                          return "感じる"
+                        }else{
+                          return "強く感じる"
+                       }
+	                }
+	            }
+	        }
+	    }
+	});
+</script>

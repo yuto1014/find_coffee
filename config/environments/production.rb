@@ -91,5 +91,11 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.assets.precompile += ['users/*.js']
+  # config.assets.precompile += ['users/*.js']
+  config.assets.precompile += ['users/item_index.js']
+  config.assets.precompile += ['users/item_research.js']
+  config.assets.precompile += ['users/item_show.js']
+  config.assets.precompile += ['users/taist_new.js']
+  config.assets.precompile += ['users/user_show.js']
+end
 end

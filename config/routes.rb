@@ -45,6 +45,7 @@ Rails.application.routes.draw do
     resources :contacts
     put "/users/:id" => "users#hide", as: 'users_hide'
     resources :users
+    resources :rooms
 
   end
 

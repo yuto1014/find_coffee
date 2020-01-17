@@ -18,9 +18,6 @@ class User < ApplicationRecord
   has_many :items, dependent: :destroy
   attachment :profile_image
 
-   has_many :user_rooms
-   has_many :rooms, through: :customer_rooms
-   has_many :messages
 
    has_many :events, dependent: :destroy
 
@@ -28,6 +25,10 @@ class User < ApplicationRecord
    has_many :following, through: :following_relationships
    has_many :follower_relationships, foreign_key: "following_id", class_name: "Relationship", dependent: :destroy
    has_many :followers, through: :follower_relationships
+
+   has_many :entries
+   has_many :direct_messages
+   has_many :rooms, through: :entries
 
 
   def following?(user)

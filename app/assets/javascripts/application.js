@@ -20,6 +20,8 @@
 //= require fullcalendar/lang/ja
 //= require turbolinks
 //= require data-confirm-modal
+//= require channels/room.coffee
+//= require_tree .
 
 $(document).on("turbolinks:load", function() {
 	//ヘッダーナブバー右

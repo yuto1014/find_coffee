@@ -30,15 +30,32 @@ class Users::UsersController < ApplicationController
 			end
 			logger.debug(x)
 			#like_recommend = item_recommendの中でそのユーザーがいいねしていないitem
-			@like_recommend = item_recommend.where.not(id: x)
+			@like_recommend = item_recommend.where.not(id: x).last
 			#チャート
-			gon.item = @like_recommend.last
-			gon.taist = @like_recommend.last.taist
+			gon.item = @like_recommend
+			gon.taist = @like_recommend.taist
 		else
 			@like_recommend = Item.order("RANDOM()").last
 			gon.item = @like_recommend
 			gon.taist = @like_recommend.taist
 		end
+		#チャット
+		@currentUserEntry = Entry.where(user_id: current_user.id)
+	    @userEntry=Entry.where(user_id: @user.id)
+		    unless @user.id == current_user.id
+		      @currentUserEntry.each do |cu|
+		        @userEntry.each do |u|
+		          if cu.room_id == u.room_id then
+		            @isRoom = true
+		            @roomId = cu.room_id
+		          end
+		        end
+		      end
+		      unless @isRoom
+		        @room = Room.new
+		        @entry = Entry.new
+		      end
+    end
 
 	end
 
@@ -90,6 +107,7 @@ class Users::UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@items = @user.items.page(params[:page]).reverse_order
 	end
+
 
 	private
 	def user_params

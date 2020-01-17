@@ -1,4 +1,4 @@
-<section class="container clearfix">
+<section class="container clearfix" id="items-show">
 	<div class="row">
 		<div class="col-xs-6 col-xs-offset-3 item-show-container">
 			<div class="row">
@@ -102,8 +102,7 @@
 	        				<%= image_tag 'zoneP', :class => "zone_img" %>
 	        			<% end %>
 	        		</div>
-					<canvas id="myRaderChart"></canvas>
-					<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+					<canvas id="showRaderChart"></canvas>
 	    	</div>
 	    	<hr>
 		    <div class="row">
@@ -144,4 +143,50 @@
 	</div>
 </section>
 <%= include_gon(:init => true) %>
-<%= javascript_include_tag 'users/item_show.js' %>
+<!--%= javascript_include_tag 'users/item_show.js' %-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+<script>
+	 //item_showチャート
+    var ctx = document.getElementById("showRaderChart");
+    var item = gon.item_show
+    // console.log(item)
+    var taist = gon.taist_show
+    console.log(item)
+      var showRadarChart = new Chart(ctx, {
+          type: 'radar',
+          data: {
+              labels: ["スッキリ", "ビター", "コク", "フルーティ"],
+              datasets: [{
+                  label: item.name,
+                  data: [taist.refresh, taist.bitter, taist.body, taist.fruity],
+                  //data: [1, 2, 3, 2],
+                  backgroundColor: 'RGBA(135, 206, 235, 0.5)',
+                  borderColor: 'RGBA(65, 105, 225, 1)',
+                  borderWidth: 1,
+                  pointBackgroundColor: 'RGB(46,106,177)'
+              }]
+          },
+          options: {
+            title: {
+                display: true,
+                text: ''
+            },
+            scale:{
+                ticks:{
+                    suggestedMin: 0,
+                    suggestedMax: 3,
+                    stepSize: 1,
+                    callback: function(value, index, values){
+                      if(value == 1){
+                          return "やや感じる"
+                      }else if(value == 2){
+                        return "感じる"
+                      }else{
+                        return "強く感じる"
+                      }
+                    }
+                  }
+                }
+ 			}
+ 		});
+</script>
