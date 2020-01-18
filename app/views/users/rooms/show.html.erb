@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<div class="col-8 offset-2 chat_room">
+		<div class="col-8 offset-2 chat_room" style="background-color: #2c3e50;">
 			<% @entries.each do |e| %>
 				<% current_user == e.user ? @class = "current_user" : @class = ""  %>
 				<% if e.user != current_user %>
@@ -9,13 +9,13 @@
 				  <h5 class="text-left <%= @class %>" id="<%= @class %>" data-id="<%= e.user.id %>"></h5>
 				<% end %>
 			<% end %>
-			<hr>
+			<div class="chat-border"></div>
 			<div id="direct_messages" data-room_id="<%= @room.id %>">
 			  <%= render @direct_messages %>
 			</div>
-			<hr>
+			<div class="chat-border"></div>
 			<form>
-			  <label>新しいメッセージを作成</label><br>
+			  <label style="color: white;">新しいメッセージを作成</label><br>
 			  <input type="text" id="chat-input" data-behavior="room_speaker" class="form-control">
 			</form>
 		</div>
