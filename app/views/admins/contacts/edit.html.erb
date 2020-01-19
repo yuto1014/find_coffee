@@ -1,1 +1,23 @@
-edit
+<div class="contact-edit-content">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 content_box">
+				<h2 class="text-center">お問い合わせ内容</h2>
+				<hr>
+				<%= form_for (@contact) do |f| %>
+					  <h3 class="contact-edit-title">顧客名</h3>
+					  <%= @contact.user.name %><%= @contact.user.name %>さん
+					  <h3 class="contact-edit-title_body">問い合わせ日</h3>
+					  <%= @contact.created_at.strftime("%Y年%m月%d日 ") %>
+	                  <h3 class="contact-edit-title_body">タイトル</h3>
+	                  <%= @contact.title %>
+	                  <h3 class="contact-edit-title_body">問い合わせ内容</h3>
+	                  <%= @contact.body %><br>
+	                  <h3 class="contact-edit-title">返信</h3>
+	                  <%= f.text_area :reply, class:"form-control contact-reply", placeholder: "返信内容" %>
+	                  <%= f.submit "送信", class:"btn btn-lg btn-block btn-base-1 mt-20 bg-primary" %>
+	              <% end %>
+	      </div>
+	  </div>
+	</div>
+</div>

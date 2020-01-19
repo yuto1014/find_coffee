@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
 
+  devise_for :admins
   root 'users/homes#top'
 
-  devise_for :admins, path: 'auth', path_names: { sign_in: 'find_user_coffee_login', sign_out: 'panda_and_coffee_with_ryoko_play_logout', password: 'panda_and_coffee_with_ryoko_play_secret', confirmation: 'panda_and_coffee_with_ryoko_play_verification', unlock: 'panda_and_coffee_with_ryoko_play_unblock', registration: 'panda_and_coffee_with_ryoko_play_register', sign_up: 'panda_and_coffee_with_ryoko_play_cmon_let_me_in' }, controllers: {
-    sessions: 'admins/sessions',
-    passwords: 'admins/passwords',
-    registrations: 'admins/registrations',
-  }
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',
@@ -46,6 +42,7 @@ Rails.application.routes.draw do
     put "/users/:id" => "users#hide", as: 'users_hide'
     resources :users
     resources :rooms
+    resources :contacts, only: [:new, :create, :destroy]
 
   end
 
@@ -63,6 +60,7 @@ Rails.application.routes.draw do
     resources :contacts
     resources :users
     get "like" => "items#like"
+    resources :contacts, only: [:index, :edit, :update, :destroy]
 
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
