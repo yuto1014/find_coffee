@@ -1,3 +1,10 @@
 // Place all the styles related to the users::rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//room_show
+.chat_room {
+	border: solid 1px black;
+	margin: 60px auto;
+    padding: 32px;
+}

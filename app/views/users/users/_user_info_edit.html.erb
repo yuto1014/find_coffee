@@ -3,13 +3,27 @@
 		<div class="user_name">
 			@<%= user.name %>
 		</div>
-		<div class="prof_image">
-			<%= link_to "プロフィール編集", edit_users_user_path, remote: true, class: "btn btn-outline-dark" %>
-			<div id="user-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
-		</div>
-		<div>
-			<%= link_to "退会", users_users_hide_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？", style: "margin-left: 20px;", class: "btn btn-outline-danger" %>
-		</div>
+		<% if @user.id == current_user.id %>
+			<div class="prof_image">
+				<%= link_to "プロフィール編集", edit_users_user_path, remote: true, class: "btn btn-outline-dark" %>
+				<div id="user-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+			</div>
+			<a class="js-modal-open1" href="">
+				<i class="fab fa-hornbill"></i>
+			</a>
+			<div class="modal js-modal1">
+				<div class="modal__bg js-modal-close"></div>
+				   <div class="modal__content">
+				   		<div>
+				   			<%= link_to "ダイレクトメッセージ", users_rooms_path, class:"text-center" %>
+				   		</div>
+						<div>
+							<%= link_to "退会", users_users_hide_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？", class: "text-center" %>
+						</div>
+						<a class="js-modal-close pull-right" href="">✖︎</a>
+					</div><!--modal__inner-->
+		    </div><!--modal-->
+		<% end %>
 	</div>
 	<div class="user_info_sub">
 		<div class="post">

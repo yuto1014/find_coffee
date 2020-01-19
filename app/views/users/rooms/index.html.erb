@@ -1,0 +1,21 @@
+<section class="container wear-edit">
+ 	<div class="row edit-row">
+ 		<div class="col-6 offset-3 content_box">
+ 			 <h2 class="text-center">メッセージ一覧</h2>
+ 				<% @anotherEntries.each do |e| %>
+ 				 	<table class="table table-striped">
+ 				 		 <tr>
+ 				 		 	<td>
+								<%= link_to users_room_path(e.room.id) do %>
+									@<%= e.user.name %>さんとDMをしよう！
+								<% end %>
+							</td>
+							<td>
+								<h6 style="color: #C0C0C0;"><%= e.updated_at.strftime("%Y-%m-%d %H:%M") %></h6>
+							</td>
+						</tr>
+					</table>
+				<% end %>
+		</div>
+	</div>
+</section>

@@ -1,5 +1,16 @@
 class Users::RoomsController < ApplicationController
   before_action :authenticate_user!
+
+  def index
+    @user = current_user
+    @currentEntries = current_user.entries
+    myRoomIds = []
+    @currentEntries.each do |entry|
+      myRoomIds << entry.room.id
+    end
+    @anotherEntries = Entry.where(room_id: myRoomIds).where.not(user_id: @user.id)
+  end
+
   def show
     @room = Room.find(params[:id])
     #present?の戻り値は真偽値。よって、trueの場合、
