@@ -38,21 +38,15 @@
           <a href="/admin/items" class="header_title">FindBestCoffee.</a>
         </nav>
         <nav>
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav">
             <li>
-              <%= link_to 'ユーザー一覧', admins_users_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+              <%= link_to '問い合わせ一覧', admins_contacts_path, class: "btn-default nav_tag_text", style: "color: white;" %>
             </li>
             <li>
-              <%= link_to '各種登録', new_admins_item_path, class: "btn-default", style: "margin-left: 20px; margin-top: 33px;"%>
+              <%= link_to 'いいねランキング', admins_like_path, class: "btn-default nav_tag_text", style: "color: white;" %>
             </li>
             <li>
-              <%= link_to '問い合わせ一覧', admins_contacts_path, class: "btn-default", style: "margin-left: 20px; margin-top: 33px;" %>
-            </li>
-            <li>
-              <%= link_to 'いいねランキング', admins_like_path, class: "btn-default", style: "margin-left: 20px; margin-top: 33px;" %>
-            </li>
-            <li>
-              <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: "btn-default", style: "margin-left: 20px; margin-top: 33px;" %>
+              <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: "btn-default nav_tag_text", style: "color: white;" %>
             </li>
             <li>
               <div class="search">

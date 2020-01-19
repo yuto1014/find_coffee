@@ -14,7 +14,7 @@ class Admins::ContactsController < ApplicationController
 	   	contact.update(contact_params)
 	   	user = contact.user
 	   	ContactMailer.send_when_admin_reply(user, contact).deliver
-	   	redirect_to admin_items_path
+	   	redirect_to admins_items_path
 	end
 
 	def destroy

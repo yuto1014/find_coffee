@@ -15,4 +15,14 @@ class Item < ApplicationRecord
 
 	attachment :image
 
+	has_many :notifications,dependent: :destroy
+	def create_notification_by(current_user)
+    notification=current_user.active_notifications.new(
+      item_id:self.id,
+      visited_id:self.contributer.id,
+      action:"like"
+    )
+    notification.save if notification.valid?
+  end
+
 end
