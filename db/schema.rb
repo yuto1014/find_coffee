@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(version: 2020_01_19_094201) do
     t.integer "item_id"
     t.integer "comment_id"
     t.string "action"
-    t.boolean "checked"
+    t.boolean "checked", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -5,6 +5,10 @@ class Users::LikesController < ApplicationController
       like.save
       @item = Item.find(params[:item_id])
       @item.create_notification_by(current_user)
+      respond_to do |format|
+        format.html {redirect_to request.referrer}
+        format.js
+      end
   end
 
   def destroy

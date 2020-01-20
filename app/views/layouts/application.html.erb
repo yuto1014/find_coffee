@@ -90,6 +90,9 @@
             <%= link_to "MESSAGE", users_rooms_path, class: "btn-default nav_tag_text" %>
             <p class="nav_tag_text9">ダイレクトメッセージ</p>
             </li>
+            <% if unchecked_notifications.any? %>
+              <i class="fa fa-circle notification-circle" style="color: gold;"></i>
+            <% end %>
             <li class="nav_tag10">
             <%= link_to "NOTICE", users_notifications_path, class: "btn-default nav_tag_text" %>
             <p class="nav_tag_text10">通知</p>

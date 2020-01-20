@@ -1,17 +1,19 @@
 class Users::CommentsController < ApplicationController
 	def create
-    @item = Item.find(params[:item_id]) #①
-    @comment = @item.comments.build(comment_params) #②
-    @comment.user_id = current_user.id #③
+    @item = Item.find(params[:item_id])
+    @comment = @item.comments.build(comment_params)
+    @comment.user_id = current_user.id
+    @comment_item = @comment.item
     if @comment.save
-      render :index #④
+      @comment_item.create_notification_comment!(current_user, @comment.id)
+      render :index
     end
   end
 
  def destroy
-    @comment = Comment.find(params[:id]) #⑤
+    @comment = Comment.find(params[:id])
     if @comment.destroy
-      render :index #⑥
+       render :index
     end
   end
 
