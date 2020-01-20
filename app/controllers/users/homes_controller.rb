@@ -3,9 +3,9 @@ class Users::HomesController < ApplicationController
   	@items = Item.all.order(created_at: :desc).limit(6)
   end
 
-  def thanks
+  def privacy_policy
   end
 
-  def unsubscribe
+  def term
   end
 end

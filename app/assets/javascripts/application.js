@@ -106,6 +106,15 @@ $(document).on("turbolinks:load", function() {
     }
     );
 
+  $('.nav_tag10').hover(
+    function(){
+      $('.nav_tag_text10').fadeIn();
+    },
+    function(){
+      $('.nav_tag_text10').fadeOut();
+    }
+    );
+
   //トップページ機能説明
   $('.information_list1').hover(
     function() {

@@ -13,8 +13,8 @@ Rails.application.routes.draw do
 
   namespace :users do
     get 'homes/top'
-    get 'homes/thanks'
-    get ':id/unsubscribe' => "homes#unsubscribe", as: "unsubscribe"
+    get 'homes/term'
+    get 'homes/privacy_policy'
     resources :taists
     get 'items/research' => 'items#research', as: 'items_research'
     get "items/index2" => "items#index2", as: 'index2'
@@ -43,6 +43,7 @@ Rails.application.routes.draw do
     resources :users
     resources :rooms
     resources :contacts, only: [:new, :create, :destroy]
+    resources :notifications
 
   end
 

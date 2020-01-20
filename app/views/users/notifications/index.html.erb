@@ -1,0 +1,16 @@
+<section class="container">
+ 	<div class="row edit-row">
+ 		<div class="col-6 offset-3 content_box">
+			  <h3 class="text-center">通知</h3>
+			  <hr>
+			  <% if @notifications.exists? %>
+			    <div class="users-index">
+			      <%= render @notifications %>
+			      <%= paginate @notifications %>
+			    </div>
+			  <% else %>
+			    <p>通知はありません</p>
+			  <% end %>
+		</div>
+	</div>
+</section>

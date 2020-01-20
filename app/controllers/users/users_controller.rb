@@ -32,8 +32,14 @@ class Users::UsersController < ApplicationController
 			#like_recommend = item_recommendの中でそのユーザーがいいねしていないitem
 			@like_recommend = item_recommend.where.not(id: x).last
 			#チャート
-			gon.item = @like_recommend
-			gon.taist = @like_recommend.taist
+			unless @like_recommend.nil?
+				gon.item = @like_recommend
+				gon.taist = @like_recommend.taist
+			else
+				@like_recommend = Item.order("RANDOM()").last
+				gon.item = @like_recommend
+				gon.taist = @like_recommend.taist
+			end
 		else
 			@like_recommend = Item.order("RANDOM()").last
 			gon.item = @like_recommend
