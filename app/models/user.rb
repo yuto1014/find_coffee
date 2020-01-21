@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :omniauthable
 
   has_many :likes, dependent: :destroy
   has_many :liked_items, through: :likes, source: :item
@@ -67,4 +67,17 @@ class User < ApplicationRecord
     徳島県:36,香川県:37,愛媛県:38,高知県:39,
     福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,沖縄県:47
   }
+
+  def self.find_for_oauth(auth)
+    user = User.where(uid: auth.uid, provider: auth.provider).first
+    unless user
+      user = User.create(
+        uid:      auth.uid,
+        provider: auth.provider,
+        email:    auth.info.email,
+        password: Devise.friendly_token[0, 20]
+      )
+    end
+    user
+  end
 end

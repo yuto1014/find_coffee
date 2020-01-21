@@ -2,13 +2,13 @@
 	<div class="row">
 		<div class="col-xs-8 col-xs-offset-2 show-container">
 			<div class="row">
-				<div class="row" id="user_info_edit">
+				<div class="row fadeIn" id="user_info_edit">
 					<%= render 'users/users/user_info_edit', user: @user %>
 				</div>
 
 				<div class="col-md-12 mypage_list"></div>
 
-				<div class="row">
+				<div class="row user_info_event fadeIn">
 					<div class="col-md-6 show_evnt">
 						<%= render 'users/users/event', events: @events %>
 					</div>
@@ -59,7 +59,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-12 show_like">
+				<div class="col-12 show_like fadeIn">
 					<h2 class="mypage_list">いいね一覧
 						 <%= link_to  users_path(@user) do %><h6 class="more">もっと見る...</h6><% end %>
 					</h2>

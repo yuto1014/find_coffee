@@ -10,21 +10,21 @@
 
     <div class="chart clearfix">
       <i class="fas fa-ellipsis-v"></i>
-      <div class="chart_left">
+      <div class="chart_left fadeIn">
         <h1 class="top">What's<br>Your Favorite Coffee?</h1>
         <h4 class="middle">あなたの好きなコーヒーの<br>テイストをチャートで視覚化。<br>好みのテイストを一緒に探しましょう!</h4>
         <h5 class="bottom">Visualize your favorite coffee taste with charts. <br>Let's find your favorite taste together!</h5>
       </div>
-      <div class="chart_right">
+      <div class="chart_right fadeIn">
         <%= image_tag "coffee17", class: "chart_right_img" %>
       </div>
     </div>
 
     <div class="map clearfix">
-      <div class="map_left">
+      <div class="map_left fadeIn">
         <%= image_tag "coffee21", class: "map_left_img" %>
       </div>
-      <div class="map_right">
+      <div class="map_right fadeIn">
         <h1 class="top">Where<br>Your Favorite Coffee?</h1>
         <h4 class="middle">コーヒーマップからあなたの好みと近いユーザーと繋がれます。<br>好みの似たユーザーの投稿から新たにコーヒーを発見しましょう。</h4>
         <h5 class="bottom">Connect with users who are close to your tastes from the coffee map. <br> Discover new coffee from posts from similar users.</h5>
@@ -32,12 +32,12 @@
     </div>
 
     <div class="index">
-      <div class="index_left">
+      <div class="index_left fadeIn">
         <h1 class="top">Coffee Life</h1>
         <h5 class="middle">コーヒーの魅力は無限大です。<br>
           お気に入りのユーザーをフォローしたり<br>同じような好みを持つユーザーとチャットをすることで<br>まだ見ぬ自分の好みを探しましょう。</h5>
       </div>
-      <div class="index_right">
+      <div class="index_right fadeIn">
           <div class="index_right_slide">
               <% @items.each do |item| %>
                   <div class="top_item_index">
@@ -71,20 +71,20 @@
     </div>
 
     <div class="information">
-      <h1 class="text-center">Function</h1>
+      <h1 class="text-center fadeIn">Function</h1>
       <ul>
-        <li class="information_list1">
+        <li class="information_list1 fadeIn">
           <%= image_tag "ankeet.png", class: "information_icon1", size: "200x200" %>
           <h2 class="information_text1">おすすめ</h2>
           <p class="information_none1">あなたが最近いいねした投稿と似たを投稿をご提案させていただきます。</p>
         </li>
-        <li class="information_list2">
+        <li class="information_list2 fadeIn">
           <%= image_tag "calender.png", class: "information_icon2", size: "200x200" %>
           <h2 class="information_text1">カレンダー</h2>
           <p class="information_none2">いつどんなコーヒーを飲んだか記録しましょう。
               あなたは暑いとき、寒いとき、どんなコーヒーが好きですか？</p>
         </li>
-        <li class="information_list3">
+        <li class="information_list3 fadeIn">
           <%= image_tag "people.png", class: "information_icon3", size: "200x200" %>
           <h2 class="information_text3">チャット</h2>
           <p class="information_none3">あなたと好みの近いユーザーとどんどん繋がりましょう。
@@ -92,12 +92,57 @@
         </li>
       </ul>
     </div>
-
-
-
-
-
-
-
 </div>
 <!--%= javascript_include_tag 'users/homes_top.js' %-->
+<script>
+//   $(window).on('load scroll', function (){
+
+//   var box = $('.fadeIn');
+//   var animated = 'animated';
+//   box.each(function(){
+//     var boxOffset = $(this).offset().top;
+//     var scrollPos = $(window).scrollTop();
+//     var wh = $(window).height();
+
+//     if(scrollPos > boxOffset - wh + 100 ){
+//       $(this).addClass(animated);
+//     }
+//   });
+
+// });
+
+$(function(){
+  function animation(){
+    $('.fadeIn').each(function(){
+      //ターゲットの位置を取得
+      var target = $(this).offset().top;
+      //スクロール量を取得
+      var scroll = $(window).scrollTop();
+      //ウィンドウの高さを取得
+      var windowHeight = $(window).height();
+      //ターゲットまでスクロールするとフェードインする
+      if (scroll > target - windowHeight){
+        $(this).css('opacity','1');
+        $(this).css('transform','translateY(0)');
+      }
+    });
+  }
+  animation();
+  $(window).scroll(function (){
+    animation();
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+

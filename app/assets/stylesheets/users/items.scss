@@ -2,25 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-//item_index
+//item_index-----------------------------------------------------------------
 .item_index_row{
+  margin: 50px;
+}
+.item_index_row1{
 	margin: 50px;
+}
+.item_index_row2{
+  margin: 50px;
+}
+.item_index_row3{
+  margin: 50px;
 }
 .item_box {
 	margin-top: 20px;
 }
-.item_title {
-  border-bottom: solid 3px #cce4ff;
-  position: relative;
+.item_title_media {
+  display: none;
 }
-.item_title:after {
-  position: absolute;
-  content: " ";
-  display: block;
-  border-bottom: solid 3px #5472cd;
-  bottom: -3px;
-  width: 20%;
-}
+// .item_title {
+//   border-bottom: solid 3px #cce4ff;
+//   position: relative;
+// }
+// .item_title:after {
+//   position: absolute;
+//   content: " ";
+//   display: block;
+//   border-bottom: solid 3px #5472cd;
+//   bottom: -3px;
+//   width: 20%;
+// }
 .item_index {
 	width: 22%;
 	float: left;
@@ -30,6 +42,13 @@
 	margin-right: 30px;
 	margin-bottom: 30px;
   background-color: white;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.item_index:hover {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 .coffee_opinion {
 	display: block;
@@ -66,7 +85,103 @@
   box-shadow: 0px 0px 0px 5px #ff5722d9;
 }
 
-//item_show
+.item_box1 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #FFF;
+    background: #6eb7ff;
+    border-bottom: solid 6px #3f87ce;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+.item_box1 h2 h6 {
+    margin: 0;
+    padding: 0;
+}
+.item_box1_hover {
+  -webkit-transition: all .3s;
+    transition: all .3s;
+}
+.item_box1_hover:hover {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+.item_box2 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #FFF;
+    background: #6eb7ff;
+    border-bottom: solid 6px #3f87ce;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+}
+.item_box2 h2 h6 {
+    margin: 0;
+    padding: 0;
+}
+.item_box2_hover {
+  -webkit-transition: all .3s;
+    transition: all .3s;
+}
+.item_box2_hover:hover {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+.item_box3 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #FFF;
+    background: #6eb7ff;
+    border-bottom: solid 6px #3f87ce;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+}
+.item_box3 h2 {
+    margin: 0;
+    padding: 0;
+}
+.item_box3_hover {
+  -webkit-transition: all .3s;
+    transition: all .3s;
+}
+.item_box3_hover:hover {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+.item_box4 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #FFF;
+    background: #6eb7ff;
+    border-bottom: solid 6px #3f87ce;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+}
+.item_box4 h2 {
+    margin: 0;
+    padding: 0;
+}
+.item_box5 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #FFF;
+    background: #6eb7ff;
+    border-bottom: solid 6px #3f87ce;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+}
+.item_box5 h2 {
+    margin: 0;
+    padding: 0;
+}
+
+
+//item_show------------------------------------------------------------
 .show-container {
   background-color: white;
   padding: 50px;
@@ -90,6 +205,11 @@
 }
 .comment-container {
 	margin-bottom: 10px;
+}
+canvas {
+  display: block;
+  width: 1200px;
+  height: 600px;
 }
 .comment-box {
 	padding-left: 65px;
@@ -167,6 +287,126 @@
     opacity: 1;
 }
 
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width:425px) {
+  //index-------------------------------------------------//
+  .item_box1 {
+   display: none;
+  }
+  .item_box2 {
+   display: none;
+  }
+  .item_box3 {
+   display: none;
+  }
+  .item_box_2 {
+    display: none;
+  }
+  .item_box_3 {
+    display: none
+  }
+  .item_index {
+    float: none;
+    width: 100%;
+    position: relative;
+    height: 307px;
+  }
+  .item_index_media_user {
+    position: absolute;
+    height: 36px;
+    top: -259px;
+    left: -101px;
+    margin-top: 10px;
+  }
+  .btn-circle-stitch {
+    display: none;
+  }
+  .coffee_image_media {
+    position: relative;
+    top: 36px;
+  }
+  .coffee_opinion {
+    position: absolute;
+    display: block;
+    margin-top: 13px;
+    top: 243px;
+    left: 124px;
+    margin-bottom: 10px;
+  }
+  .item-like {
+    position: absolute;
+    top: 24px;
+    right: -135px;
+  }
+  .item_title_media {
+    display: block;
+  }
+  .item_index_row1 > #item_index_new > .item_index > .row > .item_index_media_user {
+    width: 30px;
+    height: 30px;
+  }
+  //show-------------------------------------------------//
+  .item-show-container {
+    padding: 0;
+  }
+  .item-show-container > .row {
+    margin: 0;
+  }
+  .item-show-container > .row ul {
+    width: 100%;
+  }
+  .item-show-container > .row > .media_image {
+    padding-left: 63px;
+  }
+  .center-block {
+    margin-left: 0;
+  }
+  .text-left {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+  }
+  .has-rader {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  canvas {
+    width: 190vw!important;
+    height: 95vw!important;
+    -webkit-transform: translateX(-22.5%);
+       -moz-transform: translateX(-22.5%);
+        -ms-transform: translateX(-22.5%);
+         -o-transform: translateX(-22.5%);
+            transform: translateX(-22.5%);
+  }
+  .input-mysize {
+    width: 70vw!important;
+  }
+  .zone_img {
+    display: none;
+  }
+  .item-show-container > .media_comment {
+    padding: 10px;
+  }
+  .item-show-container > .media_rebyu {
+    padding: 10px;
+  }
+  .profile_image.comment-image {
+    margin: 0px;
+    width: 30px;
+    height: 30px;
+  }
+  .comment-submit {
+    height: 50px;
+  }
+  .comment-box {
+    width: 91vw;
+  }
+  .comment-date {
+    bottom: 1px;
+  }
+
+}
 
 
 

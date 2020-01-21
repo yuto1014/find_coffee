@@ -1,7 +1,7 @@
 <div class="research_back">
 	<section class="container clearfix">
 		<div class="row">
-			<div class="research_box">
+			<div class="research_box fadeIn">
 				<div class="taist">
 					<div class="refresh_box1">
 						<a class="js-modal-open1" href=""><i class="fas fa-coffee zone1"></i></a>
@@ -41,7 +41,7 @@
 															</td>
 															<td>
 																<%= link_to users_user_path(item.user_id) do %>
-																	<p style="color: black"><%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
+																	<p style="color: black"><%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle find_prof_image_media", size: "40x40" %>
 																	@<%= item.user.name %></p>
 																<% end %>
 															</td>
@@ -61,7 +61,7 @@
 						<a class="js-modal-open2" href=""><i class="fas fa-coffee zone2"></i></a>
 						<div class="modal js-modal2">
 							<div class="modal__bg js-modal-close"></div>
-						    <div class="modal__content">
+						    <div class="modal__content research_modal_media">
 						    	<% if @taist2.exists? %>
 						    		<h2 class="text-center">選択エリアのコーヒー</h2>
 						    		<%= link_to users_taist_research_path(sort:2) do %>
@@ -95,7 +95,7 @@
 															</td>
 															<td>
 																<%= link_to users_user_path(item.user_id) do %>
-																	<p style="color: black"><%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
+																	<p style="color: black"><%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle research_prof", size: "40x40" %>
 																	@<%= item.user.name %></p>
 																<% end %>
 															</td>

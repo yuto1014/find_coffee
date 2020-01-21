@@ -58,6 +58,10 @@ class Users::ItemsController < ApplicationController
     	@taist_show = Taist.find_by(refresh: @item.taist.refresh, bitter: @item.taist.bitter, body: @item.taist.body, fruity: @item.taist.fruity)
 	end
 
+	def show_like
+		@item = Item.find(params[:id])
+	end
+
 	def research
 		@items = Item.all.order(created_at: :desc)
 		@taist1 = Taist.where(refresh:3, bitter:0, body:0, fruity:3).order(created_at: :desc).limit(5)

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     passwords: 'users/passwords',
     registrations: 'users/registrations',
+    omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
 
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
     get 'items/research' => 'items#research', as: 'items_research'
     get "items/index2" => "items#index2", as: 'index2'
     put 'items/:id/hide' => 'items#hide', as: 'items_hide'
+    get 'items/:id/show_like' => 'items#show_like', as: 'items_show_like'
     get "users/:id/likes" => "users#likes"
     get "users/:id/my_index" => "users#my_index", as: 'my_index'
     get "users/taist_research" => "items#taist_research", as: 'taist_research'

@@ -4,10 +4,10 @@
     <title>FCoffee</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <script src="https://kit.fontawesome.com/0a9fd1077e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
@@ -33,7 +33,7 @@
         <h3 class="head_image_content_left">朝はシャキッと</h3>
         <h3 class="head_image_content_right">夜はゆったり</h3>
     </div>
-    <header class="navbar", style="padding: 0 50px; margin-bottom: 0px;">
+    <header class="navbar nav_right", style="padding: 0 50px; margin-bottom: 0px;">
         <nav class="nav navbar-nav navbar-left">
           <a href="/admin/items" class="header_title">FindBestCoffee.</a>
         </nav>
@@ -69,7 +69,7 @@
           <a href="/" class="header_title">FindBestCoffee.</a>
         </nav>
         <nav>
-          <ul class="nav">
+          <ul class="nav nav_right">
             <li class="nav_tag1">
               <%= link_to 'MYPAGE', users_user_path(current_user.id), class: "btn-default nav_tag_text" %>
               <p class="nav_tag_text1">マイページ</p>
@@ -112,6 +112,25 @@
                 <%= render 'users/items/search_form' %>
           </ul>
         </nav>
+
+        <div id="sp-menu">
+          <h2>MENU</h2>
+          <ul>
+            <li><%= link_to 'MYPAGE', users_user_path(current_user.id), class: "btn-default nav_tag_text" %></li>
+            <li><%= link_to 'FIND', users_items_research_path, class: "btn-default nav_tag_text" %></li>
+            <li><%= link_to "INDEX", users_items_path, class: "btn-default nav_tag_text" %></li>
+            <li><%= link_to "TIMELINE", users_follow_index_path, class: "btn-default nav_tag_text" %></li>
+            <li><%= link_to "MESSAGE", users_rooms_path, class: "btn-default nav_tag_text" %></li>
+            <li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "btn-default nav_tag_text" %></li>
+          </ul>
+        </div>
+        <div id="hm-icon">
+          <a class="menu-trigger" href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
      <% else %>
      <!--  <div class="head_image">
         <h3 class="head_image_title">あなたもみつかるハマるコーヒー</h3>
@@ -123,7 +142,7 @@
           <a href="/" class="header_title">FindBestCoffee .</a>
         </nav>
         <nav>
-          <ul class="nav">
+          <ul class="nav nav_right">
             <li class="nav_tag2">
               <%= link_to 'FIND', users_items_research_path, class: "btn-default nav_tag_text" %>
               <p class="nav_tag_text2">コーヒーを探す</p>

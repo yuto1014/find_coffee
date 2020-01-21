@@ -2,14 +2,14 @@
 	<div class="row">
 		<div class="col-xs-6 col-xs-offset-3 item-show-container">
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-6 media_image fadeIn">
 					<div class="item_show">
 						<div class="item_show_image">
 							<%= attachment_image_tag @item, :image, size: "250x250", class: "center-block" %>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-6 fadeIn">
 					<table class="table table-striped">
 						<thead>
 							<tr>
@@ -34,7 +34,10 @@
 							</tr>
 							<tr>
 								<th>いいねしたユーザー</th>
-								<th></th>
+								<th><%= link_to users_items_show_like_path do %>
+										<%= @item.likes.count %>件のいいね
+									<% end %>
+								</th>
 							</tr>
 							<% if @item.user == current_user %>
 				            	<tr>
@@ -48,7 +51,7 @@
 				</div>
 	        </div>
 	        <hr>
-	        <div class="row">
+	        <div class="row media_comment fadeIn">
 	        	<ul>
 		        	<h3 class="text-left">
 		        		<span class="title">
@@ -102,35 +105,31 @@
 	        				<%= image_tag 'zoneP', :class => "zone_img" %>
 	        			<% end %>
 	        		</div>
-					<canvas id="showRaderChart"></canvas>
+	        		<div class="has-rader fadeIn">
+						<canvas id="showRaderChart"></canvas>
+					</div>
 	    	</div>
 	    	<hr>
-		    <div class="row">
+		    <div class="row media_rebyu fadeIn">
 				<ul>
 					<li class="comment-create">
-	  					<h3 class="text-left">
-			        		<span class="title">
-			        			レビュー
-			        		</span>
-			        	</h3>
-	  					<ul id="comments_area">
-					      <%= render partial: 'users/comments/index', locals: { comments: @comments } %>
-					    </ul>
-					</li>
+	  					<h3 class="text-left title">レビュー</h3>
+			        </li>
+  					<li id="comments_area">
+				      <%= render partial: 'users/comments/index', locals: { comments: @comments } %>
+				    </li>
 				</ul>
 				<hr>
-				<div class="row">
-					<div class="comment-create">
-	  					<h3 class="text-left">
-			        		<span class="title">
-			        			レビューを投稿する
-			        		</span>
-			        	</h3>
-					    <% if user_signed_in? %>
-					      <%= render partial: 'users/comments/form', locals: { comment: @comment, item: @item } %>
-					    <% end %>
-					</div>
-	  			</div>
+				<div class="comment-create">
+  					<h3 class="text-left">
+		        		<span class="title">
+		        			レビューを投稿する
+		        		</span>
+		        	</h3>
+				    <% if user_signed_in? %>
+				      <%= render partial: 'users/comments/form', locals: { comment: @comment, item: @item } %>
+				    <% end %>
+				</div>
   			</div>
   			<%= link_to "新規投稿", new_users_taist_path, remote: true, class: "btn-circle-stitch" %>
 				<div id="item-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">

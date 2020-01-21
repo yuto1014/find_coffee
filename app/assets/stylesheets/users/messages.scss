@@ -22,3 +22,22 @@ div.message_form {
 #message_content {
   font-size: 1.0em;
 }
+
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width:425px) {
+  //message-------------------------------------------------//
+  .col-6.content_box {
+  	-webkit-box-flex: 0;
+    flex: 0;
+    max-width: 100%;
+  }
+  .offset-3.content_box {
+	margin-left: 0;
+  }
+  .profile-img-circle.dm_prof_media {
+  	margin: 0;
+  	width: 30px;
+  	height: 30px;
+  }
+
+  }

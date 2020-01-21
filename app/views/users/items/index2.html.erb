@@ -1,11 +1,15 @@
 <section class="container clearfix">
 	<div class="row item_index_row">
 		<% if params[:sort] == "1" %>
-			<h2 class="item_title">新着コーヒー一覧</h2>
+			<div class="item_box4 fadeIn">
+				<h2 class="item_title">新着コーヒー一覧</h2>
+			</div>
 		<% else %>
-			<h2 class="item_title">いいねランキング</h2>
+			<div class="item_box5 fadeIn">
+				<h2 class="item_title">いいねランキング</h2>
+			</div>
 		<% end %>
-		<div class="col-md-12">
+		<div class="col-md-12 fadeIn">
 			<% @items.each do |item| %>
 				<div class="item_index">
 					<div class="coffee_image">

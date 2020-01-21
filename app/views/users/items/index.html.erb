@@ -1,20 +1,28 @@
 <section class="container clearfix">
-	<div class="row item_index_row">
-		<h2 class="item_title">新着投稿</h2>
-		<%= link_to users_index2_path(sort:1) do %>
-			<h6 class="text-right" style="color: #C0C0C0; margin-top: 17px;">もっと見る...</h6>
-		<% end %>
+	<div class="row item_index_row1">
+		<div class="item_box1_hover">
+			<div class="item_box1 fadeIn">
+				<h2 class="item_title">新着投稿</h2>
+					<%= link_to users_index2_path(sort:1) do %>
+						<h6 class="text-right" style="color: #C0C0C0; margin-top: 17px;">もっと見る...</h6>
+					<% end %>
+			</div>
+		</div>
 		<div class="col-md-12" id="item_index_new">
 			<%= render 'item_new', items: @items %>
 		</div>
 	</div>
 
-	<div class="row item_index_row">
-		<h2 class="item_title">いいねランキング</h2>
-		<%= link_to users_index2_path(sort:2) do %>
-			<h6 class="text-right" style="color: #C0C0C0; margin-top: 17px;">もっと見る...</h6>
-		<% end %>
-		<div class="col-md-12">
+	<div class="row item_index_row2">
+		<div class="item_box2_hover">
+			<div class="item_box2 fadeIn">
+				<h2 class="item_title">いいねランキング</h2>
+				<%= link_to users_index2_path(sort:2) do %>
+					<h6 class="text-right" style="color: #C0C0C0; margin-top: 17px;">もっと見る...</h6>
+				<% end %>
+			</div>
+		</div>
+		<div class="col-md-12 item_box_2 fadeIn">
 			<% @all_ranks.each do |item| %>
 				<div class="item_index">
 					<div class="coffee_image">
@@ -44,10 +52,13 @@
 			<% end %>
 		</div>
 	</div>
-
-	<div class="row item_index_row">
-		<h2 class="item_title">おすすめ</h2>
-		<div class="col-md-12">
+	<div class="row item_index_row3">
+		<div class="item_box3_hover">
+			<div class="item_box3 fadeIn">
+				<h2 class="item_title">オーナーのおすすめ</h2>
+			</div>
+		</div>
+		<div class="col-md-12 item_box_3 fadeIn">
 			<% @random.each do |item| %>
 				<div class="item_index">
 					<div class="coffee_image">
