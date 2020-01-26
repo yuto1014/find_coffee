@@ -4,10 +4,10 @@
     <title>FCoffee</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <script src="https://kit.fontawesome.com/0a9fd1077e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
@@ -27,32 +27,30 @@
   </head>
 
   <body>
+      <div id="mouse_box1" class="mouse_box"></div>
+<!--       <div id="mouse_box2" class="mouse_box"></div>
+      <div id="mouse_box3" class="mouse_box"></div> -->
+
     <% if admin_signed_in? %>
     <div class="head_image">
       <h3 class="head_image_title">あなたもみつかるハマるコーヒー</h3>
         <h3 class="head_image_content_left">朝はシャキッと</h3>
         <h3 class="head_image_content_right">夜はゆったり</h3>
     </div>
-    <header class="navbar", style="padding: 0 50px; margin-bottom: 0px;">
+    <header class="navbar nav_right", style="padding: 0 50px; margin-bottom: 0px;">
         <nav class="nav navbar-nav navbar-left">
           <a href="/admin/items" class="header_title">FindBestCoffee.</a>
         </nav>
         <nav>
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav">
             <li>
-              <%= link_to 'ユーザー一覧', admins_users_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+              <%= link_to '問い合わせ一覧', admins_contacts_path, class: "btn-default nav_tag_text", style: "color: white;" %>
             </li>
             <li>
-              <%= link_to '各種登録', new_admins_item_path, class: "btn-default", style: "margin-left: 20px; margin-top: 33px;"%>
+              <%= link_to 'いいねランキング', admins_like_path, class: "btn-default nav_tag_text", style: "color: white;" %>
             </li>
             <li>
-              <%= link_to '問い合わせ一覧', admins_contacts_path, class: "btn-default", style: "margin-left: 20px; margin-top: 33px;" %>
-            </li>
-            <li>
-              <%= link_to 'いいねランキング', admins_like_path, class: "btn-default", style: "margin-left: 20px; margin-top: 33px;" %>
-            </li>
-            <li>
-              <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: "btn-default", style: "margin-left: 20px; margin-top: 33px;" %>
+              <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: "btn-default nav_tag_text", style: "color: white;" %>
             </li>
             <li>
               <div class="search">
@@ -75,7 +73,7 @@
           <a href="/" class="header_title">FindBestCoffee.</a>
         </nav>
         <nav>
-          <ul class="nav">
+          <ul class="nav nav_right">
             <li class="nav_tag1">
               <%= link_to 'MYPAGE', users_user_path(current_user.id), class: "btn-default nav_tag_text" %>
               <p class="nav_tag_text1">マイページ</p>
@@ -92,9 +90,20 @@
             <%= link_to "TIMELINE", users_follow_index_path, class: "btn-default nav_tag_text" %>
             <p class="nav_tag_text6">フォローユーザーの投稿</p>
             </li>
+            <li class="nav_tag9">
+            <%= link_to "MESSAGE", users_rooms_path, class: "btn-default nav_tag_text" %>
+            <p class="nav_tag_text9">ダイレクトメッセージ</p>
+            </li>
+            <% if unchecked_notifications.any? %>
+              <i class="fa fa-circle notification-circle" style="color: gold;"></i>
+            <% end %>
+            <li class="nav_tag10">
+            <%= link_to "NOTICE", users_notifications_path, class: "btn-default nav_tag_text" %>
+            <p class="nav_tag_text10">通知</p>
+            </li>
             <li class="nav_tag4">
-            <%= link_to "CONTACT", "#", class: "btn-default nav_tag_text" %>
-            <p class="nav_tag_text4">お問い合わせ</p>
+            <!--%= link_to "CONTACT", new_users_contact_path, class: "btn-default nav_tag_text" %>
+            <p class="nav_tag_text4">お問い合わせ</p-->
             </li>
             <li class="nav_tag5">
               <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "btn-default nav_tag_text" %>
@@ -107,18 +116,37 @@
                 <%= render 'users/items/search_form' %>
           </ul>
         </nav>
+
+        <div id="sp-menu">
+          <h2>MENU</h2>
+          <ul>
+            <li><%= link_to 'MYPAGE', users_user_path(current_user.id), class: "btn-default nav_tag_text" %></li>
+            <li><%= link_to 'FIND', users_items_research_path, class: "btn-default nav_tag_text" %></li>
+            <li><%= link_to "INDEX", users_items_path, class: "btn-default nav_tag_text" %></li>
+            <li><%= link_to "TIMELINE", users_follow_index_path, class: "btn-default nav_tag_text" %></li>
+            <li><%= link_to "MESSAGE", users_rooms_path, class: "btn-default nav_tag_text" %></li>
+            <li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "btn-default nav_tag_text" %></li>
+          </ul>
+        </div>
+        <div id="hm-icon">
+          <a class="menu-trigger" href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
      <% else %>
-     <!--  <div class="head_image">
+      <div class="head_image">
         <h3 class="head_image_title">あなたもみつかるハマるコーヒー</h3>
           <h3 class="head_image_content_left">朝はシャキッと</h3>
           <h3 class="head_image_content_right">夜はゆったり</h3>
-      </div> -->
-      <header class="navbar nav_top", style="padding: 0 50px; margin-bottom: 0px;">
+      </div>
+      <header class="navbar", style="padding: 0 50px; margin-bottom: 0px;">
         <nav class="nav navbar-nav navbar-left">
           <a href="/" class="header_title">FindBestCoffee .</a>
         </nav>
         <nav>
-          <ul class="nav">
+          <ul class="nav nav_right">
             <li class="nav_tag2">
               <%= link_to 'FIND', users_items_research_path, class: "btn-default nav_tag_text" %>
               <p class="nav_tag_text2">コーヒーを探す</p>
@@ -139,6 +167,8 @@
             <p class="navbar-text navbar-right">
               ようこそ ゲストさん。
             </p>
+            <i class="fas fa-search" id="show"></i>
+                <%= render 'users/items/search_form' %>
           </ul>
         </nav>
       <% end %>
@@ -151,16 +181,31 @@
         </div>
       </footer>
     <% elsif user_signed_in? %>
-      <footer class="footer navbar-dark bg-dark", style="height: 80px; line-height: 80px; font-size: 20px;">
-          <div class="container">
-            <p class="nav navbar-nav navbar-right", style="color:white">© All rights reserved by Find Best Coffee.Inc.</p>
-          </div>
-      </footer>
+      <footer class="footer sign_out">
+          <h1 class="text-center" style="color: white;">コーヒーでリラックスタイムを。</h1>
+          <h2 class="text-center header_title" style="margin: 30px 0px;">FindBestCoffee .</h2>
+          <nav>
+          <ul class="text-center footer_info" style="color: white">
+            <li class="footer_nav"><%= link_to "お問い合わせ", new_users_contact_path, style: "color: white;" %></li>
+            <li class="footer_nav"><%= link_to "利用規約", users_homes_term_path, style: "color: white;" %></li>
+            <li class="footer_nav"><%= link_to "プライバシーポリシー", users_homes_privacy_policy_path, style: "color: white;" %></li>
+          </ul>
+          <nav>
+          <p class="text-center" style="color: white">Copyright © 2019 FindBestCoffee. All rights reserved.</p>
+        </footer>
     <% else %>
         <footer class="footer sign_out">
           <h1 class="text-center" style="color: white;">まずは無料で始めてみよう。</h1>
           <p class="text-center"><%= link_to "SIGN UP", new_user_registration_path, class: "btn btn-light sign_up_btn" %></p>
           <h2 class="text-center header_title" style="margin-top: 50px;">FindBestCoffee .</h2>
+          <nav>
+          <ul class="text-center footer_info" style="color: white">
+            <li class="footer_nav"><%= link_to "お問い合わせ", new_users_contact_path, style: "color: white;" %></li>
+            <li class="footer_nav"><%= link_to "利用規約", users_homes_term_path, style: "color: white;" %></li>
+            <li class="footer_nav"><%= link_to "プライバシーポリシー", users_homes_privacy_policy_path, style: "color: white;" %></li>
+          </ul>
+          <nav>
+          <p class="text-center" style="color: white">Copyright © 2019 FindBestCoffee. All rights reserved.</p>
         </footer>
     <% end %>
 

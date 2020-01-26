@@ -1,13 +1,18 @@
 <!-- フォローされている人の一覧画面 -->
-<section class="container wear-edit">
+<section class="container">
  	<div class="row edit-row">
- 		<div class="col-md-8 col-sm-offset-2">
- 			<h2 class="edit-title">フォロワー一覧</h2>
+ 		<div class="col-6 offset-3 content_box">
+ 			<h2 class="text-center">フォロワー一覧</h2>
+ 			<hr>
 				<% @user.followers.each do |user| %>
 					<table class="table table-striped">
 						<tr>
-  							<td>  <%= user.name %> </td>
- 							<td><%= link_to '詳細', users_user_path(user) %></td>
+  							<td>
+  								<%= link_to users_user_path(user) do %>
+	  								<%= attachment_image_tag user, :profile_image, format: 'jpeg', class: "rounded-circle", fallback: "no_image.jpg", size: "30x30" %>
+	  								@<%= user.name %>
+	  							<% end %>
+  							</td>
 						</tr>
 
 					</table>

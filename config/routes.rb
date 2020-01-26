@@ -1,28 +1,26 @@
 Rails.application.routes.draw do
 
+  devise_for :admins
   root 'users/homes#top'
 
-  devise_for :admins, path: 'auth', path_names: { sign_in: 'find_user_coffee_login', sign_out: 'panda_and_coffee_with_ryoko_play_logout', password: 'panda_and_coffee_with_ryoko_play_secret', confirmation: 'panda_and_coffee_with_ryoko_play_verification', unlock: 'panda_and_coffee_with_ryoko_play_unblock', registration: 'panda_and_coffee_with_ryoko_play_register', sign_up: 'panda_and_coffee_with_ryoko_play_cmon_let_me_in' }, controllers: {
-    sessions: 'admins/sessions',
-    passwords: 'admins/passwords',
-    registrations: 'admins/registrations',
-  }
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',
     registrations: 'users/registrations',
+    omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
 
   namespace :users do
     get 'homes/top'
-    get 'homes/thanks'
-    get ':id/unsubscribe' => "homes#unsubscribe", as: "unsubscribe"
+    get 'homes/term'
+    get 'homes/privacy_policy'
     resources :taists
     get 'items/research' => 'items#research', as: 'items_research'
     get "items/index2" => "items#index2", as: 'index2'
     put 'items/:id/hide' => 'items#hide', as: 'items_hide'
+    get 'items/:id/show_like' => 'items#show_like', as: 'items_show_like'
     get "users/:id/likes" => "users#likes"
     get "users/:id/my_index" => "users#my_index", as: 'my_index'
     get "users/taist_research" => "items#taist_research", as: 'taist_research'
@@ -46,7 +44,12 @@ Rails.application.routes.draw do
     put "/users/:id" => "users#hide", as: 'users_hide'
     resources :users
     resources :rooms
-
+    resources :contacts, only: [:new, :create, :destroy]
+    resources :notifications do
+       collection do
+          delete 'destroy_all'
+       end
+    end
   end
 
 
@@ -63,6 +66,7 @@ Rails.application.routes.draw do
     resources :contacts
     resources :users
     get "like" => "items#like"
+    resources :contacts, only: [:index, :edit, :update, :destroy]
 
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

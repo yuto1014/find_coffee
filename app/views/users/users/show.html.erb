@@ -8,7 +8,7 @@
 
 				<div class="col-md-12 mypage_list"></div>
 
-				<div class="row">
+				<div class="row user_info_event">
 					<div class="col-md-6 show_evnt">
 						<%= render 'users/users/event', events: @events %>
 					</div>
@@ -59,7 +59,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-12 show_like">
+				<div class="col-12 show_like fadeIn">
 					<h2 class="mypage_list">いいね一覧
 						 <%= link_to  users_path(@user) do %><h6 class="more">もっと見る...</h6><% end %>
 					</h2>
@@ -75,10 +75,10 @@
 									<%= truncate(item.name, length: 8) %>
 								</div>
 								<div class="row">
-									<div class="col-md-8">
+									<div class="col-md-8 item_index_prof">
 										<%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
 										<%= link_to users_user_path(item.user_id) do %>
-											@<%= truncate(item.user.name, length: 5) %>
+											<span style="color: black;">@<%= truncate(item.user.name, length: 5) %></span>
 										<% end %>
 									</div>
 									<div class="col-md-4 item-like">

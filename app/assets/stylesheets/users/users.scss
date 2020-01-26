@@ -7,14 +7,36 @@
 	border-radius: 50%;
 	border: 1px solid #c0c0c06b;
 	margin: 0px 0px 20px 127px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+.profile-img:hover {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 #user_info {
 	margin-left: 85px;
 	display: flex;
 }
+.user_info_sub_current {
+    display: inline-flex;
+    margin-left: -326px;
+    margin-top: 72px;
+    font-size: 20px;
+    .post {
+        margin-right: 10px;
+    }
+    .follower {
+        margin-right: 10px;
+    }
+    .follow {
+        margin-right: 10px;
+    }
+}
 .user_info_sub {
 	display: inline-flex;
-	margin-left: -254px;
+	margin-left: -205px;
     margin-top: 72px;
     font-size: 20px;
     .post {
@@ -25,6 +47,21 @@
     }
     .follow {
     	margin-right: 10px;
+    }
+}
+.user_info_sub_signout {
+    display: inline-flex;
+    margin-left: -144px;
+    margin-top: 72px;
+    font-size: 20px;
+    .post {
+        margin-right: 10px;
+    }
+    .follower {
+        margin-right: 10px;
+    }
+    .follow {
+        margin-right: 10px;
     }
 }
 .user_name {
@@ -83,6 +120,14 @@
     background-color: white;
     padding: 30px;
 }
+#dm_submit {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
 //sign_up
 .signup-container {
   background-color: white;
@@ -91,6 +136,93 @@
   border-radius: 15px;
 }
 
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width:425px) {
+      //show-------------------------------------------------//
+     #user_info {
+        margin-left: 0;
+     }
+     #user_info_edit {
+        width: 80vw;
+     }
+     .show-container {
+        width: 100vw;
+     }
+     .user_name {
+        font-size: 20px;
+     }
+     .profile_image {
+        margin: 47px 0px 20px 127px;
+        width: 80px;
+        height: 80px;
+     }
+     .prof_image {
+        margin-left: 23px;
+     }
+     .btn-outline-danger {
+        height: 63px;
+        margin-left: 31px;
+        width: 58px;
+        line-height: 50px;
+     }
+     .user_info_sub {
+        display: flex;
+        margin-left: 0;
+        margin-top: 47px;
+     }
+     .user_info_sub h5 {
+        font-size: 16px;
+     }
+     .user_info_event {
+        width: 91vw;
+     }
+     #calendar {
+        height: 353px;
+        margin-left: 0;
+        float: none;
+     }
+     .show_evnt {
+        margin-bottom: 41px;
+     }
+     .recommend_item_left {
+        margin-bottom: 26px;
+     }
+     .recommend_item_right > table > thead > tr > th {
+        width: 70px;
+     }
+     .recommend_item_right > table > thead > tr > th >.profile_image {
+        margin: 0;
+        width: 30px;
+        height: 30px;
+     }
+     .mypage_recommend > .row > canvas {
+        width: 100vw !important;
+        height: 60vw !important;
+        padding-bottom: 37px;
+        padding-left: 117px;
+     }
+     .mypage_list {
+        font-size: 20px;
+     }
+     .show_like > .item_index > .row > .col-md-8 > .profile-img-circle {
+        margin: 0;
+        width: 30px;
+        height: 30px;
+     }
+     .show_like > .item_index > .row > .col-md-8 {
+        margin-top: 20px;
+     }
+     .item-like {
+        right: 0;
+     }
+     .container > .modal-dialog > .prof_modal {
+        width: 86vw;
+     }
+     .fc-right {
+        font-size: 10px;
+     }
+
+}
 
 
 

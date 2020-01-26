@@ -1,5 +1,6 @@
 class Users::UsersController < ApplicationController
-
+	before_action :authenticate_user!
+	before_action :correct_user, only: [:edit, :update, :hide]
 	def show
 		@user = User.find(params[:id])
 		@items = @user.items.page(params[:page]).reverse_order
@@ -32,31 +33,37 @@ class Users::UsersController < ApplicationController
 			#like_recommend = item_recommendの中でそのユーザーがいいねしていないitem
 			@like_recommend = item_recommend.where.not(id: x).last
 			#チャート
-			gon.item = @like_recommend
-			gon.taist = @like_recommend.taist
+			unless @like_recommend.nil?
+				gon.item = @like_recommend
+				gon.taist = @like_recommend.taist
+			else
+				@like_recommend = Item.order("RANDOM()").last
+				gon.item = @like_recommend
+				gon.taist = @like_recommend.taist
+			end
 		else
 			@like_recommend = Item.order("RANDOM()").last
 			gon.item = @like_recommend
 			gon.taist = @like_recommend.taist
 		end
 		#チャット
-		@currentUserEntry = Entry.where(user_id: current_user.id)
-	    @userEntry=Entry.where(user_id: @user.id)
-		    unless @user.id == current_user.id
-		      @currentUserEntry.each do |cu|
-		        @userEntry.each do |u|
-		          if cu.room_id == u.room_id then
-		            @isRoom = true
-		            @roomId = cu.room_id
-		          end
-		        end
-		      end
-		      unless @isRoom
-		        @room = Room.new
-		        @entry = Entry.new
-		      end
-    end
-
+		if user_signed_in?
+			@currentUserEntry = Entry.where(user_id: current_user.id)
+		    @userEntry=Entry.where(user_id: @user.id)
+			    unless @user.id == current_user.id
+			      @currentUserEntry.each do |cu|
+			        @userEntry.each do |u|
+			          if cu.room_id == u.room_id then
+			            @isRoom = true
+			            @roomId = cu.room_id
+			          end
+			        end
+			      end
+			      unless @isRoom
+			        @room = Room.new
+			        @entry = Entry.new
+		end	      end
+	  end
 	end
 
 	def edit
@@ -113,4 +120,11 @@ class Users::UsersController < ApplicationController
 	def user_params
 	    params.require(:user).permit(:name, :email, :address, :profile_image)
 	end
+
+	def correct_user
+		@user = User.find(params[:id])
+		if current_user != @user
+			redirect_to root_path
+		end
+    end
 end

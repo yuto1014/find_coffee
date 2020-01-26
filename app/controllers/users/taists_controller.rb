@@ -1,4 +1,5 @@
 class Users::TaistsController < ApplicationController
+	before_action :authenticate_user!
 	def new
 		@taist = Taist.new
 		@taist.items.build

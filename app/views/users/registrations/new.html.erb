@@ -46,7 +46,18 @@
             <hr>
           <% end %>
 
-          <%= render "users/shared/links" %>
+          <%- if controller_name != 'sessions' %>
+            <%= link_to "ログインはこちら", new_session_path(resource_name), class: "btn btn-outline-dark" %><br />
+          <% end %>
+          <hr>
+
+          <%- if devise_mapping.omniauthable? %>
+            <%- resource_class.omniauth_providers.each do |provider| %>
+              <%= link_to "#{OmniAuth::Utils.camelize(provider)}でログイン", omniauth_authorize_path(resource_name, provider), class: "btn btn-outline-primary" %><br />
+            <% end %>
+          <% end %>
+
+          <!--%= render "users/shared/links" %-->
       </div>
   </div>
 </div>
