@@ -1,5 +1,10 @@
 class Item < ApplicationRecord
 
+	validates :name, presence: true, length: {maximum: 30}
+	validates :opinion, presence: true, length: {maximum: 140}
+	validates :place, presence: true, length: {maximum: 30}
+	# validates :image_id, presence: true
+
 	belongs_to :taist
 	belongs_to :user
 

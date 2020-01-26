@@ -13,9 +13,7 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script>
-      new WOW().init();
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.min.css">
     <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
@@ -27,6 +25,10 @@
   </head>
 
   <body>
+      <div id="mouse_box1" class="mouse_box"></div>
+<!--       <div id="mouse_box2" class="mouse_box"></div>
+      <div id="mouse_box3" class="mouse_box"></div> -->
+
     <% if admin_signed_in? %>
     <div class="head_image">
       <h3 class="head_image_title">あなたもみつかるハマるコーヒー</h3>
@@ -39,6 +41,12 @@
         </nav>
         <nav>
           <ul class="nav">
+            <li>
+              <%= link_to '投稿一覧', admins_items_path, class: "btn-default nav_tag_text", style: "color: white;" %>
+            </li>
+            <li>
+              <%= link_to 'ユーザー一覧', admins_users_path, class: "btn-default nav_tag_text", style: "color: white;" %>
+            </li>
             <li>
               <%= link_to '問い合わせ一覧', admins_contacts_path, class: "btn-default nav_tag_text", style: "color: white;" %>
             </li>
@@ -132,12 +140,12 @@
           </a>
         </div>
      <% else %>
-     <!--  <div class="head_image">
+      <div class="head_image">
         <h3 class="head_image_title">あなたもみつかるハマるコーヒー</h3>
           <h3 class="head_image_content_left">朝はシャキッと</h3>
           <h3 class="head_image_content_right">夜はゆったり</h3>
-      </div> -->
-      <header class="navbar nav_top", style="padding: 0 50px; margin-bottom: 0px;">
+      </div>
+      <header class="navbar", style="padding: 0 50px; margin-bottom: 0px;">
         <nav class="nav navbar-nav navbar-left">
           <a href="/" class="header_title">FindBestCoffee .</a>
         </nav>
@@ -163,6 +171,8 @@
             <p class="navbar-text navbar-right">
               ようこそ ゲストさん。
             </p>
+            <i class="fas fa-search" id="show"></i>
+                <%= render 'users/items/search_form' %>
           </ul>
         </nav>
       <% end %>

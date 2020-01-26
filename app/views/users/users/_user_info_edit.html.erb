@@ -3,31 +3,43 @@
 		<div class="user_name">
 			@<%= user.name %>
 		</div>
-		<% unless @user.id == current_user.id %>
-		  <% if @isRoom == true %>
-		    <%= link_to users_room_path(@roomId) do %>
-		    	<button id="dm_submit"><i class="fas fa-envelope"></i></button>
-		    <% end %>
-		  <% else %>
-		    <%= form_for @room, url: users_rooms_path do |f| %>
-		      <%= fields_for @entry do |e| %>
-		        <%= e.hidden_field :user_id, :value=> @user.id %>
-		      <% end %>
-		      <button type="submit" id="dm_submit"><i class="fas fa-envelope"></i></button>
-		    <% end %>
-		  <% end %>
+		<% if user_signed_in? %>
+			<% unless @user.id == current_user.id %>
+			  <% if @isRoom == true %>
+			    <%= link_to users_room_path(@roomId) do %>
+			    	<button id="dm_submit"><i class="fas fa-envelope"></i></button>
+			    <% end %>
+			  <% else %>
+			    <%= form_for @room, url: users_rooms_path do |f| %>
+			      <%= fields_for @entry do |e| %>
+			        <%= e.hidden_field :user_id, :value=> @user.id %>
+			      <% end %>
+			      <button type="submit" id="dm_submit"><i class="fas fa-envelope"></i></button>
+			    <% end %>
+			  <% end %>
+			<% end %>
 		<% end %>
-		<% if @user.id == current_user.id %>
-			<div class="prof_image">
-				<%= link_to "プロフィール編集", edit_users_user_path, remote: true, class: "btn btn-outline-dark" %>
-				<div id="user-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
-			</div>
-			<div>
-				<%= link_to "退会", users_users_hide_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？", style: "margin-left: 20px;", class: "btn btn-outline-danger" %>
-			</div>
+		<% if user_signed_in? %>
+			<% if @user.id == current_user.id %>
+				<div class="prof_image">
+					<%= link_to "プロフィール編集", edit_users_user_path, remote: true, class: "btn btn-outline-dark" %>
+					<div id="user-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+				</div>
+				<div>
+					<%= link_to "退会", users_users_hide_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？", style: "margin-left: 20px;", class: "btn btn-outline-danger" %>
+				</div>
+			<% end %>
 		<% end %>
 	</div>
-	<div class="user_info_sub">
+ <% if user_signed_in? %>
+ 	<% if @user == current_user %>
+		<div class="user_info_sub_current">
+ 	<% else %>
+		<div class="user_info_sub">
+	<% end %>
+ <% else %>
+	<div class="user_info_sub_signout">
+ <% end %>
 		<div class="post">
 			<%= link_to users_my_index_path(user) do %>
 				<h5 style="color: black;">投稿<%= user.items.count %>件</h5>

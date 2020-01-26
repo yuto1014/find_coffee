@@ -2,13 +2,13 @@
 	<div class="row">
 		<div class="col-xs-8 col-xs-offset-2 show-container">
 			<div class="row">
-				<div class="row fadeIn" id="user_info_edit">
+				<div class="row" id="user_info_edit">
 					<%= render 'users/users/user_info_edit', user: @user %>
 				</div>
 
 				<div class="col-md-12 mypage_list"></div>
 
-				<div class="row user_info_event fadeIn">
+				<div class="row user_info_event">
 					<div class="col-md-6 show_evnt">
 						<%= render 'users/users/event', events: @events %>
 					</div>
@@ -75,10 +75,10 @@
 									<%= truncate(item.name, length: 8) %>
 								</div>
 								<div class="row">
-									<div class="col-md-8">
+									<div class="col-md-8 item_index_prof">
 										<%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
 										<%= link_to users_user_path(item.user_id) do %>
-											@<%= truncate(item.user.name, length: 5) %>
+											<span style="color: black;">@<%= truncate(item.user.name, length: 5) %></span>
 										<% end %>
 									</div>
 									<div class="col-md-4 item-like">
@@ -104,7 +104,6 @@
 <%= include_gon(:init => true) %>
 <!--%= javascript_include_tag 'users/user_show.js' %-->
 <!--%= javascript_include_tag 'application.js' %-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
 	  var like_chart = document.getElementById("showRaderChart");
 	  var like_chart_item = gon.item

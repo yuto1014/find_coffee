@@ -1,3 +1,4 @@
+
 // Place all the styles related to the users::homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
@@ -17,13 +18,13 @@
 }
 .top_image {
   	width: 100%;
-    padding: 81px 20px 20px;
+    padding: 40px 20px 20px;
     position: relative;
 }
 .top_comment_text {
 	position: absolute;
     right: 28%;
-    top: 52%;
+    top: 88%;
     color: white;
     border: solid 5px;
     padding: 10px;
@@ -51,7 +52,6 @@
 .chart {
 	position: relative;
     display: flex;
-    margin-top: 50px;
 }
 .chart_left {
     width: 500px;
@@ -161,18 +161,29 @@
 .top_item_index {
     width: 29%;
     float: left;
-    border: 1px solid #eee;
     text-align: center;
-    padding: 20px 0;
-    margin-right: 30px;
-    margin-bottom: 30px;
-    background-color: white;
+    margin:2em 16px;
+    position: relative;
+    padding: 0.5em 1.5em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-transition: all .3s;
     transition: all .3s;
 }
+.top_item_index:before, .top_item_index:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+}
+.top_item_index:before {left: 10px;}
+.top_item_index:after {right: 10px;}
 .top_item_index:hover {
   // transform: rotateX(360deg);
     // transform: perspective(800px) translateZ(50px);
@@ -282,8 +293,18 @@ margin-left: 101px;
 .home {
     margin: 50px;
 }
+.fa-arrow-alt-circle-up {
+    color: black;
+}
+.fa-arrow-alt-circle-up:hover{
+  color: #faf0e6;
+  background-color: none;
+}
 
-
+#back-to-top a:hover{
+  background : none;
+  color: #faf0e6;
+}
 
 
 

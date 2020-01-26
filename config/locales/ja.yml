@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    models:
+      taist: コーヒー
+      item: アイテム
+    attributes:
+      taist:
+        fruity: コーヒーマップ
+        # refresh: リフレッシュ
+        # body: コク
+        # bitter: ビター
+      items:
+        name: タイトル
+        opinion: 感想
+        place: 購入場所
+

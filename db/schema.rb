@@ -163,7 +163,7 @@ ActiveRecord::Schema.define(version: 2020_01_21_020013) do
     t.string "name"
     t.string "password"
     t.integer "address"
-    t.boolean "is_deleted"
+    t.boolean "is_deleted", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "profile_image_id"

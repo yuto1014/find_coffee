@@ -9,7 +9,6 @@
     </section>
 
     <div class="chart clearfix">
-      <i class="fas fa-ellipsis-v"></i>
       <div class="chart_left fadeIn">
         <h1 class="top">What's<br>Your Favorite Coffee?</h1>
         <h4 class="middle">あなたの好きなコーヒーの<br>テイストをチャートで視覚化。<br>好みのテイストを一緒に探しましょう!</h4>
@@ -46,16 +45,16 @@
                           <%= attachment_image_tag item, :image, size: "190x190" %>
                         <% end %>
                       </div>
-                      <div class="coffee_opinion">
-                        <%= link_to users_item_path(item) do %>
-                          <%= truncate(item.name, length: 8) %>
-                        <% end %>
-                      </div>
+                      <!-- <div class="coffee_opinion">
+                        <!%= link_to users_item_path(item) do %>
+                          <!%= truncate(item.name, length: 8) %>
+                        <!% end %>
+                      </div> -->
                       <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-8 item_index_prof">
                           <%= link_to users_user_path(item.user_id) do %>
                             <%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
-                            @<%= truncate(item.user.name, length: 5) %>
+                            <span style="color: black;">@<%= truncate(item.user.name, length: 5) %></span>
                           <% end %>
                         </div>
                         <div class="col-md-4 item-like">
@@ -92,24 +91,29 @@
         </li>
       </ul>
     </div>
+
+    <div id="back-to-top" style="position:fixed;right:25px;bottom:5px">
+      <a href="#"><i class="fas fa-arrow-alt-circle-up fa-5x"></i></a>
+    </div>
 </div>
 <!--%= javascript_include_tag 'users/homes_top.js' %-->
 <script>
-//   $(window).on('load scroll', function (){
+  $("#back-to-top").hide();
+  $(window).scroll(function(){
+    $('#pos').text($(this).scrollTop());
+    if ($(this).scrollTop() > 60){
+      $("#back-to-top").fadeIn();
+    }else{
+      $('#back-to-top').fadeOut();
+    }
 
-//   var box = $('.fadeIn');
-//   var animated = 'animated';
-//   box.each(function(){
-//     var boxOffset = $(this).offset().top;
-//     var scrollPos = $(window).scrollTop();
-//     var wh = $(window).height();
-
-//     if(scrollPos > boxOffset - wh + 100 ){
-//       $(this).addClass(animated);
-//     }
-//   });
-
-// });
+  });
+  $('#back-to-top a').click(function() {
+      $('html, body').animate({
+          scrollTop:0
+      }, 800);
+      return false;
+  });
 
 $(function(){
   function animation(){
@@ -130,6 +134,12 @@ $(function(){
   animation();
   $(window).scroll(function (){
     animation();
+  });
+
+  $('.menu-trigger').on('click', function() {
+    $(this).toggleClass('active');
+    $('#sp-menu').fadeToggle();
+    return false;
   });
 });
 </script>

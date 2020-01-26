@@ -21,34 +21,36 @@
 .item_title_media {
   display: none;
 }
-// .item_title {
-//   border-bottom: solid 3px #cce4ff;
-//   position: relative;
-// }
-// .item_title:after {
-//   position: absolute;
-//   content: " ";
-//   display: block;
-//   border-bottom: solid 3px #5472cd;
-//   bottom: -3px;
-//   width: 20%;
-// }
 .item_index {
 	width: 22%;
 	float: left;
-	border: 1px solid #eee;
 	text-align: center;
-	padding: 20px 0;
-	margin-right: 30px;
-	margin-bottom: 30px;
-  background-color: white;
   -webkit-transition: all .3s;
   transition: all .3s;
+  margin:2em 16px;
+  position: relative;
+  padding: 0.5em 1.5em;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
 }
+.item_index:before, .item_index:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+}
+.item_index:before {left: 10px;}
+.item_index:after {right: 10px;}
 .item_index:hover {
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
+}
+.item_index_media_user {
+  margin-top: 18px;
 }
 .coffee_opinion {
 	display: block;
@@ -59,7 +61,10 @@
 	border-radius: 50%;
 }
 .item-like {
-	margin-top: 4px;
+	margin-top: 24px;
+}
+.item_index_prof {
+  margin-top: 18px;
 }
 .btn-circle-stitch {
   display: inline-block;
@@ -208,7 +213,7 @@
 }
 canvas {
   display: block;
-  width: 1200px;
+  width: 900px;
   height: 600px;
 }
 .comment-box {
