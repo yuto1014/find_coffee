@@ -8,6 +8,9 @@
 				</div>
 				<div class="modal-body">
 					<%= form_for(@user, url: users_user_path(@user), remote: true) do |f| %>
+						<div id="create_error">
+							<%= render 'layouts/error_message', model: f.object %>
+						</div>
 						<%= f.label :プロフィール画像 %><br>
 						<%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size: "100x100" %>
 					    <%= f.attachment_field :profile_image %>

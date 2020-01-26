@@ -72,17 +72,18 @@ class Users::UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
-    	respond_to do |format|
+    	# respond_to do |format|
 	      if @user.update(user_params)
-	        format.html { redirect_to @user, notice: 'User was successfully created.' }
-	        format.json { render :show, status: :ok, location: @user }
-	        format.js { @status = "success"}
+	      	render :update
+	        # format.html { redirect_to @user, notice: 'User was successfully created.' }
+	        # format.json { render :show, status: :ok, location: @user }
+	        # format.js { @status = "success"}
 	      else
-	        format.html { render :show }
-	        format.json { render json: @user.errors, status: :unprocessable_entity }
-	        format.js { @status = "fail" }
+	      	render :update_error
+	        # format.html { render :show }
+	        # format.json { render json: @user.errors, status: :unprocessable_entity }
+	        # format.js { @status = "fail" }
 	      end
-    	end
 	end
 
 	def hide

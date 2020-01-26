@@ -120,6 +120,12 @@ class Users::ItemsController < ApplicationController
 		end
 	end
 
+	def destroy
+		item = Item.find(params[:id])
+    	item.destroy
+    	redirect_to root_path
+	end
+
 	def search
       @items = Item.where('items.name LIKE(?)', "%#{params[:search]}%").page(params[:page]).per(20).order(created_at: :desc)
     end

@@ -13,7 +13,11 @@
 		<div class="row">
 			<div class="col-md-8 item_index_media_user">
 				<%= link_to users_user_path(item.user_id) do %>
+<<<<<<< HEAD
+					<%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "30x30" %>
+=======
 					<%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
+>>>>>>> 1dab7d716716e9b3619ab9f419b2a23576be4362
 					<span style="color: black;">@<%= truncate(item.user.name, length: 5) %></span>
 				<% end %>
 			</div>

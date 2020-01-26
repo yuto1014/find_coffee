@@ -8,6 +8,9 @@
 				</div>
 					<div class="modal-body">
 						<%= form_for(@taist, url: users_taists_path, remote: true) do |f| %>
+							<div id="create_error">
+								<%= render 'layouts/error_message', model: f.object %>
+							</div>
 							<%= f.fields_for :items do |item| %>
 								<%= render 'item_fields', f: item %>
 							<% end %>

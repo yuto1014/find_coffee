@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
 
-  devise_for :admins
   root 'users/homes#top'
 
+  # devise_for :admins, path: 'find_coffee_sessions'
+  # ,path_names: { sign_in: 'find_coffee_login', sign_out: 'find_coffee_logout', password: 'find_coffee_secret', confirmation: 'find_coffee_verification', unlock: 'find_coffee_unblock', registration: 'find_coffee_register', sign_up: 'find_coffee_cmon_let_me_in' }, controllers: {
+    # sessions: 'admins/sessions',
+    # passwords: 'admins/passwords',
+    # registrations: 'admins/registrations',
+  # }
 
+
+  devise_for :admins
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',
@@ -60,13 +67,14 @@ Rails.application.routes.draw do
     resources :tastes, only: [:create, :update]
     put 'ctastes/:id/hide' => 'tastes#hide', as: 'tastes_hide'
     put "/items/:id" => "items#hide"
-    resources :items, only: [:new, :create, :edit, :update, :index, :show] do
+    resources :items do
       resources :comments
     end
     resources :contacts
     resources :users
     get "like" => "items#like"
     resources :contacts, only: [:index, :edit, :update, :destroy]
+    get 'items/:id/show_like' => 'items#show_like', as: 'items_show_like'
 
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
