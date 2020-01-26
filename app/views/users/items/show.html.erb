@@ -1,6 +1,6 @@
 <section class="container clearfix" id="items-show">
 	<div class="row">
-		<div class="col-xs-6 col-xs-offset-3 item-show-container">
+		<div class="item-show-container">
 			<div class="row">
 				<div class="col-md-6 media_image fadeIn">
 					<div class="item_show">
@@ -120,16 +120,16 @@
 				    </li>
 				</ul>
 				<hr>
-				<div class="comment-create">
-  					<h3 class="text-left">
-		        		<span class="title">
-		        			レビューを投稿する
-		        		</span>
-		        	</h3>
-				    <% if user_signed_in? %>
-				      <%= render partial: 'users/comments/form', locals: { comment: @comment, item: @item } %>
-				    <% end %>
-				</div>
+				<% if user_signed_in? %>
+					<div class="comment-create">
+	  					<h3 class="text-left">
+			        		<span class="title">
+			        			レビューを投稿する
+			        		</span>
+			        	</h3>
+					      <%= render partial: 'users/comments/form', locals: { comment: @comment, item: @item } %>
+					</div>
+				<% end %>
   			</div>
   			<%= link_to "新規投稿", new_users_taist_path, remote: true, class: "btn-circle-stitch" %>
 				<div id="item-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">

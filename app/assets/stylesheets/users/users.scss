@@ -19,6 +19,21 @@
 	margin-left: 85px;
 	display: flex;
 }
+.user_info_sub_current {
+    display: inline-flex;
+    margin-left: -326px;
+    margin-top: 72px;
+    font-size: 20px;
+    .post {
+        margin-right: 10px;
+    }
+    .follower {
+        margin-right: 10px;
+    }
+    .follow {
+        margin-right: 10px;
+    }
+}
 .user_info_sub {
 	display: inline-flex;
 	margin-left: -205px;
@@ -32,6 +47,21 @@
     }
     .follow {
     	margin-right: 10px;
+    }
+}
+.user_info_sub_signout {
+    display: inline-flex;
+    margin-left: -144px;
+    margin-top: 72px;
+    font-size: 20px;
+    .post {
+        margin-right: 10px;
+    }
+    .follower {
+        margin-right: 10px;
+    }
+    .follow {
+        margin-right: 10px;
     }
 }
 .user_name {

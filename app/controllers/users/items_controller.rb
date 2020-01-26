@@ -1,4 +1,6 @@
 class Users::ItemsController < ApplicationController
+	before_action :authenticate_user!
+	before_action :correct_user, only: [:edit, :update]
 	def new
 		@item = Item.new
 	end
@@ -26,7 +28,7 @@ class Users::ItemsController < ApplicationController
 	end
 
 	def index
-		@items = Item.all.order(created_at: :desc).limit(4)
+		@items = Item.all.order(created_at: :desc).limit(8)
 		@all_ranks = Item.find(Like.group(:item_id).order('count(item_id) desc').limit(8).pluck(:item_id))
 		@random = Item.order("RANDOM()").limit(8)
 		@taists = Taist.all
@@ -128,5 +130,11 @@ class Users::ItemsController < ApplicationController
     	params.require(:item).permit(:name, :image, :opinion, :place, :tast_id, :user_id)
   	end
 
+	def correct_user
+		@item = Item.find(params[:id])
+		if current_user != @item.user
+			redirect_to root_path
+		end
+    end
 
 end

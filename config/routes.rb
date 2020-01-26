@@ -45,8 +45,11 @@ Rails.application.routes.draw do
     resources :users
     resources :rooms
     resources :contacts, only: [:new, :create, :destroy]
-    resources :notifications
-
+    resources :notifications do
+       collection do
+          delete 'destroy_all'
+       end
+    end
   end
 
 

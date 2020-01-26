@@ -437,11 +437,21 @@
     width: 90px;
 }
 .research-title-bottom {
-  position: absolute;
-  top: 639px;
-  left: 300px;
-  font-family: 'Ubuntu Mono', monospace;
-  font-size: 25px;
+    position: absolute;
+    top: 639px;
+    left: 300px;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 25px;
+}
+.fa-question-circle {
+    position: absolute;
+    left: 991px;
+    top: 647px;
+    font-size: 30px;
+}
+.coffee_map_zone_img {
+    width: 200px;
+    height: 200px;
 }
 
 

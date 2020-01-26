@@ -1,7 +1,40 @@
 <div class="research_back">
 	<section class="container clearfix">
 		<div class="row">
-			<div class="research_box fadeIn">
+			<div class="find_question">
+					<i class="far fa-question-circle">
+						<span><h7 style="font-size: 17px;">マップの見方</h7></span>
+					</i>
+			 </div>
+			<button data-toggle="modal" data-target="#exampleModalLong">
+			 <i class="far fa-question-circle"></i>
+			</button>
+			<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="exampleModalLongTitle">コーヒーマップの使い方</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+			        <h2 class="text-center">ZONEについて</h2>
+			        <hr>
+			        <%= image_tag "coffee_map.png", class: "coffee_map_zone_img mx-auto d-block" %>
+			        <h5>各コーヒーがコーヒーマップのどこに属しているかを示したものです。<br>
+						飲んだコーヒーやお気に入りのZONEを確認してみましょう。
+					</h5>
+					<h5>コーヒーカップをクリックすると、選択したゾーンの新着投稿を確認できます。<br>
+					投稿をクリックしてテイストをチャートで見てみましょう!</h5>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			<div class="research_box">
 				<div class="taist">
 					<div class="refresh_box1">
 						<a class="js-modal-open1" href=""><i class="fas fa-coffee zone1"></i></a>
