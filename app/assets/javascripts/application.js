@@ -171,7 +171,11 @@ $(document).on("turbolinks:load", function() {
       var cy = $(this).height() / 2;
       var dx = e.clientX - cx;
       var dy = e.clientY - cy;
+<<<<<<< HEAD
       $('#mouse_box1').css('left', cx + dx * 1.0);
+=======
+      $('#mouse_box1').css('left', cx + dx * 1.1);
+>>>>>>> 1dab7d716716e9b3619ab9f419b2a23576be4362
       // $('#mouse_box2').css('left', cx + dx * 1.3);
       // $('#mouse_box3').css('left', cx + dx * 1.5);
       $('#mouse_box1').css('top', cy + dy * 1.0);
