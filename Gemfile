@@ -81,3 +81,7 @@ gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'rails-i18n'
+group :production do
+  gem 'mysql2'
+end
+
