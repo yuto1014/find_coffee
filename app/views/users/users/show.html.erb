@@ -71,13 +71,15 @@
 										<%= attachment_image_tag item, :image, size: "190x190" %>
 									<% end %>
 								</div>
-								<div class="coffee_opinion">
-									<%= truncate(item.name, length: 8) %>
-								</div>
+								<!-- <div class="coffee_opinion">
+									<!%= link_to users_item_path(item) do %>
+										<!%= truncate(item.name, length: 8) %>
+									<!% end %>
+								</div> -->
 								<div class="row">
 									<div class="col-md-8 item_index_prof">
-										<%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
 										<%= link_to users_user_path(item.user_id) do %>
+											<%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "30x30" %>
 											<span style="color: black;">@<%= truncate(item.user.name, length: 5) %></span>
 										<% end %>
 									</div>

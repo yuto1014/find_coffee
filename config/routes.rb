@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     get 'homes/privacy_policy'
     resources :taists
     get 'items/research' => 'items#research', as: 'items_research'
-    get "items/index2" => "items#index2", as: 'index2'
+    get "items/index_add" => "items#index_add", as: 'index_add'
     put 'items/:id/hide' => 'items#hide', as: 'items_hide'
     get 'items/:id/show_like' => 'items#show_like', as: 'items_show_like'
     get "users/:id/likes" => "users#likes"
@@ -48,7 +48,7 @@ Rails.application.routes.draw do
     resources :events
     resources :messages, only: [:show, :create]
     resources :contacts
-    put "/users/:id" => "users#hide", as: 'users_hide'
+    put "/users/:id/hide" => "users#hide", as: 'users_hide'
     resources :users
     resources :rooms
     resources :contacts, only: [:new, :create, :destroy]
@@ -67,6 +67,7 @@ Rails.application.routes.draw do
     resources :tastes, only: [:create, :update]
     put 'ctastes/:id/hide' => 'tastes#hide', as: 'tastes_hide'
     put "/items/:id" => "items#hide"
+    get "items/index_add" => "items#index_add", as: 'index_add'
     resources :items do
       resources :comments
     end

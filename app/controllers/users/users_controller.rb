@@ -1,6 +1,6 @@
 class Users::UsersController < ApplicationController
+	before_action :correct_user, only: [:edit, :update]
 	before_action :authenticate_user!
-	before_action :correct_user, only: [:edit, :update, :hide]
 	def show
 		@user = User.find(params[:id])
 		@items = @user.items.page(params[:page]).reverse_order
@@ -118,9 +118,6 @@ class Users::UsersController < ApplicationController
 
 
 	private
-	def user_params
-	    params.require(:user).permit(:name, :email, :address, :profile_image)
-	end
 
 	def correct_user
 		@user = User.find(params[:id])
@@ -128,4 +125,9 @@ class Users::UsersController < ApplicationController
 			redirect_to root_path
 		end
     end
+
+	def user_params
+	    params.require(:user).permit(:name, :email, :address, :profile_image)
+	end
+
 end

@@ -1,10 +1,19 @@
 <div class="container">
     <div class="row">
+      <div class="test_user">
+        <h4>テストユーザー</h4>
+        <hr>
+        <h5>メールアドレス：a@a.com</h5>
+        <h5>パスワード：111111</h5>
+      </div>
        <div class="signup-container">
+        <%= flash[:error] %>
+        <hr>
           <h2 class="text-center">ログイン</h2>
           <hr>
 
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
             <div class="field">
               <%= f.label :メールアドレス %><br />
               <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"xxxx@xxx.com",class: "form-control" %>
@@ -13,7 +22,7 @@
 
             <div class="field">
               <%= f.label :パスワード %><br />
-              <%= f.password_field :password, autocomplete: "current-password", placeholder:"●●●●●●",class: "form-control" %>
+              <%= f.password_field :password, autocomplete: "current-password", placeholder:"パスワード",class: "form-control" %>
             </div>
             <hr>
 

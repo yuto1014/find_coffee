@@ -34,7 +34,7 @@ class Users::ItemsController < ApplicationController
 		@taists = Taist.all
 	end
 
-	def index2
+	def index_add
 		if params[:sort] == "1"
 			@items = Item.all.page(params[:page]).per(20).order(created_at: :desc)
 		elsif params[:sort] == "2"

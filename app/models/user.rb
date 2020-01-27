@@ -4,10 +4,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
 
-  validates :name, presence: true, length: {maximum: 30}
+  def active_for_authentication?
+    super && (self.is_deleted == false)
+  end
+
+  validates :name, presence: true, length: {maximum: 10}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX }
+  validates :password, presence: true
 
   has_many :likes, dependent: :destroy
   has_many :liked_items, through: :likes, source: :item
