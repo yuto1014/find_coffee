@@ -1,2 +1,2 @@
 $("#item-modal").modal("hide");
-$("#item_index_new").html("<%= escape_javascript(render 'users/items/item_new', items: @items) %>")
+$("#item_index_new").prepend("<%= escape_javascript(render 'users/items/item_new', items: @items) %>")
