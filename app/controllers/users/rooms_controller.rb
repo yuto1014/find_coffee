@@ -13,7 +13,6 @@ class Users::RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
-    #present?の戻り値は真偽値。よって、trueの場合、
     if Entry.where(:user_id => current_user.id, :room_id => @room.id).present?
       @direct_messages = @room.direct_messages
       @entries = @room.entries
@@ -27,5 +26,11 @@ class Users::RoomsController < ApplicationController
     @entry1 = Entry.create(:room_id => @room.id, :user_id => current_user.id)
     @entry2 = Entry.create(params.require(:entry).permit(:user_id, :room_id).merge(:room_id => @room.id))
     redirect_to users_room_path(@room.id)
+  end
+
+  def destroy
+      room = Room.find(params[:id])
+      room.destroy
+      redirect_to users_rooms_path
   end
 end

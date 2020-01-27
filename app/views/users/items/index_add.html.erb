@@ -1,0 +1,50 @@
+<section class="container clearfix">
+	<div class="row item_index_row">
+		<% if params[:sort] == "1" %>
+			<div class="item_box4 fadeIn">
+				<h2 class="item_title">新着コーヒー一覧</h2>
+			</div>
+		<% else %>
+			<div class="item_box5 fadeIn">
+				<h2 class="item_title">いいねランキング</h2>
+			</div>
+		<% end %>
+		<div class="col-md-12 fadeIn">
+			<% @items.each do |item| %>
+				<div class="item_index">
+					<div class="coffee_image">
+						<%= link_to users_item_path(item) do %>
+							<%= attachment_image_tag item, :image, size: "190x190" %>
+						<% end %>
+					</div>
+					<!-- <div class="coffee_opinion">
+						<!%= link_to users_item_path(item) do %>
+							<!%= truncate(item.name, length: 8) %>
+						<!% end %>
+					</div> -->
+					<div class="row">
+						<div class="col-md-8 item_index_prof">
+							<%= link_to users_user_path(item.user_id) do %>
+								<%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "30x30" %>
+								<span style="color: black;">@<%= truncate(item.user.name, length: 5) %></span>
+							<% end %>
+						</div>
+						<div class="col-md-4 item-like">
+							<div class="item_like_<%= item.id %>">
+							 	<%= render 'like', item: item %>
+							</div>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<%= paginate @items, class: "pagenate" %>
+		<%= link_to "新規投稿", new_users_taist_path, remote: true, class: "btn-circle-stitch" %>
+				<div id="item-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+					<div class="modal-dialog">
+	          			<div class="post_index_m modal-content">
+	          			</div>
+	       			</div>
+   				</div>
+	</div>
+</section>

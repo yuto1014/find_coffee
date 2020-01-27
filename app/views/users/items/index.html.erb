@@ -3,7 +3,7 @@
 		<div class="item_box1_hover">
 			<div class="item_box1 fadeIn">
 				<h2 class="item_title">新着投稿</h2>
-					<%= link_to users_index2_path(sort:1) do %>
+					<%= link_to users_index_add_path(sort:1) do %>
 						<h6 class="text-right" style="color: #C0C0C0; margin-top: 17px;">もっと見る...</h6>
 					<% end %>
 			</div>
@@ -17,7 +17,7 @@
 		<div class="item_box2_hover">
 			<div class="item_box2 fadeIn">
 				<h2 class="item_title">いいねランキング</h2>
-				<%= link_to users_index2_path(sort:2) do %>
+				<%= link_to users_index_add_path(sort:2) do %>
 					<h6 class="text-right" style="color: #C0C0C0; margin-top: 17px;">もっと見る...</h6>
 				<% end %>
 			</div>
@@ -38,11 +38,7 @@
 					<div class="row">
 						<div class="col-md-8 item_index_prof">
 							<%= link_to users_user_path(item.user_id) do %>
-<<<<<<< HEAD
 								<%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "30x30" %>
-=======
-								<%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
->>>>>>> 1dab7d716716e9b3619ab9f419b2a23576be4362
 								<span style="color: black;">@<%= truncate(item.user.name, length: 5) %></span>
 							<% end %>
 						</div>
@@ -78,11 +74,7 @@
 					<div class="row">
 						<div class="col-md-8 item_index_prof">
 							<%= link_to users_user_path(item.user_id) do %>
-<<<<<<< HEAD
 								<%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "30x30" %>
-=======
-								<%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
->>>>>>> 1dab7d716716e9b3619ab9f419b2a23576be4362
 								<span style="color: black;">@<%= truncate(item.user.name, length: 5) %></span>
 							<% end %>
 						</div>

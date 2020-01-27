@@ -11,7 +11,9 @@
 			    <div class="comment-entry">
   				    <%= comment.content %>
   				    <% if comment.user == current_user %>
-			      		<%= link_to '削除', users_item_comment_path(comment.item_id, comment.id), method: :delete, remote: true, class: "comment_destroy" %>
+			      		<%= link_to users_item_comment_path(comment.item_id, comment.id), method: :delete, remote: true, class: "comment_destroy" do %>
+			      			<i class="fas fa-trash" style="color: black;"></i>
+			      		<% end %>
 			    	<% end %>
   				</div>
 				<span class="comment-date pull-right">
@@ -36,7 +38,9 @@
 						    <div class="comment-entry">
 			  				    <%= comment.content %>
 			  				    <% if comment.user == current_user %>
-						      		<%= link_to '削除', users_item_comment_path(comment.item_id, comment.id), method: :delete, remote: true, class: "comment_destroy" %>
+						      		<%= link_to users_item_comment_path(comment.item_id, comment.id), method: :delete, remote: true, class: "comment_destroy" do %>
+			      						<i class="fas fa-trash" style="color: black;"></i>
+			      					<% end %>
 						    	<% end %>
 			  				</div>
 							<span class="comment-date pull-right">

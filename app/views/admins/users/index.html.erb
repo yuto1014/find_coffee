@@ -1,23 +1,38 @@
 <section class="container">
  	<div class="row edit-row">
  		<div class="col-6 offset-3 content_box">
- 			<h2 class="text-center">フォロー一覧</h2>
+ 			<h2 class="text-center">ユーザー一覧</h2>
  			<hr>
-				<% @user.each do |user| %>
-					<table class="table table-striped">
-						<tbody>
-							<tr>
-	  							<td>
-	  								<%= attachment_image_tag user, :profile_image, format: 'jpeg', class: "rounded-circle", fallback: "no_image.jpg", size: "30x30" %>
-	  								@<%= user.name %>
-	  							</td>
-								<td>
-									<%= link_to "退会", users_users_hide_path(user), method: :put, "data-confirm" => "本当に退会させますか？", class: "btn btn-outline-danger" %>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				<% end %>
+ 			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th style="width: 50%;">
+							ユーザー名
+						</th>
+						<th style="width: 30%;">
+							地域
+						</th>
+						<th style="width: 20%;">
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @user.each do |user| %>
+					<tr>
+						<td>
+							<%= attachment_image_tag user, :profile_image, format: 'jpeg', class: "rounded-circle", fallback: "no_image.jpg", size: "30x30" %>
+							@<%= user.name %>
+						</td>
+						<td>
+							<%= user.address %>
+						</td>
+						<td>
+							<%= link_to "退会", users_users_hide_path(user), method: :put, "data-confirm" => "本当に退会させますか？", class: "btn btn-outline-danger" %>
+						</td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </section>
