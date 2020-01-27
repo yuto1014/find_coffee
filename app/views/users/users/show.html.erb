@@ -1,105 +1,109 @@
 <section class="container clearfix" id="users-show">
 	<div class="row">
 		<div class="col-xs-8 col-xs-offset-2 show-container">
-			<div class="row">
-				<div class="row" id="user_info_edit">
-					<%= render 'users/users/user_info_edit', user: @user %>
-				</div>
-
-				<div class="col-md-12 mypage_list"></div>
-
-				<div class="row user_info_event">
-					<div class="col-md-6 show_evnt">
-						<%= render 'users/users/event', events: @events %>
+			<% if @user.is_deleted == false %>
+				<div class="row">
+					<div class="row" id="user_info_edit">
+						<%= render 'users/users/user_info_edit', user: @user %>
 					</div>
-					<div class="col-md-6">
-						<div class="mypage_recommend">
-							<h3 class="text-center">あなたへのおすすめ</h3>
-							<hr>
-								<div class="row">
-									<div class="col-md-6 recommend_item_left">
-										<%= link_to users_item_path(@like_recommend) do %>
-											<%= attachment_image_tag @like_recommend, :image, size: "140x140" %>
-										<% end %>
+
+					<div class="col-md-12 mypage_list"></div>
+
+					<div class="row user_info_event">
+						<div class="col-md-6 show_evnt">
+							<%= render 'users/users/event', events: @events %>
+						</div>
+						<div class="col-md-6">
+							<div class="mypage_recommend">
+								<h3 class="text-center">あなたへのおすすめ</h3>
+								<hr>
+									<div class="row">
+										<div class="col-md-6 recommend_item_left">
+											<%= link_to users_item_path(@like_recommend) do %>
+												<%= attachment_image_tag @like_recommend, :image, size: "140x140" %>
+											<% end %>
+										</div>
+										<div class="col-md-6 recommend_item_right">
+											<table class="table table-striped">
+												<thead>
+													<tr>
+														<th>タイトル</th>
+														<th><%= truncate(@like_recommend.name, length: 8) %></th>
+													</tr>
+													<tr>
+														<th>感想</th>
+														<th><%= truncate(@like_recommend.opinion, length: 8) %></th>
+													</tr>
+													<tr>
+														<th>ユーザー</th>
+														<th><%= attachment_image_tag @like_recommend.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "20x20" %>
+															<%= link_to users_user_path(@like_recommend.user_id) do %>
+																@<%= truncate(@like_recommend.user.name, length: 5) %>
+															<% end %>
+														</th>
+													</tr>
+													<tr>
+														<th>いいね</th>
+														<th>
+															<div id="item__show_like_<%= @like_recommend.id %>">
+										             			<%= render 'users/items/show_like', item: @like_recommend %>
+															</div>
+														</th>
+													</tr>
+												</thead>
+											</table>
+										</div>
 									</div>
-									<div class="col-md-6 recommend_item_right">
-										<table class="table table-striped">
-											<thead>
-												<tr>
-													<th>タイトル</th>
-													<th><%= truncate(@like_recommend.name, length: 8) %></th>
-												</tr>
-												<tr>
-													<th>感想</th>
-													<th><%= truncate(@like_recommend.opinion, length: 8) %></th>
-												</tr>
-												<tr>
-													<th>ユーザー</th>
-													<th><%= attachment_image_tag @like_recommend.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "20x20" %>
-														<%= link_to users_user_path(@like_recommend.user_id) do %>
-															@<%= truncate(@like_recommend.user.name, length: 5) %>
-														<% end %>
-													</th>
-												</tr>
-												<tr>
-													<th>いいね</th>
-													<th>
-														<div id="item__show_like_<%= @like_recommend.id %>">
-									             			<%= render 'users/items/show_like', item: @like_recommend %>
-														</div>
-													</th>
-												</tr>
-											</thead>
-										</table>
-									</div>
-								</div>
-								<div class="row">
-									<canvas id="showRaderChart"></canvas>
-						    	</div>
+									<div class="row">
+										<canvas id="showRaderChart"></canvas>
+							    	</div>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-12 show_like fadeIn">
-					<h2 class="mypage_list">いいね一覧
-						 <%= link_to  users_path(@user) do %><h6 class="more">もっと見る...</h6><% end %>
-					</h2>
-					<% @like_items.each do |like| %>
-						<% item = Item.find_by(id: like.item_id) %>
-							<div class="item_index">
-								<div class="coffee_image">
-									<%= link_to users_item_path(item) do %>
-										<%= attachment_image_tag item, :image, size: "190x190" %>
-									<% end %>
-								</div>
-								<!-- <div class="coffee_opinion">
-									<!%= link_to users_item_path(item) do %>
-										<!%= truncate(item.name, length: 8) %>
-									<!% end %>
-								</div> -->
-								<div class="row">
-									<div class="col-md-8 item_index_prof">
-										<%= link_to users_user_path(item.user_id) do %>
-											<%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "30x30" %>
-											<span style="color: black;">@<%= truncate(item.user.name, length: 5) %></span>
+					<div class="col-12 show_like fadeIn">
+						<h2 class="mypage_list">いいね一覧
+							 <%= link_to  users_path(@user) do %><h6 class="more">もっと見る...</h6><% end %>
+						</h2>
+						<% @like_items.each do |like| %>
+							<% item = Item.find_by(id: like.item_id) %>
+								<div class="item_index">
+									<div class="coffee_image">
+										<%= link_to users_item_path(item) do %>
+											<%= attachment_image_tag item, :image, size: "190x190" %>
 										<% end %>
 									</div>
-									<div class="col-md-4 item-like">
-										<div class="item_like_<%= item.id %>">
-										 	<%= render 'users/items/like', item: item %>
+									<!-- <div class="coffee_opinion">
+										<!%= link_to users_item_path(item) do %>
+											<!%= truncate(item.name, length: 8) %>
+										<!% end %>
+									</div> -->
+									<div class="row">
+										<div class="col-md-8 item_index_prof">
+											<%= link_to users_user_path(item.user_id) do %>
+												<%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "30x30" %>
+												<span style="color: black;">@<%= truncate(item.user.name, length: 5) %></span>
+											<% end %>
+										</div>
+										<div class="col-md-4 item-like">
+											<div class="item_like_<%= item.id %>">
+											 	<%= render 'users/items/like', item: item %>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-					<% end %>
+						<% end %>
+					</div>
 				</div>
-			</div>
-			<%= link_to "新規投稿", new_users_taist_path, remote: true, class: "btn-circle-stitch" %>
-				<div id="item-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-					<div class="modal-dialog">
-	          			<div class="post_index_m modal-content">
-	          			</div>
-	       			</div>
-   				</div>
+				<%= link_to "新規投稿", new_users_taist_path, remote: true, class: "btn-circle-stitch" %>
+					<div id="item-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+						<div class="modal-dialog">
+		          			<div class="post_index_m modal-content">
+		          			</div>
+		       			</div>
+	   				</div>
+   			<% else %>
+   			 <h3><%= @user.name %>さんは退会済みです。</h3>
+   			<% end %>
 		</div>
 	</div>
 </section>

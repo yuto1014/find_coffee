@@ -3,12 +3,9 @@ class Admins::UsersController < ApplicationController
 		@user = User.all
 	end
 
-	def show
-	end
-
-	def edit
-	end
-
 	def hide
+		@user = User.find(params[:id])
+    	@user.update(is_deleted: true)
+    	redirect_to admin_items_path
 	end
 end

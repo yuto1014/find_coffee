@@ -73,6 +73,7 @@ Rails.application.routes.draw do
     end
     resources :contacts
     resources :users
+    put "/admins/:id/hide" => "admins#hide", as: 'admins_hide'
     get "like" => "items#like"
     resources :contacts, only: [:index, :edit, :update, :destroy]
     get 'items/:id/show_like' => 'items#show_like', as: 'items_show_like'
