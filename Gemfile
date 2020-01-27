@@ -82,6 +82,6 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'rails-i18n'
 group :production do
-  gem 'mysql2'
+  gem 'mysql2', '~> 0.3.20'
 end
 
