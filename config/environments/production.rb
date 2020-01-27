@@ -98,4 +98,3 @@ Rails.application.configure do
   config.assets.precompile += ['users/taist_new.js']
   config.assets.precompile += ['users/user_show.js']
 end
-end
