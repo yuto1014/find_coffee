@@ -29,7 +29,9 @@ class Users::ItemsController < ApplicationController
 	def index
 		@items = Item.order(created_at: :desc).limit(8)
 		@all_ranks = Item.find(Like.group(:item_id).order('count(item_id) desc').limit(8).pluck(:item_id))
-		@random = Item.order("RANDOM()").limit(8)
+		if @items
+			@random = Item.order("RANDOM()").limit(8)
+		end
 		@taists = Taist.all
 	end
 
