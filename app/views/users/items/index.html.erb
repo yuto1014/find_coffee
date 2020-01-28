@@ -59,7 +59,7 @@
 			</div>
 		</div>
 		<div class="col-md-12 item_box_3 fadeIn">
-			<% if @random %>
+			<% if @random.exists? %>
 				<% @random.each do |item| %>
 					<div class="item_index">
 						<div class="coffee_image">
