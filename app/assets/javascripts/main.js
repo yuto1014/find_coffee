@@ -27,8 +27,9 @@ Docs & License: https://fullcalendar.io/
     /* global Reflect, Promise */
 
     var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        extendStatics =
+            // Object.setPrototypeOf ||
+            // ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
@@ -36,7 +37,7 @@ Docs & License: https://fullcalendar.io/
     function __extends(d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+        // d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     }
 
     var __assign = function() {
@@ -59,11 +60,11 @@ Docs & License: https://fullcalendar.io/
         function TimeGridEventRenderer(timeGrid) {
             var _this = _super.call(this, timeGrid.context) || this;
             _this.timeGrid = timeGrid;
-            _this.fullTimeFormat = core.createFormatter({
-                hour: 'numeric',
-                minute: '2-digit',
-                separator: _this.context.options.defaultRangeSeparator
-            });
+            // _this.fullTimeFormat = core.createFormatter({
+            //     hour: 'numeric',
+            //     minute: '2-digit',
+            //     separator: _this.context.options.defaultRangeSeparator
+            // });
             return _this;
         }
         // Given an array of foreground segments, render a DOM element for each, computes position,
@@ -506,12 +507,12 @@ Docs & License: https://fullcalendar.io/
             if (Array.isArray(input)) {
                 input = input[input.length - 1];
             }
-            this.labelFormat = core.createFormatter(input || {
-                hour: 'numeric',
-                minute: '2-digit',
-                omitZeroMinute: true,
-                meridiem: 'short'
-            });
+            // this.labelFormat = core.createFormatter(input || {
+            //     hour: 'numeric',
+            //     minute: '2-digit',
+            //     omitZeroMinute: true,
+            //     meridiem: 'short'
+            // });
             input = this.opt('slotLabelInterval');
             this.labelInterval = input ?
                 core.createDuration(input) :
@@ -950,7 +951,7 @@ Docs & License: https://fullcalendar.io/
     }(core.Splitter));
 
     var TIMEGRID_ALL_DAY_EVENT_LIMIT = 5;
-    var WEEK_HEADER_FORMAT = core.createFormatter({ week: 'short' });
+    // var WEEK_HEADER_FORMAT = core.createFormatter({ week: 'short' });
     /* An abstract class for all timegrid-related views. Displays one more columns with time slots running vertically.
     ----------------------------------------------------------------------------------------------------------------------*/
     // Is a manager for the TimeGrid subcomponent and possibly the DayGrid subcomponent (if allDaySlot is on).
@@ -1324,25 +1325,25 @@ Docs & License: https://fullcalendar.io/
         return new core.DayTable(daySeries, false);
     }
 
-    var main = core.createPlugin({
-        defaultView: 'timeGridWeek',
-        views: {
-            timeGrid: {
-                class: TimeGridView$1,
-                allDaySlot: true,
-                slotDuration: '00:30:00',
-                slotEventOverlap: true // a bad name. confused with overlap/constraint system
-            },
-            timeGridDay: {
-                type: 'timeGrid',
-                duration: { days: 1 }
-            },
-            timeGridWeek: {
-                type: 'timeGrid',
-                duration: { weeks: 1 }
-            }
-        }
-    });
+    // var main = core.createPlugin({
+    //     defaultView: 'timeGridWeek',
+    //     views: {
+    //         timeGrid: {
+    //             class: TimeGridView$1,
+    //             allDaySlot: true,
+    //             slotDuration: '00:30:00',
+    //             slotEventOverlap: true // a bad name. confused with overlap/constraint system
+    //         },
+    //         timeGridDay: {
+    //             type: 'timeGrid',
+    //             duration: { days: 1 }
+    //         },
+    //         timeGridWeek: {
+    //             type: 'timeGrid',
+    //             duration: { weeks: 1 }
+    //         }
+    //     }
+    // });
 
     exports.AbstractTimeGridView = TimeGridView;
     exports.TimeGrid = TimeGrid;
@@ -1350,7 +1351,7 @@ Docs & License: https://fullcalendar.io/
     exports.TimeGridView = TimeGridView$1;
     exports.buildDayRanges = buildDayRanges;
     exports.buildDayTable = buildDayTable;
-    exports.default = main;
+    // exports.default = main;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
