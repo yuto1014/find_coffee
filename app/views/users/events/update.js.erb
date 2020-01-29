@@ -1,16 +1,6 @@
-// $(function() {
-	// $('#inputScheduleEditForm').on('show.bs.modal',function() {
-	// 	$('.modal fade').modal('hide');
-	// 	$('.modal-backdrop').remove();
-	// 	$('#inputScheduleEditForm').fullCalendar('refetchEvents')
-	// })
-// })
-	// $('#inputScheduleEditForm').modal('hide');
-	$('#inputEditForm').html('<%= escape_javascript(render("users/events/edit", events: @events)) %>');
-	$('.modal-backdrop').remove();
-	// フルカレンダー を一度消しもう一度表示
-	$('#calendar').fullCalendar('refetchEvents')
-
-  // $('#inputScheduleEditForm').removeClass('modal-open'); // 1
-        // 2
-  // $('#inputScheduleEditForm').modal('hide');        // 3
+//updateした内容を差し替え
+$('#inputEditForm').html('<%= escape_javascript(render("users/events/edit", events: @events)) %>');
+//モーダル背景画面を消す
+$('.modal-backdrop').remove();
+// フルカレンダー を一度消しもう一度表示
+$('#calendar').fullCalendar('refetchEvents')

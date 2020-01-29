@@ -1,3 +1,4 @@
+<!-- 新着投稿一覧 ------------------------------------------------------------------>
 <% items.each do |item| %>
 	<div class="item_index">
 		<div class="coffee_image">
@@ -5,11 +6,6 @@
 				<%= attachment_image_tag item, :image, size: "190x190", class: "coffee_image_media" %>
 			<% end %>
 		</div>
-		<!-- <div class="coffee_opinion">
-			<!-%= link_to users_item_path(item) do %>
-				<!-%= truncate(item.name, length: 8) %>
-			<!- end %>
-		</div> -->
 		<div class="row">
 			<div class="col-md-8 item_index_media_user">
 				<%= link_to users_user_path(item.user_id) do %>

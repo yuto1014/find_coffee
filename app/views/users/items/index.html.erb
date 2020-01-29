@@ -1,4 +1,6 @@
+<!-- 投稿一覧(ヘッダーリンク；index) ------------------------------------------------------------------>
 <section class="container clearfix">
+<!-- 投稿の新しい順 ------------------------------------------------------------------>
 	<div class="row item_index_row1">
 		<%= link_to users_index_add_path(sort:1), class: "type1_link" do %>
 		<div class="button type1">
@@ -10,7 +12,7 @@
 			<%= render 'item_new', items: @items %>
 		</div>
 	</div>
-
+<!-- いいねしたユーザーの多い投稿ランキング ------------------------------------------------------------------>
 	<div class="row item_index_row2">
 		<%= link_to users_index_add_path(sort:2), class: "type2_link" do %>
 			<div class="button type2">
@@ -48,6 +50,7 @@
 			<% end %>
 		</div>
 	</div>
+<!-- 投稿をランダム表示(mysql:RAND()) ------------------------------------------------------------------>
 	<div class="row item_index_row3">
 		<button class="button type2">
 				<h2 class="item_title">オーナーのおすすめ</h2>
@@ -84,6 +87,7 @@
 			<% end %>
 		</div>
 	</div>
+<!-- 新規投稿ボタン ------------------------------------------------------------------>
 	<%= link_to "新規投稿", new_users_taist_path, remote: true, class: "btn-circle-stitch" %>
 		<div id="item-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog">

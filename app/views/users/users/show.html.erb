@@ -1,3 +1,4 @@
+<!-- MYPAGE(退会済みユーザーは表示内容切り替え) ------------------------------------------------------------------>
 <section class="container clearfix" id="users-show">
 	<div class="row">
 		<div class="col-xs-8 col-xs-offset-2 show-container">
@@ -13,6 +14,8 @@
 						<div class="col-md-6 show_evnt">
 							<%= render 'users/users/event', events: @events %>
 						</div>
+<!-- MYPAGEのユーザーが一番最近いいねした投稿と同じコーヒーマップZONEの投稿で、
+	まだMYPAGEユーザーがいいねしていない投稿の一番最新の投稿を表示、無ければランダムに投稿を表示 --------------------------------------------------------------------------------------->
 						<div class="col-md-6">
 							<div class="mypage_recommend">
 								<h3 class="text-center">あなたへのおすすめ</h3>
@@ -72,11 +75,6 @@
 											<%= attachment_image_tag item, :image, size: "190x190" %>
 										<% end %>
 									</div>
-									<!-- <div class="coffee_opinion">
-										<!%= link_to users_item_path(item) do %>
-											<!%= truncate(item.name, length: 8) %>
-										<!% end %>
-									</div> -->
 									<div class="row">
 										<div class="col-md-8 item_index_prof">
 											<%= link_to users_user_path(item.user_id) do %>
@@ -111,6 +109,7 @@
 <!--%= javascript_include_tag 'users/user_show.js' %-->
 <!--%= javascript_include_tag 'application.js' %-->
 <script>
+	//おすすめアイテムのチャート化
 	  var like_chart = document.getElementById("showRaderChart");
 	  var like_chart_item = gon.item
       var like_chart_taist = gon.taist

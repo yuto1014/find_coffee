@@ -1,3 +1,4 @@
+<!-- トップページ ------------------------------------------------------------------>
  <section class="home-body clearfix">
    <section class="top">
       <div class="top_image">
@@ -45,11 +46,6 @@
                           <%= attachment_image_tag item, :image, size: "190x190", class: "index_right_image" %>
                         <% end %>
                       </div>
-                      <!-- <div class="coffee_opinion">
-                        <!%= link_to users_item_path(item) do %>
-                          <!%= truncate(item.name, length: 8) %>
-                        <!% end %>
-                      </div> -->
                       <div class="row">
                         <div class="col-md-8 item_index_prof">
                           <%= link_to users_user_path(item.user_id) do %>
@@ -91,13 +87,14 @@
         </li>
       </ul>
     </div>
-
+<!-- トップへ戻るボタン ------------------------------------------------------------------>
     <div id="back-to-top" style="position:fixed;right:25px;bottom:5px">
       <a href="#"><i class="fas fa-arrow-alt-circle-up fa-5x"></i></a>
     </div>
 </div>
 <!--%= javascript_include_tag 'users/homes_top.js' %-->
 <script>
+//トップへ戻る
   $("#back-to-top").hide();
   $(window).scroll(function(){
     $('#pos').text($(this).scrollTop());
@@ -115,6 +112,7 @@
       return false;
   });
 
+//スクロールでフェイドイン
   $(function(){
     function animation(){
       $('.fadeIn').each(function(){
