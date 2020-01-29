@@ -30,7 +30,7 @@ class Users::ItemsController < ApplicationController
 		@items = Item.order(created_at: :desc).limit(8)
 		@all_ranks = Item.find(Like.group(:item_id).order('count(item_id) desc').limit(8).pluck(:item_id))
 		if @items
-			@random = Item.order("RANDOM()").limit(8)
+			@random = Item.order("RAND()").limit(8)
 		end
 		@taists = Taist.all
 	end
@@ -39,7 +39,7 @@ class Users::ItemsController < ApplicationController
 		if params[:sort] == "1"
 			@items = Item.page(params[:page]).per(20).order(created_at: :desc)
 		elsif params[:sort] == "2"
-			@items = Item.find(Like.group(:item_id).where(id: x).order('count(item_id) desc').pluck(:item_id))
+			@items = Item.find(Like.group(:item_id).order('count(item_id) desc').pluck(:item_id))
 			@items = Kaminari.paginate_array(@items).page(params[:page]).per(20)
 		end
 	end
@@ -129,6 +129,11 @@ class Users::ItemsController < ApplicationController
 
 	def search
       @items = Item.where('items.name LIKE(?)', "%#{params[:search]}%").page(params[:page]).per(20).order(created_at: :desc)
+      @search_result = "#{params[:search]}"
+    end
+
+    def media_search
+    	@items = Item.order(created_at: :desc).limit(8)
     end
 
 

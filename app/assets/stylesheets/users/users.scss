@@ -207,7 +207,7 @@
   padding: 0;
 }
 
-/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+/* スマートフォンサイズ（425px）以下の際に適用される設定 ---------------------------------------------*/
 @media screen and (max-width:425px) {
       //show-------------------------------------------------//
      #user_info {
@@ -221,8 +221,9 @@
      }
      .user_name {
         font-size: 20px;
+        width: 149px;
      }
-     .profile_image {
+     #user_info_edit > .profile_image {
         margin: 47px 0px 20px 127px;
         width: 80px;
         height: 80px;
@@ -236,6 +237,30 @@
         width: 58px;
         line-height: 50px;
      }
+     .user_info_sub_current {
+        display: -webkit-inline-box;
+        display: inline-flex;
+        margin-left: 0px;
+        margin-top: 43px;
+        font-size: 1px;
+    }
+    .post a h5 {
+        width:83px;
+        font-size: 15px;
+    }
+    .follower a h5 {
+        width: 132px;
+        font-size: 15px;
+    }
+    .follow a h5 {
+        width: 100px;
+        font-size: 15px;
+    }
+    #mypage_recommend_prof_img {
+        margin: -3px 0px 0px -32px;
+        width: 20px;
+        height: 20px;
+    }
      .user_info_sub {
         display: flex;
         margin-left: 0;
@@ -261,10 +286,21 @@
      .recommend_item_right > table > thead > tr > th {
         width: 70px;
      }
-     .recommend_item_right > table > thead > tr > th >.profile_image {
-        margin: 0;
+     .item_index_prof {
+        margin-top: -5px;
+    }
+     #mypage_prof_img {
+        margin: 16px 0px 20px -96px;
         width: 30px;
         height: 30px;
+     }
+     #follow_form > .edit_user > .btn-outline-secondary {
+        position: absolute;
+        top: 330px;
+        left: 122px;
+     }
+     #user_info_edit > #user_info > #new_room > #dm_submit {
+        margin-left: 96px;
      }
      .mypage_recommend > .row > canvas {
         width: 100vw !important;
@@ -275,6 +311,18 @@
      .mypage_list {
         font-size: 20px;
      }
+     .show_like_item {
+        width: 90%;
+        float: none;
+        text-align: center;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+        margin: 2em 10px;
+        position: relative;
+        padding: 0.5em 1.5em;
+        border-top: solid 2px black;
+        border-bottom: solid 2px black;
+    }
      .show_like > .item_index > .row > .col-md-8 > .profile-img-circle {
         margin: 0;
         width: 30px;
@@ -284,7 +332,10 @@
         margin-top: 20px;
      }
      .item-like {
-        right: 0;
+        position: absolute;
+        top: -71px;
+        right: -135px;
+        margin-left: -64px;
      }
      .container > .modal-dialog > .prof_modal {
         width: 86vw;
@@ -292,6 +343,15 @@
      .fc-right {
         font-size: 10px;
      }
+     .edit-row .content_box {
+        margin: 50px 50px;
+        margin-left: 50px;
+        word-break: keep-all;
+    }
+    //sign_in-----------------------------------------------------------------------------
+    .test_user {
+      display: none;
+    }
 
 }
 

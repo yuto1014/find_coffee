@@ -115,7 +115,7 @@ $(document).on("turbolinks:load", function() {
     }
     );
 
-  //トップページ機能説明
+  //トップページ機能説明-----------------------------------
   $('.information_list1').hover(
     function() {
       $(this).find('.information_none1').addClass('text-active');
@@ -143,7 +143,7 @@ $(document).on("turbolinks:load", function() {
     }
     );
 
-  //スクロールでフェードイン
+  //スクロールでフェードイン------------------------------
   function animation(){
     $('.fadeIn').each(function(){
       //ターゲットの位置を取得
@@ -164,7 +164,7 @@ $(document).on("turbolinks:load", function() {
     animation();
   });
 
-  //マウスホバー
+  //マウスホバー----------------------------------------
   $('body').mousemove(function(e) {
       // console.log(e.clientX, e.clientY);
       var cx = $(this).width() / 2;
@@ -179,7 +179,7 @@ $(document).on("turbolinks:load", function() {
       // $('#mouse_box3').css('top', cy + dy * 1.3);
     });
 
-  //検索フォーム
+  //検索フォーム-----------------------------------------
   var show = document.getElementById('show');
   var hide = document.getElementById('hide');
 
@@ -192,6 +192,7 @@ $(document).on("turbolinks:load", function() {
     $('.search-form').removeClass('search-form-open');
   });
 
+  //ハンバーガーメニュー-----------------------------------
   $(function() {
     $('.menu-trigger').on('click', function() {
       $(this).toggleClass('active');
