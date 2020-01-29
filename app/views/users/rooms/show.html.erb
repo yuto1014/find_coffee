@@ -1,3 +1,4 @@
+<!-- トークルーム ------------------------------------------------------------------>
 <div class="container">
 	<div class="row">
 		<div class="col-8 offset-2 chat_room" style="background-color: #2c3e50;">
@@ -23,6 +24,7 @@
 </div>
 
 <script>
+	//トークルーム遷移時に入力フォーム記載場所にスクロールする(最新トークは下にあるため)
 	var element = document.getElementById('target'); // 移動させたい位置の要素を取得
     var rect = element.getBoundingClientRect();
     var position = rect.top;

@@ -1,5 +1,8 @@
+//モーダルを隠す
 $("#user-modal").modal("hide");
+//モーダルの背景を隠す
 $('.modal-backdrop').remove();
-// $('.modal-open').remove();
+//編集内容を差し替える
 $("#user_info_edit").html("<%= escape_javascript(render 'user_info_edit', user: @user) %>")
+//モーダルを隠す(modal-openクラスのremove)
 element.classList.remove('.modal-open');

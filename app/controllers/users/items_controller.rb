@@ -30,7 +30,7 @@ class Users::ItemsController < ApplicationController
 		@items = Item.order(created_at: :desc).limit(8)
 		@all_ranks = Item.find(Like.group(:item_id).order('count(item_id) desc').limit(8).pluck(:item_id))
 		if @items
-			@random = Item.order("RAND()").limit(8)
+			@random = Item.order("RANDOM()").limit(8)
 		end
 		@taists = Taist.all
 	end

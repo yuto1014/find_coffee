@@ -37,12 +37,12 @@ class Users::UsersController < ApplicationController
 				gon.item = @like_recommend
 				gon.taist = @like_recommend.taist
 			else
-				@like_recommend = Item.order("RAND()").last
+				@like_recommend = Item.order("RANDOM()").last
 				gon.item = @like_recommend
 				gon.taist = @like_recommend.taist
 			end
 		else
-			@like_recommend = Item.order("RAND()").last
+			@like_recommend = Item.order("RANDOM()").last
 			gon.item = @like_recommend
 			gon.taist = @like_recommend.taist
 		end
