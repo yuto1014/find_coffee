@@ -159,7 +159,7 @@
     padding-right: 50px;
 }
 .top_item_index {
-    width: 93%;
+    width: 27%;
     float: left;
     text-align: center;
     margin:2em 16px;
@@ -306,8 +306,206 @@ margin-left: 101px;
   color: #faf0e6;
 }
 
+/* スマートフォンサイズ（425px）以下の際に適用される設定 ---------------------------------------------*/
+@media screen and (max-width:425px) {
+    .top_comment_text {
+        position: absolute;
+        right: 24%;
+        top: 24%;
+        color: white;
+        border: solid 5px;
+        padding: 10px;
+        border-radius: 11px;
+        font-size: 13px;
+        box-sizing: border-box;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+    }
+    .chart_left {
+        width: 200px;
+        height: 100vw;
+        position: absolute;
+        top: -50px;
+        left: -36px;
+        margin: 56px;
+        /* margin-left: 101px; */
+    }
+    .chart_left .top {
+        font-size: 14px;
+    }
+    .chart_left .middle {
+        margin-top: 8px;
+        font-size: 10px;
+    }
+    .chart_left .bottom {
+        margin-top: 11px;
+        font-size: 2px;
+        width: 152px;
+    }
+    .chart_right_img {
+        margin-left: 233%;
+        margin-top: 10%;
+        width: 97px;
+        height: 117px;
+        box-sizing: border-box;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+    }
+    .map_left_img {
+        margin-left: 26%;
+        margin-top: 13%;
+        width: 106px;
+        height: 150px;
+        box-sizing: border-box;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+    }
+    .map_right {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        flex-direction: row-reverse;
+        width: 130px;
+        height: 100vw;
+        position: absolute;
+        top: -49px;
+        left: 18%;
+        margin: 56px;
+        margin-left: 101px;
+    }
+    .map_right .top {
+        font-size: 14px;
+    }
+    .map_right .middle {
+        margin-top: 8px;
+        font-size: 10px;
+        width: 150px;
+    }
+    .map_right .bottom {
+        margin-top: 11px;
+        font-size: 2px;
+        width: 152px;
+    }
+    .index {
+        position: relative;
+        display: -webkit-box;
+        display: flex;
+        margin-top: 44px;
+    }
+    .index_left {
+        margin-left: 37px;
+        padding-top: 0px;
+        padding-right: 2px;
+        margin-top: 0px;
+    }
+    .index_left .top {
+        font-size: 14px;
+    }
+    .index_left .middle {
+        font-size: 3px;
+        min-width: 99px;
+    }
+    .top_item_index {
+        width: 26%;
+        float: left;
+        text-align: center;
+        margin: 3px 2px;
+        position: relative;
+        padding: 0.5em 1.5em;
+        border-top: none;
+        border-bottom: none;
+        box-sizing: border-box;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+    }
+    .index_right {
+        margin-top: 15px;
+    }
+    .index_right_image {
+        width: 30px;
+        height: 30px;
+    }
+    .top_item_index .item_index_prof {
+        display: none;
+    }
+    .top_item_index .item-like {
+        display: none;
+    }
+    .top_item_index .index_left {
+        margin-top: 0px;
+    }
+    .top_item_index:before, .top_item_index:after{
+        display: none;
+    }
+    .top_item_index:before {
+        display: none;
+    }
+    .top_item_index:after {
+        display: none;
+    }
+    .information {
+        padding-top: 20px;
+        padding-left: 0px;
+    }
+    .information h1 {
+        font-size: 20px;
+    }
+    .information ul {
+        width: 0px;
+        margin: 42px;
+    }
+    .information li {
+        width: 25px;
+    }
+    .information_icon1 {
+        width: 50px;
+        height: 50px;
+    }
+    .information_icon2 {
+        width: 50px;
+        height: 50px;
+    }
+    .information_icon3 {
+        width: 50px;
+        height: 50px;
+    }
+    .information_text1 {
+        text-align: none;
+        margin-top: 10px;
+        font-size: 5px;
+        width: 49px;
+    }
+    .information_text2 {
+        text-align: none;
+        margin-top: 10px;
+        font-size: 5px;
+        width: 49px;
+    }
+    .information_text3 {
+        text-align: none;
+        margin-top: 10px;
+        font-size: 5px;
+        width: 49px;
+    }
+    .information_none1  {
+        font-size: 1px;
+        width: 111px;
+    }
+    .information_none2  {
+        font-size: 1px;
+        width: 111px;
+    }
+    .information_none3  {
+        font-size: 1px;
+        width: 111px;
+    }
+    #back-to-top {
+       font-size: 0.5em;
+    }
+    .fa-5x {
+        font-size: 0.5em;
+    }
 
-
+}
 
 
 
