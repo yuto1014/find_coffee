@@ -138,7 +138,7 @@ class Users::ItemsController < ApplicationController
 	end
 
 	def search
-	　#itemのタイトル(name)を曖昧検索
+	#itemのタイトル(name)を曖昧検索
       	@items = Item.where('items.name LIKE(?)', "%#{params[:search]}%").page(params[:page]).per(20).order(created_at: :desc)
       	#フォームに入力した内容を取ってくる
       	@search_result = "#{params[:search]}"
