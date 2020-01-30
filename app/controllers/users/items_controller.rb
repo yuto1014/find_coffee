@@ -27,19 +27,24 @@ class Users::ItemsController < ApplicationController
 	end
 
 	def index
+		#新着順
 		@items = Item.order(created_at: :desc).limit(8)
+		#いいね数が多い順
 		@all_ranks = Item.find(Like.group(:item_id).order('count(item_id) desc').limit(8).pluck(:item_id))
 		if @items
+			#ランダム(mysqlではRAND())
 			@random = Item.order("RANDOM()").limit(8)
 		end
 		@taists = Taist.all
 	end
 
 	def index_add
+		#paramsのナンバーの数字で新着順かいいね順かを判別
 		if params[:sort] == "1"
 			@items = Item.page(params[:page]).per(20).order(created_at: :desc)
 		elsif params[:sort] == "2"
 			@items = Item.find(Like.group(:item_id).order('count(item_id) desc').pluck(:item_id))
+			#ページネーション
 			@items = Kaminari.paginate_array(@items).page(params[:page]).per(20)
 		end
 	end
@@ -47,13 +52,16 @@ class Users::ItemsController < ApplicationController
 	def follow_index
 		@item_all = Item.all
 		@user = User.find(current_user.id)
+		#@userのフォローしているユーザー
 		@follow_users = @user.following
+		#@follow_usersの投稿
 		@items = @item_all.where(user_id: @follow_users).order(created_at: :desc)
 		@items = Kaminari.paginate_array(@items).page(params[:page]).per(20)
 	end
 
 	def show
 		@item = Item.find(params[:id])
+		#railsの変数をchart.jsに渡す
 		gon.item_show = @item
 		gon.taist_show = @item.taist
 		@comment = Comment.new
@@ -67,6 +75,7 @@ class Users::ItemsController < ApplicationController
 
 	def research
 		@items = Item.all.order(created_at: :desc)
+		#コーヒーマップ(FIND)の各ブロックに紐づいた投稿を新着順で5つ
 		@taist1 = Taist.where(refresh:3, bitter:0, body:0, fruity:3).order(created_at: :desc).limit(5)
 		@taist2 = Taist.where(refresh:3, bitter:1, body:0, fruity:2).order(created_at: :desc).limit(5)
 		@taist3 = Taist.where(refresh:2, bitter:0, body:1, fruity:3).order(created_at: :desc).limit(5)
@@ -86,6 +95,7 @@ class Users::ItemsController < ApplicationController
 	end
 
 	def taist_research
+		#コーヒーマップ(FIND)の各ブロックに応じたモーダル内"もっと見る"を押した時のparamsナンバーで判別
 		if params[:sort] == "1"
 			@taists = Taist.where(refresh:3, bitter:0, body:0, fruity:3).page(params[:page]).per(20).order(created_at: :desc)
 		elsif params[:sort] == "2"
@@ -128,11 +138,14 @@ class Users::ItemsController < ApplicationController
 	end
 
 	def search
-      @items = Item.where('items.name LIKE(?)', "%#{params[:search]}%").page(params[:page]).per(20).order(created_at: :desc)
-      @search_result = "#{params[:search]}"
+	　	#itemのタイトル(name)を曖昧検索
+      	@items = Item.where('items.name LIKE(?)', "%#{params[:search]}%").page(params[:page]).per(20).order(created_at: :desc)
+      	#フォームに入力した内容を取ってくる
+      	@search_result = "#{params[:search]}"
     end
 
     def media_search
+    	#レスポンシブ時の検索フォーム
     	@items = Item.order(created_at: :desc).limit(8)
     end
 
@@ -143,6 +156,7 @@ class Users::ItemsController < ApplicationController
   	end
 
 	def correct_user
+		#ログインユーザーとparamsユーザーが同じでないとプロフィールの編集と更新はできない
 		@item = Item.find(params[:id])
 		if current_user != @item.user
 			redirect_to root_path

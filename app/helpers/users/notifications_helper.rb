@@ -5,6 +5,7 @@ module Users::NotificationsHelper
 	  @comment = nil
 	  your_item = link_to 'あなたの投稿', users_item_path(notification), style:"font-weight: bold;"
 	  @visiter_comment = notification.comment_id
+	  #notification.actionがfollowかlikeかcommentか
 	  case notification.action
 	    when "follow" then
 	      tag.a(notification.visiter.name, href:users_user_path(@visiter), style:"font-weight: bold;")+"があなたをフォローしました"

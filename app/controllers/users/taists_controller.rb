@@ -1,6 +1,7 @@
 class Users::TaistsController < ApplicationController
 	before_action :authenticate_user!
 	def new
+		#cocoonで親子同時保存
 		@taist = Taist.new
 		@taist.items.build
 	end

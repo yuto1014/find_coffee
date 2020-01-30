@@ -1,3 +1,4 @@
+//DM内容----------------------------------------------------
 .balloon1-top {
   position: relative;
   display: inline-block;
@@ -9,7 +10,6 @@
   font-size: 16px;
   background: #e0edff;
 }
-
 .balloon1-top:before {
   content: "";
   position: absolute;
@@ -19,7 +19,6 @@
   border: 15px solid transparent;
   border-bottom: 15px solid #e0edff;
 }
-
 .balloon1-top p {
   margin: 0;
   padding: 0;

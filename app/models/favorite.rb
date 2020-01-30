@@ -1,4 +1,5 @@
 class Favorite < ApplicationRecord
+#未使用-----------------------------------------------------------------------
   belongs_to :user
   belongs_to :item
 

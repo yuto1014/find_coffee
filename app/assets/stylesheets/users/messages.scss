@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//message------------------------------------------------------------------------------------------
 section.message_box {
   padding: 10px;
   border: 1px solid black;
@@ -23,9 +24,9 @@ div.message_form {
   font-size: 1.0em;
 }
 
-/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+/* スマートフォンサイズ（425px）以下の際に適用される設定 -----------------------------------------------------------------*/
 @media screen and (max-width:425px) {
-  //message-------------------------------------------------//
+  //message--------------------------------------------------------------------------------------------
   .col-6.content_box {
   	-webkit-box-flex: 0;
     flex: 0;

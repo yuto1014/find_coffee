@@ -3,18 +3,19 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
-
+  #ログインする時に退会済み(is_deleted==true)のユーザーを弾く
   def active_for_authentication?
     super && (self.is_deleted == false)
   end
-
+  #バリデーション
   validates :name, presence: true, length: {maximum: 10}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX }
-
+  #アソシエーション
   has_many :likes, dependent: :destroy
   has_many :liked_items, through: :likes, source: :item
+  #既にいいねしているかどうか
   def already_liked?(item)
     self.likes.exists?(item_id: item.id)
   end
@@ -25,6 +26,7 @@ class User < ApplicationRecord
   has_many :contact, dependent: :destroy
 
   has_many :items, dependent: :destroy
+  #refile
   attachment :profile_image
 
 
@@ -41,7 +43,7 @@ class User < ApplicationRecord
 
    has_many :active_notifications, class_name: "Notification", foreign_key: "visiter_id", dependent: :destroy
    has_many :passive_notifications, class_name: "Notification", foreign_key: "visited_id", dependent: :destroy
-
+   #フォロー時の通知
    def create_notification_follow!(current_user)
     temp = Notification.where(["visiter_id = ? and visited_id = ? and action = ? ",current_user.id, id, 'follow'])
     if temp.blank?
@@ -76,7 +78,7 @@ class User < ApplicationRecord
     徳島県:36,香川県:37,愛媛県:38,高知県:39,
     福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,沖縄県:47
   }
-
+  #facebookログイン時のauth
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
     unless user
