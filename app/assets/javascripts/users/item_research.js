@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+    //FIND(コーヒーマップのカップアイコンクリックで発火)
 	//モーダル表示
   $('.js-modal-open1').on('click',function(){
         $('.js-modal1').fadeIn();

@@ -1,3 +1,4 @@
+<!-- フォローしているユーザーの投稿(ヘッダーリンク：タイムライン) ----------------------------------------------------------->
 <section class="container clearfix">
 	<div class="row item_index_row">
 			<div class="col-md-12">
@@ -5,20 +6,24 @@
 					<div class="item_index">
 						<div class="coffee_image">
 							<%= link_to users_item_path(item) do %>
-								<%= attachment_image_tag item, :image, size: "190x190" %>
+								<%= attachment_image_tag item, :image, size: "190x190", class: "coffee_image_media" %>
 							<% end %>
 						</div>
-						<div class="coffee_opinion">
-							<%= item.name %>
-						</div>
+						<!-- <div class="coffee_opinion">
+							<!-%= link_to users_item_path(item) do %>
+								<!-%= truncate(item.name, length: 8) %>
+							<!- end %>
+						</div> -->
 						<div class="row">
-							<div class="col-md-8">
-								<%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %>
-								@<%= link_to "#{item.user.name}", users_user_path(item.user_id) %>
+							<div class="col-md-8 item_index_media_user">
+								<%= link_to users_user_path(item.user_id) do %>
+									<%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "30x30" %>
+									<span style="color: black;">@<%= truncate(item.user.name, length: 5) %></span>
+								<% end %>
 							</div>
 							<div class="col-md-4 item-like">
 								<div class="item_like_<%= item.id %>">
-								 	<%= render 'like', item: item %>
+								 	<%= render 'users/items/like', item: item %>
 								</div>
 						</div>
 						</div>

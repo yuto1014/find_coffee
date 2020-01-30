@@ -1,3 +1,17 @@
 // Place all the styles related to the users::notifications controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+
+/* スマートフォンサイズ（425px）以下の際に適用される設定--------------------------------------------------------- */
+@media screen and (max-width:425px) {
+  //index-----------------------------------------------------------------------------------------------
+  #media_notice_box {
+    margin: 50px 50px;
+    margin-left: 15px;
+    word-break: keep-all;
+  }
+}

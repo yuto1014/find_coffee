@@ -1,18 +1,18 @@
 class Message < ApplicationRecord
-
+	#アソシエーション
 	belongs_to :from, class_name: "User"
 	belongs_to :to, class_name: "User"
 
-	# Scopes
+	#スコープ
 	default_scope -> {order(created_at: :asc)}
 
-	# Validations
+	#バリデーション
 	validates :from_id, presence: true
 	validates :to_id, presence: true
 	validates :room_id, presence: true
 	validates :content, presence: true, length: {maximum: 50}
 
-	# Methods
+	#最新500ルーム
 	def Message.recent_in_room(room_id)
 	  where(room_id: room_id).last(500)
 	end

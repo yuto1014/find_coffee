@@ -25,6 +25,7 @@
 
 $(document).on("turbolinks:load", function() {
 	//ヘッダーナブバー右
+  //nav_tagホバー時に発火(nav_tag_textの表示)
   $('.nav_tag1').hover(
     function(){
       $('.nav_tag_text1').fadeIn();
@@ -115,7 +116,8 @@ $(document).on("turbolinks:load", function() {
     }
     );
 
-  //トップページ機能説明
+  //トップページFunction(機能説明)-----------------------------------
+  //アイコンホバー時に発火(addClass)
   $('.information_list1').hover(
     function() {
       $(this).find('.information_none1').addClass('text-active');
@@ -143,7 +145,7 @@ $(document).on("turbolinks:load", function() {
     }
     );
 
-  //スクロールでフェードイン
+  //スクロールでフェイドイン--------------------------------------------
   function animation(){
     $('.fadeIn').each(function(){
       //ターゲットの位置を取得
@@ -164,7 +166,8 @@ $(document).on("turbolinks:load", function() {
     animation();
   });
 
-  //マウスホバー
+  //マウスパララックス----------------------------------------
+  //マウスの座標を取得
   $('body').mousemove(function(e) {
       // console.log(e.clientX, e.clientY);
       var cx = $(this).width() / 2;
@@ -179,7 +182,7 @@ $(document).on("turbolinks:load", function() {
       // $('#mouse_box3').css('top', cy + dy * 1.3);
     });
 
-  //検索フォーム
+  //検索フォーム-----------------------------------------
   var show = document.getElementById('show');
   var hide = document.getElementById('hide');
 
@@ -192,6 +195,7 @@ $(document).on("turbolinks:load", function() {
     $('.search-form').removeClass('search-form-open');
   });
 
+  //ハンバーガーメニュー-----------------------------------
   $(function() {
     $('.menu-trigger').on('click', function() {
       $(this).toggleClass('active');
