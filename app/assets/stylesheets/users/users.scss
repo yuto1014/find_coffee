@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-//user_show
+//user_show-------------------------------------------------------------------------------------------
 .profile-img {
 	border-radius: 50%;
 	border: 1px solid #c0c0c06b;
@@ -65,13 +65,13 @@
     }
 }
 .user_name {
-	font-size: 27px;
+	  font-size: 27px;
 }
 .prof_image {
-	margin-left: 20px;
+	  margin-left: 20px;
 }
 .item_post {
-	margin-top: 20px;
+	   margin-top: 20px;
 }
 .mypage_list {
     padding: 0.5em 1em;
@@ -82,7 +82,7 @@
     height: 60px;
 }
 .mypage {
-	width: 100%;
+	  width: 100%;
     margin: 50px auto 0;
     float:left;
 }
@@ -92,7 +92,7 @@
     padding-top: 5px;
 }
 #calendar {
-	padding: 5px;
+	  padding: 5px;
     margin-left: 20px;
     /* border: 1px solid black; */
     border-radius: 5px;
@@ -100,7 +100,7 @@
     height: 464px;
 }
 .mypage_recommend {
-	border: solid 1px black;
+	  border: solid 1px black;
     border-radius: 5px;
     padding: 5px;
 }
@@ -155,7 +155,7 @@
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
-//sign_up--------------------------------------------------------//
+//sign_up------------------------------------------------------------------------------------------------
 .signup-container {
     background-color: white;
     padding: 50px;
@@ -207,9 +207,9 @@
   padding: 0;
 }
 
-/* スマートフォンサイズ（425px）以下の際に適用される設定 ---------------------------------------------*/
+/* スマートフォンサイズ（425px）以下の際に適用される設定 ---------------------------------------------------------*/
 @media screen and (max-width:425px) {
-      //show-------------------------------------------------//
+      //show------------------------------------------------------------------------------------------------
      #user_info {
         margin-left: 0;
      }
@@ -348,7 +348,7 @@
         margin-left: 50px;
         word-break: keep-all;
     }
-    //sign_in-----------------------------------------------------------------------------
+    //sign_in---------------------------------------------------------------------------------------------
     .test_user {
       display: none;
     }

@@ -1,15 +1,16 @@
 class Item < ApplicationRecord
-
+	#バリデーション
 	validates :name, presence: true, length: {maximum: 30}
 	validates :opinion, presence: true, length: {maximum: 140}
 	validates :place, presence: true, length: {maximum: 30}
 	# validates :image_id, presence: true
-
+	#アソシエーション
 	belongs_to :taist
 	belongs_to :user
 
 	has_many :likes, dependent: :destroy
 	has_many :liked_users, through: :likes, source: :user
+	#いいねしているかどうか
 	def liked_by?(user)
 		likes.where(user_id: user.id).exists?
 	end
@@ -17,7 +18,7 @@ class Item < ApplicationRecord
 	has_many :favorites, dependent: :destroy
 
 	has_many :comments, dependent: :destroy
-
+	#refile
 	attachment :image
 
 	has_many :notifications, dependent: :destroy

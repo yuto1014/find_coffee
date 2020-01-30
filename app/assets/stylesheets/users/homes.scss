@@ -11,6 +11,7 @@
 // 	position: relative;
 // }
 
+//トップページ----------------------------------------------------
 .home-body {
     background-image: url(image-path("back8.jpg"));
     background-size: cover;
@@ -83,9 +84,9 @@
 //     opacity: 1;
 // }
 .fadeIn {
-  opacity : 0;
-  transform: translateY(20px);
-  transition: 1s;
+    opacity : 0;
+    transform: translateY(20px);
+    transition: 1s;
 }
 .chart_right_img {
     margin-left: 192%;
