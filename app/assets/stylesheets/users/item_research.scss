@@ -1,3 +1,4 @@
+//FIND(コーヒーマップ)------------------------------------------------------------------------------
 .research_back {
   background-image: url(image-path("coffee14.jpg"));
   background-size: cover;
@@ -7,7 +8,7 @@
     margin: 253px 295px 80px auto;
     position: relative;
 }
-.taist {
+#taist {
 	display: grid;
 	grid-template-rows: 160px 160px 160px 160px;
 	grid-template-columns: 160px 160px 160px 160px;
@@ -454,32 +455,43 @@
     height: 200px;
 }
 
-
+/* スマートフォンサイズ（425px）以下の際に適用される設定 ---------------------------------------------*/
 @media screen and (max-width:425px) {
-     //find-------------------------------------------------//
-    .modal{
+     //FIND--------------------------------------------------------------------------------
+      .modal{
         width: 100vw;
-    }
-    .modal__bg{
+      }
+      .modal__bg{
         height: 100vh;
         position: absolute;
         width: 100%;
-    }
-    .modal__content{
+      }
+      .modal__content{
         background: #fff;
-        left: 50%;
+        left: 18%;
         padding: 0;
         position: absolute;
-        top: 50%;
-        transform: translate(-50%,-50%);
-        width: 100%;
-    }
-    .profile_image.profile-img-circle.find_prof_image_media {
+        top: 14%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 85vw;
+      }
+      .research_modal_media > h2 {
+        font-size: 14px;
+        margin-top: 10px;
+      }
+      .research_modal_media > table > tbody > tr > td > a > p {
+        font-size: 10px;
+      }
+      .research_modal_media > table > thead > tr > th {
+        font-size: 10px;
+      }
+      .profile_image.profile-img-circle.find_prof_image_media {
         margin: 0;
         width: 20px!important;
         height: 20px!important;
-    }
-    　.taist {
+      }
+      #taist {
         grid-template-rows: 50px 50px 50px 50px;
         grid-template-columns: 50px 50px 50px 50px;
       }
@@ -560,8 +572,12 @@
       }
       .research_prof {
         margin: 0;
-        width: 30px;
-        height: 30px;
+        width: 15px;
+        height: 15px;
+      }
+      .fa-question-circle {
+        top: 10%;
+        left: 34%;
       }
 }
 

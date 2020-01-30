@@ -126,6 +126,7 @@
             <li><%= link_to "INDEX", users_items_path, class: "btn-default nav_tag_text" %></li>
             <li><%= link_to "TIMELINE", users_follow_index_path, class: "btn-default nav_tag_text" %></li>
             <li><%= link_to "MESSAGE", users_rooms_path, class: "btn-default nav_tag_text" %></li>
+            <li><%= link_to "NOTICE", users_notifications_path, class: "btn-default nav_tag_text" %></li>
             <li><%= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "btn-default nav_tag_text" %></li>
           </ul>
         </div>
@@ -142,7 +143,7 @@
           <h3 class="head_image_content_left">朝はシャキッと</h3>
           <h3 class="head_image_content_right">夜はゆったり</h3>
       </div>
-      <header class="navbar", style="padding: 0 50px; margin-bottom: 0px;">
+      <header class="navbar media_navbar_signout", style="padding: 0 50px; margin-bottom: 0px;">
         <nav class="nav navbar-nav navbar-left">
           <a href="/" class="header_title">FindBestCoffee .</a>
         </nav>
@@ -172,6 +173,22 @@
                 <%= render 'users/items/search_form' %>
           </ul>
         </nav>
+        <div id="sp-menu">
+          <h2>MENU</h2>
+          <ul>
+            <li><%= link_to 'FIND', users_items_research_path, class: "btn-default nav_tag_text" %></li>
+            <li><%= link_to "INDEX", users_items_path, class: "btn-default nav_tag_text" %></li>
+            <li><%= link_to "LOGIN", new_user_session_path, class: "btn-default nav_tag_text" %></li>
+            <li><%= link_to 'SIGNUP', new_user_registration_path, class: "btn-default nav_tag_text" %></li>
+          </ul>
+        </div>
+        <div id="hm-icon">
+          <a class="menu-trigger" href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
       <% end %>
     </header>
     <%= yield %>
@@ -183,31 +200,49 @@
       </footer>
     <% elsif user_signed_in? %>
       <footer class="footer sign_out">
-          <h1 class="text-center" style="color: white;">コーヒーでリラックスタイムを。</h1>
-          <h2 class="text-center header_title" style="margin: 30px 0px;">FindBestCoffee .</h2>
+          <h1 class="text-center media_none" style="color: white;">コーヒーでリラックスタイムを。</h1>
+          <h2 class="text-center header_title media_none" style="margin: 30px 0px;">FindBestCoffee .</h2>
           <nav>
-          <ul class="text-center footer_info" style="color: white">
-            <li class="footer_nav"><%= link_to "お問い合わせ", new_users_contact_path, style: "color: white;" %></li>
-            <li class="footer_nav"><%= link_to "利用規約", users_homes_term_path, style: "color: white;" %></li>
-            <li class="footer_nav"><%= link_to "プライバシーポリシー", users_homes_privacy_policy_path, style: "color: white;" %></li>
-          </ul>
-          <nav>
+            <ul class="text-center footer_info" style="color: white">
+              <li class="footer_nav"><%= link_to "お問い合わせ", new_users_contact_path, style: "color: white;" %></li>
+              <li class="footer_nav"><%= link_to "利用規約", users_homes_term_path, style: "color: white;" %></li>
+              <li class="footer_nav"><%= link_to "プライバシーポリシー", users_homes_privacy_policy_path, style: "color: white;" %></li>
+            </ul>
+          </nav>
           <p class="text-center" style="color: white">Copyright © 2019 FindBestCoffee. All rights reserved.</p>
-        </footer>
+      </footer>
+          <nav class="media_footer_menu">
+            <ul>
+              <li><%= link_to users_items_path do %><i class="fas fa-home"></i><% end %></li>
+              <li><%= link_to users_items_research_path do %><i class="fas fa-th-large"></i><% end %></li>
+              <li><%= link_to users_items_media_search_path do %><i class="fas fa-search"></i><% end %></li>
+              <li><%= link_to users_rooms_path do %><i class="far fa-envelope"></i><% end %></li>
+              <li><%= link_to users_user_path(current_user.id) do %><i class="fas fa-user"></i><% end %></li>
+            </ul>
+          </nav>
+
+
     <% else %>
         <footer class="footer sign_out">
           <h1 class="text-center" style="color: white;">まずは無料で始めてみよう。</h1>
           <p class="text-center"><%= link_to "SIGN UP", new_user_registration_path, class: "btn btn-light sign_up_btn" %></p>
           <h2 class="text-center header_title" style="margin-top: 50px;">FindBestCoffee .</h2>
           <nav>
-          <ul class="text-center footer_info" style="color: white">
-            <li class="footer_nav"><%= link_to "お問い合わせ", new_users_contact_path, style: "color: white;" %></li>
-            <li class="footer_nav"><%= link_to "利用規約", users_homes_term_path, style: "color: white;" %></li>
-            <li class="footer_nav"><%= link_to "プライバシーポリシー", users_homes_privacy_policy_path, style: "color: white;" %></li>
-          </ul>
-          <nav>
+            <ul class="text-center footer_info" style="color: white">
+              <li class="footer_nav"><%= link_to "お問い合わせ", new_users_contact_path, style: "color: white;" %></li>
+              <li class="footer_nav"><%= link_to "利用規約", users_homes_term_path, style: "color: white;" %></li>
+              <li class="footer_nav"><%= link_to "プライバシーポリシー", users_homes_privacy_policy_path, style: "color: white;" %></li>
+            </ul>
+          </nav>
           <p class="text-center" style="color: white">Copyright © 2019 FindBestCoffee. All rights reserved.</p>
         </footer>
+        <nav class="media_footer_menu_signout">
+            <ul>
+              <li><%= link_to users_items_path do %><i class="fas fa-home"></i><% end %></li>
+              <li><%= link_to users_items_research_path do %><i class="fas fa-th-large"></i><% end %></li>
+              <li><%= link_to users_items_media_search_path do %><i class="fas fa-search"></i><% end %></li>
+            </ul>
+          </nav>
     <% end %>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>

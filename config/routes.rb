@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     get "items/index_add" => "items#index_add", as: 'index_add'
     put 'items/:id/hide' => 'items#hide', as: 'items_hide'
     get 'items/:id/show_like' => 'items#show_like', as: 'items_show_like'
+    get 'items/media_search' => 'items#media_search', as: 'items_media_search'
     get "users/:id/likes" => "users#likes"
     get "users/:id/my_index" => "users#my_index", as: 'my_index'
     get "users/taist_research" => "items#taist_research", as: 'taist_research'

@@ -1,5 +1,6 @@
 $(function(){
-		console.log("show modal")
+	//新規投稿時のコーヒーマップチェックで発火
+	//チェックされたrefreshナンバーに紐づいた'disabled'を解除する
   		$('#refresh1').click(function() {
       			$(".hidden1").attr('disabled', false);
   		});

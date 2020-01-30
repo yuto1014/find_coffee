@@ -1,0 +1,43 @@
+<!-- レスポンシブ時使用ページ(r検索フォームと新着順に投稿を記載) --------------------------------------------------------->
+<div class="container">
+	<div class="row">
+		<div class="media_search">
+			<%= form_tag(users_search_path, :method => 'get') do %>
+			    <form id="form2_search" action="自分のサイトURL" method="get">
+			    	<%= text_field_tag :search, params[:search], class: "form-control", id: "sbox2_search", placeholder: "タイトルを入力"%>
+					<!-- <input id="sbox2"  id="s" name="s" type="text" placeholder="タイトルを入力"/> -->
+					<button type="submit" id="sbtn2_search"><i class="fas fa-search search-icon2_search"></i></button>
+				</form>
+			<% end %>
+		</div>
+		<div id="item_index_new_search">
+			<% @items.each do |item| %>
+				<div class="item_index">
+					<div class="coffee_image">
+						<%= link_to users_item_path(item) do %>
+							<%= attachment_image_tag item, :image, size: "190x190", class: "coffee_image_media" %>
+						<% end %>
+					</div>
+					<!-- <div class="coffee_opinion">
+						<!-%= link_to users_item_path(item) do %>
+							<!-%= truncate(item.name, length: 8) %>
+						<!- end %>
+					</div> -->
+					<div class="row">
+						<div class="col-md-8 item_index_media_user">
+							<%= link_to users_user_path(item.user_id) do %>
+								<%= attachment_image_tag item.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "30x30" %>
+								<span style="color: black;">@<%= truncate(item.user.name, length: 5) %></span>
+							<% end %>
+						</div>
+						<div class="col-md-4 item-like">
+							<div class="item_like_<%= item.id %>">
+							 	<%= render 'users/items/like', item: item %>
+							</div>
+					</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
