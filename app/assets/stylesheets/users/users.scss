@@ -1,12 +1,7 @@
-// Place all the styles related to the users/users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-//user_show-------------------------------------------------------------------------------------------
 .profile-img {
-	border-radius: 50%;
-	border: 1px solid #c0c0c06b;
-	margin: 0px 0px 20px 127px;
+    border-radius: 50%;
+    border: 1px solid #c0c0c06b;
+    margin: 0px 0px 20px 127px;
     -webkit-transition: all .3s;
     transition: all .3s;
 }
@@ -16,8 +11,8 @@
     transform: translateY(-5px);
 }
 #user_info {
-	margin-left: 85px;
-	display: flex;
+    margin-left: 85px;
+    display: flex;
 }
 .user_info_sub_current {
     display: inline-flex;
@@ -155,6 +150,10 @@
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
+.show_like_item > .row > .item-like {
+    margin-top: -29px;
+    margin-left: 148px;
+}
 //sign_up------------------------------------------------------------------------------------------------
 .signup-container {
     background-color: white;
@@ -286,8 +285,9 @@
      .recommend_item_right > table > thead > tr > th {
         width: 70px;
      }
-     .item_index_prof {
-        margin-top: -5px;
+     .show_like_item > .row > .item_index_prof {
+        margin-top: 49px !important;
+        margin-right: 0px;
     }
      #mypage_prof_img {
         margin: 16px 0px 20px -96px;
@@ -331,11 +331,10 @@
      .show_like > .item_index > .row > .col-md-8 {
         margin-top: 20px;
      }
-     .item-like {
-        position: absolute;
-        top: -71px;
-        right: -135px;
-        margin-left: -64px;
+     .show_like_item > .row > .item-like {
+         position: absolute;
+         top: 293px;
+         right: -76px;
      }
      .container > .modal-dialog > .prof_modal {
         width: 86vw;

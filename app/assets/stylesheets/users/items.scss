@@ -64,7 +64,8 @@
 	margin-top: 24px;
 }
 .item_index_prof {
-  margin-top: 18px;
+  margin-top: 49px!important;
+  margin-right: 91px;
 }
 .btn-circle-stitch {
   display: inline-block;
@@ -404,6 +405,13 @@ canvas {
     width: 30px;
     height: 30px;
   }
+  .item_index_row2 {
+       display: none!important;
+   }
+  .item_index_row3 {
+       display: none!important;
+   }
+
   //show--------------------------------------------------------------------------------------------------
   .item-show-container {
     padding: 0;

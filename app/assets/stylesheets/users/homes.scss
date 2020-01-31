@@ -160,7 +160,7 @@
     padding-right: 50px;
 }
 .top_item_index {
-    width: 94%;
+    width: 27%;
     float: left;
     text-align: center;
     margin:2em 16px;
@@ -191,6 +191,10 @@
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
+}
+.top_item_index > .row > .item-like {
+   top: -34px;
+   right: -163px;
 }
 .information {
     padding-top: 130px;
@@ -312,7 +316,7 @@ margin-left: 101px;
     .top_comment_text {
         position: absolute;
         right: 24%;
-        top: 24%;
+        top: 32%;
         color: white;
         border: solid 5px;
         padding: 10px;
@@ -340,7 +344,7 @@ margin-left: 101px;
     }
     .chart_left .bottom {
         margin-top: 11px;
-        font-size: 2px;
+        font-size: 8px;
         width: 152px;
     }
     .chart_right_img {
@@ -383,7 +387,7 @@ margin-left: 101px;
     }
     .map_right .bottom {
         margin-top: 11px;
-        font-size: 2px;
+        font-size: 8px;
         width: 152px;
     }
     .index {
@@ -402,7 +406,7 @@ margin-left: 101px;
         font-size: 14px;
     }
     .index_left .middle {
-        font-size: 3px;
+        font-size: 10px;
         min-width: 99px;
     }
     .top_item_index {
@@ -445,8 +449,15 @@ margin-left: 101px;
     }
     .information {
         padding-top: 20px;
-        padding-left: 0px;
+        padding-left: 23px;
+	margin-bottom: 80px;
     }
+    .information_list1 {
+        margin-right: 69px;
+    }
+    .information_list3 {
+        margin-left: 60px;
+    }	
     .information h1 {
         font-size: 20px;
     }
@@ -488,15 +499,15 @@ margin-left: 101px;
         width: 49px;
     }
     .information_none1  {
-        font-size: 1px;
+        font-size: 10px;
         width: 111px;
     }
     .information_none2  {
-        font-size: 1px;
+        font-size: 10px;
         width: 111px;
     }
     .information_none3  {
-        font-size: 1px;
+        font-size: 10px;
         width: 111px;
     }
     #back-to-top {
@@ -507,8 +518,6 @@ margin-left: 101px;
     }
 
 }
-
-
 
 
 
