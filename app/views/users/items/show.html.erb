@@ -26,6 +26,12 @@
 								<th><%= @item.created_at.strftime("%Y年%m月%d日 ") %></th>
 							</tr>
 							<tr>
+								<th>投稿者</th>
+								<th><%= link_to users_user_path(@item.user_id) do %>
+										@<%= @item.user.name %>
+									<% end %>
+								</th>
+							<tr>
 								<th>いいね</th>
 								<th>
 									<div id="item__show_like_<%= @item.id %>">
