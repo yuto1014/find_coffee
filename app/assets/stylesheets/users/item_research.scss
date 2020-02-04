@@ -1,8 +1,8 @@
 //FIND(コーヒーマップ)------------------------------------------------------------------------------
 .research_back {
-  background-image: url(image-path("coffee14.jpg"));
-  background-size: cover;
-  background-position: center;
+    background-image: url(image-path("coffee14.jpg"));
+    background-size: cover;
+    background-position: center;
 }
 .research_box {
     margin: 253px 295px 80px auto;
@@ -13,7 +13,6 @@
 	grid-template-rows: 160px 160px 160px 160px;
 	grid-template-columns: 160px 160px 160px 160px;
 }
-
 .refresh_box1 {
     border: solid 1px #C0C0C0;
     grid-row: 1;

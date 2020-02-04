@@ -32,8 +32,7 @@ class Users::ItemsController < ApplicationController
 		#いいね数が多い順
 		@all_ranks = Item.find(Like.group(:item_id).order('count(item_id) desc').limit(8).pluck(:item_id))
 		if @items
-			#ランダム(mysqlではRAND())
-			@random = Item.order("RAND()").limit(8)
+		   @random = Item.order("RAND()").limit(8)
 		end
 		@taists = Taist.all
 	end
