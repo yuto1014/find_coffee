@@ -468,13 +468,14 @@
       }
       .modal__content{
         background: #fff;
-        left: 18%;
+        left: 52%;
         padding: 0;
         position: absolute;
-        top: 14%;
+        top: 35%;
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         width: 85vw;
+	font-size: 8px;
       }
       .research_modal_media > h2 {
         font-size: 14px;
@@ -576,12 +577,10 @@
         height: 15px;
       }
       .fa-question-circle {
-        top: 10%;
+        top: 14%;
         left: 34%;
       }
 }
-
-
 
 
 
