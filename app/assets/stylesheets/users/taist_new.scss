@@ -1,37 +1,36 @@
 //taist_new(新規投稿時コーヒーマップ)----------------------------------------------------------------------
 .js-modal-close {
-  position: absolute;
-  right: 0px;
-  top: 0px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
 }
 .taist-index {
-	display: grid;
-  position: relative;
-	grid-template-rows: 80px 80px 80px 80px;
-	grid-template-columns: 80px 80px 80px 80px;
-  margin: 30px 0px 38px 71px;
+  	display: grid;
+    position: relative;
+  	grid-template-rows: 80px 80px 80px 80px;
+  	grid-template-columns: 80px 80px 80px 80px;
+    margin: 30px 0px 38px 71px;
 }
 .map-title-top {
-  position: absolute;
-  top: -29px;
-  left: 124px;
+    position: absolute;
+    top: -29px;
+    left: 124px;
 }
 .map-title-left {
-  position: absolute;
-  top: 146px;
-  left: -81px;
+    position: absolute;
+    top: 146px;
+    left: -81px;
 }
 .map-title-right {
-  position: absolute;
-  top: 147px;
-  left: 332px;
+    position: absolute;
+    top: 147px;
+    left: 332px;
 }
 .map-title-bottom {
-  position: absolute;
-  top: 324px;
+    position: absolute;
+    top: 324px;
     left: 142px;
 }
-
 .refresh_content1 {
     border: solid 1px #C0C0C0;
     grid-row: 1;
@@ -168,36 +167,34 @@
     border-right: solid 2px black;
     position: relative;
 }
-
  .radio_btn {
-   display: none;
+    display: none;
  }
 // チェックが入っていないとき
 .radio_btn + label {
-  display: inline-block;
-  box-sizing: border-box;
-  font-size: 12px;
-  font-weight: normal;
-  color: #888;
-  border: solid 1px #EDBC6C;
-  border-radius: 5px;
-  margin-top: 10px;
-  padding: 3px 10px;
-  background-color: #fff;
-  cursor: pointer;
-  position: absolute;
-  top: 15px;
-  left: 18px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 12px;
+    font-weight: normal;
+    color: #888;
+    border: solid 1px #EDBC6C;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 3px 10px;
+    background-color: #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    left: 18px;
 }
 // チェックが入ったとき
 .radio_btn:checked + label {
-  color: #fff;
-  background-color: #EDBC6C;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    color: #fff;
+    background-color: #EDBC6C;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
-
 .modal-title {
-  margin: 0 auto;
+    margin: 0 auto;
 }
 
 

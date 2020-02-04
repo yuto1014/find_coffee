@@ -11,15 +11,12 @@ section.message_box {
     height: 400px;
   }
 }
-
 div.message_form {
   padding-top: 10px;
 }
-
 #message_sender {
   font-size: 1.1em;
 }
-
 #message_content {
   font-size: 1.0em;
 }
@@ -33,7 +30,7 @@ div.message_form {
     max-width: 100%;
   }
   .offset-3.content_box {
-	margin-left: 0;
+	  margin-left: 0;
   }
   .profile-img-circle.dm_prof_media {
   	margin: 0;
@@ -41,4 +38,4 @@ div.message_form {
   	height: 30px;
   }
 
-  }
+}

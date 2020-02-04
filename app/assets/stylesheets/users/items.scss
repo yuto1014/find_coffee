@@ -34,20 +34,20 @@
   border-bottom: solid 2px black;
 }
 .item_index:before, .item_index:after{
-    content: '';
-    position: absolute;
-    top: -10px;
-    width: 2px;
-    height: -webkit-calc(100% + 20px);
-    height: calc(100% + 20px);
-    background-color: black;
+  content: '';
+  position: absolute;
+  top: -10px;
+  width: 2px;
+  height: -webkit-calc(100% + 20px);
+  height: calc(100% + 20px);
+  background-color: black;
 }
 .item_index:before {left: 10px;}
 .item_index:after {right: 10px;}
 .item_index:hover {
-    -webkit-transform: translateY(-5px);
-    -ms-transform: translateY(-5px);
-    transform: translateY(-5px);
+  -webkit-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 .item_index_media_user {
   margin-top: 18px;
@@ -67,6 +67,26 @@
   margin-top: 49px!important;
   margin-right: 91px;
 }
+//使い方ボタン
+.how_to {
+  display: inline-block;
+  text-decoration: none;
+  background: #C0C0C0;
+  color: #FFF;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 5px #C0C0C0;
+  border: dashed 1px #FFF;
+  transition: .4s;
+  position: absolute;
+  top: 58%;
+  left: 90%;
+  cursor: pointer;
+}
 .btn-circle-stitch {
   display: inline-block;
   text-decoration: none;
@@ -85,55 +105,54 @@
   right:50px;
   bottom:50px;
 }
-
 .btn-circle-stitch:hover {
   background: #212529;
   box-shadow: 0px 0px 0px 5px #212529;
 }
 .button {
-    position: relative;
-    padding: 1em 1.5em;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    outline: none;
-    font-size: 18px;
-    margin: 1em 0.8em;
+  position: relative;
+  padding: 1em 1.5em;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  font-size: 18px;
+  margin: 1em 0.8em;
 }
 .type1 {
-    color:#566473;
+  color:#566473;
 }
 .type1::after,
 .type1::before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 20%;
-    height: 20%;
-    border: 2px solid;
-    transition: all 0.6s ease;
-    border-radius: 2px;
+  content: '';
+  display: block;
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  border: 2px solid;
+  transition: all 0.6s ease;
+  border-radius: 2px;
 }
 .type1::after {
-    bottom: 0;
-    right: 0;
-    border-top-color: transparent;
-    border-left-color: transparent;
-    border-bottom-color: #566473;
-    border-right-color: #566473;
+  bottom: 0;
+  right: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: #566473;
+  border-right-color: #566473;
 }
 .type1::before {
-    top: 0;
-    left: 0;
-    border-bottom-color: transparent;
-    border-right-color: transparent;
-    border-top-color: #566473;
-    border-left-color: #566473;
+  top: 0;
+  left: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-top-color: #566473;
+  border-left-color: #566473;
 }
 .type1:hover:after,
 .type1:hover:before {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 .type1_link:hover {
   text-decoration: none;
@@ -142,39 +161,39 @@
   text-decoration: none;
 }
 .type2 {
-    color:#566473;
+  color:#566473;
 }
 .type2::after,
 .type2::before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 20%;
-    height: 20%;
-    border: 2px solid;
-    transition: all 0.6s ease;
-    border-radius: 2px;
+  content: '';
+  display: block;
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  border: 2px solid;
+  transition: all 0.6s ease;
+  border-radius: 2px;
 }
 .type2::after {
-    bottom: 0;
-    right: 0;
-    border-top-color: transparent;
-    border-left-color: transparent;
-    border-bottom-color: #566473;
-    border-right-color: #566473;
+  bottom: 0;
+  right: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: #566473;
+  border-right-color: #566473;
 }
 .type2::before {
-    top: 0;
-    left: 0;
-    border-bottom-color: transparent;
-    border-right-color: transparent;
-    border-top-color: #566473;
-    border-left-color: #566473;
+  top: 0;
+  left: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-top-color: #566473;
+  border-left-color: #566473;
 }
 .type2:hover:after,
 .type2:hover:before {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 .type2_link:hover {
   text-decoration: none;
@@ -213,19 +232,19 @@ canvas {
 }
 .comment-box {
 	padding-left: 65px;
-    border: solid 1px #C0C0C0;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 1060px;
-    position: relative;
+  border: solid 1px #C0C0C0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 1060px;
+  position: relative;
 }
 .comment-avatar {
 	position: absolute;
-    left: 22px;
+  left: 22px;
 }
 .comment-text {
 	margin-left: 10px;
-    margin-top: 5px;
+  margin-top: 5px;
 }
 .comment-date {
 	position: absolute;
@@ -263,15 +282,12 @@ canvas {
   left: 30px;
   top: 254px;
 }
-// .comment {
-//   display: none;
-// }
 .more {
   display: block;
   cursor :pointer;
 }
 #menu_bar01 {
-    display: none;
+  display: none;
 }
 #links01 {
   height: 0;
@@ -283,8 +299,8 @@ canvas {
   transition: all 0.5s;
 }
 #menu_bar01:checked ~ #links01  {
-    height: 54px;
-    opacity: 1;
+  height: 54px;
+  opacity: 1;
 }
 
 /* スマートフォンサイズ（425px）以下の際に適用される設定------------------------------------------------------------ */
@@ -305,6 +321,9 @@ canvas {
     top: 42px;
     left: -44px;
     margin-top: 10px;
+  }
+  .how_to {
+    display: none;
   }
   //新規投稿ボタン----------------------------------------------------------------------------------------------
   .btn-circle-stitch {
