@@ -44,7 +44,6 @@ class Users::UsersController < ApplicationController
 				gon.taist = @like_recommend.taist
 			end
 		else
-			#@userがいいねした投稿が無ければランダムで投稿を表示する
 			@like_recommend = Item.order("RAND()").last
 			gon.item = @like_recommend
 			gon.taist = @like_recommend.taist

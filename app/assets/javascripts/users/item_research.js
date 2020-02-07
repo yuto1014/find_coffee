@@ -1,147 +1,148 @@
 $(document).ready(function() {
     //FIND(コーヒーマップのカップアイコンクリックで発火)
 	//モーダル表示
-  $('.js-modal-open1').on('click',function(){
-        $('.js-modal1').fadeIn();
+    //コーヒーマップ左上:左上:zoneA
+    $('.js-modal-openA').on('click',function(){
+        $('.js-modalA').fadeIn();
         return false;
     });
     $('.js-modal-close').on('click',function(){
-        $('.js-modal1').fadeOut();
+        $('.js-modalA').fadeOut();
         return false;
     });
-
-    $('.js-modal-open2').on('click',function(){
-        $('.js-modal2').fadeIn();
-        return false;
-    });
-    $('.js-modal-close').on('click',function(){
-        $('.js-modal2').fadeOut();
-        return false;
-    });
-
-    $('.js-modal-open3').on('click',function(){
-        $('.js-modal3').fadeIn();
+    //コーヒーマップ左上:右上:zoneB
+    $('.js-modal-openB').on('click',function(){
+        $('.js-modalB').fadeIn();
         return false;
     });
     $('.js-modal-close').on('click',function(){
-        $('.js-modal3').fadeOut();
+        $('.js-modalB').fadeOut();
         return false;
     });
-
-    $('.js-modal-open4').on('click',function(){
-        $('.js-modal4').fadeIn();
-        return false;
-    });
-    $('.js-modal-close').on('click',function(){
-        $('.js-modal4').fadeOut();
-        return false;
-    });
-
-    $('.js-modal-open5').on('click',function(){
-        $('.js-modal5').fadeIn();
+    //コーヒーマップ左上:右下:zoneC
+    $('.js-modal-openC').on('click',function(){
+        $('.js-modalC').fadeIn();
         return false;
     });
     $('.js-modal-close').on('click',function(){
-        $('.js-modal5').fadeOut();
+        $('.js-modalC').fadeOut();
         return false;
     });
-
-    $('.js-modal-open6').on('click',function(){
-        $('.js-modal6').fadeIn();
-        return false;
-    });
-    $('.js-modal-close').on('click',function(){
-        $('.js-modal6').fadeOut();
-        return false;
-    });
-
-    $('.js-modal-open7').on('click',function(){
-        $('.js-modal7').fadeIn();
+    //コーヒーマップ左上:右下:zoneD
+    $('.js-modal-openD').on('click',function(){
+        $('.js-modalD').fadeIn();
         return false;
     });
     $('.js-modal-close').on('click',function(){
-        $('.js-modal7').fadeOut();
+        $('.js-modalD').fadeOut();
         return false;
     });
-
-    $('.js-modal-open8').on('click',function(){
-        $('.js-modal8').fadeIn();
-        return false;
-    });
-    $('.js-modal-close').on('click',function(){
-        $('.js-modal8').fadeOut();
-        return false;
-    });
-
-    $('.js-modal-open9').on('click',function(){
-        $('.js-modal9').fadeIn();
+    //コーヒーマップ右上:左上:zoneE
+    $('.js-modal-openE').on('click',function(){
+        $('.js-modalE').fadeIn();
         return false;
     });
     $('.js-modal-close').on('click',function(){
-        $('.js-modal9').fadeOut();
+        $('.js-modalE').fadeOut();
         return false;
     });
-
-    $('.js-modal-open10').on('click',function(){
-        $('.js-modal10').fadeIn();
-        return false;
-    });
-    $('.js-modal-close').on('click',function(){
-        $('.js-modal10').fadeOut();
-        return false;
-    });
-
-    $('.js-modal-open11').on('click',function(){
-        $('.js-modal11').fadeIn();
+    //コーヒーマップ右上:右上:zoneF
+    $('.js-modal-openF').on('click',function(){
+        $('.js-modalF').fadeIn();
         return false;
     });
     $('.js-modal-close').on('click',function(){
-        $('.js-modal11').fadeOut();
+        $('.js-modalF').fadeOut();
         return false;
     });
-
-    $('.js-modal-open12').on('click',function(){
-        $('.js-modal12').fadeIn();
-        return false;
-    });
-    $('.js-modal-close').on('click',function(){
-        $('.js-modal12').fadeOut();
-        return false;
-    });
-
-    $('.js-modal-open13').on('click',function(){
-        $('.js-modal13').fadeIn();
+    //コーヒーマップ右上:左下:zoneG
+    $('.js-modal-openG').on('click',function(){
+        $('.js-modalG').fadeIn();
         return false;
     });
     $('.js-modal-close').on('click',function(){
-        $('.js-modal13').fadeOut();
+        $('.js-modalG').fadeOut();
         return false;
     });
-
-    $('.js-modal-open14').on('click',function(){
-        $('.js-modal14').fadeIn();
-        return false;
-    });
-    $('.js-modal-close').on('click',function(){
-        $('.js-modal14').fadeOut();
-        return false;
-    });
-
-    $('.js-modal-open15').on('click',function(){
-        $('.js-modal15').fadeIn();
+    //コーヒーマップ右上:右下:zoneH
+    $('.js-modal-openH').on('click',function(){
+        $('.js-modalH').fadeIn();
         return false;
     });
     $('.js-modal-close').on('click',function(){
-        $('.js-modal15').fadeOut();
+        $('.js-modalH').fadeOut();
         return false;
     });
-
-    $('.js-modal-open16').on('click',function(){
-        $('.js-modal16').fadeIn();
+    //コーヒーマップ左下:左上:zoneI
+    $('.js-modal-openI').on('click',function(){
+        $('.js-modalI').fadeIn();
         return false;
     });
     $('.js-modal-close').on('click',function(){
-        $('.js-modal16').fadeOut();
+        $('.js-modalI').fadeOut();
+        return false;
+    });
+    //コーヒーマップ左下:右上:zoneJ
+    $('.js-modal-openJ').on('click',function(){
+        $('.js-modalJ').fadeIn();
+        return false;
+    });
+    $('.js-modal-close').on('click',function(){
+        $('.js-modalJ').fadeOut();
+        return false;
+    });
+    //コーヒーマップ左下:左下:zoneK
+    $('.js-modal-openK').on('click',function(){
+        $('.js-modalK').fadeIn();
+        return false;
+    });
+    $('.js-modal-close').on('click',function(){
+        $('.js-modalK').fadeOut();
+        return false;
+    });
+    //コーヒーマップ左下:右下:zoneL
+    $('.js-modal-openL').on('click',function(){
+        $('.js-modalL').fadeIn();
+        return false;
+    });
+    $('.js-modal-close').on('click',function(){
+        $('.js-modalL').fadeOut();
+        return false;
+    });
+    //コーヒーマップ右下:左上:zoneM
+    $('.js-modal-openM').on('click',function(){
+        $('.js-modalM').fadeIn();
+        return false;
+    });
+    $('.js-modal-close').on('click',function(){
+        $('.js-modalM').fadeOut();
+        return false;
+    });
+    //コーヒーマップ右下:右上:zoneN
+    $('.js-modal-openN').on('click',function(){
+        $('.js-modalN').fadeIn();
+        return false;
+    });
+    $('.js-modal-close').on('click',function(){
+        $('.js-modalN').fadeOut();
+        return false;
+    });
+    //コーヒーマップ右下:左下:zoneO
+    $('.js-modal-openO').on('click',function(){
+        $('.js-modalO').fadeIn();
+        return false;
+    });
+    $('.js-modal-close').on('click',function(){
+        $('.js-modalO').fadeOut();
+        return false;
+    });
+    //コーヒーマップ右下:右下:zoneP
+    $('.js-modal-openP').on('click',function(){
+        $('.js-modalP').fadeIn();
+        return false;
+    });
+    $('.js-modal-close').on('click',function(){
+        $('.js-modalP').fadeOut();
         return false;
     });
 

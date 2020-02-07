@@ -39,7 +39,24 @@ ol {
 li {
   list-style: none;
 }
+//マウスパララックス-----------------------------------------------------------------------------------------
+.mouse_box {
+  position: fixed;
+  opacity: 0.6;
+  left: 300px;
+}
+#mouse_box {
+  width: 60px;
+  height: 60px;
+  top: 140px;
+  background: #b0c4de;
+  border-radius: 50%;
+}
 //ヘッダー--------------------------------------------------------------------------------------------------
+header {
+  overflow-x: hidden;
+}
+//画像
 .head_image {
   background-image: url(image-path("coffee15.jpg"));
   background-size: cover;
@@ -48,6 +65,7 @@ li {
   text-align: center;
   padding-top: 38px;
 }
+//「あなたも見つかるハマるコーヒー」
 .head_image_title {
 	margin: 30px auto;
   position: relative;
@@ -60,7 +78,7 @@ li {
   -webkit-transition: all .3s;
   transition: all .3s;
 }
-	.head_image_title:after {
+.head_image_title:after {
   position: absolute;
   content: '';
   top: 100%;
@@ -75,6 +93,7 @@ li {
   -ms-transform: translateY(-5px);
   transform: translateY(-5px);
 }
+//「朝はシャキッと」
 .head_image_content_left {
 	float: left;
   margin: 0 0 0 504px;
@@ -95,6 +114,7 @@ li {
   -ms-transform: translateY(-5px);
   transform: translateY(-5px);
 }
+//「夜はゆったり」
 .head_image_content_right {
 	float: left;
   margin: 0 0 0 0;
@@ -116,6 +136,7 @@ li {
   -ms-transform: translateY(-5px);
   transform: translateY(-5px);
 }
+//画像下の黒いヘッダー
 .navbar {
   display: flex;
   width: 100%;
@@ -124,12 +145,19 @@ li {
   background: #181818;
   z-index: 10;
   height: 110px;
+  position: relative;
 }
+//画像下の黒いヘッダー:ナビ部分
+.nav {
+  margin-bottom: -16px;
+}
+//「FindBestCoffee.」
 .header_title {
 	color: white;
   font-family: 'Dancing Script', cursive, sans-serif;
   font-size: 30px;
 }
+//画像下の黒いヘッダー:右側部分
 .navbar-right {
   list-style: none;
   margin: 0;
@@ -138,23 +166,18 @@ li {
   justify-content: space-between;
   color: white;
 }
+//画像下の黒いヘッダー:右側部分:「ようこそ●●さん」
 .navbar-text {
 	margin-right: 49px;
 }
+//検索フォーム----------------------------------------------------------------------------------
+//虫眼鏡アイコン
 .fa-search {
-	color: white;
+  color: white;
   font-size: 27px;
 }
-header {
-	overflow-x: hidden;
-}
-.navbar {
-	position: relative;
-}
-.nav {
-  margin-bottom: -16px;
-}
-//検索フォーム----------------------------------------------------------------------------------
+//検索フォーム(users/items/_search_form.html.erb)----------------------------------------------
+//検査フォーム
 .search-form {
   z-index: 2;
   position: absolute;
@@ -167,44 +190,21 @@ header {
   width: 180px;
   min-height: 100%;
   transition: .4s;
-  }
+}
+//クリックアクション
 .search-form-open {
 	right: 106px;
 	background: #181818;
 	top: 30px;
 }
-//マウスパララックス-------------------------------------------------------------------------
-.mouse_box {
-  position: fixed;
-  opacity: 0.6;
-  left: 300px;
-}
-#mouse_box1 {
-  width: 60px;
-  height: 60px;
-  top: 140px;
-  background: #b0c4de;
-  border-radius: 50%;
-}
-// #mouse_box2 {
-//     width: 50px;
-//     height: 50px;
-//     top: 155px;
-//     background: blue;
-// }
-// #mouse_box3 {
-//     width: 60px;
-//     height: 60px;
-//     top: 165px;
-//     background: yellow;
-// }
-//item_search----------------------------------------------------------------------------
-#form2{
+//検索フォームを括る
+#search_form_area{
   position:relative;
   max-width:300px;
   margin-bottom:20px;
 }
-#sbox2{
+//検索フォーム
+#search_area{
   height: 50px;
   padding: 0 10px;
   position: absolute;
@@ -215,7 +215,8 @@ header {
   background: #eee;
   width: 238px;
 }
-#sbtn2{
+//送信ボタンを括る(虫眼鏡アイコン)
+#sbtn_submit{
   position: absolute;
   left: 0;
   top: 0;
@@ -225,79 +226,86 @@ header {
 #sbtn5:hover{
   color:#7fbfff;
 }
+//送信ボタン(虫眼鏡アイコン)
 .search-icon2 {
-	position: absolute;
+  position: absolute;
   color: black;
   font-size: 26px;
   right: -223px;
   top: 13px;
 }
+//検索フォームを閉じる
 .fa-times {
-	position: absolute;
+  position: absolute;
   right: -85px;
   color: white;
   top: 17px;
   font-size: 23px;
 }
+//----------------------------------------------------------------------------------------
+//画像下の黒いヘッダー:右側部分
 .nav_tag_text {
   margin-right: 27px;
   color: white;
 }
-.nav_tag_text1 {
+//画像下の黒いヘッダー:右側部分:「マイページ」
+.nav_tag_text_mypage {
   display: none;
   color: white;
   font-size: 9px;
   margin: 5px;
 }
-.nav_tag_text2 {
+//画像下の黒いヘッダー:右側部分:「コーヒーを探す」
+.nav_tag_text_find {
   display: none;
   color: white;
   font-size: 9px;
   margin: 5px -10px;
 }
-.nav_tag_text3 {
+//画像下の黒いヘッダー:右側部分:「投稿一覧」
+.nav_tag_text_index {
   display: none;
   color: white;
   font-size: 9px;
   margin: 5px;
 }
-.nav_tag_text4 {
+//画像下の黒いヘッダー:右側部分:「ログアウト」
+.nav_tag_text_signout {
   display: none;
   color: white;
   font-size: 9px;
   margin: 5px;
 }
-.nav_tag_text5 {
+//画像下の黒いヘッダー:右側部分:「フォローユーザーの投稿」
+.nav_tag_text_timeline {
   display: none;
   color: white;
   font-size: 9px;
   margin: 5px;
 }
-.nav_tag_text6 {
+//画像下の黒いヘッダー:右側部分:「新規登録」
+.nav_tag_text_signup {
   display: none;
   color: white;
   font-size: 9px;
   margin: 5px;
 }
-.nav_tag_text7 {
+//画像下の黒いヘッダー:右側部分:「ログイン」
+.nav_tag_text_signin {
   display: none;
   color: white;
   font-size: 9px;
   margin: 5px;
 }
-.nav_tag_text8 {
+//画像下の黒いヘッダー:右側部分:「ダイレクトメッセージ」
+.nav_tag_text_dm {
   display: none;
   color: white;
   font-size: 9px;
   margin: 5px;
 }
-.nav_tag_text9 {
-  display: none;
-  color: white;
-  font-size: 9px;
-  margin: 5px;
-}
-.nav_tag_text10 {
+//画像下の黒いヘッダー:右側部分:「通知」
+.nav_tag_text_notice {
   display: none;
   color: white;
   font-size: 9px;
@@ -310,7 +318,8 @@ header {
   height: 110px;
   position: fixed;
 }
-//ユーザーログアウトログイン時フッター-----------------------------------------------------------------
+//ユーザーログアウト・ログイン時フッター-----------------------------------------------------------------
+//フッター画像
 .sign_out {
   background-image: url(image-path("back16.jpg"));
   background-size: cover;
@@ -318,22 +327,26 @@ header {
   height: 500px;
   padding-top: 150px;
 }
+//新規登録ボタン
 .sign_up_btn {
     width: 283px;
     margin-top: 30px;
 }
+//問い合わせ・利用規約・プライバシーポリシーを括る
 .footer_info {
   display: flex;
   margin-left: 38%;
 }
+//問い合わせ・利用規約・プライバシーポリシー
 .footer_nav {
   text-align: center;
   margin-right: 2%;
 }
+//レスポンシブ時のフッター
 .media_footer_menu {
   display: none;
 }
-// ハンバーガーアイコン -------------------------------------------------------------------------------
+//ハンバーガーアイコン -------------------------------------------------------------------------------
 #hm-icon{
   position: fixed;
   right: 20px;
@@ -383,7 +396,7 @@ header {
   transform: translateY(-20px) rotate(45deg);
   background-color: #fff;
 }
-// ハンバーガーアイコン/spメニュー ----------------------------------------------------------------
+//ハンバーガーアイコン/spメニュー ----------------------------------------------------------------
 #sp-menu {
   position: fixed;
   top: 0;
@@ -406,68 +419,86 @@ header {
   font-weight: bold;
 }
 @media screen and (min-width:426px) {
+  //レスポンシブ時のフッター(ログアウト時)
   .media_footer_menu_signout {
     display: none;
   }
 }
 /* スマートフォンサイズ（425px）以下の際に適用される設定------------------------------------------ */
 @media screen and (max-width:425px) {
-.head_image {
-  display: none;
+  //マウスパララックス
+  #mouse_box {
+    display: none;
   }
+  //ヘッダー-----------------------------------------------------------------------------
   header {
     width: 100%;
   }
-  #mouse_box1 {
+  //ヘッダー画像
+  .head_image {
     display: none;
   }
-  .media_search {
-    margin: 50px auto;
-  }
-  #sbtn2_search {
-    position: absolute;
-    top: 15%;
-    right: 26%;
-  }
-  #item_index_new_search {
-    margin-left: 47px;
-  }
-  .fa-search {
-    color: black;
-  }
+  //黒いヘッダー
   .nav_right {
     display: none;
-    }
+  }
+  //黒いヘッダー
   .navbar {
     min-width: 0px;
     background-color: #f8f9fa;
     width: 100vw;
     height: 18vw;
   }
+  //ログアウト時ヘッダー(レスポンシブ時専用)
   .media_navbar_signout {
     min-width: 0px;
     background-color: #f5f5f5;
     width: 100vw;
   }
+  //「FindBestCoffee .」
   .header_title {
     color: black;
   }
+  //検索フォーム
+  .media_search {
+    margin: 50px auto;
+  }
+  //検索フォーム
+  #sbtn2_search {
+    position: absolute;
+    top: 15%;
+    right: 26%;
+  }
+  //検索フォーム
+  #item_index_new_search {
+    margin-left: 47px;
+  }
+  //虫眼鏡アイコン
+  .fa-search {
+    color: black;
+  }
+  //フッター--------------------------------------------------------------------------------------
   footer {
     display: none;
   }
-  footer > .media_none {
-    display: none;
-  }
+  //フッターを括る
   .sign_out {
     height: 152px;
     padding-top: 30px;
   }
+  //「コーヒーでリラックスタイムを」
+  footer > .media_none {
+    display: none;
+  }
+  //問い合わせ・利用規約・プライバシーポリシーを括る
   .footer_info {
     margin-left: 7%;
   }
+  //ハンバーガーメニュー
   #hm-icon {
     display: block;
   }
+  //レスポンシブ用フッター
   .media_footer_menu {
     display: block;
     font-size: 27px;
@@ -487,6 +518,7 @@ header {
   .media_footer_menu > ul > li > i {
     color: white;
   }
+  //レスポンシブ用フッター
   .media_footer_menu_signout {
     display: block;
     font-size: 27px;
@@ -506,25 +538,31 @@ header {
   .media_footer_menu_signout > ul > li > i {
     color: white;
   }
+  //レスポンシブ用フッター:家のアイコン
   .fa-home {
     color: white;
     display: block;
   }
+  //レスポンシブ用フッター:格子のアイコン
   .fa-th-large {
     color: white;
     display: block;
   }
+  //レスポンシブ用フッター:人のアイコン
   .fa-user {
     color: white;
     display: block;
   }
+  //レスポンシブ用フッター:メールのアイコン
   .fa-envelope {
     color: white;
     display: block;
   }
+  //レスポンシブ用フッター:虫眼鏡のアイコン
   .media_footer_menu > ul > li > a > .fa-search {
     color: white;
   }
+  //レスポンシブ用フッター(ログアウト時):虫眼鏡のアイコン
   .media_footer_menu_signout > ul > li > a > .fa-search {
     color: white;
   }

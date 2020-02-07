@@ -1,7 +1,46 @@
 <!-- 投稿一覧(ヘッダーリンク；index) ------------------------------------------------------------------>
+<!-- 使い方ボタン-------------------------------------------------------------------------------------------->
+<div class="find_question" data-toggle="modal" data-target="#exampleModalLong">
+	<h7 class="how_to" style="font-size: 17px;">使い方</h7>
+</div>
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h2 class="text-center">Findt Best Coffeeについて</h2>
+        <hr>
+        <h3 class="btn btn-dark">MYPAGE</h3><br>
+        	『コーヒーライフ』では、カレンダーで飲んだコーヒーを記録したり、予定管理をすることができます。<br>
+			『あなたへのおすすめ』は、あなたがいいねした投稿と同じテイストの投稿をご提案致します。
+		<hr>
+        <h3 class="btn btn-dark">INDEX</h3><br>
+        	新着一覧・いいねランキング・オーナーのおすすめが見れます。<br>
+			新着一覧・いいねランキングは『もっと見る』でさらに見ることができます。
+		<hr>
+		<h3 class="btn btn-dark">新規投稿</h3><br>
+        	飲んだコーヒーを投稿しましょう。<br>
+			テイストを16個のブロックから選びます。<br>自分の好みと近い投稿はFINDから探せます。<br>
+			投稿をクリックし詳細へ飛ぶと、どのブロック(コーヒーマップ)の投稿なのかを確認できます。<br>また、テイストをチャートで見ることができます。
+		<hr>
+		<h3 class="btn btn-dark">FIND</h3><br>
+        	各投稿がコーヒーマップのどこに属しているかを示したものです。<br>
+			飲んだコーヒーやお気に入りのZONEを確認してみましょう。
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+      </div>
+    </div>
+  </div>
+</div>
 <section class="container clearfix">
 <!-- 投稿の新しい順 ------------------------------------------------------------------>
-	<div class="row item_index_row1">
+	<div class="row item_index_row_new_item">
 		<%= link_to users_index_add_path(sort:1), class: "type1_link" do %>
 		<div class="button type1">
 			<h2 class="item_title">新着投稿</h2>
@@ -13,7 +52,7 @@
 		</div>
 	</div>
 <!-- いいねしたユーザーの多い投稿ランキング ------------------------------------------------------------------>
-	<div class="row item_index_row2">
+	<div class="row item_index_row_like_lank_item">
 		<%= link_to users_index_add_path(sort:2), class: "type2_link" do %>
 			<div class="button type2">
 					<h2 class="item_title">いいねランキング</h2>
@@ -46,7 +85,7 @@
 		</div>
 	</div>
 <!-- 投稿をランダム表示(mysql:RAND()) ------------------------------------------------------------------>
-	<div class="row item_index_row3">
+	<div class="row item_index_row_random_item">
 		<button class="button type2">
 				<h2 class="item_title">オーナーのおすすめ</h2>
 		</button>
@@ -77,7 +116,7 @@
 			<% end %>
 		</div>
 	</div>
-<!-- 新規投稿ボタン ------------------------------------------------------------------>
+<!-- 新規投稿ボタン ------------------------------------------------------------------------------------------->
 	<%= link_to "新規投稿", new_users_taist_path, remote: true, class: "btn-circle-stitch" %>
 		<div id="item-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog">

@@ -1,20 +1,30 @@
-//FIND(コーヒーマップ)------------------------------------------------------------------------------
+//FIND(コーヒーマップ:users/items/research)------------------------------------------------------------------------------
+//背景画像
 .research_back {
-  background-image: url(image-path("coffee14.jpg"));
-  background-size: cover;
-  background-position: center;
+    background-image: url(image-path("coffee14.jpg"));
+    background-size: cover;
+    background-position: center;
 }
+//コーヒーマップの使い方の?マーク
+.fa-question-circle {
+    position: absolute;
+    left: 991px;
+    top: 647px;
+    font-size: 30px;
+}
+//コーヒーマップ全体
 .research_box {
     margin: 253px 295px 80px auto;
     position: relative;
 }
+//コーヒーマップ全体:グリッド
 #taist {
 	display: grid;
 	grid-template-rows: 160px 160px 160px 160px;
 	grid-template-columns: 160px 160px 160px 160px;
 }
-
-.refresh_box1 {
+//コーヒーマップ左上:左上:zoneA
+.refresh_boxA {
     border: solid 1px #C0C0C0;
     grid-row: 1;
     grid-column: 1;
@@ -23,134 +33,8 @@
     border-left: solid 2px black;
     position: relative;
 }
-.refresh_box2 {
-    border: solid 1px #C0C0C0;
-    grid-row: 1;
-    grid-column: 2;
-    background-color: #90735B;
-    border-top: solid 2px black;
-    border-right: solid 2px black;
-    position: relative;
-}
-.refresh_box3 {
-    border: solid 1px #C0C0C0;
-    grid-row: 2;
-    grid-column: 1;
-    background-color: #90735B;
-    border-left: solid 2px black;
-    border-bottom: solid 2px black;
-    position: relative;
-}
-.refresh_box4 {
-    border: solid 1px #C0C0C0;
-    grid-row: 2;
-    grid-column: 2;
-    background-color: #90735B;
-    border-right: solid 2px black;
-    border-bottom: solid 2px black;
-    position: relative;
-}
-.bitter_box1 {
-	border: solid 1px #C0C0C0;
-    grid-row: 1;
-    grid-column: 3;
-    background-color: #BB8E58;
-    border-top: solid 2px black;
-    position: relative;
-}
-.bitter_box2 {
-	border: solid 1px #C0C0C0;
-    grid-row: 1;
-    grid-column: 4;
-    background-color: #BB8E58;
-    border-top: solid 2px black;
-    border-right: solid 2px black;
-    position: relative;
-}
-.bitter_box3 {
-	border: solid 1px #C0C0C0;
-    grid-row: 2;
-    grid-column: 3;
-    background-color: #BB8E58;
-    border-bottom: solid 2px black;
-    position: relative;
-}
-.bitter_box4 {
-	border: solid 1px #C0C0C0;
-    grid-row: 2;
-    grid-column: 4;
-    background-color: #BB8E58;
-    border-right: solid 2px black;
-    border-bottom: solid 2px black;
-    position: relative;
-}
-.body_box1 {
-	border: solid 1px #C0C0C0;
-    grid-row: 3;
-    grid-column: 1;
-    background-color: #A26A50;
-    border-left: solid 2px black;
-    position: relative;
-}
-.body_box2 {
-	border: solid 1px #C0C0C0;
-    grid-row: 3;
-    grid-column: 2;
-    background-color: #A26A50;
-    border-right: solid 2px black;
-    position: relative;
-}
-.body_box3 {
-	border: solid 1px #C0C0C0;
-    grid-row: 4;
-    grid-column: 1;
-    background-color: #A26A50;
-    border-left: solid 2px black;
-    border-bottom: solid 2px black;
-    position: relative;
-}
-.body_box4 {
-	border: solid 1px #C0C0C0;
-    grid-row: 4;
-    grid-column: 2;
-    background-color: #A26A50;
-    border-bottom: solid 2px black;
-    border-right: solid 2px black;
-    position: relative;
-}
-.fruity_box1 {
-	border: solid 1px #C0C0C0;
-    grid-row: 3;
-    grid-column: 3;
-    background-color: #E5B777;
-    position: relative;
-}
-.fruity_box2 {
-	border: solid 1px #C0C0C0;
-    grid-row: 3;
-    grid-column: 4;
-    background-color: #E5B777;
-    border-right: solid 2px black;
-    position: relative;
-}
-.fruity_box3 {
-	border: solid 1px #C0C0C0;
-    grid-row: 4;
-    grid-column: 3;
-    background-color: #E5B777;
-    border-bottom: solid 2px black;
-    position: relative;
-}
-.fruity_box4 {
-	border: solid 1px #C0C0C0;
-    grid-row: 4;
-    grid-column: 4;
-    background-color: #E5B777;
-    border-bottom: solid 2px black;
-    border-right: solid 2px black;
-    position: relative;
-}
-.zone1 {
+//コーヒーマップ左上:左上:zoneA:コーヒーカップ
+.zoneA {
     position: absolute;
     font-size: 70px;
     top: 28%;
@@ -160,12 +44,23 @@
     -webkit-transition: all .3s;
     transition: all .3s;
 }
-.zone1:hover {
+.zoneA:hover {
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
-.zone2 {
+//コーヒーマップ左上:右上:zoneB
+.refresh_boxB {
+    border: solid 1px #C0C0C0;
+    grid-row: 1;
+    grid-column: 2;
+    background-color: #90735B;
+    border-top: solid 2px black;
+    border-right: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ左上:右上:zoneB:コーヒーカップ
+.zoneB {
     position: absolute;
     font-size: 70px;
     top: 28%;
@@ -175,12 +70,23 @@
     -webkit-transition: all .3s;
     transition: all .3s;
 }
-.zone2:hover {
+.zoneB:hover {
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
-.zone3 {
+//コーヒーマップ左上:右下:zoneC
+.refresh_boxC {
+    border: solid 1px #C0C0C0;
+    grid-row: 2;
+    grid-column: 1;
+    background-color: #90735B;
+    border-left: solid 2px black;
+    border-bottom: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ左上:右下:zoneC:コーヒーカップ
+.zoneC {
     position: absolute;
     font-size: 70px;
     top: 28%;
@@ -190,12 +96,23 @@
     -webkit-transition: all .3s;
     transition: all .3s;
 }
-.zone3:hover {
+.zoneC:hover {
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
-.zone4 {
+//コーヒーマップ左上:右下:zoneD
+.refresh_boxD {
+    border: solid 1px #C0C0C0;
+    grid-row: 2;
+    grid-column: 2;
+    background-color: #90735B;
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ左上:右下:zoneD:コーヒーカップ
+.zoneD {
     position: absolute;
     font-size: 70px;
     top: 28%;
@@ -205,12 +122,22 @@
     -webkit-transition: all .3s;
     transition: all .3s;
 }
-.zone4:hover {
+.zoneD:hover {
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
-.zone5 {
+//コーヒーマップ右上:左上:zoneE
+.bitter_boxE {
+	border: solid 1px #C0C0C0;
+    grid-row: 1;
+    grid-column: 3;
+    background-color: #BB8E58;
+    border-top: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ右上:左上:zoneE:コーヒーカップ
+.zoneE {
     position: absolute;
     font-size: 70px;
     top: 28%;
@@ -220,12 +147,23 @@
     -webkit-transition: all .3s;
     transition: all .3s;
 }
-.zone5:hover {
+.zoneE:hover {
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
-.zone6 {
+//コーヒーマップ右上:右上:zoneF
+.bitter_boxF {
+	border: solid 1px #C0C0C0;
+    grid-row: 1;
+    grid-column: 4;
+    background-color: #BB8E58;
+    border-top: solid 2px black;
+    border-right: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ右上:右上:zoneF:コーヒーカップ
+.zoneF {
     position: absolute;
     font-size: 70px;
     top: 28%;
@@ -235,12 +173,22 @@
     -webkit-transition: all .3s;
     transition: all .3s;
 }
-.zone6:hover {
+.zoneF:hover {
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
-.zone7 {
+//コーヒーマップ右上:左下:zoneG
+.bitter_boxG {
+	border: solid 1px #C0C0C0;
+    grid-row: 2;
+    grid-column: 3;
+    background-color: #BB8E58;
+    border-bottom: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ右上:左下:zoneG:コーヒーカップ
+.zoneG {
     position: absolute;
     font-size: 70px;
     top: 28%;
@@ -250,12 +198,23 @@
     -webkit-transition: all .3s;
     transition: all .3s;
 }
-.zone7:hover {
+.zoneG:hover {
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
-.zone8 {
+//コーヒーマップ右上:右下:zoneH
+.bitter_boxH {
+	border: solid 1px #C0C0C0;
+    grid-row: 2;
+    grid-column: 4;
+    background-color: #BB8E58;
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ右上:右下:zoneH:コーヒーカップ
+.zoneH {
     position: absolute;
     font-size: 70px;
     top: 28%;
@@ -265,12 +224,22 @@
     -webkit-transition: all .3s;
     transition: all .3s;
 }
-.zone8:hover {
+.zoneH:hover {
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
-.zone9 {
+//コーヒーマップ左下:左上:zoneI
+.body_boxI {
+	border: solid 1px #C0C0C0;
+    grid-row: 3;
+    grid-column: 1;
+    background-color: #A26A50;
+    border-left: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ左下:左上:zoneI:コーヒーカップ
+.zoneI {
     position: absolute;
     font-size: 70px;
     top: 28%;
@@ -280,12 +249,22 @@
     -webkit-transition: all .3s;
     transition: all .3s;
 }
-.zone9:hover {
+.zoneI:hover {
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
-.zone10 {
+//コーヒーマップ左下:右上:zoneJ
+.body_boxJ {
+	border: solid 1px #C0C0C0;
+    grid-row: 3;
+    grid-column: 2;
+    background-color: #A26A50;
+    border-right: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ左下:右上:zoneJ:コーヒーカップ
+.zoneJ {
     position: absolute;
     font-size: 70px;
     top: 28%;
@@ -295,12 +274,23 @@
     -webkit-transition: all .3s;
     transition: all .3s;
 }
-.zone10:hover {
+.zoneJ:hover {
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
-.zone11 {
+//コーヒーマップ左下:左下:zoneK
+.body_boxK {
+	border: solid 1px #C0C0C0;
+    grid-row: 4;
+    grid-column: 1;
+    background-color: #A26A50;
+    border-left: solid 2px black;
+    border-bottom: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ左下:左下:zoneK:コーヒーカップ
+.zoneK {
     position: absolute;
     font-size: 70px;
     top: 28%;
@@ -310,12 +300,23 @@
     -webkit-transition: all .3s;
     transition: all .3s;
 }
-.zone11:hover {
+.zoneK:hover {
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
-.zone12 {
+//コーヒーマップ左下:右下:zoneL
+.body_boxL {
+	border: solid 1px #C0C0C0;
+    grid-row: 4;
+    grid-column: 2;
+    background-color: #A26A50;
+    border-bottom: solid 2px black;
+    border-right: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ左下:右下:zoneL:コーヒーカップ
+.zoneL {
     position: absolute;
     font-size: 70px;
     top: 28%;
@@ -325,12 +326,21 @@
     -webkit-transition: all .3s;
     transition: all .3s;
 }
-.zone12:hover {
+.zoneL:hover {
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
-.zone13 {
+//コーヒーマップ右下:左上:zoneM
+.fruity_boxM {
+	border: solid 1px #C0C0C0;
+    grid-row: 3;
+    grid-column: 3;
+    background-color: #E5B777;
+    position: relative;
+}
+//コーヒーマップ右下:左上:zoneM:コーヒーカップ
+.zoneM {
     position: absolute;
     font-size: 70px;
     top: 28%;
@@ -340,12 +350,22 @@
     -webkit-transition: all .3s;
     transition: all .3s;
 }
-.zone13:hover {
+.zoneM:hover {
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
-.zone14 {
+//コーヒーマップ右下:右上:zoneN
+.fruity_boxN {
+	border: solid 1px #C0C0C0;
+    grid-row: 3;
+    grid-column: 4;
+    background-color: #E5B777;
+    border-right: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ右下:右上:zoneN:コーヒーカップ
+.zoneN {
     position: absolute;
     font-size: 70px;
     top: 28%;
@@ -355,12 +375,22 @@
     -webkit-transition: all .3s;
     transition: all .3s;
 }
-.zone14:hover {
+.zoneN:hover {
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
-.zone15 {
+//コーヒーマップ右下:左下:zoneO
+.fruity_boxO {
+	border: solid 1px #C0C0C0;
+    grid-row: 4;
+    grid-column: 3;
+    background-color: #E5B777;
+    border-bottom: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ右下:左下:zoneO:コーヒーカップ
+.zoneO {
     position: absolute;
     font-size: 70px;
     top: 28%;
@@ -370,12 +400,23 @@
     -webkit-transition: all .3s;
     transition: all .3s;
 }
-.zone15:hover {
+.zoneO:hover {
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
-.zone16 {
+//コーヒーマップ右下:右下:zoneP
+.fruity_boxP {
+	border: solid 1px #C0C0C0;
+    grid-row: 4;
+    grid-column: 4;
+    background-color: #E5B777;
+    border-bottom: solid 2px black;
+    border-right: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ右下:右下:zoneP:コーヒーマップ
+.zoneP {
     position: absolute;
     font-size: 70px;
     top: 28%;
@@ -385,7 +426,7 @@
     -webkit-transition: all .3s;
     transition: all .3s;
 }
-.zone16:hover {
+.zoneP:hover {
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
@@ -393,6 +434,7 @@
 .content{
     padding: 20px 0px 0px 0px;
 }
+//コーヒーカップクリックでモーダル表示
 .modal{
     display: none;
     height: 100vh;
@@ -400,12 +442,14 @@
     top: 0;
     width: 100%;
 }
+//モーダル閉じるxボタン
 .modal__bg{
     background: rgba(0,0,0,0.8);
     height: 100vh;
     position: absolute;
     width: 100%;
 }
+//モーダル内の内容
 .modal__content{
     background: #fff;
     left: 50%;
@@ -415,6 +459,12 @@
     transform: translate(-50%,-50%);
     width: 60%;
 }
+//モーダル内のコーヒーマップの図
+.coffee_map_zone_img {
+    width: 200px;
+    height: 200px;
+}
+//スッキリ
 .research-title-top {
     position: absolute;
     top: -41px;
@@ -422,6 +472,7 @@
     font-family: 'Ubuntu Mono', monospace;
     font-size: 25px;
 }
+//フルーティ
 .research-title-left {
     position: absolute;
     top: 301px;
@@ -429,6 +480,7 @@
     font-family: 'Ubuntu Mono', monospace;
     font-size: 25px;
 }
+//ビター
 .research-title-right {
     position: absolute;
     top: 300px;
@@ -437,6 +489,7 @@
     font-size: 25px;
     width: 90px;
 }
+//コク
 .research-title-bottom {
     position: absolute;
     top: 639px;
@@ -444,125 +497,39 @@
     font-family: 'Ubuntu Mono', monospace;
     font-size: 25px;
 }
-.fa-question-circle {
-    position: absolute;
-    left: 991px;
-    top: 647px;
-    font-size: 30px;
-}
-.coffee_map_zone_img {
-    width: 200px;
-    height: 200px;
-}
 
 /* スマートフォンサイズ（425px）以下の際に適用される設定 ---------------------------------------------*/
 @media screen and (max-width:425px) {
      //FIND--------------------------------------------------------------------------------
-      .modal{
-        width: 100vw;
+     //コーヒーマップ全体
+      .research_box {
+        margin: 80px 65px 29px 76px;
       }
-      .modal__bg{
-        height: 100vh;
-        position: absolute;
-        width: 100%;
-      }
-      .modal__content{
-        background: #fff;
-        left: 52%;
-        padding: 0;
-        position: absolute;
-        top: 35%;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        width: 85vw;
-	font-size: 8px;
-      }
-      .research_modal_media > h2 {
-        font-size: 14px;
-        margin-top: 10px;
-      }
-      .research_modal_media > table > tbody > tr > td > a > p {
-        font-size: 10px;
-      }
-      .research_modal_media > table > thead > tr > th {
-        font-size: 10px;
-      }
-      .profile_image.profile-img-circle.find_prof_image_media {
-        margin: 0;
-        width: 20px!important;
-        height: 20px!important;
-      }
+      //コーヒーマップ全体:グリッド
       #taist {
         grid-template-rows: 50px 50px 50px 50px;
         grid-template-columns: 50px 50px 50px 50px;
       }
-      .zone1 {
-        font-size: 22px;
-      }
-      .zone2 {
-        font-size: 22px;
-      }
-      .zone3 {
-        font-size: 22px;
-      }
-      .zone4 {
-        font-size: 22px;
-      }
-      .zone5 {
-        font-size: 22px;
-      }
-      .zone6 {
-        font-size: 22px;
-      }
-      .zone7 {
-        font-size: 22px;
-      }
-      .zone8 {
-        font-size: 22px;
-      }
-      .zone9 {
-        font-size: 22px;
-      }
-      .zone10 {
-        font-size: 22px;
-      }
-      .zone11 {
-        font-size: 22px;
-      }
-      .zone12 {
-        font-size: 22px;
-      }
-      .zone13 {
-        font-size: 22px;
-      }
-      .zone14 {
-        font-size: 22px;
-      }
-      .zone15 {
-        font-size: 22px;
-      }
-      .zone16 {
-        font-size: 22px;
-      }
-      .research_box {
-        margin: 80px 65px 29px 76px;
-      }
+      //スッキリ
       .research-title-top {
         top: -16px;
         left: 79px;
         font-family: 'Ubuntu Mono', monospace;
         font-size: 14px;
       }
+      //ビター
       .research-title-right {
         top: 90px;
         left: 204px;
         font-size: 14px;
       }
+      //コク
       .research-title-bottom {
         top: 200px;
         left: 89px;
         font-size: 14px;
       }
+      //フルーティ
       .research-title-left {
         top: 91px;
         left: -63px;
@@ -579,6 +546,111 @@
       .fa-question-circle {
         top: 14%;
         left: 34%;
+      }
+     //コーヒーカップクリックでモーダル表示
+      .modal{
+        width: 100vw;
+      }
+      //モーダル閉じるxボタン
+      .modal__bg{
+        height: 100vh;
+        position: absolute;
+        width: 100%;
+      }
+      //モーダル内の内容
+      .modal__content{
+        background: #fff;
+        left: 52%;
+        padding: 0;
+        position: absolute;
+        top: 35%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 85vw;
+	    font-size: 8px;
+      }
+      //モーダル内h2(選択エリアのコーヒー)
+      .research_modal_media > h2 {
+        font-size: 14px;
+        margin-top: 10px;
+      }
+      //モーダル内p(ユーザー名・プロフィール画像)
+      .research_modal_media > table > tbody > tr > td > a > p {
+        font-size: 10px;
+      }
+      //モーダル内th
+      .research_modal_media > table > thead > tr > th {
+        font-size: 10px;
+      }
+      //モーダル内プロフィール画像
+      .profile_image.profile-img-circle.find_prof_image_media {
+        margin: 0;
+        width: 20px!important;
+        height: 20px!important;
+      }
+      //コーヒーマップ左上:左上:zoneA:コーヒーカップ
+      .zoneA {
+        font-size: 22px;
+      }
+      //コーヒーマップ左上:右上:zoneB:コーヒーカップ
+      .zoneB {
+        font-size: 22px;
+      }
+      //コーヒーマップ左上:右下:zoneC:コーヒーカップ
+      .zoneC {
+        font-size: 22px;
+      }
+      //コーヒーマップ左上:右下:zoneD:コーヒーカップ
+      .zoneD {
+        font-size: 22px;
+      }
+      //コーヒーマップ右上:左上:zoneE:コーヒーカップ
+      .zoneE {
+        font-size: 22px;
+      }
+      //コーヒーマップ右上:右上:zoneF:コーヒーカップ
+      .zoneF {
+        font-size: 22px;
+      }
+      //コーヒーマップ右上:左下:zoneG:コーヒーカップ
+      .zoneG {
+        font-size: 22px;
+      }
+      //コーヒーマップ右上:右下:zoneH:コーヒーカップ
+      .zoneH {
+        font-size: 22px;
+      }
+      //コーヒーマップ左下:左上:zoneI:コーヒーカップ
+      .zoneI {
+        font-size: 22px;
+      }
+      //コーヒーマップ左下:右上:zoneJ:コーヒーカップ
+      .zoneJ {
+        font-size: 22px;
+      }
+      //コーヒーマップ左下:左下:zoneK:コーヒーカップ
+      .zoneK {
+        font-size: 22px;
+      }
+      //コーヒーマップ左下:右下:zoneL:コーヒーカップ
+      .zoneL {
+        font-size: 22px;
+      }
+      //コーヒーマップ右下:左上:zoneM:コーヒーカップ
+      .zoneM {
+        font-size: 22px;
+      }
+      //コーヒーマップ右下:右上:zoneN:コーヒーカップ
+      .zoneN {
+        font-size: 22px;
+      }
+      //コーヒーマップ右下:左下:zoneO:コーヒーカップ
+      .zoneO {
+        font-size: 22px;
+      }
+      //コーヒーマップ右下:右下:zoneP:コーヒーマップ
+      .zoneP {
+        font-size: 22px;
       }
 }
 
