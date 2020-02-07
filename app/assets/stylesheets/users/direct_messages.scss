@@ -1,4 +1,5 @@
-//DM内容----------------------------------------------------
+//DM内容(users/direct_messages/_direct_message.html.erb)----------------------------------------------------
+//メッセージ吹き出し部分
 .balloon1-top {
   position: relative;
   display: inline-block;
@@ -23,10 +24,45 @@
   margin: 0;
   padding: 0;
 }
+//メッセージ内容指定の範囲内で改行
+.dm_content {
+   word-wrap: break-word;
+}
+//最新メッセージと入力フォームの間の線
 .chat-border {
   border: solid 1px white;
   margin-bottom: 10px;
 }
-.dm_content {
-   word-wrap: break-word;
+//DMユーザー一覧(users/users/message.html.erb)--------------------------------------------------------------------
+section.message_box {
+  padding: 10px;
+  border: 1px solid black;
+  overflow: scroll;
+  #messages {
+    height: 400px;
+  }
+}
+div.message_form {
+  padding-top: 10px;
+}
+#message_sender {
+  font-size: 1.1em;
+}
+#message_content {
+  font-size: 1.0em;
+}
+
+/* スマートフォンサイズ（425px）以下の際に適用される設定 -----------------------------------------------------------------*/
+@media screen and (max-width:425px) {
+  //DM内容(users/direct_messages/_direct_message.html.erb)--------------------------------------------------------------------------------------------
+  //プロフィール画像
+  .profile-img-circle.dm_prof_media {
+    margin: 0;
+    width: 30px;
+    height: 30px;
+  }
+  .offset-3.content_box {
+    margin-left: 0;
+  }
+
 }

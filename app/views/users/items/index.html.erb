@@ -1,9 +1,7 @@
 <!-- 投稿一覧(ヘッダーリンク；index) ------------------------------------------------------------------>
 <!-- 使い方ボタン-------------------------------------------------------------------------------------------->
 <div class="find_question" data-toggle="modal" data-target="#exampleModalLong">
-	<!-- <i class="far fa-question-circle how_to"> -->
 	<h7 class="how_to" style="font-size: 17px;">使い方</h7>
-	<!-- </i> -->
 </div>
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -42,7 +40,7 @@
 </div>
 <section class="container clearfix">
 <!-- 投稿の新しい順 ------------------------------------------------------------------>
-	<div class="row item_index_row1">
+	<div class="row item_index_row_new_item">
 		<%= link_to users_index_add_path(sort:1), class: "type1_link" do %>
 		<div class="button type1">
 			<h2 class="item_title">新着投稿</h2>
@@ -54,7 +52,7 @@
 		</div>
 	</div>
 <!-- いいねしたユーザーの多い投稿ランキング ------------------------------------------------------------------>
-	<div class="row item_index_row2">
+	<div class="row item_index_row_like_lank_item">
 		<%= link_to users_index_add_path(sort:2), class: "type2_link" do %>
 			<div class="button type2">
 					<h2 class="item_title">いいねランキング</h2>
@@ -87,7 +85,7 @@
 		</div>
 	</div>
 <!-- 投稿をランダム表示(mysql:RAND()) ------------------------------------------------------------------>
-	<div class="row item_index_row3">
+	<div class="row item_index_row_random_item">
 		<button class="button type2">
 				<h2 class="item_title">オーナーのおすすめ</h2>
 		</button>
