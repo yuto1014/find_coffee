@@ -2,25 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-//item_index-----------------------------------------------------------------
-.item_index_row{
+//投稿一覧(uesrs/items/index.html.erb)-----------------------------------------------------------------
+.item_index_row {
   margin: 50px;
 }
-.item_index_row1{
+//新着順全体
+.item_index_row_new_item {
 	margin: 50px;
 }
-.item_index_row2{
+//いいねランキング全体
+.item_index_row_like_lank_item {
   margin: 50px;
 }
-.item_index_row3{
+//オーナーのおすすめ(ランダム表示)全体
+.item_index_row_random_item {
   margin: 50px;
 }
 .item_box {
 	margin-top: 20px;
 }
+//投稿タイトル
 .item_title_media {
   display: none;
 }
+//投稿の枠
 .item_index {
 	width: 22%;
 	float: left;
@@ -33,6 +38,7 @@
   border-top: solid 2px black;
   border-bottom: solid 2px black;
 }
+//投稿の枠線
 .item_index:before, .item_index:after{
   content: '';
   position: absolute;
@@ -49,17 +55,21 @@
   -ms-transform: translateY(-5px);
   transform: translateY(-5px);
 }
+//投稿内容のユーザー情報
 .item_index_media_user {
   margin-top: 18px;
 }
+//投稿の感想
 .coffee_opinion {
 	display: block;
 	margin: 10px;
 }
+//投稿のプロフィール画像
 .profile-img-circle{
 	border: 1px solid #eee;
 	border-radius: 50%;
 }
+//投稿のいいね
 .item-like {
 	margin-top: 24px;
 }
@@ -83,10 +93,11 @@
   border: dashed 1px #FFF;
   transition: .4s;
   position: absolute;
-  top: 58%;
+  top: 63%;
   left: 90%;
   cursor: pointer;
 }
+//新規投稿ボタン
 .btn-circle-stitch {
   display: inline-block;
   text-decoration: none;
@@ -105,10 +116,12 @@
   right:50px;
   bottom:50px;
 }
+//新規投稿ボタンホバーで色変化
 .btn-circle-stitch:hover {
   background: #212529;
   box-shadow: 0px 0px 0px 5px #212529;
 }
+//新着投稿・いいねランキングの「もっと見る」のリンク用ボタン
 .button {
   position: relative;
   padding: 1em 1.5em;
@@ -119,6 +132,7 @@
   font-size: 18px;
   margin: 1em 0.8em;
 }
+//新着投稿の枠線
 .type1 {
   color:#566473;
 }
@@ -149,17 +163,21 @@
   border-top-color: #566473;
   border-left-color: #566473;
 }
+//新着投稿の枠線:ホバーで囲む
 .type1:hover:after,
 .type1:hover:before {
   width: 100%;
   height: 100%;
 }
+//新着投稿「もっと見る」のリンクの下線非表示
 .type1_link:hover {
   text-decoration: none;
 }
+//新着投稿のリンクの下線非表示
 .item_title {
   text-decoration: none;
 }
+//いいねランキングの枠線
 .type2 {
   color:#566473;
 }
@@ -190,46 +208,51 @@
   border-top-color: #566473;
   border-left-color: #566473;
 }
+//いいねランキングの枠線:ホバーで囲む
 .type2:hover:after,
 .type2:hover:before {
   width: 100%;
   height: 100%;
 }
+//いいねランキング「もっと見る」のリンクの下線非表示
 .type2_link:hover {
   text-decoration: none;
 }
-
-
-//item_show-------------------------------------------------------------------------------------
+//投稿詳細(users/items/show.html,erb)-------------------------------------------------------------------------------------
 .show-container {
   background-color: white;
   padding: 50px;
   margin: 50px 0px;
 }
+//投稿詳細内容:背景白部分
 .item-show-container {
   background-color: white;
   padding: 50px;
   margin: 50px 0px;
   position: relative;
 }
+//投稿画像
 .center-block {
 	margin-left: 97px;
 }
+//投稿者コメント
 .title {
 	border-bottom: solid 1px #9d9d9d;
 	font-size: 20px;
 }
+//投稿者感想
 .opinion {
 	margin-top: 10px;
 }
+//レビューの文字
+.comment-create {
+  margin-bottom: 15px;
+}
+//コメント内容(users/comments/_index.html.erb)----------------------------------------------
 .comment-container {
 	margin-bottom: 10px;
 }
-canvas {
-  display: block;
-  width: 900px;
-  height: 600px;
-}
+//コメント内容全体
 .comment-box {
 	padding-left: 65px;
   border: solid 1px #C0C0C0;
@@ -238,53 +261,56 @@ canvas {
   width: 1060px;
   position: relative;
 }
+//コメント投稿者ユーザー画像の枠
 .comment-avatar {
 	position: absolute;
   left: 22px;
 }
+//コメント投稿者のユーザー画像
+.comment-image {
+  border-radius: 50%;
+}
+//コメント内容
 .comment-text {
 	margin-left: 10px;
   margin-top: 5px;
 }
+//コメント投稿日時
 .comment-date {
 	position: absolute;
 	right: 10px;
 	bottom: 10px;
 	color: #C0C0C0;
 }
-.comment-create {
-	margin-bottom: 15px;
-}
-.comment-submit {
-	margin-bottom: 15px;
-}
-.comment-image {
-	border-radius: 50%;
-}
+//コメント削除ボタン
 .comment_destroy {
-	margin-left: 20px;
+  margin-left: 20px;
 }
+//-------------------------------------------------------------------------------------------
+//コメント入力フォーム(users/comments/_form.html.erb)---------------------------------------------
+//入力エリア
 .input-mysize {
   width: 1060px;
   border: solid 1px black;
 }
-.mypage_list {
-  display: flex;
+//コメント送信ボタン
+.comment-submit {
+	margin-bottom: 15px;
 }
-.more {
-  color: #6c757d;
-  margin: 16px
-}
+//-------------------------------------------------------------------------------------------
+//コーヒーマップ画像:チャートに対応
 .zone_img {
   width: 200px;
   height: 200px;
   position: absolute;
   left: 30px;
-  top: 293px;
+  top: 324px;
 }
-.more {
+//チャート
+canvas {
   display: block;
-  cursor :pointer;
+  width: 900px;
+  height: 600px;
 }
 #menu_bar01 {
   display: none;
@@ -305,16 +331,19 @@ canvas {
 
 /* スマートフォンサイズ（425px）以下の際に適用される設定------------------------------------------------------------ */
 @media screen and (max-width:425px) {
-  //index----------------------------------------------------------------------------------------------------
+  //投稿一覧(users/items/index.html.erb)-----------------------------------------------------------------------
+  //いいねランキングの枠線
   .type2 {
     display: none;
   }
+  //投稿の枠
   .item_index {
     float: none;
     width: 93%;
     position: relative;
     height: 307px;
   }
+  //投稿内容のユーザー情報
   .item_index_media_user {
     position: absolute;
     height: 36px;
@@ -322,10 +351,11 @@ canvas {
     left: -44px;
     margin-top: 10px;
   }
+  //使い方ボタン
   .how_to {
     display: none;
   }
-  //新規投稿ボタン----------------------------------------------------------------------------------------------
+  //新規投稿ボタン(users/taists/_new_form.html.erb)----------------------------------------------------------------------------------------------
   .btn-circle-stitch {
     display: inline-block;
     text-decoration: none;
@@ -345,11 +375,13 @@ canvas {
     right: 18px;
     bottom: 106px;
   }
+  //コーヒーマップ
   .taist-box > .taist-index {
     grid-template-rows: 50px 50px 50px 50px;
     grid-template-columns: 50px 50px 50px 50px;
     margin: 30px 0px 38px 44px;
   }
+  //ラジオボタンとチェックボタン
   .radio_btn + label {
     display: inline-block!important;
     box-sizing: border-box!important;
@@ -373,34 +405,41 @@ canvas {
     background-color: #EDBC6C!important;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15)!important;
   }
+  //スッキリ
   .map-title-top {
     position: absolute!important;
     top: -29px!important;
     left: 73px!important;
     font-size: 14px!important;
   }
+  //ビター
   .map-title-right {
     position: absolute!important;
     top: 89px!important;
     left: 203px!important;
     font-size: 14px!important;
   }
+  //コク
   .map-title-bottom {
     position: absolute!important;
     top: 205px!important;
     left: 84px!important;
     font-size: 14px!important;
   }
+  //フルーティ
   .map-title-left {
     position: absolute!important;
     top: 93px!important;
     left: -60px!important;
     font-size: 12px!important;
   }
+  //------------------------------------------------------------------------------------------------------------
+  //投稿画像(新着順)
   .coffee_image_media {
     position: relative;
     top: 36px;
   }
+  //投稿の感想
   .coffee_opinion {
     position: absolute;
     display: block;
@@ -409,6 +448,7 @@ canvas {
     left: 124px;
     margin-bottom: 10px;
   }
+  //いいね
   .item_index > .row > .item-like {
     position: absolute;
     top: 225px;
@@ -416,22 +456,26 @@ canvas {
     margin-left: 0px;
     width: 81px;
   }
+  //投稿のタイトル
   .item_title_media {
     display: block;
   }
+  //プロフィール画像
   .item_index_row1 > #item_index_new > .item_index > .row > .item_index_media_user
   > .attachment .user .profile_image .profile-img-circle {
     width: 30px;
     height: 30px;
   }
+  //いいねランキング全体
   .item_index_row2 {
        display: none!important;
    }
+  //オーナーのおすすめ全体
   .item_index_row3 {
        display: none!important;
    }
-
-  //show--------------------------------------------------------------------------------------------------
+  //投稿詳細(users/items/show.html.erb)--------------------------------------------------------------------------------------------------
+  //投稿詳細内容:背景白部分
   .item-show-container {
     padding: 0;
   }
@@ -444,18 +488,30 @@ canvas {
   .item-show-container > .row > .media_image {
     padding-left: 63px;
   }
+  //投稿画像
   .center-block {
     margin-left: 0;
   }
+  //投稿の感想
+  .item-show-container > .media_comment {
+    padding: 10px;
+  }
+  //「コーヒーマップ」の文字
   .text-left {
     width: 100%;
     height: auto;
     margin-bottom: 0;
   }
+  //コーヒーマップ画像:チャートに対応
+  .zone_img {
+    display: none;
+  }
+  //チャートを括っている
   .has-rader {
     width: 100vw;
     overflow-x: hidden;
   }
+  //チャート
   canvas {
     width: 190vw!important;
     height: 95vw!important;
@@ -465,35 +521,39 @@ canvas {
          -o-transform: translateX(-22.5%);
             transform: translateX(-22.5%);
   }
-  .input-mysize {
-    width: 70vw!important;
-  }
-  .zone_img {
-    display: none;
-  }
-  .item-show-container > .media_comment {
-    padding: 10px;
-  }
+  //投稿のレビュー(コメント)
   .item-show-container > .media_rebyu {
     padding: 10px;
   }
+  //プロフィール画像
   .profile_image.comment-image {
     margin: 0px;
     width: 30px;
     height: 30px;
   }
-  .comment-submit {
-    height: 50px;
-  }
+  //コメント内容(users/comments/_index.html.erb)----------------------------------------------
+  //コメント内容全体
   .comment-box {
     width: 91vw;
   }
+  //コメント投稿日時
   .comment-date {
     bottom: 1px;
   }
+  //コメント削除ボタン
   .coffee_opinion {
     display: none;
   }
+  //--------------------------------------------------------------------------------------------
+  //コメント入力フォーム(users/comments/_form.html.erb)---------------------------------------------
+  //入力エリア
+  .input-mysize {
+    width: 70vw!important;
+  }
+  .comment-submit {
+    height: 50px;
+  }
+  //---------------------------------------------------------------------------------------------
 
 }
 

@@ -1,3 +1,239 @@
 // Place all the styles related to the users::taists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//新規投稿時コーヒーマップ(users/taists/_new_form.html.erb)----------------------------------------------------------------------
+//「新規投稿」の文字
+.modal-title {
+    margin: 0 auto;
+}
+//モーダル閉じる
+.js-modal-close {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+//コーヒーマップ全体
+.taist-index {
+  	display: grid;
+    position: relative;
+  	grid-template-rows: 80px 80px 80px 80px;
+  	grid-template-columns: 80px 80px 80px 80px;
+    margin: 30px 0px 38px 71px;
+}
+//スッキリ
+.map-title-top {
+    position: absolute;
+    top: -29px;
+    left: 124px;
+}
+//フルーティ
+.map-title-left {
+    position: absolute;
+    top: 146px;
+    left: -81px;
+}
+//ビター
+.map-title-right {
+    position: absolute;
+    top: 147px;
+    left: 332px;
+}
+//コク
+.map-title-bottom {
+    position: absolute;
+    top: 324px;
+    left: 142px;
+}
+//コーヒーマップ左上:左上:zoneA
+.refresh_contentA {
+    border: solid 1px #C0C0C0;
+    grid-row: 1;
+    grid-column: 1;
+    background-color: #90735B;
+    border-top: solid 2px black;
+    border-left: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ左上:右上:zoneB
+.refresh_contentB {
+    border: solid 1px #C0C0C0;
+    grid-row: 1;
+    grid-column: 2;
+    background-color: #90735B;
+    border-top: solid 2px black;
+    border-right: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ左上:右下:zoneC
+.refresh_contentC {
+    border: solid 1px #C0C0C0;
+    grid-row: 2;
+    grid-column: 1;
+    background-color: #90735B;
+    border-left: solid 2px black;
+    border-bottom: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ左上:右下:zoneD
+.refresh_contentD {
+    border: solid 1px #C0C0C0;
+    grid-row: 2;
+    grid-column: 2;
+    background-color: #90735B;
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ右上:左上:zoneE
+.bitter_contentE {
+	  border: solid 1px #C0C0C0;
+    grid-row: 1;
+    grid-column: 3;
+    background-color: #BB8E58;
+    border-top: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ右上:右上:zoneF
+.bitter_contentF {
+	  border: solid 1px #C0C0C0;
+    grid-row: 1;
+    grid-column: 4;
+    background-color: #BB8E58;
+    border-top: solid 2px black;
+    border-right: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ右上:左下:zoneG
+.bitter_contentG {
+	  border: solid 1px #C0C0C0;
+    grid-row: 2;
+    grid-column: 3;
+    background-color: #BB8E58;
+    border-bottom: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ右上:右下:zoneH
+.bitter_contentH {
+	  border: solid 1px #C0C0C0;
+    grid-row: 2;
+    grid-column: 4;
+    background-color: #BB8E58;
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ左下:左上:zoneI
+.body_contentI {
+	  border: solid 1px #C0C0C0;
+    grid-row: 3;
+    grid-column: 1;
+    background-color: #A26A50;
+    border-left: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ左下:右上:zoneJ
+.body_contentJ {
+	  border: solid 1px #C0C0C0;
+    grid-row: 3;
+    grid-column: 2;
+    background-color: #A26A50;
+    border-right: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ左下:左下:zoneK
+.body_contentK {
+	  border: solid 1px #C0C0C0;
+    grid-row: 4;
+    grid-column: 1;
+    background-color: #A26A50;
+    border-left: solid 2px black;
+    border-bottom: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ左下:右下:zoneL
+.body_contentL {
+	  border: solid 1px #C0C0C0;
+    grid-row: 4;
+    grid-column: 2;
+    background-color: #A26A50;
+    border-bottom: solid 2px black;
+    border-right: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ右下:左上:zoneM
+.fruity_contentM {
+	  border: solid 1px #C0C0C0;
+    grid-row: 3;
+    grid-column: 3;
+    background-color: #E5B777;
+    position: relative;
+}
+//コーヒーマップ右下:右上:zoneN
+.fruity_contentN {
+	  border: solid 1px #C0C0C0;
+    grid-row: 3;
+    grid-column: 4;
+    background-color: #E5B777;
+    border-right: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ右下:左下:zoneO
+.fruity_contentO {
+	  border: solid 1px #C0C0C0;
+    grid-row: 4;
+    grid-column: 3;
+    background-color: #E5B777;
+    border-bottom: solid 2px black;
+    position: relative;
+}
+//コーヒーマップ右下:右下:zoneP
+.fruity_contentP {
+	  border: solid 1px #C0C0C0;
+    grid-row: 4;
+    grid-column: 4;
+    background-color: #E5B777;
+    border-bottom: solid 2px black;
+    border-right: solid 2px black;
+    position: relative;
+}
+//ラジオボタン
+ .radio_btn {
+    display: none;
+ }
+// チェックが入っていないとき
+.radio_btn + label {
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 12px;
+    font-weight: normal;
+    color: #888;
+    border: solid 1px #EDBC6C;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 3px 10px;
+    background-color: #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    left: 18px;
+}
+// チェックが入ったとき
+.radio_btn:checked + label {
+    color: #fff;
+    background-color: #EDBC6C;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

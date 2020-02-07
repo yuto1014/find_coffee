@@ -22,7 +22,7 @@
 		<% end %>
 		<% if user_signed_in? %>
 			<% if @user.id == current_user.id %>
-				<div class="prof_image">
+				<div class="prof_edit">
 					<%= link_to "プロフィール編集", edit_users_user_path, remote: true, class: "btn btn-outline-dark" %>
 					<div id="user-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
 				</div>
