@@ -75,22 +75,22 @@ class Users::ItemsController < ApplicationController
 	def research
 		@items = Item.all.order(created_at: :desc)
 		#コーヒーマップ(FIND)の各ブロックに紐づいた投稿を新着順で5つ
-		@taist1 = Taist.where(refresh:3, bitter:0, body:0, fruity:3).order(created_at: :desc).limit(5)
-		@taist2 = Taist.where(refresh:3, bitter:1, body:0, fruity:2).order(created_at: :desc).limit(5)
-		@taist3 = Taist.where(refresh:2, bitter:0, body:1, fruity:3).order(created_at: :desc).limit(5)
-		@taist4 = Taist.where(refresh:2, bitter:1, body:1, fruity:2).order(created_at: :desc).limit(5)
-		@taist5 = Taist.where(refresh:3, bitter:2, body:0, fruity:1).order(created_at: :desc).limit(5)
-		@taist6 = Taist.where(refresh:3, bitter:3, body:0, fruity:0).order(created_at: :desc).limit(5)
-		@taist7 = Taist.where(refresh:2, bitter:2, body:1, fruity:1).order(created_at: :desc).limit(5)
-		@taist8 = Taist.where(refresh:2, bitter:3, body:1, fruity:0).order(created_at: :desc).limit(5)
-		@taist9 = Taist.where(refresh:1, bitter:0, body:2, fruity:3).order(created_at: :desc).limit(5)
-		@taist10 = Taist.where(refresh:1, bitter:1, body:2, fruity:2).order(created_at: :desc).limit(5)
-		@taist11 = Taist.where(refresh:0, bitter:0, body:3, fruity:3).order(created_at: :desc).limit(5)
-		@taist12 = Taist.where(refresh:0, bitter:1, body:3, fruity:2).order(created_at: :desc).limit(5)
-		@taist13 = Taist.where(refresh:1, bitter:2, body:2, fruity:1).order(created_at: :desc).limit(5)
-		@taist14 = Taist.where(refresh:1, bitter:3, body:2, fruity:0).order(created_at: :desc).limit(5)
-		@taist15 = Taist.where(refresh:0, bitter:2, body:3, fruity:1).order(created_at: :desc).limit(5)
-		@taist16 = Taist.where(refresh:0, bitter:3, body:3, fruity:0).order(created_at: :desc).limit(5)
+		@taistA = Taist.where(refresh:3, bitter:0, body:0, fruity:3).order(created_at: :desc).limit(5)
+		@taistB = Taist.where(refresh:3, bitter:1, body:0, fruity:2).order(created_at: :desc).limit(5)
+		@taistC = Taist.where(refresh:2, bitter:0, body:1, fruity:3).order(created_at: :desc).limit(5)
+		@taistD = Taist.where(refresh:2, bitter:1, body:1, fruity:2).order(created_at: :desc).limit(5)
+		@taistE = Taist.where(refresh:3, bitter:2, body:0, fruity:1).order(created_at: :desc).limit(5)
+		@taistF = Taist.where(refresh:3, bitter:3, body:0, fruity:0).order(created_at: :desc).limit(5)
+		@taistG = Taist.where(refresh:2, bitter:2, body:1, fruity:1).order(created_at: :desc).limit(5)
+		@taistH = Taist.where(refresh:2, bitter:3, body:1, fruity:0).order(created_at: :desc).limit(5)
+		@taistI = Taist.where(refresh:1, bitter:0, body:2, fruity:3).order(created_at: :desc).limit(5)
+		@taistJ = Taist.where(refresh:1, bitter:1, body:2, fruity:2).order(created_at: :desc).limit(5)
+		@taistK = Taist.where(refresh:0, bitter:0, body:3, fruity:3).order(created_at: :desc).limit(5)
+		@taistL = Taist.where(refresh:0, bitter:1, body:3, fruity:2).order(created_at: :desc).limit(5)
+		@taistM = Taist.where(refresh:1, bitter:2, body:2, fruity:1).order(created_at: :desc).limit(5)
+		@taistN = Taist.where(refresh:1, bitter:3, body:2, fruity:0).order(created_at: :desc).limit(5)
+		@taistO = Taist.where(refresh:0, bitter:2, body:3, fruity:1).order(created_at: :desc).limit(5)
+		@taistP = Taist.where(refresh:0, bitter:3, body:3, fruity:0).order(created_at: :desc).limit(5)
 	end
 
 	def taist_research
@@ -137,7 +137,7 @@ class Users::ItemsController < ApplicationController
 	end
 
 	def search
-	　	#itemのタイトル(name)を曖昧検索
+	#itemのタイトル(name)を曖昧検索
       	@items = Item.where('items.name LIKE(?)', "%#{params[:search]}%").page(params[:page]).per(20).order(created_at: :desc)
       	#フォームに入力した内容を取ってくる
       	@search_result = "#{params[:search]}"

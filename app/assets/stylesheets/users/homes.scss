@@ -11,17 +11,26 @@
 // 	position: relative;
 // }
 
-//トップページ----------------------------------------------------
+//トップページ(users/homes/top.html.erb)---------------------------------------------------------------------------
+//トップページ背景画像
 .home-body {
     background-image: url(image-path("back8.jpg"));
     background-size: cover;
     background-position: center;
 }
+//スクロールでフェイドイン
+.fadeIn {
+    opacity : 0;
+    transform: translateY(20px);
+    transition: 1s;
+}
+//top内背景動画
 .top_image {
   	width: 100%;
     padding: 40px 20px 20px;
     position: relative;
 }
+//top内テキスト(FIND BEST COFFEE)
 .top_comment_text {
 	position: absolute;
     right: 28%;
@@ -37,23 +46,24 @@
     -webkit-transition: all .3s;
     transition: all .3s;
 }
+//top内テキストホバーで上に動くアニメーション
 .top_comment_text:hover {
-  // transform: rotateX(360deg);
   	-webkit-transform: translateY(-10px);
     -ms-transform: translateY(-10px);
     transform: translateY(-10px);
 }
-
 .fa-ellipsis-v {
     font-size: 30px;
     left: 3%;
     top: 287px;
     position: fixed;
 }
+//チャート説明部分
 .chart {
 	position: relative;
     display: flex;
 }
+//チャート説明部分:左側コメント
 .chart_left {
     width: 500px;
     height: 300px;
@@ -73,21 +83,7 @@
     }
 
 }
-// .fadeIn {
-//     transform: translate3d(0, -10px, 0);
-//     transition: 1s;
-//     opacity: 0;
-// }
-
-// .fadeIn.animated {
-//     transform: translate3d(0, 0, 0);
-//     opacity: 1;
-// }
-.fadeIn {
-    opacity : 0;
-    transform: translateY(20px);
-    transition: 1s;
-}
+//チャート説明部分:右側画像
 .chart_right_img {
     margin-left: 192%;
     margin-top: 34%;
@@ -99,18 +95,19 @@
     -webkit-transition: all .3s;
     transition: all .3s;
 }
+//ホバーで上に動くアニメーション
 .chart_right_img:hover {
-  // transform: rotateX(360deg);
-    // transform: perspective(800px) translateZ(50px);
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
+//コーヒーマップ説明部分
 .map {
     position: relative;
     display: flex;
     margin-top: 50px;
 }
+//コーヒーマップ説明部分:左側画像
 .map_left_img {
     margin-left: 52%;
     margin-top: 34%;
@@ -122,13 +119,13 @@
     -webkit-transition: all .3s;
     transition: all .3s;
 }
+//ホバーで上に動くアニメーション
 .map_left_img:hover {
-  // transform: rotateX(360deg);
-    // transform: perspective(800px) translateZ(50px);
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
+//コーヒーマップ説明部分:右側コメント
 .map_right {
     flex-direction: row-reverse;
     width: 500px;
@@ -149,16 +146,19 @@
     }
 
 }
+//投稿紹介部分
 .index {
     position: relative;
     display: flex;
     margin-top: 145px;
 }
+//投稿紹介部分:左側コメント
 .index_left {
     margin-left: 187px;
     padding-top: 154px;
     padding-right: 50px;
 }
+//投稿紹介部分:右側投稿内容
 .top_item_index {
     width: 27%;
     float: left;
@@ -174,6 +174,7 @@
     -webkit-transition: all .3s;
     transition: all .3s;
 }
+//投稿紹介部分:右側投稿内容枠線
 .top_item_index:before, .top_item_index:after{
     content: '';
     position: absolute;
@@ -186,12 +187,16 @@
 .top_item_index:before {left: 10px;}
 .top_item_index:after {right: 10px;}
 .top_item_index:hover {
-  // transform: rotateX(360deg);
-    // transform: perspective(800px) translateZ(50px);
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
+//投稿紹介部分:右側投稿内容いいね部分
+.top_item_index > .row > .item-like {
+   top: -34px;
+   right: -163px;
+}
+//Function部分
 .information {
     padding-top: 130px;
 }
@@ -199,12 +204,19 @@
     width: 800px;
     margin: 7% auto;
     display: flex;
-    // justify-content: space-between;
 }
 .information li {
-width: 250px;
+    width: 250px;
 }
-.information_icon1 {
+//Function部分内容
+.information_list_recommend {
+    margin-right: 101px;
+}
+.information_list_dm {
+    margin-left: 101px;
+}
+//Function部分アイコン左
+.information_list_recommend_icon {
     border-radius: 50%;
     border: 1px solid #c0c0c06b;
     cursor : pointer;
@@ -214,14 +226,14 @@ width: 250px;
     -webkit-transition: all .3s;
     transition: all .3s;
 }
-.information_icon1:hover {
-  // transform: rotateX(360deg);
-    // transform: perspective(800px) translateZ(50px);
+//Function部分アイコン左:ホバーで上に動くアニメーション
+.information_list_recommend_icon:hover {
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
-.information_icon2 {
+//Function部分アイコン真ん中
+.information_list_calendar_icon {
     border-radius: 50%;
     border: 1px solid #c0c0c06b;
     cursor : pointer;
@@ -231,14 +243,14 @@ width: 250px;
     -webkit-transition: all .3s;
     transition: all .3s;
 }
-.information_icon2:hover {
-  // transform: rotateX(360deg);
-    // transform: perspective(800px) translateZ(50px);
+//Function部分アイコン真ん中:ホバーで上に動くアニメーション
+.information_list_calendar_icon:hover {
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
-.information_icon3 {
+//Function部分アイコン右
+.information_list_dm_icon {
     border-radius: 50%;
     border: 1px solid #c0c0c06b;
     cursor : pointer;
@@ -248,71 +260,74 @@ width: 250px;
     -webkit-transition: all .3s;
     transition: all .3s;
 }
-.information_icon3:hover {
-  // transform: rotateX(360deg);
-    // transform: perspective(800px) translateZ(50px);
+//Function部分アイコン右:ホバーで上に動くアニメーション
+.information_list_dm_icon:hover {
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
-.information_list1 {
-margin-right: 101px;
-}
-.information_list3 {
-margin-left: 101px;
-}
-.information_text1 {
+//Function部分:おすすめ
+.information_list_recommend_text {
     text-align: center;
     margin-top: 10px;
 }
-.information_text2 {
+//Function部分:カレンダー
+.information_list_calendar_text {
     text-align: center;
     margin-top: 10px;
 }
-.information_text3 {
+//Function部分:チャット
+.information_list_dm_text {
     text-align: center;
     margin-top: 10px;
 }
-.information_none1 {
-    text-align: center;
-    margin-top: 10px;
-    display: none;
-}
-.information_none2 {
+//Function部分:おすすめの説明内容
+.information_list_recommend_none {
     text-align: center;
     margin-top: 10px;
     display: none;
 }
-.information_none3 {
+//Function部分:カレンダーの説明内容
+.information_list_calendar_none {
     text-align: center;
     margin-top: 10px;
     display: none;
 }
+//Function部分:チャットの説明内容
+.information_list_dm_none {
+    text-align: center;
+    margin-top: 10px;
+    display: none;
+}
+//Function部分:説明内容がホバーで表示
 .text-active {
     display: block;
 }
 .home {
     margin: 50px;
 }
+//トップへ戻るボタン
 .fa-arrow-alt-circle-up {
     color: black;
 }
+//トップへ戻るボタン:ホバーで色変化
 .fa-arrow-alt-circle-up:hover{
-  color: #faf0e6;
-  background-color: none;
+    color: #faf0e6;
+    background-color: none;
 }
-
+//トップへ戻るボタン:ホバーで色変化
 #back-to-top a:hover{
-  background : none;
-  color: #faf0e6;
+    background : none;
+    color: #faf0e6;
 }
 
 /* スマートフォンサイズ（425px）以下の際に適用される設定 ---------------------------------------------*/
 @media screen and (max-width:425px) {
+    //top内テキスト(FIND BEST COFFEE)
     .top_comment_text {
         position: absolute;
         right: 24%;
-        top: 24%;
+        top: 32%;
         color: white;
         border: solid 5px;
         padding: 10px;
@@ -322,6 +337,7 @@ margin-left: 101px;
         -webkit-transition: all .3s;
         transition: all .3s;
     }
+    //チャート説明部分:左側コメント
     .chart_left {
         width: 200px;
         height: 100vw;
@@ -329,20 +345,23 @@ margin-left: 101px;
         top: -50px;
         left: -36px;
         margin: 56px;
-        /* margin-left: 101px; */
     }
+    //チャート説明部分:左側コメント:一番上コメント
     .chart_left .top {
         font-size: 14px;
     }
+    //チャート説明部分:左側コメント:真ん中コメント
     .chart_left .middle {
         margin-top: 8px;
         font-size: 10px;
     }
+    //チャート説明部分:左側コメント:一番下のコメント
     .chart_left .bottom {
         margin-top: 11px;
-        font-size: 2px;
+        font-size: 8px;
         width: 152px;
     }
+    //チャート説明部分:右側画像
     .chart_right_img {
         margin-left: 233%;
         margin-top: 10%;
@@ -352,6 +371,7 @@ margin-left: 101px;
         -webkit-transition: all .3s;
         transition: all .3s;
     }
+    //コーヒーマップ説明部分:左側画像
     .map_left_img {
         margin-left: 26%;
         margin-top: 13%;
@@ -361,6 +381,7 @@ margin-left: 101px;
         -webkit-transition: all .3s;
         transition: all .3s;
     }
+    //コーヒーマップ説明部分:右側コメント
     .map_right {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: reverse;
@@ -373,38 +394,50 @@ margin-left: 101px;
         margin: 56px;
         margin-left: 101px;
     }
+    //コーヒーマップ説明部分:右側画像:一番上コメント
     .map_right .top {
         font-size: 14px;
     }
+    //コーヒーマップ説明部分:右側画像:真ん中コメント
     .map_right .middle {
         margin-top: 8px;
         font-size: 10px;
         width: 150px;
     }
+    //コーヒーマップ説明部分:右側画像:一番下コメント
     .map_right .bottom {
         margin-top: 11px;
-        font-size: 2px;
+        font-size: 8px;
         width: 152px;
     }
+    //投稿紹介部分
     .index {
         position: relative;
         display: -webkit-box;
         display: flex;
         margin-top: 44px;
     }
+    //投稿紹介部分:左側コメント
     .index_left {
         margin-left: 37px;
         padding-top: 0px;
         padding-right: 2px;
         margin-top: 0px;
     }
+    //投稿紹介部分:左側コメント:一番上コメント
     .index_left .top {
         font-size: 14px;
     }
+    //投稿紹介部分:左側コメント:真ん中コメント
     .index_left .middle {
-        font-size: 3px;
+        font-size: 10px;
         min-width: 99px;
     }
+    //投稿紹介部分:右側投稿内容
+    .index_right {
+        margin-top: 15px;
+    }
+    //投稿紹介部分:右側投稿内容
     .top_item_index {
         width: 26%;
         float: left;
@@ -418,37 +451,42 @@ margin-left: 101px;
         -webkit-transition: all .3s;
         transition: all .3s;
     }
-    .index_right {
-        margin-top: 15px;
-    }
+    //投稿紹介部分:右側投稿内容:画像
     .index_right_image {
         width: 30px;
         height: 30px;
     }
+    //投稿紹介部分:右側投稿内容:プロフィール画像、名前
     .top_item_index .item_index_prof {
         display: none;
     }
+    //投稿紹介部分:右側投稿内容:いいね
     .top_item_index .item-like {
         display: none;
     }
+    //投稿紹介部分:左側説明部分
     .top_item_index .index_left {
         margin-top: 0px;
     }
     .top_item_index:before, .top_item_index:after{
         display: none;
     }
-    .top_item_index:before {
-        display: none;
-    }
-    .top_item_index:after {
-        display: none;
-    }
+    //Function部分
     .information {
         padding-top: 20px;
-        padding-left: 0px;
+        padding-left: 23px;
+	    margin-bottom: 80px;
     }
+     //Function部分:Functionの文字
     .information h1 {
         font-size: 20px;
+    }
+    //Function部分内容
+    .information_list_recommend {
+        margin-right: 69px;
+    }
+    .information_list_dm {
+        margin-left: 60px;
     }
     .information ul {
         width: 0px;
@@ -457,58 +495,67 @@ margin-left: 101px;
     .information li {
         width: 25px;
     }
-    .information_icon1 {
+    //Function部分アイコン左
+    .information_list_recommend_icon {
         width: 50px;
         height: 50px;
     }
-    .information_icon2 {
+    //Function部分アイコン真ん中
+    .information_list_calendar_icon {
         width: 50px;
         height: 50px;
     }
-    .information_icon3 {
+    //Function部分アイコン右
+    .information_list_dm_icon {
         width: 50px;
         height: 50px;
     }
-    .information_text1 {
+    //Function部分:おすすめ
+    .information_list_recommend_text {
         text-align: none;
         margin-top: 10px;
         font-size: 5px;
         width: 49px;
     }
-    .information_text2 {
+    //Function部分:カレンダー
+    .information_list_calendar_text {
         text-align: none;
         margin-top: 10px;
         font-size: 5px;
         width: 49px;
     }
-    .information_text3 {
+    //Function部分:チャット
+    .information_list_dm_text {
         text-align: none;
         margin-top: 10px;
         font-size: 5px;
         width: 49px;
     }
-    .information_none1  {
-        font-size: 1px;
+    //Function部分:おすすめの説明内容
+    .information_list_recommend_none  {
+        font-size: 10px;
         width: 111px;
     }
-    .information_none2  {
-        font-size: 1px;
+    //Function部分:カレンダーの説明内容
+    .information_list_calendar_none  {
+        font-size: 10px;
         width: 111px;
     }
-    .information_none3  {
-        font-size: 1px;
+    //Function部分:チャットの説明内容
+    .information_list_dm_none  {
+        font-size: 10px;
         width: 111px;
     }
+    //トップへ戻るボタン
     #back-to-top {
        font-size: 0.5em;
     }
+    //トップへ戻るボタン:画像
     .fa-5x {
         font-size: 0.5em;
     }
 
 }
-
-
 
 
 

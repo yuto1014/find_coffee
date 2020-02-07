@@ -7,9 +7,8 @@
 					<div class="row" id="user_info_edit">
 						<%= render 'users/users/user_info_edit', user: @user %>
 					</div>
-
 					<div class="col-md-12 mypage_list"></div>
-
+<!-- コーヒーライフ(フルカレンダー) ------------------------------------------------------------------>
 					<div class="row user_info_event">
 						<div class="col-md-6 show_evnt">
 							<%= render 'users/users/event', events: @events %>
@@ -63,6 +62,7 @@
 							</div>
 						</div>
 					</div>
+<!-- ユーザーのいいね一覧 ------------------------------------------------------------------>
 					<div class="col-12 show_like fadeIn">
 						<h2 class="mypage_list">いいね一覧
 							 <%= link_to  users_path(@user) do %><h6 class="more">もっと見る...</h6><% end %>
@@ -106,8 +106,6 @@
 	</div>
 </section>
 <%= include_gon(:init => true) %>
-<!--%= javascript_include_tag 'users/user_show.js' %-->
-<!--%= javascript_include_tag 'application.js' %-->
 <script>
 	//おすすめアイテムのチャート化
 	  var like_chart = document.getElementById("showRaderChart");

@@ -1,15 +1,12 @@
-<!-- コーヒーマップ( ヘッダーリンク:FIND) ------------------------------------------------------------------>
+<!-- コーヒーマップ(ヘッダーリンク:FIND) ------------------------------------------------------------------>
 <div class="research_back">
 	<section class="container clearfix">
 		<div class="row">
-			<div class="find_question">
+			<div class="find_question" data-toggle="modal" data-target="#exampleModalLong">
 					<i class="far fa-question-circle">
 						<span><h7 style="font-size: 17px;">マップの見方</h7></span>
 					</i>
 			 </div>
-			<button data-toggle="modal" data-target="#exampleModalLong">
-			 <i class="far fa-question-circle"></i>
-			</button>
 			<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 			  <div class="modal-dialog" role="document">
 			    <div class="modal-content">
@@ -37,12 +34,12 @@
 			</div>
 			<div class="research_box">
 				<div id="taist">
-					<div class="refresh_box1">
-						<a class="js-modal-open1" href=""><i class="fas fa-coffee zone1"></i></a>
-						<div class="modal js-modal1">
+					<div class="refresh_boxA">
+						<a class="js-modal-openA" href=""><i class="fas fa-coffee zoneA"></i></a>
+						<div class="modal js-modalA">
 							<div class="modal__bg js-modal-close"></div>
 						    <div class="modal__content">
-						    	<% if @taist1.exists? %>
+						    	<% if @taistA.exists? %>
 						    		<h2 class="text-center">選択エリアのコーヒー</h2>
 						    		<%= link_to users_taist_research_path(sort:1) do %>
 						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
@@ -57,7 +54,7 @@
 												</tr>
 											</thead>
 											<tbody>
-										    	<% @taist1.each do |taist| %>
+										    	<% @taistA.each do |taist| %>
 										    		<% taist.items. each do |item| %>
 											    		<tr>
 															<td>
@@ -91,12 +88,12 @@
 						    </div>
 						</div>
 					</div>
-					<div class="refresh_box2">
-						<a class="js-modal-open2" href=""><i class="fas fa-coffee zone2"></i></a>
-						<div class="modal js-modal2">
+					<div class="refresh_boxB">
+						<a class="js-modal-openB" href=""><i class="fas fa-coffee zoneB"></i></a>
+						<div class="modal js-modalB">
 							<div class="modal__bg js-modal-close"></div>
 						    <div class="modal__content research_modal_media">
-						    	<% if @taist2.exists? %>
+						    	<% if @taistB.exists? %>
 						    		<h2 class="text-center">選択エリアのコーヒー</h2>
 						    		<%= link_to users_taist_research_path(sort:2) do %>
 						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
@@ -111,7 +108,7 @@
 												</tr>
 											</thead>
 											<tbody>
-										    	<% @taist2.each do |taist| %>
+										    	<% @taistB.each do |taist| %>
 										    		<% taist.items. each do |item| %>
 											    		<tr>
 															<td>
@@ -145,12 +142,12 @@
 						    </div>
 						</div>
 					</div>
-					<div class="refresh_box3">
-						<a class="js-modal-open3" href=""><i class="fas fa-coffee zone3"></i></a>
-						<div class="modal js-modal3">
+					<div class="refresh_boxC">
+						<a class="js-modal-openC" href=""><i class="fas fa-coffee zoneC"></i></a>
+						<div class="modal js-modalC">
 							<div class="modal__bg js-modal-close"></div>
 						    <div class="modal__content">
-						    	<% if @taist3.exists? %>
+						    	<% if @taistC.exists? %>
 						    		<h2 class="text-center">選択エリアのコーヒー</h2>
 						    		<%= link_to users_taist_research_path(sort:3) do %>
 						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
@@ -165,7 +162,7 @@
 												</tr>
 											</thead>
 											<tbody>
-										    	<% @taist3.each do |taist| %>
+										    	<% @taistC.each do |taist| %>
 										    		<% taist.items. each do |item| %>
 											    		<tr>
 															<td>
@@ -199,12 +196,12 @@
 						    </div>
 						</div>
 					</div>
-					<div class="refresh_box4">
-						<a class="js-modal-open4" href=""><i class="fas fa-coffee zone4"></i></a>
-						<div class="modal js-modal4">
+					<div class="refresh_boxD">
+						<a class="js-modal-openD" href=""><i class="fas fa-coffee zoneD"></i></a>
+						<div class="modal js-modalD">
 							<div class="modal__bg js-modal-close"></div>
 						    <div class="modal__content">
-						    	<% if @taist4.exists? %>
+						    	<% if @taistD.exists? %>
 						    		<h2 class="text-center">選択エリアのコーヒー</h2>
 						    		<%= link_to users_taist_research_path(sort:4) do %>
 						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
@@ -219,7 +216,7 @@
 												</tr>
 											</thead>
 											<tbody>
-										    	<% @taist4.each do |taist| %>
+										    	<% @taistD.each do |taist| %>
 										    		<% taist.items. each do |item| %>
 											    		<tr>
 															<td>
@@ -253,12 +250,12 @@
 						    </div>
 						</div>
 					</div>
-					<div class="bitter_box1">
-						<a class="js-modal-open5" href=""><i class="fas fa-coffee zone5"></i></a>
-						<div class="modal js-modal5">
+					<div class="bitter_boxE">
+						<a class="js-modal-openE" href=""><i class="fas fa-coffee zoneE"></i></a>
+						<div class="modal js-modalE">
 							<div class="modal__bg js-modal-close"></div>
 						    <div class="modal__content">
-						    	<% if @taist5.exists? %>
+						    	<% if @taistE.exists? %>
 						    		<h2 class="text-center">選択エリアのコーヒー</h2>
 						    		<%= link_to users_taist_research_path(sort:5) do %>
 						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
@@ -273,7 +270,7 @@
 												</tr>
 											</thead>
 											<tbody>
-										    	<% @taist5.each do |taist| %>
+										    	<% @taistE.each do |taist| %>
 										    		<% taist.items. each do |item| %>
 											    		<tr>
 															<td>
@@ -307,12 +304,12 @@
 						    </div>
 						</div>
 					</div>
-					<div class="bitter_box2">
-						<a class="js-modal-open6" href=""><i class="fas fa-coffee zone6"></i></a>
-						<div class="modal js-modal6">
+					<div class="bitter_boxF">
+						<a class="js-modal-openF" href=""><i class="fas fa-coffee zoneF"></i></a>
+						<div class="modal js-modalF">
 							<div class="modal__bg js-modal-close"></div>
 						    <div class="modal__content">
-						    	<% if @taist6.exists? %>
+						    	<% if @taistF.exists? %>
 						    		<h2 class="text-center">選択エリアのコーヒー</h2>
 						    		<%= link_to users_taist_research_path(sort:6) do %>
 						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
@@ -327,7 +324,7 @@
 												</tr>
 											</thead>
 											<tbody>
-										    	<% @taist6.each do |taist| %>
+										    	<% @taistF.each do |taist| %>
 										    		<% taist.items. each do |item| %>
 											    		<tr>
 															<td>
@@ -361,12 +358,12 @@
 						    </div>
 						</div>
 					</div>
-					<div class="bitter_box3">
-						<a class="js-modal-open7" href=""><i class="fas fa-coffee zone7"></i></a>
-						<div class="modal js-modal7">
+					<div class="bitter_boxG">
+						<a class="js-modal-openG" href=""><i class="fas fa-coffee zoneG"></i></a>
+						<div class="modal js-modalG">
 							<div class="modal__bg js-modal-close"></div>
 						    <div class="modal__content">
-						    	<% if @taist7.exists? %>
+						    	<% if @taistG.exists? %>
 						    		<h2 class="text-center">選択エリアのコーヒー</h2>
 						    		<%= link_to users_taist_research_path(sort:7) do %>
 						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
@@ -381,7 +378,7 @@
 												</tr>
 											</thead>
 											<tbody>
-										    	<% @taist7.each do |taist| %>
+										    	<% @taistG.each do |taist| %>
 										    		<% taist.items. each do |item| %>
 											    		<tr>
 															<td>
@@ -415,12 +412,12 @@
 						    </div>
 						</div>
 					</div>
-					<div class="bitter_box4">
-						<a class="js-modal-open8" href=""><i class="fas fa-coffee zone8"></i></a>
-						<div class="modal js-modal8">
+					<div class="bitter_boxH">
+						<a class="js-modal-openH" href=""><i class="fas fa-coffee zoneH"></i></a>
+						<div class="modal js-modalH">
 							<div class="modal__bg js-modal-close"></div>
 						    <div class="modal__content">
-						    	<% if @taist8.exists? %>
+						    	<% if @taistH.exists? %>
 						    		<h2 class="text-center">選択エリアのコーヒー</h2>
 						    		<%= link_to users_taist_research_path(sort:88) do %>
 						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
@@ -435,7 +432,7 @@
 												</tr>
 											</thead>
 											<tbody>
-										    	<% @taist8.each do |taist| %>
+										    	<% @taistH.each do |taist| %>
 										    		<% taist.items. each do |item| %>
 											    		<tr>
 															<td>
@@ -469,12 +466,12 @@
 						    </div>
 						</div>
 					</div>
-					<div class="body_box1">
-						<a class="js-modal-open9" href=""><i class="fas fa-coffee zone9"></i></a>
-						<div class="modal js-modal9">
+					<div class="body_boxI">
+						<a class="js-modal-openI" href=""><i class="fas fa-coffee zoneI"></i></a>
+						<div class="modal js-modalI">
 							<div class="modal__bg js-modal-close"></div>
 						    <div class="modal__content">
-						    	<% if @taist9.exists? %>
+						    	<% if @taistI.exists? %>
 						    		<h2 class="text-center">選択エリアのコーヒー</h2>
 						    		<%= link_to users_taist_research_path(sort:9) do %>
 						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
@@ -489,7 +486,7 @@
 												</tr>
 											</thead>
 											<tbody>
-										    	<% @taist9.each do |taist| %>
+										    	<% @taistI.each do |taist| %>
 										    		<% taist.items. each do |item| %>
 											    		<tr>
 															<td>
@@ -523,12 +520,12 @@
 						    </div>
 						</div>
 					</div>
-					<div class="body_box2">
-						<a class="js-modal-open10" href=""><i class="fas fa-coffee zone10"></i></a>
-						<div class="modal js-modal10">
+					<div class="body_boxJ">
+						<a class="js-modal-openJ" href=""><i class="fas fa-coffee zoneJ"></i></a>
+						<div class="modal js-modalJ">
 							<div class="modal__bg js-modal-close"></div>
 						    <div class="modal__content">
-						    	<% if @taist10.exists? %>
+						    	<% if @taistJ.exists? %>
 						    		<h2 class="text-center">選択エリアのコーヒー</h2>
 						    		<%= link_to users_taist_research_path(sort:10) do %>
 						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
@@ -543,7 +540,7 @@
 												</tr>
 											</thead>
 											<tbody>
-										    	<% @taist10.each do |taist| %>
+										    	<% @taistJ.each do |taist| %>
 										    		<% taist.items. each do |item| %>
 											    		<tr>
 															<td>
@@ -577,12 +574,12 @@
 						    </div>
 						</div>
 					</div>
-					<div class="body_box3">
-						<a class="js-modal-open11" href=""><i class="fas fa-coffee zone11"></i></a>
-						<div class="modal js-modal11">
+					<div class="body_boxK">
+						<a class="js-modal-openK" href=""><i class="fas fa-coffee zoneK"></i></a>
+						<div class="modal js-modalK">
 							<div class="modal__bg js-modal-close"></div>
 						    <div class="modal__content">
-						    	<% if @taist11.exists? %>
+						    	<% if @taistK.exists? %>
 						    		<h2 class="text-center">選択エリアのコーヒー</h2>
 						    		<%= link_to users_taist_research_path(sort:11) do %>
 						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
@@ -597,7 +594,7 @@
 												</tr>
 											</thead>
 											<tbody>
-										    	<% @taist11.each do |taist| %>
+										    	<% @taistK.each do |taist| %>
 										    		<% taist.items. each do |item| %>
 											    		<tr>
 															<td>
@@ -631,12 +628,12 @@
 						    </div>
 						</div>
 					</div>
-					<div class="body_box4">
-						<a class="js-modal-open12" href=""><i class="fas fa-coffee zone12"></i></a>
-						<div class="modal js-modal12">
+					<div class="body_boxL">
+						<a class="js-modal-openL" href=""><i class="fas fa-coffee zoneL"></i></a>
+						<div class="modal js-modalL">
 							<div class="modal__bg js-modal-close"></div>
 						    <div class="modal__content">
-						    	<% if @taist12.exists? %>
+						    	<% if @taistL.exists? %>
 						    		<h2 class="text-center">選択エリアのコーヒー</h2>
 						    		<%= link_to users_taist_research_path(sort:12) do %>
 						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
@@ -651,7 +648,7 @@
 												</tr>
 											</thead>
 											<tbody>
-										    	<% @taist12.each do |taist| %>
+										    	<% @taistL.each do |taist| %>
 										    		<% taist.items. each do |item| %>
 											    		<tr>
 															<td>
@@ -685,12 +682,12 @@
 						    </div>
 						</div>
 					</div>
-					<div class="fruity_box1">
-						<a class="js-modal-open13" href=""><i class="fas fa-coffee zone13"></i></a>
-						<div class="modal js-modal13">
+					<div class="fruity_boxM">
+						<a class="js-modal-openM" href=""><i class="fas fa-coffee zoneM"></i></a>
+						<div class="modal js-modalM">
 							<div class="modal__bg js-modal-close"></div>
 						    <div class="modal__content">
-						    	<% if @taist13.exists? %>
+						    	<% if @taistM.exists? %>
 						    		<h2 class="text-center">選択エリアのコーヒー</h2>
 						    		<%= link_to users_taist_research_path(sort:13) do %>
 						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
@@ -705,7 +702,7 @@
 												</tr>
 											</thead>
 											<tbody>
-										    	<% @taist13.each do |taist| %>
+										    	<% @taistM.each do |taist| %>
 										    		<% taist.items. each do |item| %>
 											    		<tr>
 															<td>
@@ -739,12 +736,12 @@
 						    </div>
 						</div>
 					</div>
-					<div class="fruity_box2">
-						<a class="js-modal-open14" href=""><i class="fas fa-coffee zone14"></i></a>
-						<div class="modal js-modal14">
+					<div class="fruity_boxN">
+						<a class="js-modal-openN" href=""><i class="fas fa-coffee zoneN"></i></a>
+						<div class="modal js-modalN">
 							<div class="modal__bg js-modal-close"></div>
 						    <div class="modal__content">
-						    	<% if @taist14.exists? %>
+						    	<% if @taistN.exists? %>
 						    		<h2 class="text-center">選択エリアのコーヒー</h2>
 						    		<%= link_to users_taist_research_path(sort:14) do %>
 						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
@@ -759,7 +756,7 @@
 												</tr>
 											</thead>
 											<tbody>
-										    	<% @taist14.each do |taist| %>
+										    	<% @taistN.each do |taist| %>
 										    		<% taist.items. each do |item| %>
 											    		<tr>
 															<td>
@@ -793,12 +790,12 @@
 						    </div>
 						</div>
 					</div>
-					<div class="fruity_box3">
-						<a class="js-modal-open15" href=""><i class="fas fa-coffee zone15"></i></a>
-						<div class="modal js-modal15">
+					<div class="fruity_boxO">
+						<a class="js-modal-openO" href=""><i class="fas fa-coffee zoneO"></i></a>
+						<div class="modal js-modalO">
 							<div class="modal__bg js-modal-close"></div>
 						    <div class="modal__content">
-						    	<% if @taist15.exists? %>
+						    	<% if @taistO.exists? %>
 						    		<h2 class="text-center">選択エリアのコーヒー</h2>
 						    		<%= link_to users_taist_research_path(sort:15) do %>
 						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
@@ -813,7 +810,7 @@
 												</tr>
 											</thead>
 											<tbody>
-										    	<% @taist15.each do |taist| %>
+										    	<% @taistO.each do |taist| %>
 										    		<% taist.items. each do |item| %>
 											    		<tr>
 															<td>
@@ -847,12 +844,12 @@
 						    </div>
 						</div>
 					</div>
-					<div class="fruity_box4">
-						<a class="js-modal-open16" href=""><i class="fas fa-coffee zone16"></i></a>
-						<div class="modal js-modal16">
+					<div class="fruity_boxP">
+						<a class="js-modal-openP" href=""><i class="fas fa-coffee zoneP"></i></a>
+						<div class="modal js-modalP">
 							<div class="modal__bg js-modal-close"></div>
 						    <div class="modal__content">
-						    	<% if @taist16.exists? %>
+						    	<% if @taistP.exists? %>
 						    		<h2 class="text-center">選択エリアのコーヒー</h2>
 						    		<%= link_to users_taist_research_path(sort:16) do %>
 						    			<h6 class="text-right" style="color: #C0C0C0">もっと見る...</h6>
@@ -867,7 +864,7 @@
 												</tr>
 											</thead>
 											<tbody>
-										    	<% @taist16.each do |taist| %>
+										    	<% @taistP.each do |taist| %>
 										    		<% taist.items. each do |item| %>
 											    		<tr>
 															<td>

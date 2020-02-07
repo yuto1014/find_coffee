@@ -1,24 +1,37 @@
-// Place all the styles related to the users/users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-//user_show-------------------------------------------------------------------------------------------
+//マイページ(users/users/show.html.erb)--------------------------------------------------------------------------
+//ユーザー情報(users/users/_user_info_edit.html.erb)-------------------------------------------------------------
+//プロフィール画像
 .profile-img {
-	border-radius: 50%;
-	border: 1px solid #c0c0c06b;
-	margin: 0px 0px 20px 127px;
+    border-radius: 50%;
+    border: 1px solid #c0c0c06b;
+    margin: 0px 0px 20px 127px;
     -webkit-transition: all .3s;
     transition: all .3s;
 }
+//プロフィール画像ホバーで上に動く
 .profile-img:hover {
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
+//ユーザー情報を括る(プロフィール画像以外)
 #user_info {
-	margin-left: 85px;
-	display: flex;
+    margin-left: 85px;
+    display: flex;
 }
+//ユーザーの名前
+.user_name {
+    font-size: 27px;
+}
+//メールのアイコン(room/showへのリンク)
+#dm_submit {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+//投稿一覧・フォロー一覧・フォロワー一覧(current_user)
 .user_info_sub_current {
     display: inline-flex;
     margin-left: -326px;
@@ -34,11 +47,12 @@
         margin-right: 10px;
     }
 }
+//投稿一覧・フォロー一覧・フォロワー一覧(current_userでないuser)
 .user_info_sub {
 	display: inline-flex;
 	margin-left: -205px;
-    margin-top: 72px;
-    font-size: 20px;
+  margin-top: 72px;
+  font-size: 20px;
     .post {
     	margin-right: 10px;
     }
@@ -49,11 +63,12 @@
     	margin-right: 10px;
     }
 }
+//投稿一覧・フォロー一覧・フォロワー一覧(signout時)
 .user_info_sub_signout {
-    display: inline-flex;
-    margin-left: -144px;
-    margin-top: 72px;
-    font-size: 20px;
+  display: inline-flex;
+  margin-left: -144px;
+  margin-top: 72px;
+  font-size: 20px;
     .post {
         margin-right: 10px;
     }
@@ -64,15 +79,15 @@
         margin-right: 10px;
     }
 }
-.user_name {
-	  font-size: 27px;
-}
-.prof_image {
+//プロフィール編集ボタン
+.prof_edit {
 	  margin-left: 20px;
 }
+//-----------------------------------------------------------------------------------------------------------------
 .item_post {
 	   margin-top: 20px;
 }
+//グレーの境界線
 .mypage_list {
     padding: 0.5em 1em;
     margin: 1em 0;
@@ -86,31 +101,32 @@
     margin: 50px auto 0;
     float:left;
 }
+//カレンダーを括る
 .show_evnt {
     border: solid 1px black;
     border-radius: 5px;
     padding-top: 5px;
 }
+//カレンダー
 #calendar {
 	  padding: 5px;
     margin-left: 20px;
-    /* border: 1px solid black; */
     border-radius: 5px;
     float: left;
     height: 464px;
 }
+//あなたへのおすすめを括る
 .mypage_recommend {
 	  border: solid 1px black;
     border-radius: 5px;
     padding: 5px;
 }
-.show_like {
-	margin-top: 25px;
-}
+//あなたへのおすすめ(投稿画像)
 .recommend_item_left {
     text-align: center;
     margin-top: 20px;
 }
+//あなたへのおすすめ(投稿詳細情報)
 .recommend_item_right {
     font-size: 11px;
     padding-right: 50px;
@@ -120,13 +136,18 @@
     background-color: white;
     padding: 30px;
 }
-#dm_submit {
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    margin-left: 20px;
-    margin-top: 5px;
+//ユーザーのいいね一覧
+.show_like {
+    margin-top: 25px;
 }
+//いいね一覧「もっと見る」
+.more {
+    color: #6c757d;
+    margin: 16px;
+    display: block;
+    cursor :pointer;
+}
+//ユーザーのいいね一覧(投稿を括る)
 .show_like_item {
     width: 23%;
     float: left;
@@ -155,88 +176,102 @@
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
-//sign_up------------------------------------------------------------------------------------------------
+//ユーザーのいいね一覧(いいね)
+.show_like_item > .row > .item-like {
+    margin-top: -29px;
+    margin-left: 148px;
+}
+//新規登録(users/registrations/new.html.erb/ログイン(users/sessions/new.html.erb)---------------------------------------------------------------------------------------------
+//テストユーザー
+.test_user {
+    position: absolute;
+    top: 90%;
+    display: inline-block;
+    margin: 1.5em 15px 1.5em 0;
+    padding: 7px 10px;
+    min-width: 120px;
+    max-width: 100%;
+    color: #555;
+    font-size: 16px;
+    background: #FFF;
+    border: solid 3px #555;
+    box-sizing: border-box;
+}
+.test_user:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -24px;
+    margin-top: -12px;
+    border: 12px solid transparent;
+    border-left: 12px solid #FFF;
+    z-index: 2;
+}
+.test_user:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    margin-top: -14px;
+    border: 14px solid transparent;
+    border-left: 14px solid #555;
+    z-index: 1;
+}
+.test_user h4 {
+    margin: 0;
+    padding: 0;
+}
+//新規登録フォーム全体を括る
 .signup-container {
     background-color: white;
     padding: 50px;
     margin: 80px auto;
     border-radius: 15px;
 }
-.test_user {
-    position: absolute;
-    top: 100%;
-}
-.test_user {
-  top: 90%;
-  display: inline-block;
-  margin: 1.5em 15px 1.5em 0;
-  padding: 7px 10px;
-  min-width: 120px;
-  max-width: 100%;
-  color: #555;
-  font-size: 16px;
-  background: #FFF;
-  border: solid 3px #555;
-  box-sizing: border-box;
-}
-
-.test_user:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: -24px;
-  margin-top: -12px;
-  border: 12px solid transparent;
-  border-left: 12px solid #FFF;
-  z-index: 2;
-}
-
-.test_user:after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: -30px;
-  margin-top: -14px;
-  border: 14px solid transparent;
-  border-left: 14px solid #555;
-  z-index: 1;
-}
-
-.test_user h4 {
-  margin: 0;
-  padding: 0;
-}
 
 /* スマートフォンサイズ（425px）以下の際に適用される設定 ---------------------------------------------------------*/
 @media screen and (max-width:425px) {
-      //show------------------------------------------------------------------------------------------------
-     #user_info {
-        margin-left: 0;
-     }
-     #user_info_edit {
-        width: 80vw;
-     }
+     //マイページ(users/users/show.html.erb)------------------------------------------------------------------------------------------------
+     //マイページを括る
      .show-container {
         width: 100vw;
      }
-     .user_name {
-        font-size: 20px;
-        width: 149px;
+     //ユーザー情報を括る
+     #user_info_edit {
+        width: 80vw;
      }
+     //ユーザー情報(users/users/_user_info_edit.html.erb)-------------------------------------------------------
+     //ユーザー情報を括る(プロフィール画像以外)
+     #user_info {
+        margin-left: 0;
+     }
+     //プロフィール画像
      #user_info_edit > .profile_image {
         margin: 47px 0px 20px 127px;
         width: 80px;
         height: 80px;
      }
-     .prof_image {
+     //ユーザーの名前
+     .user_name {
+        font-size: 20px;
+        width: 149px;
+     }
+     //プロフィール編集ボタン
+     .prof_edit {
         margin-left: 23px;
      }
+     //退会ボタン
      .btn-outline-danger {
         height: 63px;
         margin-left: 31px;
         width: 58px;
         line-height: 50px;
      }
+     //メールのアイコン(room/showへのリンク)
+     #user_info_edit > #user_info > #new_room > #dm_submit {
+       margin-left: 96px;
+     }
+     //投稿一覧・フォロー一覧・フォロワー一覧(current_user)
      .user_info_sub_current {
         display: -webkit-inline-box;
         display: inline-flex;
@@ -244,24 +279,23 @@
         margin-top: 43px;
         font-size: 1px;
     }
+    //投稿一覧
     .post a h5 {
         width:83px;
         font-size: 15px;
     }
+    //フォロワー一覧
     .follower a h5 {
         width: 132px;
         font-size: 15px;
     }
+    //フォロー一覧
     .follow a h5 {
         width: 100px;
         font-size: 15px;
     }
-    #mypage_recommend_prof_img {
-        margin: -3px 0px 0px -32px;
-        width: 20px;
-        height: 20px;
-    }
-     .user_info_sub {
+    //投稿一覧・フォロー一覧・フォロワー一覧(current_userでないuser)
+    .user_info_sub {
         display: flex;
         margin-left: 0;
         margin-top: 47px;
@@ -269,89 +303,108 @@
      .user_info_sub h5 {
         font-size: 16px;
      }
-     .user_info_event {
-        width: 91vw;
-     }
-     #calendar {
-        height: 353px;
-        margin-left: 0;
-        float: none;
-     }
-     .show_evnt {
-        margin-bottom: 41px;
-     }
-     .recommend_item_left {
-        margin-bottom: 26px;
-     }
-     .recommend_item_right > table > thead > tr > th {
-        width: 70px;
-     }
-     .item_index_prof {
-        margin-top: -5px;
-    }
-     #mypage_prof_img {
-        margin: 16px 0px 20px -96px;
-        width: 30px;
-        height: 30px;
-     }
+     //フォローボタン(users/users/_follow.html.erb/_unfollow.html.erb)
      #follow_form > .edit_user > .btn-outline-secondary {
         position: absolute;
         top: 330px;
         left: 122px;
      }
-     #user_info_edit > #user_info > #new_room > #dm_submit {
-        margin-left: 96px;
-     }
-     .mypage_recommend > .row > canvas {
-        width: 100vw !important;
-        height: 60vw !important;
-        padding-bottom: 37px;
-        padding-left: 117px;
-     }
-     .mypage_list {
-        font-size: 20px;
-     }
-     .show_like_item {
-        width: 90%;
-        float: none;
-        text-align: center;
-        -webkit-transition: all .3s;
-        transition: all .3s;
-        margin: 2em 10px;
-        position: relative;
-        padding: 0.5em 1.5em;
-        border-top: solid 2px black;
-        border-bottom: solid 2px black;
+    //-----------------------------------------------------------------------------------------------------
+    //カレンダーを括る
+    .user_info_event {
+      width: 91vw;
     }
-     .show_like > .item_index > .row > .col-md-8 > .profile-img-circle {
-        margin: 0;
-        width: 30px;
-        height: 30px;
-     }
-     .show_like > .item_index > .row > .col-md-8 {
-        margin-top: 20px;
-     }
-     .item-like {
-        position: absolute;
-        top: -71px;
-        right: -135px;
-        margin-left: -64px;
-     }
-     .container > .modal-dialog > .prof_modal {
-        width: 86vw;
-     }
-     .fc-right {
-        font-size: 10px;
-     }
-     .edit-row .content_box {
-        margin: 50px 50px;
-        margin-left: 50px;
-        word-break: keep-all;
+    //カレンダーを括る
+    .show_evnt {
+      margin-bottom: 41px;
     }
-    //sign_in---------------------------------------------------------------------------------------------
-    .test_user {
+    //カレンダー
+    #calendar {
+      height: 353px;
+      margin-left: 0;
+      float: none;
+    }
+    //あなたへのおすすめ(投稿画像)
+    .recommend_item_left {
+      margin-bottom: 26px;
+    }
+    //あなたへのおすすめ(投稿詳細情報)
+    .recommend_item_right > table > thead > tr > th {
+      width: 70px;
+    }
+    //あなたへのおすすめのプロフィール画像
+    #mypage_recommend_prof_img {
+      margin: -3px 0px 0px -32px;
+      width: 20px;
+      height: 20px;
+    }
+    //あなたへのおすすめ(チャート)
+    .mypage_recommend > .row > canvas {
+      width: 100vw !important;
+      height: 60vw !important;
+      padding-bottom: 37px;
+      padding-left: 117px;
+    }
+    //グレーの境界線
+    .mypage_list {
+      font-size: 20px;
+    }
+    //ユーザーのいいね一覧を括る
+    .show_like_item {
+      width: 90%;
+      float: none;
+      text-align: center;
+      -webkit-transition: all .3s;
+      transition: all .3s;
+      margin: 2em 10px;
+      position: relative;
+      padding: 0.5em 1.5em;
+      border-top: solid 2px black;
+      border-bottom: solid 2px black;
+    }
+    //ユーザーのいいね一覧(プロフィール画像・名前を括る)
+    .show_like > .item_index > .row > .col-md-8 {
+      margin-top: 20px;
+    }
+    //ユーザーのいいね一覧(プロフィール画像・名前を括る)
+    .show_like_item > .row > .item_index_prof {
+      margin-top: 49px !important;
+      margin-right: 0px;
+    }
+    //ユーザーのいいね一覧(プロフィール画像)
+    #mypage_prof_img {
+      margin: 16px 0px 20px -96px;
+      width: 30px;
+      height: 30px;
+    }
+    //ユーザーのいいね一覧(プロフィール画像)
+    .show_like > .item_index > .row > .col-md-8 > .profile-img-circle {
+      margin: 0;
+      width: 30px;
+      height: 30px;
+    }
+    //ユーザーのいいね一覧(いいねボタン)
+    .show_like_item > .row > .item-like {
+       position: absolute;
+       top: 293px;
+       right: -76px;
+    }
+    .container > .modal-dialog > .prof_modal {
+      width: 86vw;
+    }
+    .fc-right {
+      font-size: 10px;
+    }
+    //フォロー一覧・フォロワー一覧(users/users/show_follow.html.erb/show_follower.html.erb)
+    .edit-row .content_box {
+      margin: 50px 50px;
+      margin-left: 50px;
+      word-break: keep-all;
+   }
+   //新規登録(users/registrations/new.html.erb/ログイン(users/sessions/new.html.erb)---------------------------------------------------------------------------------------------
+   .test_user {
       display: none;
-    }
+   }
 
 }
 

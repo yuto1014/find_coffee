@@ -25,9 +25,7 @@
   </head>
 
   <body>
-      <div id="mouse_box1" class="mouse_box"></div>
-<!--       <div id="mouse_box2" class="mouse_box"></div>
-      <div id="mouse_box3" class="mouse_box"></div> -->
+      <div id="mouse_box" class="mouse_box"></div>
 
     <% if admin_signed_in? %>
     <div class="head_image">
@@ -75,40 +73,36 @@
         </nav>
         <nav>
           <ul class="nav nav_right">
-            <li class="nav_tag1">
+            <li class="nav_tag_mypage">
               <%= link_to 'MYPAGE', users_user_path(current_user.id), class: "btn-default nav_tag_text" %>
-              <p class="nav_tag_text1">マイページ</p>
+              <p class="nav_tag_text_mypage">マイページ</p>
             </li>
-            <li class="nav_tag2">
+            <li class="nav_tag_find">
               <%= link_to 'FIND', users_items_research_path, class: "btn-default nav_tag_text" %>
-              <p class="nav_tag_text2">コーヒーを探す</p>
+              <p class="nav_tag_text_find">コーヒーを探す</p>
             </li>
-            <li class="nav_tag3">
+            <li class="nav_tag_index">
             <%= link_to "INDEX", users_items_path, class: "btn-default nav_tag_text" %>
-            <p class="nav_tag_text3">投稿一覧</p>
+            <p class="nav_tag_text_index">投稿一覧</p>
             </li>
-            <li class="nav_tag6">
+            <li class="nav_tag_timeline">
             <%= link_to "TIMELINE", users_follow_index_path, class: "btn-default nav_tag_text" %>
-            <p class="nav_tag_text6">フォローユーザーの投稿</p>
+            <p class="nav_tag_text_timeline">フォローユーザーの投稿</p>
             </li>
-            <li class="nav_tag9">
+            <li class="nav_tag_dm">
             <%= link_to "MESSAGE", users_rooms_path, class: "btn-default nav_tag_text" %>
-            <p class="nav_tag_text9">ダイレクトメッセージ</p>
+            <p class="nav_tag_text_dm">ダイレクトメッセージ</p>
             </li>
             <% if unchecked_notifications.any? %>
               <i class="fa fa-circle notification-circle" style="color: gold;"></i>
             <% end %>
-            <li class="nav_tag10">
+            <li class="nav_tag_notice">
             <%= link_to "NOTICE", users_notifications_path, class: "btn-default nav_tag_text" %>
-            <p class="nav_tag_text10">通知</p>
+            <p class="nav_tag_text_notice">通知</p>
             </li>
-            <li class="nav_tag4">
-            <!--%= link_to "CONTACT", new_users_contact_path, class: "btn-default nav_tag_text" %>
-            <p class="nav_tag_text4">お問い合わせ</p-->
-            </li>
-            <li class="nav_tag5">
+            <li class="nav_tag_signout">
               <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "btn-default nav_tag_text" %>
-              <p class="nav_tag_text5">ログアウト</p>
+              <p class="nav_tag_text_signout">ログアウト</p>
             </li>
             <p class="navbar-text navbar-right">
             ようこそ<%= current_user.name %>さん。
@@ -117,7 +111,7 @@
                 <%= render 'users/items/search_form' %>
           </ul>
         </nav>
-
+    </header>
         <div id="sp-menu">
           <h2>MENU</h2>
           <ul>
@@ -149,21 +143,21 @@
         </nav>
         <nav>
           <ul class="nav nav_right">
-            <li class="nav_tag2">
+            <li class="nav_tag_find">
               <%= link_to 'FIND', users_items_research_path, class: "btn-default nav_tag_text" %>
-              <p class="nav_tag_text2">コーヒーを探す</p>
+              <p class="nav_tag_text_find">コーヒーを探す</p>
             </li>
-            <li class="nav_tag3">
+            <li class="nav_tag_index">
             <%= link_to "INDEX", users_items_path, class: "btn-default nav_tag_text" %>
-            <p class="nav_tag_text3">投稿一覧</p>
+            <p class="nav_tag_text_index">投稿一覧</p>
             </li>
-            <li class="nav_tag7">
+            <li class="nav_tag_signup">
               <%=link_to "SIGNUP", new_user_registration_path, class: "btn-default nav_tag_text"  %>
-              <p class="nav_tag_text7">新規登録</p>
+              <p class="nav_tag_text_signup">新規登録</p>
             </li>
-            <li class="nav_tag8">
+            <li class="nav_tag_signin">
               <%= link_to "LOGIN", new_user_session_path, class: "btn-default nav_tag_text"  %>
-              <p class="nav_tag_text8">ログイン</p>
+              <p class="nav_tag_text_signin">ログイン</p>
             </li>
             </br>
             <p class="navbar-text navbar-right">
@@ -173,6 +167,7 @@
                 <%= render 'users/items/search_form' %>
           </ul>
         </nav>
+    </header>
         <div id="sp-menu">
           <h2>MENU</h2>
           <ul>
@@ -190,7 +185,6 @@
           </a>
         </div>
       <% end %>
-    </header>
     <%= yield %>
     <% if admin_signed_in? %>
       <footer class="footer navbar-dark bg-dark", style="height: 80px; line-height: 80px; font-size: 20px;">

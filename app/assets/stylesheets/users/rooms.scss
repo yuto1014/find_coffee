@@ -2,9 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-//room_show--------------------------------------------------------------------------------------
+//チャットルーム(users/rooms/show.html.erb)--------------------------------------------------------------------------------------
+//チャットルーム全体
 .chat_room {
 	border: solid 1px black;
 	margin: 60px auto;
     padding: 32px;
+}
+/* スマートフォンサイズ（425px）以下の際に適用される設定 -----------------------------------------------------------------*/
+@media screen and (max-width:425px) {
+  //DM一覧(users/rooms/index.html.erb)-----------------------------------------------------------------------------
+  //メッセージ一覧全体
+  .col-6.content_box {
+    -webkit-box-flex: 0;
+    flex: 0;
+    max-width: 100%;
+  }
 }

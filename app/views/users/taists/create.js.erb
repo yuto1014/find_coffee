@@ -1,4 +1,4 @@
 //モーダルを消す
 $("#item-modal").modal("hide");
 //item_newの一番前に追加する(後ろに追加するときはappend/全体の差し替えはhtml)
-$("#item_index_new").prepend("<%= escape_javascript(render 'users/items/item_new', items: @items) %>")
+$("#item_index_new").html("<%= escape_javascript(render 'users/items/item_new', items: @items) %>")
