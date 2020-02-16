@@ -29,7 +29,7 @@
 * ユーザー登録機能(devise)
 * ログイン機能(devise)
 * ユーザー情報編集機能
-* 投稿機能(modal/cocoon)
+* 投稿機能(非同期:Ajax/cocoon)
 * チャート機能(chart.js)
 * カレンダー機能(fullcalender)
 * DM機能(ActionCable)
